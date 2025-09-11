@@ -1,0 +1,214 @@
+\documentclass[aps,pra,showpacs,amsmath,amssymb,nofootinbib,longbibliography,superscriptaddress
+]{revtex4-1}
+
+%\documentclass[a4paper]{quantumarticle}
+%\newcommand{\onlinecite}{\cite}
+%\pdfoutput=1
+%\usepackage{mcite}
+%\usepackage[sort&compress,numbers]{natbib}
+%\bibliographystyle{apsrev4-1}
+
+
+\usepackage[pdftex]{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{epstopdf}
+\usepackage{tikz}    % Include the tikz package for drawing
+\usepackage{mathtools}
+
+\usepackage[normalem]{ulem}
+
+\graphicspath{{FIGs/}}
+
+ \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{beramono}
+\usepackage{listings}
+
+\usepackage{lmodern}
+
+\usepackage{amssymb,amsmath,amsthm}
+
+\usepackage{bbm}
+
+\usepackage{subcaption}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{multirow}
+
+\usepackage[justification=raggedright,singlelinecheck=false]{caption}
+
+\DeclareMathAlphabet{\mathbbmsl}{U}{bbm}{m}{sl}
+
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\renewcommand{\lstlistingname}{Code Block}
+
+\newcommand{\patbox}[1]{\vspace{2mm}\noindent\fbox{\parbox{0.47\textwidth}{\hspace{1mm}\parbox{\columnwidth}{\hspace{1mm}\\#1\vspace{1.5mm}}}}\\}
+
+\lstdefinelanguage{julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={\$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+     literate={é}{{\'e}}1
+           {è}{{\`e}}1
+           {ù}{{\`u}}1
+}[keywords,comments,strings]%
+
+\lstset{%
+    language          = julia,
+    basicstyle        = \ttfamily,
+    keywordstyle      = \bfseries\color{blue},
+    numbers           = left,
+    numbers           = none,
+    stringstyle       = \color{magenta},
+    commentstyle      = \color{ForestGreen},
+    showstringspaces  = false,
+    frame             = single, 
+    inputencoding     = latin1,
+    breaklines        = true,
+    breakatwhitespace = true
+}
+
+\newcommand{\FRrefsec}[1]{sec.~\ref{#1}}
+\newcommand{\FRreffig}[1]{fig.~\ref{#1}}
+\newcommand{\FRrefeq}[1]{eq.~\ref{#1}}
+
+\newcommand{\ENrefsec}[1]{Sec.~\ref{#1}}
+\newcommand{\ENreffig}[1]{Fig.~\ref{#1}}
+\newcommand{\ENrefeq}[1]{Eq.~\ref{#1}}
+
+
+
+\newcommand{\Ham}{\hat{\mathcal{H}}}
+\newcommand{\Spin}{\hat{S}}
+\newcommand{\A}{\hat{A}{}}
+\newcommand{\B}{\hat{B}{}}
+\newcommand{\M}{\hat{M}}
+\newcommand{\densmat}{\hat{\rho}}
+\newcommand{\U}{\hat{U}{}}
+\newcommand{\D}{\hat{D}{}}
+\newcommand{\V}{\hat{V}{}}
+\newcommand{\X}{\hat{X}{}}
+\newcommand{\W}{\hat{W}{}}
+\newcommand{\bigOmega}{\hat{\Omega}{}}
+\newcommand{\bigLambda}{\hat{\Lambda}{}}
+\newcommand{\bigGamma}{\hat{\Gamma}{}}
+
+
+\newcommand{\I}{\hat{I}}
+\newcommand{\0}{\hat{0}}
+
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\dx}{\mathrm{d}\mathbf{x}}
+
+\newcommand{\Z}{\mathcal{Z}}
+
+\newcommand{\dt}{\mathrm{d}t}
+
+
+
+
+
+
+
+
+
+   \newenvironment{xabstract}
+{\onecolumngrid
+    \list{}{%
+        \setlength{\leftmargin}{.5in}% 
+        \setlength{\rightmargin}{\leftmargin}%
+        }%
+        \item\relax}
+        {\endlist}
+
+
+
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+
+
+
+%\usepackage{chngcntr}
+
+
+\usepackage[hidelinks]{hyperref}
+
+
+\begin{document}
+
+% \title{Honours Thesis Project Proposal - Simulation of Squeezed Light Generation in an Optical Resonator}
+% \author{Aaron Dayton}
+
+% \maketitle
+
+
+\begin{center}
+    \textbf{\Huge Honours Thesis Project Proposal - Simulation of Squeezed Light Generation in an Optical Resonator} \\ % Your title
+    \vspace{0.5cm} % Space between title and author
+    \Large Aaron Dayton \\ % Your name
+    \vspace{0.3cm} % Space between author and date
+    \today \\ % Current date
+\end{center}
+
+\tableofcontents
+
+
+\section{Introduction}
+
+\textcolor{red}{
+    MacRae's Outline:\\
+    Quantum fluctuations of the electromagnetic field impose a fundamental limit on measurement sensitivity, known as the standard quantum limit (SQL). Exotic quantum optical states known as "squeezed light" can surpass the SQL. Squeezed states are a hot topic in research, particularly in quantum communication, metrology, and optical quantum computing. This project will explore theoretical models predicting strong squeezing when atoms are placed inside an optical cavity. The student will develop and run numerical simulations to investigate the conditions for optimal squeezing, using tools from quantum optics and cavity QED theory. Through this work, the student will gain experience in programming, numerical methods, and the theoretical framework of quantum light–matter interactions.
+}
+
+\section{Proposed Work}
+
+\section{Timeline}
+
+The timeline for this project can be broken down into four main stages. First, relevant background knowledge must be obtained. Second, the problem must be formulated mathematically. Third, the modelled system must have computations performed to find relevant results. Fourth, the results must be analyzed to find the system conditions which promote optimal squeezed state generation such that noise is below the standard quantum limit. These stages are outlined with proposed due dates in the following table.
+
+\begin{center}
+    \begin{tabular}{ |p{3cm}||p{10cm}|p{3cm}|  }
+        \hline
+        \multicolumn{3}{|c|}{Project Timeline} \\
+        \hline
+        Stage &  Description & Proposed due date\\
+        \hline
+        Obtaining background knowledge & Learn about optical non-linearities, electromagnetically induced transparency, squeezed states, three-level atoms, four wave mixing, continuous variable entanglement, the Fock basis, and the master equation. & September 30, 2025\\
+        \hline
+        Mathematical formulation & Set up the system Hamiltonain and an equation for the time evolution dynamics using the master equation. & November 30, 2025\\
+        \hline
+        Perform computation and obtain results & Find steady states of the Hamiltonain for the master equation using computational methods over various system parameters such as detunings. & January 31, 2026\\
+        \hline
+        Result analysis & Analyze data and find when optimal squeezed states are produced at the desired frequencies. & February 28, 2026\\
+        \hline
+    \end{tabular}
+\end{center}
+
+The thesis will be written concurrently with thesis steps as they occur. This timeline then gives a month to finalize the report.
+
+
+\bibliography{refs}
+
+
+\end{document}
