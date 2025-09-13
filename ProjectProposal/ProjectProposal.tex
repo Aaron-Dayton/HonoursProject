@@ -164,37 +164,59 @@
 
 
 \begin{center}
-    \textbf{\Huge Honours Thesis Project Proposal - Simulation of Squeezed Light Generation in an Optical Resonator} \\ % Your title
+    \textbf{\Large Honours Thesis Project Proposal - Simulation of Squeezed Light Generation in an Optical Resonator} \\ % Your title
     \vspace{0.5cm} % Space between title and author
     \Large Aaron Dayton \\ % Your name
     \vspace{0.3cm} % Space between author and date
     \today \\ % Current date
 \end{center}
 
-\tableofcontents
-
 
 \section{Introduction}
 
-\textcolor{red}{
-    MacRae's Outline:\\
-    Quantum fluctuations of the electromagnetic field impose a fundamental limit on measurement sensitivity, known as the standard quantum limit (SQL). Exotic quantum optical states known as "squeezed light" can surpass the SQL. Squeezed states are a hot topic in research, particularly in quantum communication, metrology, and optical quantum computing. This project will explore theoretical models predicting strong squeezing when atoms are placed inside an optical cavity. The student will develop and run numerical simulations to investigate the conditions for optimal squeezing, using tools from quantum optics and cavity QED theory. Through this work, the student will gain experience in programming, numerical methods, and the theoretical framework of quantum light–matter interactions.
-}
+As quantum technologies advance, the need for quantum networks grows rapidly. With proposed applications like quantum key distribution and quantum computation, a way to reliably transmit quantum information with low losses is required to obtain the maximal benefit from these systems. An additional challenge is to surpass the standard quantum limit (SQL) which imposes a limitation on quantum measurement precision according to the uncertainty principle. So there are two needs in the current landscape of quantum technologies which will be worked towards by this project: to transmit/transfer quantum information reliably, and to surpass the SQL for optical quantum signals.
+
+
+Optical squeezed states are states in which an electromagnetic field has its uncertainty with respect to one canonical variable increased (either phase or amplitude) while the uncertainty in the canonical conjugate variable is decreased (either amplitude or phase, respectively) such that the uncertainty principle is observed. This allows for precision measurements of the low-uncertainty variable to be made which surpass the SQL.
+
+The non-linear optical process of four wave mixing (FWM) has been shown to be able to produce squeezed states \cite{FWMSS}. It has also been shown that if FWM is performed using three-level atoms ($\Lambda$-system), then entanglement can be produced \cite{FWMIE}. FWM can also convert optical frequencies \cite{FWMIE}. Additionally, quantum fluctuations for three-level atoms can be controlled in resonant cavities using electromagnetically induced transparency (EIT) \cite{CCQF}.
+
+These ideas will be built upon to computationally model the dynamics of a resonant cavity filled with three-level atoms in order to produce squeezed states through FWM and cavity EIT. This project works towards quantum networking as frequency conversion for quantum entangled signals could allow for quantum information to be transferred through fibre optic cables at a low-loss frequency, and towards surpassing the SQL by finding the conditions in which squeezed states can be produced given a system with a set of tunable parameters.
 
 \section{Proposed Work}
 
+This project requires firm understanding of optical non-linearities, electromagnetically induced transparency, squeezed states, three-level atoms, four wave mixing, continuous variable entanglement, the Fock basis, and the master equation. These topics will be learned in the first stage.
+
+The system to be modelled is depicted in Fig.~\ref{SphericalResonator}. If for the two output beams we have $\omega_a \neq \omega_b$, then the system will produce what is called a two-mode squeezed state; if $\omega_a = \omega_b$, then the system will produce a single mode squeezed state. This project will focus on the production of a single-mode squeezed state. The purpose of the spherical resonator is to enhance the single-mode output field produced in this process such that photons can be detected above the shot-noise level. The system will be modelled by setting up a Hamiltonian in the Fock basis for photons.
+
+\begin{figure}[h!]
+    \includegraphics[width=0.5\columnwidth]{SphericalResonator.png}
+    \caption{System involving two continuous electromagnetic input beams at frequencies $\omega_p$ and $\omega_c$ which undergo a four wave mixing process within a spherical resonator tuned to frequency $\omega_{cav}$ filled with cooled three-level atoms to produce output fields at frequencies $\omega_a$ and $\omega_{b}$, respectively.}
+    \label{SphericalResonator}
+\end{figure}
+
+
+Computations will then be performed which find a steady state density matrix $\rho$ of the Lindblad master equation dictating the time evolution of the system
+\begin{equation}
+    \frac{d \rho}{\dt} = - \frac{i}{\hbar} [H, \rho] + \sum_i \gamma_i \left( L_i \rho L_i^{\dagger} - \frac{1}{2} L_i^{\dagger} L_i \rho - \frac{1}{2} \rho L_i^{\dagger} L_i \right)
+\end{equation}
+where $L_i$ are operators describing the dissipative dynamics of the system. i.e. the goal is to solve for when $\dot{\rho} = 0$. Parameters such as, but not limited to, laser intensity and atomic density may be varied across computations.
+
+Results will be analyzed to find when the desired single-mode squeezed states would theoretically be produced. Validation of these results would then be attempted in future experiments.
+
+
 \section{Timeline}
 
-The timeline for this project can be broken down into four main stages. First, relevant background knowledge must be obtained. Second, the problem must be formulated mathematically. Third, the modelled system must have computations performed to find relevant results. Fourth, the results must be analyzed to find the system conditions which promote optimal squeezed state generation such that noise is below the standard quantum limit. These stages are outlined with proposed due dates in the following table.
+The timeline for this project can be broken down into five main stages. First, relevant background knowledge must be obtained. Second, the problem must be formulated mathematically. Third, the modelled system must have computations performed to find relevant results. Fourth, the results must be analyzed to find the system conditions which promote optimal squeezed state generation. Fifth, thesis finalization. The thesis will be written concurrently with these steps as they occur. These stages are outlined with proposed due dates in the following table.
 
 \begin{center}
-    \begin{tabular}{ |p{3cm}||p{10cm}|p{3cm}|  }
+    \begin{tabular}{ |p{4cm}||p{10cm}|p{3cm}|  }
         \hline
         \multicolumn{3}{|c|}{Project Timeline} \\
         \hline
         Stage &  Description & Proposed due date\\
         \hline
-        Obtaining background knowledge & Learn about optical non-linearities, electromagnetically induced transparency, squeezed states, three-level atoms, four wave mixing, continuous variable entanglement, the Fock basis, and the master equation. & September 30, 2025\\
+        \raggedright Obtain background knowledge & Learn about optical non-linearities, electromagnetically induced transparency, squeezed states, three-level atoms, four wave mixing, continuous variable entanglement, the Fock basis, and the master equation. & September 30, 2025\\
         \hline
         Mathematical formulation & Set up the system Hamiltonain and an equation for the time evolution dynamics using the master equation. & November 30, 2025\\
         \hline
@@ -202,10 +224,11 @@ The timeline for this project can be broken down into four main stages. First, r
         \hline
         Result analysis & Analyze data and find when optimal squeezed states are produced at the desired frequencies. & February 28, 2026\\
         \hline
+        Thesis finalization & Complete writing and editing of the thesis to prepare it for submission. & April 2, 2026\\
+        \hline
     \end{tabular}
 \end{center}
 
-The thesis will be written concurrently with thesis steps as they occur. This timeline then gives a month to finalize the report.
 
 
 \bibliography{refs}
