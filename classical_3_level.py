@@ -71,17 +71,17 @@ def plot_position_expectation_over_time():
 
 
 
-def plot_position_expectation_over_delta(Δ_end, n=500):
+def plot_susceptibility_expectation_over_delta(Δ_end, n=500):
     # Rate of spontaneous emission - Write all other parameters in terms of Γ
     Γ = 1
     Γ13 = 0.5 # One pathway
     Γ23 = 0.5 # Another pathway
 
     Δ_c = 0 # Perfect EIT transparency
-    # Δ_c = -3 * Γ # Other behaviour
-    # Δ_c = -5 * Γ # Raman peak
+    # Δ_c = 0.1 * Γ # Other behaviour between the two
+    # Δ_c = 0.5 * Γ # Raman peak
 
-    Ω_c = 0.01 * Γ
+    Ω_c = 0.1 * Γ
     Ω_s = 10.0**(-5) * Γ
 
     Δ_vals = np.linspace(-Δ_end, Δ_end, n)
@@ -108,12 +108,24 @@ def plot_position_expectation_over_delta(Δ_end, n=500):
     # d = - ℏ Ω_s |1><3|
     # Without the h.c.
     # This gives us what we want!
-    # d_13 = - ℏ * Ω_s * (ket3 * ket1.dag())
-    d_13 = - ℏ * Ω_s * (ket3 * ket1.dag()) # + ket1*ket3.dag())
+    #
+    # Although, d = - ℏ Ω_s |3><1| gives a more accurate result and MacRae didn't seem entirely sure.
+
+
+    d_13 = - ℏ * Ω_s * (ket3 * ket1.dag())
+    e_ops = [d_13]
+
+    # Other options
+    # d_13 = - ℏ * Ω_s * (ket1 * ket3.dag())
+    # d_13 = - ℏ * Ω_s * (ket3 * ket1.dag() + ket3*ket1.dag())
 
     dissipation_op_13 = Γ13*(ket1 * ket3.dag())
     dissipation_op_23 = Γ23*(ket2 * ket3.dag())
     c_ops = [dissipation_op_13, dissipation_op_23]
+
+    # Other option
+    # dissipation_op_13 = Γ13*(ket3 * ket1.dag())
+    # dissipation_op_23 = Γ23*(ket3 * ket2.dag())
 
     real_results = [0] * n
     imag_results = [0] * n
@@ -126,14 +138,14 @@ def plot_position_expectation_over_delta(Δ_end, n=500):
 
         # Compute position expectation value for induced electric dipole
         # TODO - Lookup collapse operators (Lindblad dissipation operators) for incoherent coupling between states
-        res = mesolve(H, psi0, Γ_times, c_ops, e_ops=[d_13]).expect[0][-1]
+        res = mesolve(H, psi0, Γ_times, c_ops=c_ops, e_ops=e_ops).expect[0][-1]
 
-        # Debug for steady state dynamics
+        # DEBUG for steady state dynamics
         # if i == 50:
         #     temp = mesolve(H, psi0, Γ_times, c_ops, [d_13])
             
         # Compute χ proportionality
-        χ = res**2 * δ / (np.abs(Ω_c)**2 - δ*(Δ + 1j*Γ))
+        χ = -res**2 * δ / (np.abs(Ω_c)**2 - δ*(Δ + 1j*Γ))
         real_results[i] = χ.real
         imag_results[i] = χ.imag
 
@@ -145,8 +157,9 @@ def plot_position_expectation_over_delta(Δ_end, n=500):
     ax.plot(Δ_vals, real_results)
     ax.plot(Δ_vals, imag_results)
     ax.set_xlabel('Δ')
-    ax.set_ylabel('Expectation value of position')
-    ax.legend(("Real", "Imag"))
+    ax.set_ylabel('Expectation value of susceptibility χ')
+    ax.legend(('Real', 'Imag'))
+    plt.title('EIT phenomenon for a 3-level atom in a classical EM field')
 
     # ax.plot(temp.times, temp.expect[0])
     plt.show()
