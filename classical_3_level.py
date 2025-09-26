@@ -111,7 +111,6 @@ def plot_susceptibility_expectation_over_delta(Δ_end, n=500):
     #
     # Although, d = - ℏ Ω_s |3><1| gives a more accurate result and MacRae didn't seem entirely sure.
 
-
     d_13 = - ℏ * Ω_s * (ket3 * ket1.dag())
     e_ops = [d_13]
 

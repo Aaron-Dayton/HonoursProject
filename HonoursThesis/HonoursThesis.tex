@@ -212,8 +212,70 @@ The outline of this project can be described in three stages: formulating up the
 
 \subsection{Master Equation}
 
+\section{The first steps}
 
+In order to work up to modelling a three-level atom in the Fock basis for photons with dissipative Lindbladian operators, a simpler model will be taken as a starting point. As is a common theme in physics, a hydrogenic atom in a time dependent electromagnetic field can be approximately modelled as a drive harmonic oscillator. So rather than dealing with quantized photons, the system will first be modelled using classical oscillating electromagnetic fields with frequencies nearly resonant with those of the atomic transitions in the three-level system.
 
+To do this, a few assumptions will be made \cite{TODO}: first, the wavelengths of the light sources interacting with the atom have wavelengths much greater than the Bohr radius of the atom ($\lambda >> a_0$); second, the detunings of incoming beams are small in proportion to the transition frequencies considered. These two assumption happen to be consistent with one another.
+
+The first assumption allows for us to approximate the electromagnetic field experienced by the atom as constant in space but varying in time since the change in electromagnetic field strength between the two ends the atom in the transverse wave direction is relatively small.
+
+There exists the relation between the electric and magnetic field strengths of light which arises from Maxwell's equation \cite{TODO}
+\begin{equation}
+    B = \frac{E}{c}.
+\end{equation}
+The Lorentz force is
+\begin{equation}
+    \vec{F} = q \left(\vec{E} + \vec{v} \times \vec{B} \right)
+\end{equation}
+where $q$ is charge, and $\vec{v}$ is particle velocity. Using the Bohr model for approximation, we have that quantized electron velocities for a hydrogenic atom have magnitude
+\begin{equation}
+    v_n = \alpha \frac{Z}{n} c
+\end{equation}
+where $\alpha$ is the fine structure constant, $Z$ is the atomic number, and $n$ is the principle quantum number \cite{Atomic book p.23}. We can therefore see by rough approximation that we have
+\begin{equation}
+    |\vec{v} \times \vec{B}| \lessapprox \alpha Z c \frac{E}{c} = \alpha Z E.
+\end{equation}
+We are considering Rubidium with atomic number $Z = 37$, but this neglects the effects of screening caused by the electrons in inner shells of the atom. Electron position is distributed in a cloud about the atom for any orbital, though we can expect the $36$ electrons of inner shells between the valence electron (singular in its shell) and the nuclear charge of $37e$ to roughly cancel $36e$ of charge such that the valence electron experiences about $1e$. By this line of reasoning we have
+\begin{equation}
+    |\vec{v} \times \vec{B}| \lessapprox \alpha E.
+\end{equation}
+Thus, the force due to the external magnetic field is about $1/137$ that of the external electric field. So we may neglect the external magnetic field for simplification.
+\begin{equation}
+    \vec{F} \approx q \vec{E}
+\end{equation}
+
+All of these approximations can be justified from the perspective that this model is a first estimate for system behavior which will be refined and iterated upon.
+
+This brings us to a physicist's favorite abstraction: the harmonic oscillator. The potential of which the valence electron experiences can be expanded in a Taylor series and approximated as quadratic \cite{TODO}. The mass of the nucleus is much greater than the electron mass, so we may approximate the nucleus to be fixed. So we have a mass with some equilibrium distance from a fixed point under a quadratic potential, i.e. a simple harmonic oscillator. We may then add in our external time-dependent driving force to obtain a driven harmonic oscillator.
+
+When a charge oscillates, it emits photons as its movement produces a changing electric and magnetic field. So when our system is driven on resonance, then an electromagnetic field of that same frequency will be produced. Here lies the idea behind electromagnetically induced transparency. By driving a cloud of these hydrogenic atoms on resonance, the field essentially `passes through' the medium.
+
+\textcolor{red}{TODO - Connect these ideas.}
+
+The polarization vector of the atomic cloud may be given by
+\begin{equation}
+    \vec{P} = N \langle \hat \vec{d} \rangle = \epsilon_0 \chi \vec{E}
+\end{equation}
+where $N$ is atomic density, $\hat \vec{d}$ is the average dipole moment, and $\chi$ is the magnetic susceptibility \cite{TODO}. One can find that for a three-level atom \textcolor{red}{(TODO derive or cite?)}
+\begin{equation}
+    \chi = \frac{-N d^2}{\epsilon_0 \hbar} \frac{\delta}{|\Omega_c|^2 - \delta (\Delta + i \Gamma)}
+\end{equation}
+where \textcolor{red}{TODO - Define detunings and dissipation rate along with a figure for a three-level atom}.
+
+The Hamiltonian of the three-level atom can be given as
+\begin{equation}
+    H_{atom} = TODO (diagonal-slides)
+\end{equation}
+and the Hamiltonian of the light-matter interaction can be given as
+\begin{equation}
+    H_{atom} = TODO (see_slides)
+\end{equation}
+The dissipative operators...
+
+Solve master equation with...
+
+Here's the plot...
 
 \section{Hamiltonian Formulation}
 
