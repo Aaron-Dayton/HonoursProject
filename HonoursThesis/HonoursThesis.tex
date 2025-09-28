@@ -192,29 +192,10 @@ The outline of this project can be described in three stages: formulating up the
 
 \subsection{Optical Non-Linearities}
 
+
 \subsection{Electromagnetically Induced Transparency}
 
-\subsection{Squeezed States}
-
-\subsection{Three-Level Atom}
-
-\begin{figure}
-    \includegraphics[width=\columnwidth]{ThreeLevelAtom.png}
-    \caption{\textcolor{red}{TODO}}
-    \label{ThreeLevelAtom}
-\end{figure}
-
-\subsection{Four Wave Mixing}
-
-\subsection{Continuous Variable Entanglement}
-
-\subsection{Fock Basis}
-
-\subsection{Master Equation}
-
-\section{The first steps}
-
-In order to work up to modelling a three-level atom in the Fock basis for photons with dissipative Lindbladian operators, a simpler model will be taken as a starting point. As is a common theme in physics, a hydrogenic atom in a time dependent electromagnetic field can be approximately modelled as a drive harmonic oscillator. So rather than dealing with quantized photons, the system will first be modelled using classical oscillating electromagnetic fields with frequencies nearly resonant with those of the atomic transitions in the three-level system.
+In order to gain an intuition on electromagnetically induced transparency (EIT), we will start with a classical toy model of the atom. As is a common theme in physics, a hydrogenic atom in a time dependent electromagnetic field can be approximately modelled as a driven harmonic oscillator. So rather than dealing with quantized photons, we will consider a classical oscillating electromagnetic fields with frequencies nearly resonant with those of the atomic transitions.
 
 To do this, a few assumptions will be made \cite{TODO}: first, the wavelengths of the light sources interacting with the atom have wavelengths much greater than the Bohr radius of the atom ($\lambda >> a_0$); second, the detunings of incoming beams are small in proportion to the transition frequencies considered. These two assumption happen to be consistent with one another.
 
@@ -251,7 +232,57 @@ This brings us to a physicist's favorite abstraction: the harmonic oscillator. T
 
 When a charge oscillates, it emits photons as its movement produces a changing electric and magnetic field. So when our system is driven on resonance, then an electromagnetic field of that same frequency will be produced. Here lies the idea behind electromagnetically induced transparency. By driving a cloud of these hydrogenic atoms on resonance, the field essentially `passes through' the medium.
 
-\textcolor{red}{TODO - Connect these ideas.}
+
+
+\subsection{Three-Level Atom}
+
+\begin{figure}
+    \includegraphics[width=\columnwidth]{ThreeLevelAtom.png}
+    \caption{\textcolor{red}{TODO}}
+    \label{ThreeLevelAtom}
+\end{figure}
+
+\subsection{Four Wave Mixing}
+
+
+\subsection{Squeezed States}
+
+According to Heisenberg's uncertainty principle, the product of the standard deviations of two canonically conjugate observables, $x$ and $p$, must satisfy
+
+\begin{equation}
+    \Delta x \Delta p \geq \frac{\hbar}{2}.
+\end{equation}
+
+For light of sufficient intensity, one can consider its amplitude and phase as canonically conjugate variables~\cite{TODO}. For a generically produced beam, one would expect the standard deviations of  amplitude and phaseto to be roughly equal. If measurement were to be performed in a single quadrature (amplitude for example), then reducing the uncertainty in that quadrature would result in a more percise overall reading.
+
+This leads to the idea of a squeezed state in which one quadrature has its uncertainty decreased below the shot noise level at the expense of the other, such that the uncertainty principle is still observed. It has been shown that optical squeezed states can be produced through a FWM process in optical cavities \cite{Slusher}.
+
+
+\subsection{Continuous Variable Quantum Information}
+
+If multiple beams are entangled such that a measurement of one of these variables on one beam yields information about the other beams, then we have what is called continuous variable entanglement~\cite{TODO}. In this way, quantum information can be stored, processed, and transmitted using continuous beams rather than with individual photons.
+
+
+\subsection{How Sub-Poissonian Light and Photon Anti-Bunching Effects Affect Continuous Variable Measuements}
+
+Continuous variable measurements allow for small quantum fluctuations to be less significant in measurement procedures when compared to individual photon entanglement, though there still exist challenges in performing measurements. Continuous variable measurements are typically performed with homodyne detectors~\cite{TODO}, a type of interferometer which compares some input beam against a controlled probe beam and takes the difference between their readings~\cite{TODO}.
+
+Light is quantized and beam intensity is not that high. Individual photons arrive at the detector in a Poisson process, resulting in shot noise for the detector~\cite{TODO}. Due to this, the reading of the input beam can be swayed by individual photon arrival events. It would be highly desirable for the input beam to follow sub-Poissonian statistics (with the same mean as a Poisson distribution but a lower variance)~\cite{TODO} and for the beam to display photon anti-bunching (arrival events are distributed more evenly as opposed to having intensity spikes)~\cite{TODO}.
+
+It has been shown that applying cavity EIT to three-level atoms can produce sub-Poissonian light~\cite{Souza}, and that applying FWM to three-level systems can produce photon anti-bunching effects~\cite{Du}. Combining these techniques theoretically allows for the information of continuous variable beams to be more reliably transmitted to some measurement device, such that readings fall below the shot-noise level.
+
+
+
+
+\subsection{Fock Basis}
+
+\subsection{Master Equation}
+
+
+
+\section{The first steps}
+
+In order to work up to modelling a three-level atom in the Fock basis for photons with dissipative Lindbladian operators, a simpler model will be taken as a starting point. We will treat our atom as a three-level system with discrete states while lights behaves as a continuous field such that we do not need to discretize light in the Fock basis of photon number.
 
 The polarization vector of the atomic cloud may be given by
 \begin{equation}

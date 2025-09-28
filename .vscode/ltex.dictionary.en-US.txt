@@ -5,3 +5,4 @@ Lindbladian
 Fock
 detuning
 detunings
+observables
