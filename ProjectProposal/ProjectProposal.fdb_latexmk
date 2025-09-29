@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex ProjectProposal"] 1757717013 "ProjectProposal.aux" "ProjectProposal.bbl" "ProjectProposal" 1757718044 0
-  "./ProjectProposalNotes.bib" 1757718044 104 3df53be75d46dc364236f6bd8a7721a4 ""
-  "./refs.bib" 1757715050 1466 6da51ff58b2349c7fb0a0f685afb8838 ""
+["bibtex ProjectProposal"] 1759169981 "ProjectProposal.aux" "ProjectProposal.bbl" "ProjectProposal" 1759169994 0
+  "./ProjectProposalNotes.bib" 1759169994 104 3df53be75d46dc364236f6bd8a7721a4 ""
+  "./refs.bib" 1759031054 1466 6da51ff58b2349c7fb0a0f685afb8838 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/revtex4-1/apsrev4-1.bst" 1602107945 71515 e333383ed72bf24aa6de7e8cabb55f84 ""
-  "ProjectProposal.aux" 1757718044 2452 413fa53299e9bf05e08b3a0d2d4b34cf "pdflatex"
+  "ProjectProposal.aux" 1759169994 2452 d4b1c3563568ec69f53133ecdda2b2c7 "pdflatex"
   (generated)
   "ProjectProposal.bbl"
   "ProjectProposal.blg"
   (rewritten before read)
-["pdflatex"] 1757718043 "/Users/aarondayton/repos/HonoursProject/ProjectProposal/ProjectProposal.tex" "ProjectProposal.pdf" "ProjectProposal" 1757718044 0
-  "/Users/aarondayton/repos/HonoursProject/ProjectProposal/ProjectProposal.tex" 1757718042 10219 683fb30d87d72689d85cdf3a825f82e5 ""
+["pdflatex"] 1759169993 "/Users/aarondayton/repos/HonoursProject/ProjectProposal/ProjectProposal.tex" "ProjectProposal.pdf" "ProjectProposal" 1759169994 0
+  "/Users/aarondayton/repos/HonoursProject/ProjectProposal/ProjectProposal.tex" 1759169992 10367 6fbf5a40db72c80cfd9c26dfa0ea20df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -226,10 +226,10 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1705704488 7883460 4503032ed2522f5a2bc95bcf90250e31 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "FIGs//SphericalResonator.png" 1757713876 26784 91bdb3c5d66635e77e9d0514c5ab7ccd ""
-  "ProjectProposal.aux" 1757718044 2452 413fa53299e9bf05e08b3a0d2d4b34cf "pdflatex"
-  "ProjectProposal.bbl" 1757717013 4629 1123ae74b9abb9d3934a8c7c8c867123 "bibtex ProjectProposal"
-  "ProjectProposal.out" 1757718044 394 2549b7ff1219cb39cde64f294e6ada12 "pdflatex"
-  "ProjectProposal.tex" 1757718042 10219 683fb30d87d72689d85cdf3a825f82e5 ""
+  "ProjectProposal.aux" 1759169994 2452 d4b1c3563568ec69f53133ecdda2b2c7 "pdflatex"
+  "ProjectProposal.bbl" 1759169981 4629 1123ae74b9abb9d3934a8c7c8c867123 "bibtex ProjectProposal"
+  "ProjectProposal.out" 1759169994 394 2549b7ff1219cb39cde64f294e6ada12 "pdflatex"
+  "ProjectProposal.tex" 1759169992 10367 6fbf5a40db72c80cfd9c26dfa0ea20df ""
   (generated)
   "ProjectProposal.aux"
   "ProjectProposal.log"

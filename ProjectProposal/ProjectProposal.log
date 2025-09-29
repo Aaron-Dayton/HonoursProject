@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  18 SEP 2025 18:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  29 SEP 2025 11:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1037,42 +1037,42 @@ Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 158.
 \openout3 = `ProjectProposalNotes.bib'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-82.
+84.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-82.
+84.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-182.
+184.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-182.
+184.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 182.
+(Font)              <10> on input line 184.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 182.
+(Font)              <7> on input line 184.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 182.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 182
+(Font)              <5> on input line 184.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 184
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 182
+LaTeX Font Info:    Trying to load font information for U+msb on input line 184
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1081,7 +1081,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <FIGs//SphericalResonator.png, id=28, 448.67625pt x 293.095pt>
 File: FIGs//SphericalResonator.png Graphic file (type png)
 <use FIGs//SphericalResonator.png>
-Package pdftex.def Info: FIGs//SphericalResonator.png  used on input line 193.
+Package pdftex.def Info: FIGs//SphericalResonator.png  used on input line 195.
 (pdftex.def)             Requested size: 255.0pt x 166.57393pt.
 
 
@@ -1099,7 +1099,7 @@ Package rerunfilecheck Info: File `ProjectProposal.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  29389 strings out of 476025
- 566536 string characters out of 5790017
+ 566535 string characters out of 5790017
  1875388 words of memory out of 5000000
  49305 multiletter control sequences out of 15000+600000
  543386 words of font info for 56 fonts, out of 8000000 for 9000
@@ -1115,7 +1115,7 @@ blic/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr
 /local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/tex
 live/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on ProjectProposal.pdf (2 pages, 193715 bytes).
+Output written on ProjectProposal.pdf (2 pages, 195763 bytes).
 PDF statistics:
  119 PDF objects out of 1000 (max. 8388607)
  88 compressed objects within 1 object stream
