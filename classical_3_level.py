@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from IPython.display import Image
-from qutip import (Qobj, basis, create, destroy, mesolve)
+from qutip import (Qobj, basis, create, destroy, mesolve, steadystate, expect)
 
 # Global
 ℏ = 1
@@ -137,16 +137,28 @@ def plot_susceptibility_expectation_over_delta(Δ_end, n=500):
 
         # Compute position expectation value for induced electric dipole
         # TODO - Lookup collapse operators (Lindblad dissipation operators) for incoherent coupling between states
-        res = mesolve(H, psi0, Γ_times, c_ops=c_ops, e_ops=e_ops).expect[0][-1]
+        # res = mesolve(H, psi0, Γ_times, c_ops=c_ops, e_ops=e_ops).expect[0][-1]
+
+        res = steadystate(H, c_ops)
+
+        res = expect(e_ops[0], res)
+
+        # TODO - What is this exactly? I believe this is d, but why not plot χ?
+        # χ is what tells us about EIT right? I'm not sure.
+        real_results[i] = res.real
+        imag_results[i] = res.imag
 
         # DEBUG for steady state dynamics
         # if i == 50:
         #     temp = mesolve(H, psi0, Γ_times, c_ops, [d_13])
             
+        # TODO - Delete?
         # Compute χ proportionality
-        χ = -res**2 * δ / (np.abs(Ω_c)**2 - δ*(Δ + 1j*Γ))
-        real_results[i] = χ.real
-        imag_results[i] = χ.imag
+        # For some reason this is mixed up. This is the analytic solution
+        # 
+        # χ = -res**2 * δ / (np.abs(Ω_c)**2 - δ*(Δ + 1j*Γ))
+        # real_results[i] = χ.real
+        # imag_results[i] = χ.imag
 
         i += 1
 
@@ -159,6 +171,6 @@ def plot_susceptibility_expectation_over_delta(Δ_end, n=500):
     ax.set_ylabel('Expectation value of susceptibility χ')
     ax.legend(('Real', 'Imag'))
     plt.title('EIT phenomenon for a 3-level atom in a classical EM field')
-
+    ax.axhline(y=0, color='black', linestyle='--', linewidth=1)
     # ax.plot(temp.times, temp.expect[0])
     plt.show()

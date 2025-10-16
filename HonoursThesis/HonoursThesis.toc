@@ -1,0 +1,26 @@
+\contentsline {title}{Honours Thesis - Simulation of Squeezed Light Generation in an Optical Resonator}{1}{section*.1}%
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{1}{section*.2}%
+\tocdepth@restore 
+\contentsline {section}{\numberline {I}Project Motivation}{1}{section*.3}%
+\contentsline {section}{\numberline {II}Background Information}{2}{section*.5}%
+\contentsline {subsection}{\numberline {A}Optical Non-Linearities}{2}{section*.6}%
+\contentsline {subsection}{\numberline {B}Electromagnetically Induced Transparency}{2}{section*.7}%
+\contentsline {subsection}{\numberline {C}Structure of atomic spectra}{2}{section*.8}%
+\contentsline {subsection}{\numberline {D}Atomic transitions}{2}{section*.9}%
+\contentsline {subsection}{\numberline {E}Three-Level Atom}{3}{section*.10}%
+\contentsline {subsection}{\numberline {F}Four Wave Mixing}{3}{section*.12}%
+\contentsline {subsection}{\numberline {G}Squeezed States}{3}{section*.13}%
+\contentsline {subsection}{\numberline {H}Continuous Variable Quantum Information}{3}{section*.14}%
+\contentsline {subsection}{\numberline {I}How Sub-Poissonian Light and Photon Anti-Bunching Effects Affect Continuous Variable Measuements}{3}{section*.15}%
+\contentsline {subsection}{\numberline {J}Fock Basis}{3}{section*.16}%
+\contentsline {subsection}{\numberline {K}Master Equation}{3}{section*.17}%
+\contentsline {section}{\numberline {III}The first steps}{3}{section*.18}%
+\contentsline {subsection}{\numberline {A}Meeting 2 with MacRae}{4}{section*.19}%
+\contentsline {subsubsection}{\numberline {1}Hamiltonian Derivation with light as a classical field}{4}{section*.20}%
+\contentsline {subsubsection}{\numberline {2}a}{4}{section*.21}%
+\contentsline {section}{\numberline {IV}Hamiltonian Formulation}{5}{section*.22}%
+\contentsline {section}{\numberline {V}Computational Methods}{5}{section*.23}%
+\contentsline {section}{\numberline {VI}Results}{5}{section*.24}%
+\contentsline {section}{\numberline {VII}Discussion}{5}{section*.25}%
+\contentsline {subsection}{\numberline {A}Conditions for Optical Squeezing}{5}{section*.26}%
