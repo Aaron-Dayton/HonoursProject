@@ -242,7 +242,40 @@ When a charge oscillates, it emits photons as its movement produces a changing e
 
 \subsection{Structure of atomic spectra}
 
-Atomic states for the electron of a hydrogenic atom are enumerated by the quantum numbers $n$ (principle quantum number), $l$ (angular momentum quantum number), $m_l$ (magnetic quantum number), and $m_s$ (spin quantum number)~\cite{TODO Macyntyre}. \textcolor{red}{TODO - Talk about hydrogenic energy levels for unperturbed idealized hydrogen, then fine and hyperfine structure such that it leads nicely into 3-level atoms.}
+Atomic states for the electron of a hydrogenic atom are enumerated by the quantum numbers $n$ (principle quantum number), $l$ (angular momentum quantum number), $m_l$ (magnetic quantum number), and $m_s$ (spin quantum number)~\cite{TODO Macyntyre}.
+
+\begin{equation}
+    n \in \mathbb{N},\;\; l \in \{0,1,\ldots,n-1\},\;\; m \in \{-l, \ldots, l\}
+\end{equation}
+
+The energy levels for an unperturbed hydrogenic atom modelled with just the coulomb potential are quite simple as they just depend on the principal quantum number.
+
+\begin{equation}\label{unperturbed}
+    E_n = - \frac{(Z \alpha)^2 mc^2}{2n^2} = - \frac{Z^2 Ry}{n^2}
+\end{equation}
+where $Z$ is the atomic number, $\alpha$ is the fine structure constant, $m$ is the electron mass, and $c$ is the speed of light \cite{TODO Tong}. These unperturbed energy levels each have degeneracy of $n^2$.
+
+The real picture, is more complicated, however. There are fine structure and hyperfine structure perturbations on these energy levels, splitting energy levels and decreasing their degeneracies.
+
+\subsubsection{Fine Structure Corrections}
+
+Fine structure corrections arise due to relativistic corrections to the non-relativistic Sch\"{o}dinger's equation. In particular, we have a pure relativistic correction from considering electron momentum (which is a non-negligible fraction of the speed of light), a spin-orbit coupling correction, and the Darwin correction. To first order perturbation theory, the combined energy shift of these contributions is 
+
+\begin{equation}
+    \Delta E_{fs} = \frac{(Z \alpha)^4}{2} \frac{mc^2}{n^3}\left( \frac{3}{4n} - \frac{2}{2j+1} \right)
+\end{equation}
+where $j = |l \pm \frac{1}{2}|$ \cite{TODO Tong}. Notice that these perturbations are scaled by a factor of $(Z \alpha)^2$ in comparison to Eq.~\eqref{unperturbed} such that for atoms with a sufficiently large atomic number, these approximate energy shifts arrived at by perturbation theory break down.
+
+\subsubsection{Hyperfine Structure Corrections}
+
+There exist yet smaller energy shifts due to the interaction between the internal magnetic fields of the nucleus and the orbital motion of the electron along with its spin \cite{TODO Macyntyre p.355}. For our purposes, it is sufficient to consider only hyperfine splitting for $l=0$ states, which have the correction term
+
+\begin{scriptsize}
+    \begin{equation}
+        \Delta E_{hfs} = \frac{2}{3} \frac{m}{M} (Z \alpha)^4 \frac{mc^2}{n^3} \left[ F(F+1) - s(s+1) - I(I+1) \right]
+    \end{equation}
+\end{scriptsize}
+where $I$ is the nuclear spin quantum number, $s$ is the electron spin quantum number, and $F$ is the total angular momentum quantum number with operator $\haf F = \hat I + \hat S$ \cite{TODO Macyntyre p. 369 and Tong p. 82}.
 
 \subsection{Atomic transitions}
 
@@ -264,13 +297,74 @@ It is important to note that these transition rules are not always perfectly enf
 
 \subsection{Three-Level Atom}
 
+In order to meaningfully utilize the power of quantum information via quantum states, it is beneficial to work with simplified, yet somewhat abstract, systems. It would be ideal if we could realize any imaginary quantum systems that exactly match our mathematical descriptions. Reality is not so convenient, however. We must work within the constraints enforced by the available quantum systems in terms of allowed states and transitions between those states.
 
+With enough ingenuity, we can use existing systems to approximate useful mathematical abstractions. Enter, the three-level (hydrogenic) atom. All hydrogenic atoms, in theory, have infinitely many states up to ionization ($n \in \mathbb{N}$), and transition probabilities between many of these states can be non-zero. Though by finding a subset of states with desired characteristics and leveraging transition rules where any undesired state transitions are suppressed, a physical atom can be used to approximate a model system. This becomes especially useful in the limit of a large number of atoms, where statistically the desired transitions are the most probable, and any undesired transitions are vastly outnumbered, giving approximately the desired behavior.
+
+A three-level atom has three distinct states with some set of allowed transitions between those states. There exist $\Lambda$-systems (see Fig.~\ref{Λ-system}), V-systems (see Fig.~\ref{V-system}), and $\Xi$-systems (see Fig.~\ref{Ξ-system}). From this point on we will focus on $\Lambda$-systems, which can be created with Rubidium \textcolor{red}{TODO - Which Rb? How is this kind of system formed?} \cite{TODO - Find ref}. 
+
+\begin{figure}
+    \includegraphics[width=\columnwidth]{Λ-system.png}
+    \caption{\textcolor{red}{TODO}}
+    \label{Λ-system}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\columnwidth]{V-system.png}
+    \caption{\textcolor{red}{TODO}}
+    \label{V-system}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=0.35\columnwidth]{Ξ-system.png}
+    \caption{\textcolor{red}{TODO}}
+    \label{Ξ-system}
+\end{figure}
+
+The transition amplitude between states $\ket{1}$ and $\ket{2}$ is suppressed, so if the system is in state $\ket{2}$, then in order to transition back to state $\ket{1}$ the system will likely need to transition through the excited state $\ket{3}$. This makes $\ket{2}$ a quasi-stable state.
+
+If there were a way to suppress all transitions to state $\ket{3}$, then we would obtain a system in which the atom is bound to states $\ket{1}$ and $\ket{2}$ such that any photons which would stimulate a transition to the excited state cannot be absorbed.
+
+There is, in fact, a way to do just this. By driving the system with external electromagnetic fields (lasers) at the transition frequencies, destructive quantum interference between the two fields along with specific initial conditions results in zero probability for the system to be in the excited state \cite{TODO - Find ref}. $\ket{3}$ is then called a `dark state'. In practice, since perfect precision in real-world systems is difficult, both lasers are detuned from the exact transition frequency. The probe laser stimulates transition 13 $\omega_p = \omega_{13} + \Delta$, $\Delta << \omega_{13}$, and the control laser stimulates transition 23 $\omega_c = \omega_{23} + \delta$, $\delta << \omega_{23}$ (see Fig.~\ref{ThreeLevelAtom}).
+
+The main idea is that the system then becomes effectively `transparent' to the probe and control laser frequencies. This is how EIT can be produced in practice.
 
 \begin{figure}
     \includegraphics[width=\columnwidth]{ThreeLevelAtom.png}
     \caption{\textcolor{red}{TODO}}
     \label{ThreeLevelAtom}
 \end{figure}
+
+
+To understand how this would be useful in practice, suppose you have a cloud of rubidium atoms at some temperature $T$ (high enough such that they are in a gaseous state, say around $300K$ to $400 K$) in the absence of any external electromagnetic fields (i.e.~no Stark or Zeeman effects), then by the principles of statistical mechanics, the ground state is the most common state. So the majority of atoms will sit in one of the two long-lived states ($\ket{1}$ or $\ket{2}$), while a smaller proportion of atoms are in the excited state $\ket{3}$. If the probe and control lasers are then powered on, we should get an approximate dark state where the majority of atoms are in states $\ket{1}$ or $\ket{3}$ while hardly any sit in $\ket{3}$. There may exist some atoms in higher excited states, but at a negligible population. This cloud of atoms will then exhibit EIT.
+
+
+\subsection{Cavity enhanced EIT}
+
+Consider a system composed of Avogadro's number of three-level atoms sitting. In the ideal scenario, all atoms would have the exact same transition frequencies such that when the probe and control beams are fired through the cloud, the frequency of transparency is exact. In reality, this is not so. The system needs to be in a gaseous excited state where the electromagnetic fields of nearby atoms interact, inducing Stark and Zeeman shifts in their spectra, and Doppler shifts in the observed frequency of light would occur as some atoms would be moving away from the laser while some would be moving towards it. In addition, the laser used will have some bandwidth of emission frequencies. These effects combine to cause spectral broadening in the transparency window allowed by EIT.
+
+Before moving on, we need an important fact. When light travels through some material with complex electric susceptibility (i.e. complex index of refraction), then the light will receive some phase shift due to the real-valued component of susceptibility $\chi_R$ and some decay due to the imaginary-valued component $\chi_I$, such that the oscillating electric field will propagate as \cite{TODO - Optics textbook}
+\begin{equation}\label{Beer}
+    E = E_0 e^{i(k z - \omega t)}e^{i\chi_R k z / 2}e^{-\chi_I k z / 2}
+\end{equation}
+where the rate of decay then grows exponentially with distance traveled $z$. The decay term $e^{-\chi_I k z / 2}$ is known as Beer-Lambert law \cite{TODO - Optics textbook}.
+
+Consider placing the atomic gas in an interferometric cavity (such as a Fabry-Perot cavity), the transparency window can be greatly narrowed. This can be though of classically or quantum mechanically: in a classical interpretation, Beer's law (Eq.~\eqref{Beer}) will cause any frequencies which are slightly off resonant will decay after many reflections within the cavity (the path length is effectively longer); in a quantum interpretation, non-resonant states of light will destructively interfere within the cavity, leading to a decreased probability that they propagate.
+
+
+
+\textcolor{red}{The following are meeting notes}
+
+Imagine a semi-classical EIT medium (what we have) in a Fabry-Perot cavity.
+
+Look at optics notes for Fabry-Perot cavity math.
+
+What if instead we had the light pass through a medium of atoms? We end up with a phase shift from the atoms in the cavity and an attenuation unless you are perfectly resonant.
+
+Fabry-Perot cavity gives a phase shift of $e^ikL_F$ while atoms give a phase shift of $e^inkL_A$. Multiply the classical Fabry-Perot equation by $e^inkL_A$. $E_0 \approx t e^ikL_F e^inkL_A$
+
+We don't need the Hamiltonian for the Fabry-Perot cavity. QM gives us $n$, so plug that value into the cavity equation. Phase shift should be due to Fabry-Perot and Beer's Law. The strength inside the cavity will be very large. The strength into and out of the cavity will be about equal.
+
 
 \subsection{Four Wave Mixing}
 
@@ -308,17 +402,18 @@ It has been shown that applying cavity EIT to three-level atoms can produce sub-
 
 \subsection{Master Equation}
 
+\subsection{QuTiP Python Package}
 
 
 \section{The first steps}
 
-In order to work up to modelling a three-level atom in the Fock basis for photons with dissipative Lindbladian operators, a simpler model will be taken as a starting point. We will treat our atom as a three-level system with discrete states while lights behaves as a continuous field such that we do not need to discretize light in the Fock basis of photon number.
+In order to work up to modelling a three-level atom in the Fock basis for photons with dissipative Lindbladian operators, we will start with a simpler model, then iterate upon it towards increasing complexity. We will treat our atom as a three-level system with discrete states while lights behaves as a continuous field such that we do not need to discretize light in the Fock basis of photon number.
 
 The polarization vector of the atomic cloud may be given by
 \begin{equation}
-    \mathbf{P} = N \langle \hat \mathbf{d} \rangle = \epsilon_0 \chi \mathbf{E}
+    \mathbf{P} = N \langle \hat{\mathbf{d}} \rangle = \epsilon_0 \chi \mathbf{E}
 \end{equation}
-where $N$ is atomic density, $\hat \mathbf{d}$ is the average dipole moment, and $\chi$ is the magnetic susceptibility \cite{TODO}. One can find that for a three-level atom \textcolor{red}{(TODO derive or cite?)}
+where $N$ is atomic density, $\hat{\mathbf{d}}$ is the average dipole moment, and $\chi$ is the magnetic susceptibility \cite{TODO}. One can find that for a three-level atom \textcolor{red}{(TODO derive or cite?)}
 \begin{equation}
     \chi = \frac{-N d^2}{\epsilon_0 \hbar} \frac{\delta}{|\Omega_c|^2 - \delta (\Delta + i \Gamma)}
 \end{equation}
@@ -341,8 +436,6 @@ Here's the plot...
 \subsection{Meeting 2 with MacRae}
 
 \subsubsection{Hamiltonian Derivation with light as a classical field}
-
-In order to work up to modelling a three-level atom in the Fock basis for photons with dissipative Lindbladian operators, a simpler model will be taken as a starting point. We will treat our atom as a three-level system with discrete states while lights behaves as a continuous field such that we do not need to discretize light in the Fock basis of photon number.
 
 To construct the Hamiltonian, it is advantageous to first express it as a sum of the contributions to be considered
 
@@ -389,7 +482,7 @@ Expand dipole operators and $E$ in terms of complex exponentials.
 
 $\hbar \Omega_s = \mathbf{d}_{1,3} \cdot \mathbf{E}_s$
 
-$\hbar \Omega_c = \mathbf{}d_{2,3} \cdot \mathbf{E}_c$
+$\hbar \Omega_c = \mathbf{d}_{2,3} \cdot \mathbf{E}_c$
 
 Plug in $\Omega_i$ values into hamiltonian, replacing dipoles and $E$
 
@@ -458,9 +551,34 @@ $\xi = \frac{Nd^2}{\epsilon_0 \hbar \Omega} \rho_{i,j}$
 
 The density matrix should be a unitary
 
-This 
 
+\subsection{Meeting 3 with MacRae}
 
+Note that Polarization is real as $P = P_0 e^iwt + P_0^* e^-iwt$ as real valued
+
+We use the result we obtained $<d>$ with Beer's Law to obtain $E(t)$ (wave propagation, phase shift, and absorption). We get no phase shift and no absorption for perfect EIT. In reality, we send a pulse through. Some of the pulse frequencies will be absorbed! The longer the pulse, the less we lose. This is the effect of the medium responding.
+
+For a pulse of length $\Delta \tau$. If $\Delta \tau = 10^{-5}$ then the light pulse will be about 3 km long! We need the pulse to fit in the EIT window. Slowed light helps here such that the pulse fits in the cell. Widening the frequency window increases the speed of the slowed light, so we need a very precise frequency. The narrower the transparency window, the greater the group velocity (see the equation for group velocity dependent on $dn/dw$).
+
+We can however include many more atoms to increase n to lower group velocity. This is called `increasing optical depth'.
+
+\begin{equation}
+    v_g = \frac{c}{n + \omega \frac{dn}{d\omega}}
+\end{equation}
+
+\section{Temp Section - Next Steps}
+
+I have covered a sufficient amount of background and written enough on it. My meeting notes document to sufficient detail that I can write them out formally to approximately the same degree now vs later. If anything, they will benefit from being written later with hindsight into how things actually work.
+
+So, I can leave the thesis here for now. My next steps then are the following:
+
+\begin{itemize}
+    \item Read and re-read relevant CEIT papers
+    \item Find how to model the three-level system within a cavity using classical electromagnetic fields with dissipative operators for Lindbladian time evolution
+    \item Find how to quantize the system (optional - but probably in the papers I will read)
+    \item Read FWM papers
+    \item Learn how to computationally model FWM
+\end{itemize}
 
 
 \section{Hamiltonian Formulation}

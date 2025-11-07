@@ -6,3 +6,6 @@ Fock
 detuning
 detunings
 observables
+degeneracies
+hyperfine
+Zeeman

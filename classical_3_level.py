@@ -20,7 +20,7 @@ def init_system(Δ=0.01, δ=0.001, Ω_c=4.6, Ω_s=0.3):
     return H, psi0
 
 
-
+# Dark state
 def plot_state_expectations():
     H, psi0 = init_system()
     times = np.linspace(0.0, 10.0, 100)
@@ -47,38 +47,14 @@ def plot_state_expectations():
 
 
 
-def plot_position_expectation_over_time(): 
-    H, psi0 = init_system()
-    times = np.linspace(0.0, 10.0, 100)
- 
-    ##
-    # TODO - This isn't right!
-    ##
-    # Annihilation operator for 3-state basis
-    a = destroy(3)
-    # Position operator
-    x = (a + a.dag()) / np.sqrt(2)
-
-    # Compute results
-    result = mesolve(H, psi0, times, [], [x])
-
-    # Plot
-    fig, ax = plt.subplots()
-    ax.plot(result.times, result.expect[0])
-    ax.set_xlabel('Time')
-    ax.set_ylabel('Position expectation value')
-    plt.show()
-
-
-
-def plot_susceptibility_expectation_over_delta(Δ_end, n=500):
+def plot_susceptibility_expectation_over_delta(Δ_end, Δ_c=0, n=500):
     # Rate of spontaneous emission - Write all other parameters in terms of Γ
     Γ = 1
     Γ13 = 0.5 # One pathway
     Γ23 = 0.5 # Another pathway
 
-    Δ_c = 0 # Perfect EIT transparency
-    # Δ_c = 0.1 * Γ # Other behaviour between the two
+    # Δ_c = 0 # Perfect EIT transparency
+    # Δ_c = 0.3 * Γ # Other behaviour between the two
     # Δ_c = 0.5 * Γ # Raman peak
 
     Ω_c = 0.1 * Γ

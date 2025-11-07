@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  16 OCT 2025 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  6 NOV 2025 16:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -868,229 +868,128 @@ Package natbib Warning: Citation `TODO' on page 2 undefined on input line 238.
 Package natbib Warning: Citation `TODO Macyntyre' on page 2 undefined on input line 245.
 
 
-Package natbib Warning: Citation `TODO atomic book' on page 2 undefined on input line 251.
-
-
-Package natbib Warning: Citation `TODO atomic book' on page 2 undefined on input line 255.
+Package natbib Warning: Citation `TODO Tong' on page 2 undefined on input line 256.
 
 [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-<FIGs//ThreeLevelAtom.png, id=45, 337.26pt x 221.82875pt>
+
+Package natbib Warning: Citation `TODO Tong' on page 3 undefined on input line 267.
+
+
+LaTeX Warning: Reference `unperturbed' on page 3 undefined on input line 267.
+
+
+Package natbib Warning: Citation `TODO Macyntyre p.355' on page 3 undefined on input line 271.
+
+/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:278: Undefined control sequence.
+<recently read> \haf 
+                     
+l.278 ...mentum quantum number with operator $\haf
+                                                   F = \hat I + \hat S$ \cit...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package natbib Warning: Citation `TODO Macyntyre p. 369 and Tong p. 82' on page 3 undefined on input line 278.
+
+
+Package natbib Warning: Citation `TODO atomic book' on page 3 undefined on input line 284.
+
+
+Package natbib Warning: Citation `TODO atomic book' on page 3 undefined on input line 288.
+
+
+LaTeX Warning: Reference `Λ-system' on page 3 undefined on input line 304.
+
+
+LaTeX Warning: Reference `V-system' on page 3 undefined on input line 304.
+
+
+LaTeX Warning: Reference `Ξ-system' on page 3 undefined on input line 304.
+
+
+Package natbib Warning: Citation `TODO - Find ref' on page 3 undefined on input line 304.
+
+<FIGs//Λ-system.png, id=46, 338.26375pt x 190.7125pt>
+File: FIGs//Λ-system.png Graphic file (type png)
+<use FIGs//Λ-system.png>
+Package pdftex.def Info: FIGs//Λ-system.png  used on input line 307.
+(pdftex.def)             Requested size: 246.0pt x 138.69806pt.
+<FIGs//V-system.png, id=47, 343.2825pt x 181.67876pt>
+File: FIGs//V-system.png Graphic file (type png)
+<use FIGs//V-system.png>
+Package pdftex.def Info: FIGs//V-system.png  used on input line 313.
+(pdftex.def)             Requested size: 246.0pt x 130.19038pt.
+<FIGs//Ξ-system.png, id=48, 132.495pt x 283.0575pt>
+File: FIGs//Ξ-system.png Graphic file (type png)
+<use FIGs//Ξ-system.png>
+Package pdftex.def Info: FIGs//Ξ-system.png  used on input line 319.
+(pdftex.def)             Requested size: 86.1015pt x 183.9463pt.
+
+Package natbib Warning: Citation `TODO - Find ref' on page 3 undefined on input line 328.
+
+
+LaTeX Warning: Reference `ThreeLevelAtom' on page 3 undefined on input line 328.
+
+[3{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix] on input line 329.
+
+<FIGs//ThreeLevelAtom.png, id=67, 337.26pt x 221.82875pt>
 File: FIGs//ThreeLevelAtom.png Graphic file (type png)
 <use FIGs//ThreeLevelAtom.png>
-Package pdftex.def Info: FIGs//ThreeLevelAtom.png  used on input line 270.
+Package pdftex.def Info: FIGs//ThreeLevelAtom.png  used on input line 333.
 (pdftex.def)             Requested size: 246.0pt x 161.805pt.
 
+Package natbib Warning: Citation `TODO - Optics textbook' on page 4 undefined on input line 346.
 
-Package natbib Warning: Citation `TODO' on page 3 undefined on input line 286.
+[4 <./FIGs//Λ-system.png> <./FIGs//V-system.png> <./FIGs//Ξ-system.png> <./FIGs//ThreeLevelAtom.png>]
 
-
-Package natbib Warning: Citation `Slusher' on page 3 undefined on input line 288.
-
-
-Package natbib Warning: Citation `TODO' on page 3 undefined on input line 293.
+Package natbib Warning: Citation `TODO - Optics textbook' on page 5 undefined on input line 350.
 
 
-Package natbib Warning: Citation `TODO' on page 3 undefined on input line 298.
+LaTeX Warning: Reference `Beer' on page 5 undefined on input line 352.
 
 
-Package natbib Warning: Citation `TODO' on page 3 undefined on input line 298.
+Package natbib Warning: Citation `TODO' on page 5 undefined on input line 380.
 
 
-Package natbib Warning: Citation `TODO' on page 3 undefined on input line 300.
+Package natbib Warning: Citation `Slusher' on page 5 undefined on input line 382.
 
 
-Package natbib Warning: Citation `TODO' on page 3 undefined on input line 300.
+Package natbib Warning: Citation `TODO' on page 5 undefined on input line 387.
 
 
-Package natbib Warning: Citation `TODO' on page 3 undefined on input line 300.
+Package natbib Warning: Citation `TODO' on page 5 undefined on input line 392.
 
 
-Package natbib Warning: Citation `Souza' on page 3 undefined on input line 302.
+Package natbib Warning: Citation `TODO' on page 5 undefined on input line 392.
 
 
-Package natbib Warning: Citation `Du' on page 3 undefined on input line 302.
+Package natbib Warning: Citation `TODO' on page 5 undefined on input line 394.
 
-[3 <./FIGs//ThreeLevelAtom.png>]
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:319: Argument of \math@egroup has an extra }.
+
+Package natbib Warning: Citation `TODO' on page 5 undefined on input line 394.
+
+
+Package natbib Warning: Citation `TODO' on page 5 undefined on input line 394.
+
+
+Package natbib Warning: Citation `Souza' on page 5 undefined on input line 396.
+
+
+Package natbib Warning: Citation `Du' on page 5 undefined on input line 396.
+
+[5]
+
+Package natbib Warning: Citation `TODO' on page 6 undefined on input line 416.
+
+/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:532: Argument of \math@egroup has an extra }.
 <inserted text> 
                 \par 
-l.319     \mathbf{P} = N \langle \hat \mathbf
-                                             {d} \rangle = \epsilon_0 \chi \...
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:319: Paragraph ended before \math@egroup was complete.
-<to be read again> 
-                   \par 
-l.319     \mathbf{P} = N \langle \hat \mathbf
-                                             {d} \rangle = \epsilon_0 \chi \...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:319: Missing $ inserted.
-<inserted text> 
-                $
-l.319     \mathbf{P} = N \langle \hat \mathbf
-                                             {d} \rangle = \epsilon_0 \chi \...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:319: Missing } inserted.
-<inserted text> 
-                }
-l.319     \mathbf{P} = N \langle \hat \mathbf
-                                             {d} \rangle = \epsilon_0 \chi \...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:319: Missing } inserted.
-<inserted text> 
-                }
-l.319     \mathbf{P} = N \langle \hat \mathbf
-                                             {d} \rangle = \epsilon_0 \chi \...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:319: Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.319     \mathbf{P} = N \langle \hat \mathbf
-                                             {d} \rangle = \epsilon_0 \chi \...
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:319: Extra }, or forgotten \endgroup.
-<recently read> }
-                 
-l.319     \mathbf{P} = N \langle \hat \mathbf
-                                             {d} \rangle = \epsilon_0 \chi \...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:319: Missing $ inserted.
-<inserted text> 
-                $
-l.319 ...bf{P} = N \langle \hat \mathbf{d} \rangle
-                                                   = \epsilon_0 \chi \mathbf{E}
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:320: You can't use `\eqno' in math mode.
-\endmathdisplay@a ...\df@tag \@empty \else \veqno 
-                                                  \alt@tag \df@tag \fi \ifx ...
-l.320 \end{equation}
-                    
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:320: Missing $ inserted.
-<inserted text> 
-                $
-l.320 \end{equation}
-                    
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:321: Argument of \math@egroup has an extra }.
-<inserted text> 
-                \par 
-l.321 where $N$ is atomic density, $\hat \mathbf
-                                                {d}$ is the average dipole m...
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:321: Paragraph ended before \math@egroup was complete.
-<to be read again> 
-                   \par 
-l.321 where $N$ is atomic density, $\hat \mathbf
-                                                {d}$ is the average dipole m...
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:321: Missing $ inserted.
-<inserted text> 
-                $
-l.321 where $N$ is atomic density, $\hat \mathbf
-                                                {d}$ is the average dipole m...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:321: Missing } inserted.
-<inserted text> 
-                }
-l.321 where $N$ is atomic density, $\hat \mathbf
-                                                {d}$ is the average dipole m...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:321: Missing } inserted.
-<inserted text> 
-                }
-l.321 where $N$ is atomic density, $\hat \mathbf
-                                                {d}$ is the average dipole m...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:321: Too many }'s.
-<recently read> }
-                 
-l.321 where $N$ is atomic density, $\hat \mathbf
-                                                {d}$ is the average dipole m...
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:321: Missing $ inserted.
-<inserted text> 
-                $
-l.321 ...$ is the average dipole moment, and $\chi
-                                                  $ is the magnetic suscepti...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Package natbib Warning: Citation `TODO' on page 4 undefined on input line 321.
-
-
-Underfull \hbox (badness 1748) in paragraph at lines 321--322
-[]\T1/lmr/m/n/10 d$\OML/lmm/m/it/10 istheaveragedipolemoment; and$$^^_$ \T1/lmr/m/n/10 is the mag-netic
- []
-
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:439: Argument of \math@egroup has an extra }.
-<inserted text> 
-                \par 
-l.439 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
+l.532 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
                                                   {d}>$
 I've run across a `}' that doesn't seem to match anything.
 For example, `\def\a#1{...}' and `\a}' would produce
@@ -1100,27 +999,27 @@ argument that might be the root of the problem. But if
 your `}' was spurious, just type `2' and it will go away.
 
 Runaway argument?
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:439: Paragraph ended before \math@egroup was complete.
+/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:532: Paragraph ended before \math@egroup was complete.
 <to be read again> 
                    \par 
-l.439 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
+l.532 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
                                                   {d}>$
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:439: Missing $ inserted.
+/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:532: Missing $ inserted.
 <inserted text> 
                 $
-l.439 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
+l.532 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
                                                   {d}>$
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:439: Missing } inserted.
+/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:532: Missing } inserted.
 <inserted text> 
                 }
-l.439 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
+l.532 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
                                                   {d}>$
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1128,10 +1027,10 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:439: Missing } inserted.
+/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:532: Missing } inserted.
 <inserted text> 
                 }
-l.439 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
+l.532 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
                                                   {d}>$
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1139,27 +1038,31 @@ With luck, this will get me unwedged. But if you
 really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:439: Too many }'s.
+[6]
+/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:532: Too many }'s.
 <recently read> }
                  
-l.439 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
+l.532 ...hbf{E}$ and $\mathbf{P} = N <\hat \mathbf
                                                   {d}>$
 You've closed more groups than you opened.
 Such booboos are generally harmless, so keep going.
 
-/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:440: Missing $ inserted.
+/Users/aarondayton/repos/HonoursProject/HonoursThesis/HonoursThesis.tex:533: Missing $ inserted.
 <inserted text> 
                 $
-l.440 
+l.533 
       
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-[4{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] (./HonoursThesis.bbl)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 576.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) (./HonoursThesis.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-[5] (./HonoursThesis.aux)
+[7{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./HonoursThesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1173,21 +1076,21 @@ Package rerunfilecheck Warning: File `HonoursThesis.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `HonoursThesis.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  0C3C77A359132835C9BC24561D0E9C80;4624.
+(rerunfilecheck)             After:  F2925A2D89F0914F7BAC5C90F545936B;5716.
  ) 
 Here is how much of TeX's memory you used:
- 29383 strings out of 476025
- 566574 string characters out of 5790017
- 1885388 words of memory out of 5000000
- 49266 multiletter control sequences out of 15000+600000
- 556470 words of font info for 60 fonts, out of 8000000 for 9000
+ 29471 strings out of 476025
+ 568330 string characters out of 5790017
+ 1883388 words of memory out of 5000000
+ 49328 multiletter control sequences out of 15000+600000
+ 559827 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,90p,965b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,9n,90p,985b,514s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on HonoursThesis.pdf (5 pages, 299088 bytes).
+Output written on HonoursThesis.pdf (7 pages, 335676 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
- 48 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 222 PDF objects out of 1000 (max. 8388607)
+ 165 compressed objects within 2 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
