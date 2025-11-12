@@ -168,6 +168,16 @@
 \maketitle
 \tableofcontents
 
+\section{TODO}
+
+\textcolor{blue}{
+    \begin{itemize}
+        \item Check if Tong notes are a good reference with MacRae
+        \item Derive three-level semi-classical Hamiltonian
+        \item Write section on interferometric cavities (Fabry-Perot, spherical, etc.)
+        \item Implement and write up Jaynes-Cummings Model
+    \end{itemize}
+}
 
 \section{Project Motivation}
 
@@ -175,6 +185,7 @@
     MacRae's Outline:\\
     Quantum fluctuations of the electromagnetic field impose a fundamental limit on measurement sensitivity, known as the standard quantum limit (SQL). Exotic quantum optical states known as "squeezed light" can surpass the SQL. Squeezed states are a hot topic in research, particularly in quantum communication, metrology, and optical quantum computing. This project will explore theoretical models predicting strong squeezing when atoms are placed inside an optical cavity. The student will develop and run numerical simulations to investigate the conditions for optimal squeezing, using tools from quantum optics and cavity QED theory. Through this work, the student will gain experience in programming, numerical methods, and the theoretical framework of quantum light–matter interactions.
 }
+
 
 The past hundred years since the formulation of quantum mechanics have led to unrivaled technological progress, especially in recent years. With greater understanding of and ability to control quantum phenomena further possibilities are becoming available. These include quantum key distribution (QKD), quantum communication, and quantum computation, to name a few.
 
@@ -196,8 +207,6 @@ The outline of this project can be described in three stages: formulating up the
 
 
 \section{Background Information}
-
-\subsection{Optical Non-Linearities}
 
 
 \subsection{Electromagnetically Induced Transparency}
@@ -239,6 +248,7 @@ This brings us to a physicist's favorite abstraction: the harmonic oscillator. T
 
 When a charge oscillates, it emits photons as its movement produces a changing electric and magnetic field. So when our system is driven on resonance, then an electromagnetic field of that same frequency will be produced. Here lies the idea behind electromagnetically induced transparency. By driving a cloud of these hydrogenic atoms on resonance, the field essentially `passes through' the medium.
 
+\textcolor{red}{TODO - Talk about slowed light (group velocity) due to EIT in medium}
 
 \subsection{Structure of atomic spectra}
 
@@ -366,6 +376,18 @@ Fabry-Perot cavity gives a phase shift of $e^ikL_F$ while atoms give a phase shi
 We don't need the Hamiltonian for the Fabry-Perot cavity. QM gives us $n$, so plug that value into the cavity equation. Phase shift should be due to Fabry-Perot and Beer's Law. The strength inside the cavity will be very large. The strength into and out of the cavity will be about equal.
 
 
+\subsection{Optical Nonlinearities}
+
+The polarization of a material is often written as a linear expression with electric field strength
+\begin{equation}
+    P = \varepsilon_0 \chi E
+\end{equation}
+but for a sufficiently large electric field, there is a saturation in the polarization strength \cite{Optics}. We can account for this by expanding the expression as a series of the form
+\begin{equation}
+    P = \varepsilon_0 (\chi^{(1)} E + \chi^{(2)} E^2 + \chi^{(3)} E^3 + \cdots )
+\end{equation}
+where the $i$ in $\chi^{(i)}$ is a superscript denoting the power to which the susceptibility term is associated where we would then call $\chi^{i}$ the $i$th order nonlinear optical susceptibility \cite{Nonlinear}. 
+
 \subsection{Four Wave Mixing}
 
 
@@ -401,6 +423,12 @@ It has been shown that applying cavity EIT to three-level atoms can produce sub-
 \subsection{Fock Basis}
 
 \subsection{Master Equation}
+
+\begin{itemize}
+    \item Born-Markov approximation (Born = weak interactions between bath and system. Markov = Memoryless system)
+    \item Applying rotating wave approximation to Born-Markov equation for $\dot{\rho}(t)_S$ yields Lindblad Master equation
+    \item Dissipative operators
+\end{itemize}
 
 \subsection{QuTiP Python Package}
 
@@ -579,6 +607,139 @@ So, I can leave the thesis here for now. My next steps then are the following:
     \item Read FWM papers
     \item Learn how to computationally model FWM
 \end{itemize}
+
+\section{Semi-Classical three-level atom}
+
+We can begin to understand the behavior of EIT in three-level $\Lambda$-type atoms through semi-classical modelling. We can consider a single three-level atom with quantized states in the presence of a classically oscillating electromagnetic field
+\begin{equation}
+    \vec{E} = \vec{E}_0 e^{i \omega t}.
+\end{equation}
+In this limit, we consider $E_0$ to be sufficiently large such that photon quantization can be neglected (i.e.~in the classical limit, the behavior of the quantized electromagnetic field must converge to the classical behavior). We may express the full Hamiltonian as the sum
+\begin{equation}
+    \hat H = \hat H_{Atom} + \hat H_{Light} + \hat H_{Light\;Atom\;Interaction}.
+\end{equation}
+We may the neglect the term $\hat H_{Light}$ to approximate our full Hamiltonian since the state of the electromagnetic field is not significantly affected by the atom in the (i.e.~there are is little coupling between the state of the laser field and the single atom). Our Hamiltonian then becomes 
+\begin{equation}
+    \hat H = \hat H_{Atom} + \hat H_{Light\;Atom\;Interaction}.
+\end{equation}
+where \textcolor{red}{TODO - Define $\omega$ values?}
+\begin{align}
+    \hat H_{atom} &= \omega_s \hat \sigma_{3,3} + (\omega_s - \omega_c) \hat \sigma_{2,2} \nonumber\\
+    &= \left(\begin{array}{ccc}
+        0 & 0 & 0\\
+        0 & \omega_s - \omega_c & 0\\
+        0 & 0 & \omega_s
+    \end{array}\right)
+\end{align}
+and
+\begin{align}
+    \hat H_{Light\;Atom\;Interaction} = - \hat{\vec{d}}_{1,3} \cdot \vec{E}_s - \hat{\vec{d}}_{2,3} \cdot \vec{E}_c
+\end{align}
+
+\textcolor{red}{TODO - Finish rest of derivation!!}
+
+Thus, we obtain
+\begin{equation}
+    \hat H = \left(\begin{array}{ccc}
+        0 & 0 & \Omega_s \\
+        0 & \delta & \Omega_c \\
+        \Omega_s^{*} & \Omega_c^{*} & \Delta
+    \end{array}\right)
+\end{equation}
+
+\textcolor{red}{TODO - This has been coded, include code snippets here and talk about results.}
+
+\section{Janyes-Cummings Model}
+
+Before moving on, it is useful to look at another simplified model, though one with very different characteristics and description. We may then combine the ideas from these models to form more complex systems.
+
+Introducing the Jaynes-Cummings model. For this, we take a step back to consider a two-level atom, but add complexity by placing the atom within a resonant cavity (see Fig.~\ref{Jaynes-Cummings})~\cite{TODO Tong?}. The field of a single photon within the cavity is quite significant as it will bounce back and forth between cavity walls, building up a non-negligible field. So we must quantize photons in the Fock basis. The cavity is finely tuned to a resonant frequency $\omega_c$ such that any other frequency of light destructively interferes with itself. This leads to a simplification for our Fock basis which may be restricted to photons of a single frequency. There can be a detuning between the frequencies, but we will consider the case of perfect resonance here $\omega = \omega_a = \omega_c$.
+
+
+\begin{figure}%[h!]
+    \includegraphics[width=0.6\columnwidth]{Jaynes-Cummings.png}
+    \caption{Depiction of the system for a Jaynes-Cummings model with (a) a resonant cavity of frequency $\omega_c$ containing (b) a two-level atom of transition frequency $\omega_a$.}
+    \label{Jaynes-Cummings}
+\end{figure}
+
+
+The states of our system live within the combined Hilbert space $\mathcal{H}_{atom} \otimes \mathcal{H}_{photon}$, and so states are described by $\ket{atom} \otimes \ket{photons}$ where $\ket{atom}$ has two states and $\ket{photon}$ describes all $n$-photon states. Consider a state containing $N$ photons worth of energy. Then the possible states of the system are $\ket{\downarrow} \otimes \ket{N}$ and $\ket{\uparrow} \otimes \ket{N-1}$.
+
+The Hamiltonian describing this system is given by \cite{TODO - Tong?} \cite{Scala}
+\begin{equation}
+    \hat H_{JC} = \hat H_{Atom} + \hat H_{Photon} + \hat H_{Interaction}.
+\end{equation}
+The atomic term is given by
+\begin{align}
+    \hat H_{Atom} &= \frac{\hbar \omega}{2} \hat \sigma_z \nonumber\\
+    &= \frac{\hbar \omega}{2} \left(\begin{array}{cc}
+        1 & 0\\
+        0 & -1
+    \end{array}\right).
+\end{align}
+The photonic term is given by
+\begin{equation*}
+    \hat H_{Photon} = \hbar \omega\left(\hat{a}^{\dagger} \hat{a} + \frac{1}{2}\right).
+\end{equation*}
+where we may shift by the zero-point energy since it is a constant term to obtain 
+\begin{equation*}
+    \hat H_{Photon} = \hbar \omega \hat{a}^{\dagger} \hat{a}
+\end{equation*}
+Then finally, the interaction term is given by
+\begin{align}
+    \hat H_{Interaction} &= \frac{\hbar \Omega}{2} \left( \hat{\sigma}_+ \otimes \hat{a} + \hat{\sigma}_- \otimes \hat{a}^{\dagger} \right) \nonumber\\
+    &= \frac{\hbar \Omega}{2} \left(\begin{array}{cc}
+        0 & \hat{a}\\
+        \hat{a}^{\dagger} & 0
+    \end{array}\right)
+\end{align}
+where $\Omega$ is the Rabi frequency and $\hat{\sigma}_{\pm}$ are the atomic raising and lowering operators.
+
+In order to combine the Hilbert spaces for these two separate quantizes systems, block-operator notation is applied. Notice that $\hat H_{Atom}$ acts on the two-state atomic basis, while $\hat H_{Photon}$ acts on the infinite Fock basis of photons. We then must combine the two bases in $\hat H_{Interaction}$ which describes the creation of a photon in the Fock basis upon atomic emission, and the annihilation of a photon upon absorption. So this Hamiltonian should not be thought of as a two-by-two matrix acting on the atomic basis, but rather an infinite matrix enumerating the interactions between all possible states. All together, the final Hamiltonian is then~\cite{Scala}
+
+\begin{align}
+    \hat{H}_{JC} &= \frac{\hbar \omega}{2} \hat \sigma_z + \hbar \omega \hat{a}^{\dagger} \hat{a} + \frac{\hbar \Omega}{2} \left( \hat{\sigma}_+ \otimes \hat{a} + \hat{\sigma}_- \otimes \hat{a}^{\dagger} \right) \nonumber \\
+    &= \frac{\hbar}{2} \left(\begin{array}{cc}
+        \omega & \Omega \hat{a}\\
+        \Omega \hat{a}^{\dagger} & -\omega
+    \end{array}\right) + \hbar \omega \hat{a}^{\dagger} \hat{a}
+\end{align}
+
+This is not the whole story, however. Any real cavity has some photonic decay rate, meaning we must include dissipative operators and apply Lindbladian dynamics to solve for a steady state via the master equation. Our dissipative operator then becomes $L = \sqrt{\gamma} \hat{a}$ where $\gamma$ gives the decay rate such that our master equation is \cite{Scala}
+\begin{equation}
+    \dot{\rho} = - i \left[\hat{H}_{JC}, \rho\right] + \gamma \left( \hat{a} \rho \hat{a}^{\dagger} - \frac{1}{2} \hat{a}^{\dagger} \hat{a} \rho - \frac{1}{2} \rho \hat{a}^{\dagger} \hat{a} \right).
+\end{equation}
+
+
+To gain experience working with the QuTiP package, the Jaynes-Cummings model was coded (see Code.~\ref{JCM-Code}) based on an implementation by Robert Johansson \cite{qutip-lectures}. This code differs slightly from the above description in that the atomic Hamiltonian basis is shifted such that it is in the rotating frame $\hat{H}_{Atom} = \hbar \omega \ket{e}\bra{e}$.
+
+\lstinputlisting[caption={Python code for the Jaynes-Cummings Model}, language=Python, firstline=6, lastline=39]{./Code/JCM.py}\label{JCM-Code}
+
+For an initial state where the atom is excited and there are no photons present in the cavity, we obtain decaying Rabi oscillations as expected (see Fig.~\ref{JCM-Rabi}).
+
+\begin{figure}%[h!]
+    \includegraphics[width=\columnwidth]{JCM-Rabi.png}
+    \caption{Decaying Rabi oscillation produced by the Jaynes-Cummings model with initial state $\ket{\psi}_0 = \ket{e} \otimes \ket{0}$.}
+    \label{JCM-Rabi}
+\end{figure}
+
+
+
+
+\subsection{Cavity EIT with a $\Lambda$-System}
+
+
+% \textcolor{red}{TODO - Delete or use somehow?}
+% Consider a 3-level atom (Λ-system) in a cavity from the paper "Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency". Let ω_{31} denote the transition frequency between levels 3 and 1 and ω_{32} be that of levels 3 and 2. The cavity is resonant at frequency ω_{cav}. A probe beam drive the cavity at frequency ω_P and strength ε. Transitions \ket{1} -> \ket{3} and \ket{2} -> \ket{3} are coupled by a quantum cavity mode with vacuum Rabi frequency 2g and by a classical control field with frequency ω_C and Rabi frequency 2Ω_C. Let Δ = ω_{cav} - ω_P, Δ_1 = ω_{31} - ω_{cav}, and Δ_2 = ω_{32} - ω_C denote the relevant detunings. Through some approximation methods, the Hamiltonian is then given by $H = Δ_1 σ_{33} + (Δ_1 - Δ_2) σ_{22} - Δ σ_{11} + Δ a^{\dagger} a + (ε a + g a σ_{31} + Ω_C σ_{32} + h.c.)$ where σ_{ij}, $i \neq j$, are atomic operators, σ_{ij}, $i = j$, are atomic energy level population operators, and $a^{\dagger}, a$ are creation and annihilation operators respectively. The master equation is then $\dot{ρ} = -i [H, ρ] + \kappa (2 a ρ a^{\dagger} - a^{\dagger} a ρ - ρ a^{\dagger} a) + Γ_{31}(2 σ_{13} ρ σ_{31} - σ_{33} ρ - ρ σ_{33}) + Γ_{32}(2 σ_{23} ρ σ_{32} - σ_{33} ρ - ρ σ_{33})$ where κ is the cavity-field decay rate, and Γ_{31}, Γ_{32} are polarization decay rates of the excited level \ket{3} to levels \ket{1} and \ket{2}, respectively.
+
+\textcolor{red}{Place in appendix}
+\lstinputlisting[caption={Python code for CEIT with a three-level atom}, language=Python, firstline=11, lastline=111]{./Code/ThreeLevelCavity.py}\label{TLC-Code}
+
+\begin{figure}%[h!]
+    \includegraphics[width=\columnwidth]{ThreeLevelCEIT.png}
+    \caption{TODO}
+    \label{ThreeLevelCEIT}
+\end{figure}
 
 
 \section{Hamiltonian Formulation}
