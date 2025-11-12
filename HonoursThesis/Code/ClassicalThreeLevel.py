@@ -20,33 +20,6 @@ def init_system(Δ=0.01, δ=0.001, Ω_c=4.6, Ω_s=0.3):
     return H, psi0
 
 
-# Dark state
-def plot_state_expectations():
-    H, psi0 = init_system()
-    times = np.linspace(0.0, 10.0, 100)
-
-    ket1 = basis(3, 0) # |1>
-    ket2 = basis(3, 1) # |2>
-    ket3 = basis(3, 2) # |3>
-
-    ρ1 = ket1 * ket1.dag()
-    ρ2 = ket2 * ket2.dag()
-    ρ3 = ket3 * ket3.dag()
-    # Compute results
-    result = mesolve(H, psi0, times, [], [ρ1, ρ2, ρ3])
-
-    # Plot
-    fig, ax = plt.subplots()
-    ax.plot(result.times, result.expect[0])
-    ax.plot(result.times, result.expect[1])
-    ax.plot(result.times, result.expect[2])
-    ax.set_xlabel('Time')
-    ax.set_ylabel('Expectation values')
-    ax.legend(("Basis state 1", "Basis state 2", "Basis state 3"))
-    plt.show()
-
-
-
 def plot_susceptibility_expectation_over_delta(Δ_end, Δ_c=0, n=500):
     # Rate of spontaneous emission - Write all other parameters in terms of Γ
     Γ = 1

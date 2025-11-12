@@ -48,9 +48,12 @@ def steady_evo():
     state_3_vals = []
     state_4_vals = []
     state_5_vals = []
+    real_dipole = []
+    imag_dipole = []
     Delta_vals = np.linspace(-100.0, 100.0, 1000)
 
     # Useful basis vectors
+    k_s1_n0 = tensor(atomicKet1, basis(N, 0))
     k_s2_n0 = tensor(atomicKet2, basis(N, 0))
     k_s3_n0 = tensor(atomicKet3, basis(N, 0))
     k_s2_n1 = tensor(atomicKet2, basis(N, 1))
@@ -73,6 +76,11 @@ def steady_evo():
         phi_n0 = np.angle(expect_n0)
         expect_n1 = expect(k_s2_n1 * k_s3_n1.dag(), rho)
         phi_n1 = np.angle(expect_n1)
+
+        # TODO - This does not seem quite right
+        dipole = expect(k_s3_n0 * k_s1_n0.dag(), rho)
+        real_dipole.append(dipole.real)
+        imag_dipole.append(dipole.imag)
 
         # Define rotated plus minus states in full Hilbert space 
         plus_n0 =  (k_s2_n0 + np.exp(-1j*phi_n0)*k_s3_n0) / np.sqrt(2)
@@ -116,19 +124,23 @@ def steady_evo():
     ax1.plot(Delta_vals, state_1_vals, label=r'$\langle \Psi^{(0)}_1|\rho|\Psi^{(0)}_1\rangle$')
     ax1.plot(Delta_vals, state_2_vals, label=r'$\langle \Psi^{(0)}_2|\rho|\Psi^{(0)}_2\rangle$')
     ax1.set_yscale("log")
-    ax1.set_xlabel('Delta')
+    ax1.set_xlabel(r'$\Delta$')
     ax1.set_ylabel('Probability of Excitation')
     ax1.legend((r'$\langle \Psi^{(0)}_1|\rho|\Psi^{(0)}_1\rangle$', r'$\langle \Psi^{(0)}_2|\rho|\Psi^{(0)}_2\rangle$'), loc='upper right')
-    ax1.set_title('CEIT state excitation probabilities versus Delta')
+    ax1.set_title(r'CEIT state excitation probabilities versus $\Delta$')
 
     ax2.plot(Delta_vals, state_3_vals, label=r'$\langle 1|\rho|1\rangle$')
     ax2.plot(Delta_vals, state_4_vals, label=r'$\langle 2|\rho|2\rangle$')
     ax2.plot(Delta_vals, state_5_vals, label=r'$\langle 3|\rho|3\rangle$')
     ax2.set_yscale("log")
-    ax2.set_xlabel('Delta')
+    ax2.set_xlabel(r'$\Delta$')
     ax2.set_ylabel('Probability of Excitation')
     ax2.legend((r'$\langle 1|\rho|1\rangle$', r'$\langle 2|\rho|2\rangle$', r'$\langle 3|\rho|3\rangle$'), loc='lower right')
-    ax2.set_title('Atomic basis state excitation probabilities versus Delta')
-
+    ax2.set_title(r'Atomic basis state excitation probabilities versus $\Delta$')
 
     plt.show()
+
+    # plt.plot(Delta_vals, real_dipole)
+    # plt.plot(Delta_vals, imag_dipole)
+    # plt.legend(('real', 'imag'))
+    # plt.show()

@@ -647,7 +647,16 @@ Thus, we obtain
     \end{array}\right)
 \end{equation}
 
+
 \textcolor{red}{TODO - This has been coded, include code snippets here and talk about results.}
+
+
+\begin{figure}%[h!]
+    \includegraphics[width=\columnwidth]{SemiClassicalEIT.png}
+    \caption{TODO}
+    \label{SemiClassicalEIT}
+\end{figure}
+
 
 \section{Janyes-Cummings Model}
 
@@ -732,7 +741,8 @@ For an initial state where the atom is excited and there are no photons present 
 % \textcolor{red}{TODO - Delete or use somehow?}
 % Consider a 3-level atom (Λ-system) in a cavity from the paper "Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency". Let ω_{31} denote the transition frequency between levels 3 and 1 and ω_{32} be that of levels 3 and 2. The cavity is resonant at frequency ω_{cav}. A probe beam drive the cavity at frequency ω_P and strength ε. Transitions \ket{1} -> \ket{3} and \ket{2} -> \ket{3} are coupled by a quantum cavity mode with vacuum Rabi frequency 2g and by a classical control field with frequency ω_C and Rabi frequency 2Ω_C. Let Δ = ω_{cav} - ω_P, Δ_1 = ω_{31} - ω_{cav}, and Δ_2 = ω_{32} - ω_C denote the relevant detunings. Through some approximation methods, the Hamiltonian is then given by $H = Δ_1 σ_{33} + (Δ_1 - Δ_2) σ_{22} - Δ σ_{11} + Δ a^{\dagger} a + (ε a + g a σ_{31} + Ω_C σ_{32} + h.c.)$ where σ_{ij}, $i \neq j$, are atomic operators, σ_{ij}, $i = j$, are atomic energy level population operators, and $a^{\dagger}, a$ are creation and annihilation operators respectively. The master equation is then $\dot{ρ} = -i [H, ρ] + \kappa (2 a ρ a^{\dagger} - a^{\dagger} a ρ - ρ a^{\dagger} a) + Γ_{31}(2 σ_{13} ρ σ_{31} - σ_{33} ρ - ρ σ_{33}) + Γ_{32}(2 σ_{23} ρ σ_{32} - σ_{33} ρ - ρ σ_{33})$ where κ is the cavity-field decay rate, and Γ_{31}, Γ_{32} are polarization decay rates of the excited level \ket{3} to levels \ket{1} and \ket{2}, respectively.
 
-\textcolor{red}{Place in appendix}
+\textcolor{red}{TODO - change line numbers relevant to final code}
+\textcolor{blue}{TODO - Place in appendix}
 \lstinputlisting[caption={Python code for CEIT with a three-level atom}, language=Python, firstline=11, lastline=111]{./Code/ThreeLevelCavity.py}\label{TLC-Code}
 
 \begin{figure}%[h!]
