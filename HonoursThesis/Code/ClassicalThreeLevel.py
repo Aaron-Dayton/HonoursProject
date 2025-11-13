@@ -117,7 +117,7 @@ def plot_susceptibility_expectation_over_delta(Δ_end, Δ_c=0, n=500):
     ax.plot(Δ_vals, real_results)
     ax.plot(Δ_vals, imag_results)
     ax.set_xlabel('Δ')
-    ax.set_ylabel('Expectation value of susceptibility χ')
+    ax.set_ylabel(r'$\langle d_{13} \rangle$')
     ax.legend(('Real', 'Imag'))
     plt.title('EIT phenomenon for a 3-level atom in a classical EM field')
     ax.axhline(y=0, color='black', linestyle='--', linewidth=1)

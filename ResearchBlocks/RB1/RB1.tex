@@ -1,0 +1,253 @@
+\documentclass[aps,pra,twocolumn,showpacs,amsmath,amssymb,nofootinbib,longbibliography,superscriptaddress
+]{revtex4-1}
+
+%\documentclass[a4paper]{quantumarticle}
+%\newcommand{\onlinecite}{\cite}
+%\pdfoutput=1
+%\usepackage{mcite}
+%\usepackage[sort&compress,numbers]{natbib}
+%\bibliographystyle{apsrev4-1}
+
+
+\usepackage[pdftex]{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{epstopdf}
+\usepackage{tikz}    % Include the tikz package for drawing
+\usepackage{mathtools}
+
+\usepackage[normalem]{ulem}
+
+\graphicspath{{FIGs/}}
+
+ \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{beramono}
+\usepackage{listings}
+
+\usepackage{lmodern}
+
+\usepackage{amssymb,amsmath,amsthm}
+
+\usepackage{bbm}
+
+\usepackage{subcaption}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
+
+
+\usepackage[justification=raggedright,singlelinecheck=false]{caption}
+
+\DeclareMathAlphabet{\mathbbmsl}{U}{bbm}{m}{sl}
+
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\renewcommand{\lstlistingname}{Code Block}
+
+\newcommand{\patbox}[1]{\vspace{2mm}\noindent\fbox{\parbox{0.47\textwidth}{\hspace{1mm}\parbox{\columnwidth}{\hspace{1mm}\\#1\vspace{1.5mm}}}}\\}
+
+\lstdefinelanguage{julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={\$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+     literate={é}{{\'e}}1
+           {è}{{\`e}}1
+           {ù}{{\`u}}1
+}[keywords,comments,strings]%
+
+\lstset{%
+    language          = julia,
+    basicstyle        = \ttfamily,
+    keywordstyle      = \bfseries\color{blue},
+    numbers           = left,
+    numbers           = none,
+    stringstyle       = \color{magenta},
+    commentstyle      = \color{ForestGreen},
+    showstringspaces  = false,
+    frame             = single, 
+    inputencoding     = latin1,
+    breaklines        = true,
+    breakatwhitespace = true
+}
+
+\newcommand{\FRrefsec}[1]{sec.~\ref{#1}}
+\newcommand{\FRreffig}[1]{fig.~\ref{#1}}
+\newcommand{\FRrefeq}[1]{eq.~\ref{#1}}
+
+\newcommand{\ENrefsec}[1]{Sec.~\ref{#1}}
+\newcommand{\ENreffig}[1]{Fig.~\ref{#1}}
+\newcommand{\ENrefeq}[1]{Eq.~\ref{#1}}
+
+
+
+\newcommand{\Ham}{\hat{\mathcal{H}}}
+\newcommand{\Spin}{\hat{S}}
+\newcommand{\A}{\hat{A}{}}
+\newcommand{\B}{\hat{B}{}}
+\newcommand{\M}{\hat{M}}
+\newcommand{\densmat}{\hat{\rho}}
+\newcommand{\U}{\hat{U}{}}
+\newcommand{\D}{\hat{D}{}}
+\newcommand{\V}{\hat{V}{}}
+\newcommand{\X}{\hat{X}{}}
+\newcommand{\W}{\hat{W}{}}
+\newcommand{\bigOmega}{\hat{\Omega}{}}
+\newcommand{\bigLambda}{\hat{\Lambda}{}}
+\newcommand{\bigGamma}{\hat{\Gamma}{}}
+
+
+\newcommand{\I}{\hat{I}}
+\newcommand{\0}{\hat{0}}
+
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\dx}{\mathrm{d}\mathbf{x}}
+
+\newcommand{\Z}{\mathcal{Z}}
+
+\newcommand{\dt}{\mathrm{d}t}
+
+
+
+
+
+
+
+
+
+   \newenvironment{xabstract}
+{\onecolumngrid
+    \list{}{%
+        \setlength{\leftmargin}{.5in}% 
+        \setlength{\rightmargin}{\leftmargin}%
+        }%
+        \item\relax}
+        {\endlist}
+
+
+
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+
+
+
+%\usepackage{chngcntr}
+
+
+\usepackage[hidelinks]{hyperref}
+
+
+\begin{document}
+
+\title{Honours Thesis - Research Block 1}
+\author{Aaron Dayton}
+
+\maketitle
+
+\section{Intro}
+
+\textcolor{red}{DO NOT COPY ANYTHING FROM HERE INTO THE THESIS!!! MANY SENTENCES ARE DIRECT QUOTES!!!}
+
+\section{Cavity induced transparency - Rice and Brecha}
+
+In this paper, to form their Hamiltonian, they take the Jaynes-Cummings model for a 2-level atom and add a probe field term. We could do something similar, where we take a known Hamiltonian and add relevant/necessary terms or dissipative operators.
+
+They apply the Born-Markov equation then the rotating wave approximation (i.e. they find the Lindblad master equation with relevant dissipative operators coupling the system to the bath to model decay).
+
+The cavity is tuned to the atomic transition frequency and the probe field is detuned from that. The probe beam is sufficiently weak such that few photon-cavity coupling states must be considered. They enumerate their states as the number of photons in the cavity and the state of the atom. They then write the density matrix out in this basis.
+
+They solve for the susceptibility of the system to find when the absorption dips with the detuning. Different parameters give different Lorentzian distributions.
+
+It is important that the probe fields is not too strong to rule out Stark shifts.
+
+There is a one-to-one correspondence to their approximate system (with 1-photon max in the system) and a three-level atom of V-type. This is why CIT occurs, the density matrices are identical to those of EIT.
+
+In CQED the electric field per photon is increased as it `bounces' within the medium and interferes with itself such that a weak field may be used.
+
+The dip in absorption is interpreted as interference between two absorption paths, just as in EIT (dark state). It can equivalently be seen as an interference effect from the build up of the electromagnetic field within the cavity and the weak probe field. In this interpretation, the atom experiences net-zero field at resonance and decouples from it, yielding a no absorption.
+
+
+
+\subsection{Aside - Born-Markov approximation and the Master equation}
+
+They use something called the Born-Markov approximation when forming their Master equation. Consider the full Hamiltonian $H = H_S + H_B + H_{int}$ where $H_S$ is the system Hamiltonian, $H_B$ is the bath Hamiltonian, and $H_{int}$ is the interaction Hamiltonian. We can obtain the steady-state density matrix by the von Neumann equation, then trace out everything but the system (as this is what is relevant to us) to obtain the reduced density matrix as $\rho_S(t) = Tr_B[\rho_{tot(t)}]$.
+
+The Born approximation then assumes weak coupling between the bath and system (i.e.~no long-term correlations) such that $\rho_{tot}(t) \approx \rho_S(t) \otimes \rho_B$ where $\rho_B$ is a stationary bath state for thermal equilibrium.
+
+The Markov approximation then approximates the system to have short memory such that the bath timescale is much less than the system evolution timescale. The bath basically forgets interactions with the system almost instantly. The system is then essentially memoryless as its future state only depends on its current state and not on any past states.
+
+This then gives us the Born-Markov master equation as
+
+\textcolor{red}{TODO - Check this!!!}
+
+\begin{equation}
+    \dot{\rho}_S(t) = - \frac{1}{\hbar^2} \int_0^{\infty} d\tau Tr_B[H_{int}(t), [H_{int}(t-\tau), \rho_S(t) \otimes \rho_B]]
+\end{equation}
+which is local in time.
+
+With additional approximations this then simplifies to the Lindblad master equation! The Lindblad master equation is derived by applying the rotating wave approximation or the secular approximation to eliminate rapidly oscillations. 
+
+Note there are different Lindblad master equation forms depending if it is diagonal or not!
+
+
+
+\section{Photon-Photon Interaction in Cavity Electromagnetically Induced Transparency}
+
+They look at dissipation-free photon-photon interactions within the cavity in the few-photon limit. The injection of a single photon into a cavity can block the injection of a second through a photon blockade effect. Strong coupling requires nonlinear analysis and the anharmonicity in the spectrum can lead to photon anti-bunching and photon blockade effects. Photon blockade effect is determined by the probability of two photons being absorbed by the system sequentially.
+
+The advantage of EIT is the avoidance of single photon loss due to spontaneous emission for the single photon state. It also allows for a reduced decay rate.
+
+They use the interaction picture to couple N 4-level atoms with the single-cavity mode and coupling field. They essentially add together N copies of the atomic Hamiltonian. The measured photon statistics are determined by the steady-state of the master equation.
+
+
+\section{Topics in QM - Shine a Light - Tong}
+
+The quantum state of an electromagnetic field is described by how many photons it contains. A photon has 2 quantum numbers: momentum (vector quantity) and polarization (vector quantity).
+
+To specify the state of the electromagnetic field we need to specify the number of photons are contained in the field along with each of their momenta/wave-vectors and polarizations. The electromagnetic field states are then labelled $\ket{ \{ n_{\vec{k}, \lambda} \} }$ where $n_{\vec{k}, \lambda}$ tells use the number of photons with $\vec{k}$ and $\lambda$. Photons are excitations in an underlying field. 
+
+Each type of photon has a creation and annihilation operator. The Hilbert space of the electromagnetic field consists of an infinite number of harmonic oscillations. Our Hilbert space contains states with different numbers of photons, making it a Fock space.
+
+The Hamiltonian which governs the evolution of states in this Fock space is a sum of harmonic oscillator Hamiltonians, one for each type of photon.
+
+We can approximate a classical plane wave by an infinite sum of photons (EM field excitations).
+
+\subsection{Jaynes-Cummings Model}
+
+Take a two-level atomic Hamiltonian. Consider only photons at the transition frequency, and write the photon field Hamiltonian. This can be achieved in reality by placing the atom in a cavity tuned to the resonant frequency of the atomic transition. This restriction to a single photon frequency is usually called cavity quantum electrodynamics. Ignore polarization for the atom.
+
+The zero-point energy of the photon Hamiltonian is often omitted as it only adds a constant ($\hbar \omega /2$).
+
+The Kronecker product between the two Hilbert spaces is taken (for atom and photon). In the Jaynes-Cummings model states are then enumerated by $\ket{n;\uparrow}$, $\ket{n;\downarrow}$, $n \geq 0$.
+
+We also need an interaction Hamiltonian such that the atomic de-excitation results in the emission of a photon to the photon field and absorption of a photon results in atomic excitation. The 3 Hamiltonians come together to form the Jaynes-Cummings Hamiltonian.
+
+There is then no dissipation in the Jaynes-Cummings model as any photons which are emitted stay in the fictitious cavity. So there is no external bath/environment for the system to couple to and shed excess photons onto. States with $n-1$ photons and an excited atomic state couple with states with $n$ atoms and an atomic ground state to form the eigenstates for the JC model. So an atom sitting in the ground state with $n$ photons in the cavity is not an eigenstate unless $n=0$, so the system will evolve over time to a superposition of states where the photon is absorbed by the atom and not. This describes Rabi Oscillations!
+
+
+
+
+\end{document}

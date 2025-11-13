@@ -9,3 +9,13 @@ observables
 degeneracies
 hyperfine
 Zeeman
+detuned
+anharmonicity
+polarizations
+Hamiltonians
+Non-Linearities
+Fabry-Perot
+Nonlinearities
+exponentials
+Jaynes-Cummings
+Rabi
