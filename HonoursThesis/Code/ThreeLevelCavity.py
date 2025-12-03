@@ -1,7 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from IPython.display import Image
-from qutip import (Qobj, tensor, basis, create, destroy, qeye, mesolve, steadystate, expect)
+from qutip import (Qobj, tensor, basis, create, destroy, qeye, mesolve, steadystate, expect, num)
+
+# TODO - Plot Transmission!! Fig. 1 from paper
+# This is probably done with the expecatation value of the number operator
 
 ########
 # NOTE #
@@ -16,7 +19,7 @@ Delta = 0.01
 epsilon = 1.0 * kappa
 Gamma_31 = 0.1 * kappa
 Gamma_32 = 0.1 * kappa
-N = 10 # Truncate the Fock basis to N=10 photons
+N = 7 # Truncate the Fock basis to N=10 photons
 
 # Atomic basis kets
 atomicKet1 = basis(3, 0) # |1>
@@ -42,7 +45,7 @@ c_ops = [cavity_decay, atomic_decay_13, atomic_decay_23]
 def eta(n):
     return g * np.sqrt(n/2) / W_c
 
-def steady_evo():
+def steady_evo(num_vals):
     state_1_vals = []
     state_2_vals = []
     state_3_vals = []
@@ -50,7 +53,8 @@ def steady_evo():
     state_5_vals = []
     real_dipole = []
     imag_dipole = []
-    Delta_vals = np.linspace(-100.0, 100.0, 1000)
+    photon_numbers = []
+    Delta_vals = np.linspace(-100.0, 100.0, num_vals)
 
     # Useful basis vectors
     k_s1_n0 = tensor(atomicKet1, basis(N, 0))
@@ -77,7 +81,12 @@ def steady_evo():
         expect_n1 = expect(k_s2_n1 * k_s3_n1.dag(), rho)
         phi_n1 = np.angle(expect_n1)
 
-        # TODO - This does not seem quite right
+        # THIS IS GOOD
+        num_op = tensor(qeye(3), num(N))
+        photon_numbers.append(expect(num_op, rho))
+
+        # TODO - This does not seem quite right - MacRae said real and imag look swapped
+        # dipole = expect(k_s1_n0 * k_s3_n0.dag(), rho)
         dipole = expect(k_s3_n0 * k_s1_n0.dag(), rho)
         real_dipole.append(dipole.real)
         imag_dipole.append(dipole.imag)
@@ -119,28 +128,40 @@ def steady_evo():
         state_5_vals.append(exp_5)
 
 
-    fig, (ax1, ax2) = plt.subplots(2, 1) 
-    fig.tight_layout()
-    ax1.plot(Delta_vals, state_1_vals, label=r'$\langle \Psi^{(0)}_1|\rho|\Psi^{(0)}_1\rangle$')
-    ax1.plot(Delta_vals, state_2_vals, label=r'$\langle \Psi^{(0)}_2|\rho|\Psi^{(0)}_2\rangle$')
-    ax1.set_yscale("log")
-    ax1.set_xlabel(r'$\Delta$')
-    ax1.set_ylabel('Probability of Excitation')
-    ax1.legend((r'$\langle \Psi^{(0)}_1|\rho|\Psi^{(0)}_1\rangle$', r'$\langle \Psi^{(0)}_2|\rho|\Psi^{(0)}_2\rangle$'), loc='upper right')
-    ax1.set_title(r'CEIT state excitation probabilities versus $\Delta$')
+    # NOTE - Population plots
+    # fig, (ax1, ax2) = plt.subplots(2, 1) 
+    # fig.tight_layout()
+    # ax1.plot(Delta_vals, state_1_vals, label=r'$\langle \Psi^{(0)}_1|\rho|\Psi^{(0)}_1\rangle$')
+    # ax1.plot(Delta_vals, state_2_vals, label=r'$\langle \Psi^{(0)}_2|\rho|\Psi^{(0)}_2\rangle$')
+    # ax1.set_yscale("log")
+    # ax1.set_xlabel(r'$\Delta$')
+    # ax1.set_ylabel('Probability of Excitation')
+    # ax1.legend((r'$\langle \Psi^{(0)}_1|\rho|\Psi^{(0)}_1\rangle$', r'$\langle \Psi^{(0)}_2|\rho|\Psi^{(0)}_2\rangle$'), loc='upper right')
+    # ax1.set_title(r'CEIT state excitation probabilities versus $\Delta$')
 
-    ax2.plot(Delta_vals, state_3_vals, label=r'$\langle 1|\rho|1\rangle$')
-    ax2.plot(Delta_vals, state_4_vals, label=r'$\langle 2|\rho|2\rangle$')
-    ax2.plot(Delta_vals, state_5_vals, label=r'$\langle 3|\rho|3\rangle$')
-    ax2.set_yscale("log")
-    ax2.set_xlabel(r'$\Delta$')
-    ax2.set_ylabel('Probability of Excitation')
-    ax2.legend((r'$\langle 1|\rho|1\rangle$', r'$\langle 2|\rho|2\rangle$', r'$\langle 3|\rho|3\rangle$'), loc='lower right')
-    ax2.set_title(r'Atomic basis state excitation probabilities versus $\Delta$')
+    # ax2.plot(Delta_vals, state_3_vals, label=r'$\langle 1|\rho|1\rangle$')
+    # ax2.plot(Delta_vals, state_4_vals, label=r'$\langle 2|\rho|2\rangle$')
+    # ax2.plot(Delta_vals, state_5_vals, label=r'$\langle 3|\rho|3\rangle$')
+    # ax2.set_yscale("log")
+    # ax2.set_xlabel(r'$\Delta$')
+    # ax2.set_ylabel('Probability of Excitation')
+    # ax2.legend((r'$\langle 1|\rho|1\rangle$', r'$\langle 2|\rho|2\rangle$', r'$\langle 3|\rho|3\rangle$'), loc='lower right')
+    # ax2.set_title(r'Atomic basis state excitation probabilities versus $\Delta$')
+    # plt.show()
 
-    plt.show()
 
+
+    # NOTE - Dipole plots (idk if we need these?)
     # plt.plot(Delta_vals, real_dipole)
     # plt.plot(Delta_vals, imag_dipole)
     # plt.legend(('real', 'imag'))
     # plt.show()
+
+
+
+    # NOTE - Transmission Plots
+    # THIS IS WHAT WE WANT!!!
+    # This matches Fig 1 in paper
+    plt.semilogy(Delta_vals, photon_numbers)
+    plt.legend(('Number operator'))
+    plt.show()
