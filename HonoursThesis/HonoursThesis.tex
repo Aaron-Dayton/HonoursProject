@@ -376,6 +376,17 @@ Fabry-Perot cavity gives a phase shift of $e^ikL_F$ while atoms give a phase shi
 We don't need the Hamiltonian for the Fabry-Perot cavity. QM gives us $n$, so plug that value into the cavity equation. Phase shift should be due to Fabry-Perot and Beer's Law. The strength inside the cavity will be very large. The strength into and out of the cavity will be about equal.
 
 
+\subsection{Raman Paths}
+
+\textcolor{red}{TODO - IDK if this should be a section, but the key points and definition should be included somewhere}
+
+\begin{itemize}
+    \item Two-photon transition path in $\Lambda$-systems from $| g_1 \rangle \xrightarrow{stimulated} | e \rangle \xrightarrow{stimulated} | g_2 \rangle$ 
+    \item In EIT used to suppress excited states
+    \item In FWM multiple Raman paths interfere simultaneously yielding a four-photon scattering event (events do not happen sequentially but as a superpotion of all possible paths - think Feynman diagrams)
+\end{itemize}
+
+
 \subsection{Optical Nonlinearities}
 
 The polarization of a material is often written as a linear expression with electric field strength
@@ -389,6 +400,7 @@ but for a sufficiently large electric field, there is a saturation in the polari
 where the $i$ in $\chi^{(i)}$ is a superscript denoting the power to which the susceptibility term is associated where we would then call $\chi^{i}$ the $i$th order nonlinear optical susceptibility \cite{Nonlinear}. 
 
 \subsection{Four Wave Mixing}
+
 
 
 \subsection{Squeezed States}
@@ -432,6 +444,12 @@ It has been shown that applying cavity EIT to three-level atoms can produce sub-
 
 \subsection{QuTiP Python Package}
 
+
+\section{The goal}
+
+\textcolor{red}{TODO - IDK if this should be a whole section, but it is good for now to get the idea written down somewhere}
+
+We need to find a set of parameters which allows for 3 phenomena to occur: EIT, FWM, and optical squeezing. FWM can produce squeezed state, but the amount of squeezing is variable. EIT can enhance FWM, but tuning the parameters such that squeezing is optimized while still allowing for EIT may be difficult.
 
 \section{The first steps}
 
@@ -763,6 +781,120 @@ We might want to find photon number in quantum case to find light intensity.
 Plotting Fig 1 with number operators matches Fig 1 peaks in paper. This is what we want
 
 Next step: Get classical result that we can compare against later for sanity check (they should match). This also tells us if the experiment is possible in the first place. If parameters don't work out, then it may not be possible.
+
+
+
+\secton{Meeting Jan 8}
+
+With 2 driving beams we cannot use RWA
+
+$k = n(\omega) \frac{\omega}{c}$ in a medium
+
+We need to conserve momentum and energy (frequency) to get phase matching
+
+If we have rubidium atoms in an optical resonator, can we predict the squeezing?
+
+Go through papers
+
+
+\section{Meeting Jan 12}
+
+The goal is now conversion efficiency. Look into Capckuck's stuff. Squeezing is gravy (if we can get it). Effieceincy calculations of a upconversion -> fiber optic transmission -> downconversion (end-to-end conversion efficiency) would be awesome!
+
+\section{Main results from research block}
+
+\textcolor{blue}{I read a handul of papers and here are some main points that stuck out.}
+
+Paper list:
+\begin{itemize}
+    \item Microscopic Theory of Squeezed Light in Quantum Dot Systems
+    \item Theory of cavity-enhanced spontaneous four wave mixing
+    \item Generation of 87Rb resonant bright two-mode squeezed light with four-wave mixing
+    \item Quantum Noise and Correlations in Resonantly Enhanced Wave Mixing Based on Atomic Coherence
+    \item Slow light propagation and amplification via electromagnetically induced transparency and four-wave mixing in an optically dense atomic vapor
+    \item (Didn't read fully, but used) Parametric amplification in an electromagnetically-induced-transparency medium
+    \item (Didn't read fully, but used) Competition between electromagnetically induced transparency and Raman processes
+\end{itemize}
+
+\subsection{Microscopic Theory of Squeezed Light in Quantum Dot Systems}
+
+They give operators for quadratures which need to be squeezed. MacRae said that these are conventional and we would likely use the same ones $\hat X = \frac{1}{2}(a + a^{\dagger})$ and $\hat Y = \frac{1}{2i}(a - a^{\dagger})$. The amount of squeezing is then expressed by getting expressions for $\Delta X$ and $\Delta Y$, which have difference $\Delta X - \Delta Y = 4 Re(\delta \langle aa \rangle)$ where $\delta \langle aa \rangle = \langle aa \rangle - \langle a\rangle \langle a\rangle$. They also give the operator for the $g^{(2)}(0)$ correlations (simultaneous photon emission operator)
+
+$$
+g^{(2)}(0) = \frac{\langle a^{\dagger}a^{\dagger} aa \rangle}{\langle a^{\dagger}a \rangle \langle a^{\dagger}a \rangle}
+$$
+
+They also give a Hamiltonian for their system (could be useful).
+
+Their data shows that different system parameters can result in different amounts of squeezing. This tells me that we need to balance parameters to obtain significant squeezing, FWM, and EIT all at once.
+
+THey make a statement that MacRae thought was useful: `In practice, amplitude squeezing is maintained only if classical pump relative-intensity noise (RIN) is suppressed below shot noise.' He said this may be difficult, but should be possible.
+
+Another result is stated as `This underscores the need for narrow-linewidth sources and good thermo-mechanical stability to preserve quadrature squeezing in the presence of injection-induced phase noise.' Also `From an engineering perspective, three levers govern performance, cavity decay, seed strength, and dephasing.'
+
+
+
+\subsection{Theory of cavity-enhanced spontaneous four wave mixing}
+
+This paper focuses on a system which I think is quite different from what we will be working with. Some mathematical techniques they used (Fourier transform techniques and interpretations) may be useful to us. 
+
+One result is `Thus, for a higher coeﬃcient of finesse, there will be more cavity round trip times, and the dimension of the Hilbert space which describes each photon will increase.' which seems straightforward to me. They then go on to say `Thus, interestingly, this physical system leads to higher-dimensional entanglement in the temporal-mode degree of freedom with a dimension which can be tailored by adjusting the cavity finesse.'
+
+Stated another way `increasing the finesse leads to more signal and idler cavity round-trips and hence to a greater correlation time.'
+
+They calculate the flux out of the cavity based on a few parameters and give some different regimes. Could be useful.
+
+
+
+\subsection{Generation of 87Rb resonant bright two-mode squeezed light with four-wave mixing}
+
+This paper focuses on using a double-$\Lambda$-system to produce FWM far off resonance in 85Rb such that the output photons produced are resonant with a transition of an 87Rb double-$\Lambda$-system which is more useful for quantum memory. They made a statement that I thought was very important: `While the original proposals for the double-lambda configuration [41–43] suggest that it should be possible to use EIT to eliminate absorption when operating on resonance, in practice this is not the case and residualabsorption dominates over the FWM process whenthe probe frequency is tuned closer to resonance.'
+
+So avoid needing to use EIT, they tune far off resonance to prevent significant absorption in the 85Rb sample material but in a regime where they can still obtain FWM and squeezing. They then use EIT with the 87Rb for quantum memory.
+
+Not in this paper, but related to quantum memory: MacRae said that we can create quantum memory with 87Rb and EIT by having a signal and control beam which put the system into a dark state, then if we send in a pulse of light with quantum information encoded, then turn off the control beam, we can get short-lived quantum memory storage. Once the control beam is turned back on, the pulse is re-emitted from the material. There is some decoherence of course, making this storage method somewhat short-lived, but it could be useful in quantum optical circuits.
+
+They later state that there are multiple competing non-linear processes (including FWM) which makes it difficult to get FWM alone.
+
+
+
+\subsection{Quantum Noise and Correlations in Resonantly Enhanced Wave Mixing Based on Atomic Coherence}
+
+This paper looks into supressing quantum noise fluctuations via non-linear optical processes. Squeezing can be used for limited noise reduction. Quantum coherence and interference can be used to improve the degree of noise reduction. They generate Stokes and anti-Stokes fields with a near complete supression of quantum fluctuations and a perfect correlation structure (100\% squeezing).
+
+They use a double-$\Lambda$-system with FWM to produce squeezing. They use quite a bit of math, make some approximations, and show a regime where those approximations hold to obtain the desired correlation structure. They state that their methods can be applied in the few-photon limit, meaning that the theory may allow for single-photon quantum contol via non-linear optical processes.
+
+
+
+\subsection{Slow light propagation and amplification via electromagnetically induced transparency and four-wave mixing in an optically dense atomic vapor}
+
+They state `In the limit of low optical depth, it is suﬃcient to take into account only the eﬀects of this single $\Lambda$. However, many applications require operation at high optical depth [9, 10], where additional nonlinear eﬀects may become important [11, 12, 13, 14]. One such eﬀect is resonant fourwave mixing a nonlinear process arising from the far oﬀ-resonant interaction of the control field.' so they use a double-$\Lambda$-system
+
+They also state `under certain conditions, FWM may lead to gain for both the signal and Stokes fields, which could compensate for any optical losses'
+
+They use some math to solve, including Floquet theory. They express a Hamiltonian for their system (may be helpful). They express as a system of differential equations and solve for analytic expressions to fully describe the propagation of light through the medium. They then give conditions for EIT and FWM based on the equations they obtained.
+
+They importantly state `Spectra taken at higher optical depth reveal more clear evidence of the constructive and destructive interference between EIT and FWM.' EIT and FWM can compete if the Raman paths destructively interfere (is what I gather from this).
+
+They compare theory against expreimental results, which match quite well, but indicate that they may not be considering some processes for some cases. They state that signal field absorption is underrepresented by the model, and that they may not be considering some decay mechanism.
+
+They state `modeled by a simple double-$\Lambda$ system, where the output signal and stokes field amplitudes are the results of interference of “traditional” EIT and FWM.'
+
+
+\subsection{Parametric amplification in an electromagnetically-induced-transparency medium}
+
+They state: `Experimental and theoretical analyses have revealed that, while the EIT picture is valid for relatively low atomic densities, the PA picture becomes dominant for high atomic densities and high coupling powers. We have also found that the parametric coupling between the probe and Stokes waves can be nullified by the proper choice of the coupling detuning frequency, due to destructive interference of two elementary processes.' and `The last terms of the two equations represent the parametric coupling, and if we neglect them, Eq. 2 is simply reduced to the ordinary EIT process, i.e., the linear absorption of each wave is cancelled by the presence of the factor c. In the limit of c →1, the medium becomes transparent for both the probe and Stokes waves, but it never amplifies them. If the last terms are included, however, the situation is totally different. In this case the two waves are parametrically coupled and the two waves can be amplified by the proper choice of parameters.'
+
+
+
+\subsection{Competition between electromagnetically induced transparency and Raman processes}
+
+They state `Often, the various processes compete with each other, whereby some processes are suppressed or interference between processes renders the medium transparent to the applied fields. Well-known examples include competition between third-harmonic generation and multiphoton ionization,and between four-wave mixing and two-photon absorption. Very recently, Harada et al. demonstrated experimentally that stimulated Raman scattering can disrupt electromagnetically induced transparency EIT, where the incident probe beam is depleted and new fields are generated via Raman processes.'
+
+
+
+
+
 
 \section{Hamiltonian Formulation}
 

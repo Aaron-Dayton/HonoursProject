@@ -1,0 +1,294 @@
+\documentclass[aps,pra,twocolumn,showpacs,amsmath,amssymb,nofootinbib,longbibliography,superscriptaddress
+]{revtex4-1}
+
+%\documentclass[a4paper]{quantumarticle}
+%\newcommand{\onlinecite}{\cite}
+%\pdfoutput=1
+%\usepackage{mcite}
+%\usepackage[sort&compress,numbers]{natbib}
+%\bibliographystyle{apsrev4-1}
+
+
+\usepackage[pdftex]{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{epstopdf}
+\usepackage{tikz}    % Include the tikz package for drawing
+\usepackage{mathtools}
+
+\usepackage[normalem]{ulem}
+
+\graphicspath{{FIGs/}}
+
+ \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{beramono}
+\usepackage{listings}
+
+\usepackage{lmodern}
+
+\usepackage{amssymb,amsmath,amsthm}
+
+\usepackage{bbm}
+
+\usepackage{subcaption}
+
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+
+\usepackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
+
+
+\usepackage[justification=raggedright,singlelinecheck=false]{caption}
+
+\DeclareMathAlphabet{\mathbbmsl}{U}{bbm}{m}{sl}
+
+\newtheorem{theorem}{Theorem}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\renewcommand{\lstlistingname}{Code Block}
+
+\newcommand{\patbox}[1]{\vspace{2mm}\noindent\fbox{\parbox{0.47\textwidth}{\hspace{1mm}\parbox{\columnwidth}{\hspace{1mm}\\#1\vspace{1.5mm}}}}\\}
+
+\lstdefinelanguage{julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={\$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+     literate={é}{{\'e}}1
+           {è}{{\`e}}1
+           {ù}{{\`u}}1
+}[keywords,comments,strings]%
+
+\lstset{%
+    language          = julia,
+    basicstyle        = \ttfamily,
+    keywordstyle      = \bfseries\color{blue},
+    numbers           = left,
+    numbers           = none,
+    stringstyle       = \color{magenta},
+    commentstyle      = \color{ForestGreen},
+    showstringspaces  = false,
+    frame             = single, 
+    inputencoding     = latin1,
+    breaklines        = true,
+    breakatwhitespace = true
+}
+
+\newcommand{\FRrefsec}[1]{sec.~\ref{#1}}
+\newcommand{\FRreffig}[1]{fig.~\ref{#1}}
+\newcommand{\FRrefeq}[1]{eq.~\ref{#1}}
+
+\newcommand{\ENrefsec}[1]{Sec.~\ref{#1}}
+\newcommand{\ENreffig}[1]{Fig.~\ref{#1}}
+\newcommand{\ENrefeq}[1]{Eq.~\ref{#1}}
+
+
+
+\newcommand{\Ham}{\hat{\mathcal{H}}}
+\newcommand{\Spin}{\hat{S}}
+\newcommand{\A}{\hat{A}{}}
+\newcommand{\B}{\hat{B}{}}
+\newcommand{\M}{\hat{M}}
+\newcommand{\densmat}{\hat{\rho}}
+\newcommand{\U}{\hat{U}{}}
+\newcommand{\D}{\hat{D}{}}
+\newcommand{\V}{\hat{V}{}}
+\newcommand{\X}{\hat{X}{}}
+\newcommand{\W}{\hat{W}{}}
+\newcommand{\bigOmega}{\hat{\Omega}{}}
+\newcommand{\bigLambda}{\hat{\Lambda}{}}
+\newcommand{\bigGamma}{\hat{\Gamma}{}}
+
+
+\newcommand{\I}{\hat{I}}
+\newcommand{\0}{\hat{0}}
+
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\dx}{\mathrm{d}\mathbf{x}}
+
+\newcommand{\Z}{\mathcal{Z}}
+
+\newcommand{\dt}{\mathrm{d}t}
+
+
+
+
+
+
+
+
+
+   \newenvironment{xabstract}
+{\onecolumngrid
+    \list{}{%
+        \setlength{\leftmargin}{.5in}% 
+        \setlength{\rightmargin}{\leftmargin}%
+        }%
+        \item\relax}
+        {\endlist}
+
+
+
+
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+
+
+
+%\usepackage{chngcntr}
+
+
+\usepackage[hidelinks]{hyperref}
+
+
+\begin{document}
+
+\title{Honours Thesis - Research Block 2}
+\author{Aaron Dayton}
+
+\maketitle
+
+\section{Intro}
+
+\textcolor{red}{DO NOT COPY ANYTHING FROM HERE INTO THE THESIS!!! MANY SENTENCES ARE DIRECT QUOTES!!!}
+
+\section{Microscopic Theory of Squeezed Light in Quantum Dot Systems}
+
+`In practice, amplitude squeezing is maintained only if classical pump relative-intensity noise (RIN) is suppressed below shot noise.' This is important experimental note
+
+`Simulations that average over a distribution of injected frequencies (to model finite laser linewidth) show that squeezing remains essentially unaffected so long as the injected linewidth is roughly three orders of magnitude smaller than the dephasing rate.'
+
+`stronger squeezing demands narrower effective linewidths (smaller $\gamma_c$), reflecting the familiar tradeoff between output power and preservation of quantum correlations.'
+
+`From an engineering perspective, three levers govern performance, cavity decay, seed strength, and dephasing.'
+
+This paper has a different form of cavity, but seems quite useful. Also, it is very well written and concise.
+
+\subsection{IMPORTANT EQUATIONS}
+
+Using conventional quadratures of 
+
+$$
+X = \frac{1}{2} (a + a^{\dagger})
+$$
+
+$$
+Y = \frac{1}{2i} (a - a^{\dagger})
+$$
+
+we obtain the variances
+
+$$
+\Delta X^2 = \frac{1}{4} (1 + 2 \delta \langle a^{\dagger} a \rangle + 2Re(\delta \langle a a \rangle))
+$$
+
+$$
+\Delta Y^2 = \frac{1}{4} (1 + 2 \delta \langle a^{\dagger} a \rangle  - 2Re(\delta \langle a a \rangle))
+$$
+
+$$
+\delta \langle a^{\dagger} a \rangle = \langle a^{\dagger} a \rangle - \langle a^{\dagger} \rangle \langle a \rangle
+$$
+
+$$
+\delta \langle a a \rangle = \langle a a \rangle - \langle a \rangle \langle a \rangle
+$$
+
+The effect of squeezing comes from the difference of $4Re(\delta \langle a a \rangle)$  between the above equations.
+
+$$
+g^{(2)}(0) = \frac{\langle a^{\dagger} a^{\dagger} a a\rangle}{\langle a^{\dagger} a\rangle \langle a^{\dagger} a\rangle}
+$$
+
+
+\section{CHAT GPT Understanding}
+
+\textcolor{red}{TODO - Get sources from this information as it is from chat GPT. The facts given align with what I have read before, but no statement should be used in the final project unless supported by academic evidence.}
+
+\subsection{How can EIT and FWM occur at the same time?}
+
+EIT cancels the excited-state polarization responsible for linear absorption, not the total dipole response of the atom. $\chi^{(1)} \rightarrow 0$. The atom does not stop responding to the external field and the dipole moment does not vanish, just the linear contribution. What happens is destruction between excitation pathways blocks absorption.
+
+FWM comes from multi-photon pathways (Raman-type) and ground state coherence. Strong FWM can occur even when absorption is supressed.
+
+EIT can actually enhance FWM. EIT suppresses linear absorption and incoherent spontaneous emission, while enhancing ground state coherence, interaction time (slowed light), and the nonlinear $\chi^{(3)}$ susceptibility.
+
+Supposedly, for a $\Lambda$-system under EIT, the $\chi^{(3)}$ susceptibility is 
+
+$$
+\chi^{(3)} \propto \frac{N |\mu|^4}{\hbar^3 \Gamma \gamma_g}
+$$
+
+where $\Gamma$ is the excited state decay rate, $\gamma_g$ is the ground state decoherence rate, and $\mu$ is the dipole term. \textcolor{red}{TODO - A paper has something similar, but different in some ways. DO NOT TRUST THIS. It is only here for intuition}
+
+Supposedly a double $\Lambda$-system can be used to combine EIT and FWM
+
+With small $\chi^{(1)}$ we get transparency, and with large $\chi^{(3)}$ we get strong nonlinear mixing. The two are not mutually exclusive.
+
+EIT cancels undesired absorption pathways, while FWM coherently reroutes energy to produce mixing effects. This is why EIT and FWM go together so well. EIT puts the atoms into a highly coherent state, which can be taken advantage of with FWM.
+
+
+\section{Theory of cavity-enhanced spontaneous four wave mixing}
+
+
+`In this paper we will study cases where the cavity used is resonant to one or both of the SFWM modes, while it is not resonant to the pump frequency... we restrict our attention to the SFWM process with degenerate pumps'
+
+Mirrors are perfectly transmissive to pump photons and perfectly reflective to SFWM photons. Is this a realistic assumption? What happens when this breaks down? (Later they cover this in the efficiency section)
+
+Deals with single photons. When the cavity is resonant with the signal and idler beam, then there is an interesting correlation structure for two generated photons which bounce within the medium. The total number of bounces between both photons has an entangled structure (e.g. any combination of 5 bounces, say 3 for signal and 2 for idler, has equal probability to any other combination of 5 bounces).
+
+This paper dives into a lot of theory, handling things on the single atom and individual photon level. The focus is on photon-atom interfaces. They also use a different form of cavity. This makes me think it is not what we want to follow, although we can take inspiration from the techniques used or simply gain perspective on the topic from this paper.
+
+A nice takeaway is that they have direct results showing that increasing cavity finesse increases the number of bounces within the cavity, which seems fairly straightforwards and should be expected. Is this related to the $g^{(2)}(0)$ correlation structure? It should be.
+
+Although they have an entire section on the flux out of the cavity, which may be useful to us. They pulse a pump to produce entangled photon pairs, but the limit can be taken where the pulse frequency goes to infinity (I think). Later they perform a calculation to obtain the photon flux and it is quite large ($10^9$ photon pairs per second), so it seems that this works.
+
+A useful result may be: `Thus, in order to observe a flux enhancement, the cavity needs to be resonant for both SFWM photons' and `flux enhancement increases with
+the coeﬃcient of finesse.'
+
+
+\section{Generation of 87Rb resonant bright two-mode squeezed light with four-wave mixing}
+
+This uses double lambda system of hot rubidium gas. They focus on generating two-mode squeezed light rather than single-mode squeezed light. I believe we are looking to generate single-mode squeezed light, but this may change. They state that EIT cannot be used with double-lambda systems as residual absorption dominates over the FWM process when the probe frequency is tuned near resonance. This means that a double-lambda system may not be the way to go. But they mention they overcome it I think? The line of reasoning is quite confusing to me as they mention both 87Rb and 85Rb transitions, the diagram shows that they use 85Rb, but the paper title says they use 87Rb. Are they using both? I think they just use 85Rb in their experimental setup of Fig.2, but compare against 87Rb. So I do not think they are using EIT. Double-Lambda systems could go either way, but I think there is some evidence against them. Although, another paper states that it uses EIT and FWM with a double-lambda system.
+
+
+
+`Squeezed states of light have gained a significant amount of attention given that they exhibit noise levels below the quantum noise limit(QNL).'
+
+`EIT preserves the quantum properties of squeezed light'
+
+`On the other hand, while atomic-based sources should oﬀer a natural and more direct way to generate narrow-band on-resonance quantum states of light, the strong absorption associated with working on resonance is a significant limiting factor.'
+
+`For an eﬃcient FWM process, the frequency diﬀerence between the pump and the probe needs to be close to the separation between the two ground state hyperfine levels of 85Rb, such that the pump and probe are on two-photon resonance with the corresponding Raman transition.'
+
+`While the original proposals for the double-lambda configuration [41–43] suggest that it should be possible to use EIT to eliminate absorption when operating on resonance, in practice this is not the case and residual absorption dominates over the FWM process when the probe frequency is tuned closer to resonance.'
+
+\section{Chat GPT on 85Rb vs 87Rb}
+
+Chat GPT description for the above paper: `They use a 85Rb vapor cell as a nonlinear medium to generate four-wave-mixing squeezed light, but they tune the process so the output frequencies are resonant with 87Rb D1 hyperfine transitions. The isotope in the cell determines the nonlinear dynamics, while the isotope referenced in the title refers to the spectral properties of the generated light. This separation lets them minimize absorption, optimize squeezing, and directly interface with 87Rb-based quantum systems.'
+
+One goal of having the output be resonant with 87Rb is that the output squeezed light could be used for quantum memory stored in an 87Rb ensemble. 87Rb is superior to 85Rb for quantum memory purposes in practice and is more widely used. In a quantum memory using 87Rb, the ensemble of $\Lambda$-systems all start in the lowest ground state $| g_1 \rangle$ then once a photon is introduced some atom goes to the other ground state $| g_2 \rangle$ but is really stored as a `spin wave' where that possible state is spread out across every atom in the ensemble. EIT forces this and does not allow the $| g_2 \rangle$ state to simply undergo spontaneous emission. This is why it works as a storage method. There is still a lifetime (not very long), but it can be useful in fast optical computations. Stimulated Raman emission is used to emit the photon back out and release the quantum information. Interactions progressively destroy the quantum state coherence.
+
+`An ensemble quantum memory works by coherently mapping an incoming photonic quantum state onto a delocalized ground-state coherence shared by many atoms. The excitation is stored as a collective phase pattern (spin wave), not as excited atoms, and is later retrieved by coherent, stimulated emission under the control of a classical field.'
+
+
+\end{document}
