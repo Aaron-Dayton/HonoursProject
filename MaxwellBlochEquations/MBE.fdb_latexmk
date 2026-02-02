@@ -1,15 +1,16 @@
 # Fdb version 4
-["bibtex MBE"] 1769986795 "MBE.aux" "MBE.bbl" "MBE" 1769986966 0
-  "./MBENotes.bib" 1769986965 104 3df53be75d46dc364236f6bd8a7721a4 ""
+["bibtex MBE"] 1770073202 "MBE.aux" "MBE.bbl" "MBE" 1770073204 0
+  "./MBENotes.bib" 1770073203 104 3df53be75d46dc364236f6bd8a7721a4 ""
   "./refs.bib" 1769543519 456 e9e96a8a608c8d684a8e10421f66aab0 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/revtex4-1/apsrev4-1.bst" 1602107945 71515 e333383ed72bf24aa6de7e8cabb55f84 ""
-  "MBE.aux" 1769986965 4234 35b3eb283df249ed044718e9e2c13221 "pdflatex"
+  "MBE.aux" 1770073203 4353 d199edfefc41cdbe05be77590a9ddf0c "pdflatex"
   (generated)
   "MBE.bbl"
   "MBE.blg"
   (rewritten before read)
-["pdflatex"] 1769986964 "/Users/aarondayton/repos/HonoursProject/MaxwellBlochEquations/MBE.tex" "MBE.pdf" "MBE" 1769986966 0
-  "/Users/aarondayton/repos/HonoursProject/MaxwellBlochEquations/MBE.tex" 1769986963 26703 e49f271d8d165030d7336730aa1de430 ""
+["pdflatex"] 1770073203 "/Users/aarondayton/repos/HonoursProject/MaxwellBlochEquations/MBE.tex" "MBE.pdf" "MBE" 1770073204 0
+  "/Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk" 1746469172 6964 0039f65cdc126dd4283420b3e8ae7072 ""
+  "/Users/aarondayton/repos/HonoursProject/MaxwellBlochEquations/MBE.tex" 1770073201 44005 7323698446c333a683a5b02a0a199648 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -23,6 +24,9 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm10.tfm" 1227036886 560 39fd35b5e4a6aca3672660cc548ba860 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm5.tfm" 1227036886 556 9c04e2d7f25768427a52589d484d3199 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/bbm/bbm7.tfm" 1227036886 560 ab71d518408103034050efd8ebc8a16a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm" 1136768653 520 4889cce2180234b97cad636b6039c722 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm" 1254269338 12076 b54175e02101bea1addf6b2d0197ed12 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm" 1254269338 12088 d750ac78274fa7c9f73ba09914c04f8a ""
@@ -172,6 +176,7 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/base/ifthen.sty" 1654720880 5319 48d7f3cfa322abd2788e3c09d624b922 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/base/inputenc.sty" 1654720880 5048 84b05796b49b69e2d4257d537721c960 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/bbm.sty" 1191314257 1644 1e0d54b051369c3f457872824cac219f ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd" 1191314257 2132 62f898e14cad3357133b5cbf57b61c0a ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/bera/beramono.sty" 1137109926 767 619e175cf21788218aa95de61f93b82f ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption.sty" 1678653221 55778 14d5c99aa26410e440820bb9ea5b8b3a ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/caption/caption3.sty" 1678653221 71836 1a735454ad10692452eb2f2fc37f3865 ""
@@ -242,11 +247,11 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "Figs/DiamondAtom.png" 1769539897 18845 423fa421c6ea5aafb13c33326111e613 ""
   "Figs/DrivenDiamondAtom.png" 1769542829 15382 a13b39dbdd6e0ba4a9532727f83178bd ""
-  "MBE.aux" 1769986965 4234 35b3eb283df249ed044718e9e2c13221 "pdflatex"
-  "MBE.bbl" 1769986795 3168 37014b0a71ebc7536393f0c47d7611ff "bibtex MBE"
-  "MBE.out" 1769986965 925 21e2db1ed55b31bcd2046ffb04a20e0e "pdflatex"
-  "MBE.tex" 1769986963 26703 e49f271d8d165030d7336730aa1de430 ""
-  "MBE.toc" 1769986965 381 cac5db4e4dc824d79c96bf893e918a0b "pdflatex"
+  "MBE.aux" 1770073203 4353 d199edfefc41cdbe05be77590a9ddf0c "pdflatex"
+  "MBE.bbl" 1770073203 3168 37014b0a71ebc7536393f0c47d7611ff "bibtex MBE"
+  "MBE.out" 1770073203 925 21e2db1ed55b31bcd2046ffb04a20e0e "pdflatex"
+  "MBE.tex" 1770073201 44005 7323698446c333a683a5b02a0a199648 ""
+  "MBE.toc" 1770073203 382 d798f33ab3ceb17d1739d9c333556d93 "pdflatex"
   (generated)
   "MBE.aux"
   "MBE.log"

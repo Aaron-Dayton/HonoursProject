@@ -382,7 +382,6 @@ For the purposes of calculation, we choose to express this as
         0 & 0 & 0 & e^{-i(\omega_{II} + \omega_s) t + i(\vec{k}_{II} + \vec{k}_s) \cdot \vec{r}}
     \end{array}\right)\nonumber \\
     &\;\;\;\;+ e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \biggl[ \omega_1 \hat{\sigma}_{11} + \omega_2 \hat{\sigma}_{22} + \omega_3 \hat{\sigma}_{33} + \omega_4 \hat{\sigma}_{44}\nonumber \\
-    &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \omega_{13} \hat{a}^{\dagger} \hat{a} + \omega_{24} \hat{b}^{\dagger} \hat{b}\nonumber \\
     &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{I}(t) \hat{\sigma}_{12} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{21} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
     &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{s}(t) \hat{\sigma}_{13} \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{31} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
     &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{i}(t) \hat{\sigma}_{24} \hat{b} e^{i \vec{k}_{i} \cdot \vec{r}} + \Omega_{i}^*(t) \hat{\sigma}_{42} \hat{b}^{\dagger} e^{-i \vec{k}_{i} \cdot \vec{r}}\right)\nonumber \\
@@ -412,12 +411,11 @@ Separate the terms as
         0 & 0 & 0 & e^{-i(\omega_{II} + \omega_s) t + i(\vec{k}_{II} + \vec{k}_s) \cdot \vec{r}}
     \end{array}\right)\\\nonumber\\
     \hat{B} &= e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \biggl[ \omega_1 \hat{\sigma}_{11} + \omega_2 \hat{\sigma}_{22} + \omega_3 \hat{\sigma}_{33} + \omega_4 \hat{\sigma}_{44}\nonumber \\
-    &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \omega_{13} \hat{a}^{\dagger} \hat{a} + \omega_{24} \hat{b}^{\dagger} \hat{b}\nonumber \\
     &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{I}(t) \hat{\sigma}_{12} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{21} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
     &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{s}(t) \hat{\sigma}_{13} \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{31} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
     &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{i}(t) \hat{\sigma}_{24} \hat{b} e^{i \vec{k}_{i} \cdot \vec{r}} + \Omega_{i}^*(t) \hat{\sigma}_{42} \hat{b}^{\dagger} e^{-i \vec{k}_{i} \cdot \vec{r}}\right)\nonumber \\
     &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{II}(t) \hat{\sigma}_{34} e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}} + \Omega_{II}^*(t) \hat{\sigma}_{43} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}}\right)\biggr] e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \\\nonumber\\
-    \hat{C}&= \left(e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \left(\omega_{13} \hat{a}^{\dagger}\hat{a} + \omega_{24} \hat{b}^{\dagger}\hat{b}\right)\left(e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right)
+    \hat{C}&= \left(e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \left(\omega_{13} \hat{a}^{\dagger}\hat{a} + \omega_{24} \hat{b}^{\dagger}\hat{b}\right)\left(e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \label{Unsimplified_C_eq}
 \end{align}
 Now we may compute each term individually as follows
 
@@ -429,10 +427,23 @@ Now we may compute each term individually as follows
         0 & 0 & 0 & e^{i(\omega_{II} + \omega_s) t - i(\vec{k}_{II} + \vec{k}_s) \cdot \vec{r}}
     \end{array}\right)\nonumber\\
     &\;\;\;\; \bullet \left(\begin{array}{cccc}
-        \omega_1 & \Omega_{I}(t) e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}} & \Omega_{s}(t) \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}} & 0\\
-        \Omega_{I}^*(t) e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}} & \omega_2 & 0 & \Omega_{i}(t) \hat{b} e^{i \vec{k}_{i} \cdot \vec{r}}\\
-        \Omega_{s}^*(t) \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}} & 0 & \omega_3 & \Omega_{II}(t) e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}}\\
-        0 & \Omega_{i}^*(t) \hat{b}^{\dagger} e^{-i \vec{k}_{i} \cdot \vec{r}} & \Omega_{II}^*(t) e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}} & \omega_4\\
+        \omega_1
+        & \Omega_{I}(t) e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}}
+        & \Omega_{s}(t) \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}}
+        & 0\\
+        \Omega_{I}^*(t) e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}
+        & \omega_2
+        & 0
+        & \Omega_{i}(t) \hat{b} e^{i \vec{k}_{i} \cdot \vec{r}}\\
+        \Omega_{s}^*(t) \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}}
+        & 0
+        & \omega_3
+        & \Omega_{II}(t) e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}}\\
+        0
+        &
+        \Omega_{i}^*(t) \hat{b}^{\dagger} e^{-i \vec{k}_{i} \cdot \vec{r}}
+        & \Omega_{II}^*(t) e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}}
+        & \omega_4\\
     \end{array}\right) \nonumber\\
     &\;\;\;\; \bullet\left(\begin{array}{cccc}
         1 & 0 & 0 & 0\\
@@ -447,18 +458,197 @@ Now we may compute each term individually as follows
         0 & 0 & 0 & e^{i(\omega_{II} + \omega_s) t - i(\vec{k}_{II} + \vec{k}_s) \cdot \vec{r}}
     \end{array}\right)\nonumber\\
     &\;\;\;\; \bullet \left(\begin{array}{cccc}
-        \omega_1 & 0 & 0 & 0\\
-        \Omega_{I}^*(t) e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}} & 0 & 0 & 0\\
-        \Omega_{s}^*(t) \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}} & 0 & 0 & 0\\
-        0 & 0 & 0 & 0
+        \omega_1
+        & \Omega_{I}(t) e^{2\left(-i \omega_I t + i \vec{k}_I \cdot \vec{r}\right)}
+        & \Omega_{s}(t) \hat{a} e^{-i \omega_s t + i 2\vec{k}_s \cdot \vec{r}}
+        & 0\\
+        \Omega_{I}^*(t) e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}
+        & \omega_2 e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}}
+        & 0
+        & \Omega_{i}(t) \hat{b} e^{-i(\omega_{II} + \omega_s) t + i \left(\vec{k}_{II} + \vec{k}_s + \vec{k}_{i}\right) \cdot \vec{r}}\\
+        \Omega_{s}^*(t) \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}}
+        & 0
+        & \omega_3 e^{-i \omega_s t + i \vec{k}_s \cdot \vec{r}}
+        & \Omega_{II}(t) e^{-i \left(2\omega_{II} + \omega_s \right) t + i \left(2\vec{k}_{II} + \vec{k}_s \right)\cdot \vec{r}}\\
+        0
+        & \Omega_{i}^*(t) \hat{b}^{\dagger} e^{-i \omega_I t + i \left(\vec{k}_I - \vec{k}_{i}\right) \cdot \vec{r}}
+        & \Omega_{II}^*(t) e^{i \left( \omega_{II} - \omega_s \right) t + i \left( \vec{k}_s - \vec{k}_{II} \right) \cdot \vec{r}}
+        & \omega_4 e^{-i(\omega_{II} + \omega_s) t + i(\vec{k}_{II} + \vec{k}_s) \cdot \vec{r}}
+    \end{array}\right) \nonumber \\ \nonumber \\
+    =& \left(\begin{array}{cccc}
+        \omega_1
+        & \Omega_{I}(t) e^{2\left(-i \omega_I t + i \vec{k}_I \cdot \vec{r}\right)}
+        & \Omega_{s}(t) \hat{a} e^{-i \omega_s t + i 2\vec{k}_s \cdot \vec{r}}
+        & 0\\
+        \Omega_{I}^*(t) e^{2\left(i \omega_I t - i \vec{k}_I \cdot \vec{r}\right)}
+        & \omega_2
+        & 0
+        & \Omega_{i}(t) \hat{b} e^{i(\omega_I - \omega_{II} - \omega_s) t + i \left(-\vec{k}_I + \vec{k}_{II} + \vec{k}_s + \vec{k}_{i}\right) \cdot \vec{r}}\\
+        \Omega_{s}^*(t) \hat{a}^{\dagger} e^{i \omega_s t - i 2\vec{k}_s \cdot \vec{r}}
+        & 0
+        & \omega_3
+        & \Omega_{II}(t) e^{2 \left(-i \omega_{II}t + i \vec{k}_{II}\cdot \vec{r}\right)}\\
+        0
+        & \Omega_{i}^*(t) \hat{b}^{\dagger} e^{i(-\omega_I + \omega_{II} + \omega_s) t + i \left(\vec{k}_I - \vec{k}_{II} - \vec{k}_s - \vec{k}_{i}\right) \cdot \vec{r}}
+        & \Omega_{II}^*(t) e^{2 \left(i \omega_{II}t - i \vec{k}_{II}\cdot \vec{r}\right)}
+        & \omega_4
     \end{array}\right)
 \end{align}
+where we used the fact that creation and annihilation operators commute with phase terms
 
-\textcolor{blue}{TODO - This leaves off on a hanger. Still need to calculate the same as above for $\hat{U}_{photon}$ then do the L.H.S}.
+\begin{equation}
+    \left[ \hat{a}, e^{i \omega t - i \vec{k} \cdot \vec{r}} \right] = \left[ \hat{a}^{\dagger}, e^{i \omega t - i \vec{k} \cdot \vec{r}} \right] = \left[ \hat{b}, e^{i \omega t - i \vec{k} \cdot \vec{r}} \right] = \left[ \hat{b}^{\dagger}, e^{i \omega t - i \vec{k} \cdot \vec{r}} \right] = 0
+\end{equation}
+The additional commutation relations are useful for computation of $\hat{B}$
+\begin{equation}
+    \left[ \hat{a}, \sigma_{ij} \right] = \left[ \hat{a}^{\dagger}, \sigma_{ij} \right] = \left[ \hat{b}, \sigma_{ij} \right] = \left[ \hat{b}^{\dagger}, \sigma_{ij} \right] = 0
+\end{equation}
+\begin{equation}
+    \left[ \hat{a}^{\dagger} \hat{a}, \hat{b} \right] = \left[ \hat{b}^{\dagger} \hat{b}, \hat{a} \right] = 0
+\end{equation}
 
 
 
+\begin{align}\label{Unsimplified_B_eq}
+    \hat{B} &= e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \biggl[ \omega_1 \hat{\sigma}_{11} + \omega_2 \hat{\sigma}_{22} + \omega_3 \hat{\sigma}_{33} + \omega_4 \hat{\sigma}_{44}\nonumber \\
+    &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{I}(t) \hat{\sigma}_{12} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{21} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{s}(t) \hat{\sigma}_{13} \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{31} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{i}(t) \hat{\sigma}_{24} \hat{b} e^{i \vec{k}_{i} \cdot \vec{r}} + \Omega_{i}^*(t) \hat{\sigma}_{42} \hat{b}^{\dagger} e^{-i \vec{k}_{i} \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{II}(t) \hat{\sigma}_{34} e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}} + \Omega_{II}^*(t) \hat{\sigma}_{43} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}}\right)\biggr] e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \nonumber \\\nonumber\\
+    &= \omega_1 \hat{\sigma}_{11} + \omega_2 \hat{\sigma}_{22} + \omega_3 \hat{\sigma}_{33} + \omega_4 \hat{\sigma}_{44}\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{I}(t) \hat{\sigma}_{12} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{21} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{II}(t) \hat{\sigma}_{34} e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}} + \Omega_{II}^*(t) \hat{\sigma}_{43} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}}\right)\nonumber\\
+    &\;\;\;\;+ e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \biggl[\left(\Omega_{s}(t) \hat{\sigma}_{13} \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{31} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;+ \left(\Omega_{i}(t) \hat{\sigma}_{24} \hat{b} e^{i \vec{k}_{i} \cdot \vec{r}} + \Omega_{i}^*(t) \hat{\sigma}_{42} \hat{b}^{\dagger} e^{-i \vec{k}_{i} \cdot \vec{r}}\right)\biggr] e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\nonumber \\ \nonumber \\
+    &= \omega_1 \hat{\sigma}_{11} + \omega_2 \hat{\sigma}_{22} + \omega_3 \hat{\sigma}_{33} + \omega_4 \hat{\sigma}_{44}\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{I}(t) \hat{\sigma}_{12} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{21} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{II}(t) \hat{\sigma}_{34} e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}} + \Omega_{II}^*(t) \hat{\sigma}_{43} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}}\right)\nonumber\\
+    &\;\;\;\;+ \biggl[ \left(\Omega_{s}(t) \hat{\sigma}_{13} \left(e^{i\omega_s \hat{a}^{\dagger} \hat{a} t} \hat{a} e^{-i\omega_s \hat{a}^{\dagger} \hat{a} t}\right) e^{i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{31} \left(e^{i\omega_s \hat{a}^{\dagger} \hat{a} t} \hat{a}^{\dagger} e^{-i\omega_s \hat{a}^{\dagger} \hat{a} t}\right) e^{-i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;\;\;+ \left(\Omega_{i}(t) \hat{\sigma}_{24} \left(e^{i\omega_i \hat{b}^{\dagger} \hat{b} t} \hat{b} e^{-i\omega_i \hat{b}^{\dagger} \hat{b} t}\right) e^{i \vec{k}_{i} \cdot \vec{r}} + \Omega_{i}^*(t) \hat{\sigma}_{42} \left(e^{i\omega_i \hat{b}^{\dagger} \hat{b} t} \hat{b}^{\dagger} e^{-i\omega_i \hat{b}^{\dagger} \hat{b} t}\right)e^{-i \vec{k}_{i} \cdot \vec{r}}\right)\biggr]
+\end{align}
+We can expand the exponentials as
+\begin{align}
+    e^{i\omega \hat{a}^{\dagger} \hat{a} t} \hat{a} e^{-i\omega \hat{a}^{\dagger} \hat{a} t}
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \hat{a} \left[\sum_{n=0}^{\infty} \frac{\left(-i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \nonumber \\
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \hat{a} \left[ \hat{\mathbbm{1}} + \left(-i\omega \hat{a}^{\dagger} \hat{a} t\right) + \frac{\left(-i\omega \hat{a}^{\dagger} \hat{a} t\right)^2}{2} + \frac{\left(-i\omega \hat{a}^{\dagger} \hat{a} t\right)^3}{3!} + \ldots\right] \nonumber \\
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \hat{a} \left[ \hat{\mathbbm{1}} - i\omega \hat{a}^{\dagger} \hat{a} t - \frac{\omega^2 \hat{a}^{\dagger} \hat{a} \hat{a}^{\dagger} \hat{a} t^2}{2} + i\frac{\omega^3 \hat{a}^{\dagger} \hat{a} \hat{a}^{\dagger} \hat{a} \hat{a}^{\dagger} \hat{a} t^3}{6} + \ldots\right] \nonumber \\
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \left[ \hat{a} - i\omega \hat{a} \hat{a}^{\dagger} \hat{a} t - \frac{\omega^2 \hat{a} \hat{a}^{\dagger} \hat{a} \hat{a}^{\dagger} \hat{a} t^2}{2} + i\frac{\omega^3 \hat{a} \hat{a}^{\dagger} \hat{a} \hat{a}^{\dagger} \hat{a} \hat{a}^{\dagger} \hat{a} t^3}{6} + \ldots\right] \nonumber \\
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \left[ \hat{a} - i\omega \left(\hat{a} \hat{a}^{\dagger}\right) \hat{a} t - \frac{\omega^2 \left(\hat{a} \hat{a}^{\dagger}\right) \left(\hat{a} \hat{a}^{\dagger}\right) \hat{a} t^2}{2} + i\frac{\omega^3 \left(\hat{a} \hat{a}^{\dagger}\right) \left(\hat{a} \hat{a}^{\dagger}\right) \left(\hat{a} \hat{a}^{\dagger}\right) \hat{a} t^3}{6} + \ldots\right] \nonumber \\
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \left[ \hat{\mathbbm{1}} - i\omega \left(\hat{a} \hat{a}^{\dagger}\right) t - \frac{\omega^2 \left(\hat{a} \hat{a}^{\dagger}\right) \left(\hat{a} \hat{a}^{\dagger}\right) t^2}{2} + i\frac{\omega^3 \left(\hat{a} \hat{a}^{\dagger}\right) \left(\hat{a} \hat{a}^{\dagger}\right) \left(\hat{a} \hat{a}^{\dagger}\right) t^3}{6} + \ldots\right] \hat{a} \nonumber \\
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a} \hat{a}^{\dagger} t\right)^n}{n!}\right] \hat{a} \nonumber \\
+\end{align}
+Then we may use the fact that $\hat{a} \hat{a}^{\dagger}$ is Hermitian such that $\hat{a} \hat{a}^{\dagger} = \hat{a}^{\dagger} \hat{a}$, yielding
+\begin{align}
+    e^{i\omega \hat{a}^{\dagger} \hat{a} t} \hat{a} e^{-i\omega \hat{a}^{\dagger} \hat{a} t}
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \hat{a} \nonumber \\
+    &= e^{i\omega \hat{a}^{\dagger} \hat{a} t} e^{-i\omega \hat{a}^{\dagger} \hat{a} t} \hat{a} \nonumber \\
+    &= \hat{a}
+\end{align}
+Similar processes yield
+\begin{align}
+    &e^{i\omega \hat{a}^{\dagger} \hat{a} t} \hat{a}^{\dagger} e^{-i\omega \hat{a}^{\dagger} \hat{a} t} = \hat{a}^{\dagger}\\
+    &e^{i\omega \hat{b}^{\dagger} \hat{b} t} \hat{b} e^{-i\omega \hat{b}^{\dagger} \hat{b} t} = \hat{b}\\
+    &e^{i\omega \hat{b}^{\dagger} \hat{b} t} \hat{b}^{\dagger} e^{-i\omega \hat{b}^{\dagger} \hat{b} t} = \hat{b}^{\dagger}
+\end{align}
+Thus, plugging these identities into eq.~\eqref{Unsimplified_B_eq} we have
+\begin{align}
+    \hat{B} &= \omega_1 \hat{\sigma}_{11} + \omega_2 \hat{\sigma}_{22} + \omega_3 \hat{\sigma}_{33} + \omega_4 \hat{\sigma}_{44}\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{I}(t) \hat{\sigma}_{12} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{21} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{II}(t) \hat{\sigma}_{34} e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}} + \Omega_{II}^*(t) \hat{\sigma}_{43} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}}\right)\nonumber\\
+    &\;\;\;\;+ \left(\Omega_{s}(t) \hat{\sigma}_{13} \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{31} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{i}(t) \hat{\sigma}_{24} \hat{b} e^{i \vec{k}_{i} \cdot \vec{r}} + \Omega_{i}^*(t) \hat{\sigma}_{42} \hat{b}^{\dagger}e^{-i \vec{k}_{i} \cdot \vec{r}}\right)
+\end{align}
+Now consider the next component from eq.~\eqref{Unsimplified_C_eq}
+\begin{align}
+    \hat{C} &= \left(e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \left(\omega_{13} \hat{a}^{\dagger}\hat{a} + \omega_{24} \hat{b}^{\dagger}\hat{b}\right)\left(e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \nonumber \\
+    &= \omega_{13} e^{i\omega_s \hat{a}^{\dagger} \hat{a}t} \hat{a}^{\dagger}\hat{a} e^{-i\omega_s \hat{a}^{\dagger} \hat{a}} + \omega_{24} e^{\omega_i \hat{b}^{\dagger} \hat{b}t} \hat{b}^{\dagger}\hat{b} e^{-\omega_i \hat{b}^{\dagger} \hat{b}t}
+\end{align}
+using the commutation relation for the distinct fields
+\begin{equation}
+    \left[ \hat{a}^{\dagger} \hat{a}, \hat{b}^{\dagger} \hat{b} \right] = 0
+\end{equation}
+Then we may expand the exponentials as
+\begin{align}
+    e^{i\omega \hat{a}^{\dagger} \hat{a} t} \hat{a}^{\dagger} \hat{a} e^{-i\omega \hat{a}^{\dagger} \hat{a} t}
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \hat{a}^{\dagger} \hat{a} \left[\sum_{n=0}^{\infty} \frac{\left(-i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \nonumber \\
+    &= \left[\sum_{n=0}^{\infty} \frac{\left(i \omega t\right)^n \left(\hat{a}^{\dagger} \hat{a}\right)^{n+1}}{n!}\right] \left[\sum_{n=0}^{\infty} \frac{\left(-i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \nonumber \\
+    &= \hat{a}^{\dagger} \hat{a} \left[\sum_{n=0}^{\infty} \frac{\left(i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \left[\sum_{n=0}^{\infty} \frac{\left(-i\omega \hat{a}^{\dagger} \hat{a} t\right)^n}{n!}\right] \nonumber \\
+    &= \hat{a}^{\dagger} \hat{a} e^{i\omega \hat{a}^{\dagger} \hat{a} t}  e^{-i\omega \hat{a}^{\dagger} \hat{a} t} \nonumber \\
+    &= \hat{a}^{\dagger} \hat{a}
+\end{align}
+which follows similarly for
+\begin{equation}
+    e^{i\omega \hat{b}^{\dagger} \hat{b} t} \hat{b}^{\dagger} \hat{b} e^{-i\omega \hat{b}^{\dagger} \hat{b} t} = \hat{b}^{\dagger} \hat{b}
+\end{equation}
+Thus yielding
+\begin{equation}
+    \hat{C} = \omega_{13} \hat{a}^{\dagger}\hat{a} + \omega_{24} \hat{b}^{\dagger}\hat{b}
+\end{equation}
 
+Thus yielding
+\begin{align}
+    \frac{\hat{U}^{\dagger} \hat{H} \hat{U}}{\hbar} &= \left(\begin{array}{cccc}
+        \omega_1
+        & \Omega_{I}(t) e^{2\left(-i \omega_I t + i \vec{k}_I \cdot \vec{r}\right)}
+        & \Omega_{s}(t) \hat{a} e^{-i \omega_s t + i 2\vec{k}_s \cdot \vec{r}}
+        & 0\\
+        \Omega_{I}^*(t) e^{2\left(i \omega_I t - i \vec{k}_I \cdot \vec{r}\right)}
+        & \omega_2
+        & 0
+        & \Omega_{i}(t) \hat{b} e^{i(\omega_I - \omega_{II} - \omega_s) t + i \left(-\vec{k}_I + \vec{k}_{II} + \vec{k}_s + \vec{k}_{i}\right) \cdot \vec{r}}\\
+        \Omega_{s}^*(t) \hat{a}^{\dagger} e^{i \omega_s t - i 2\vec{k}_s \cdot \vec{r}}
+        & 0
+        & \omega_3
+        & \Omega_{II}(t) e^{2 \left(-i \omega_{II}t + i \vec{k}_{II}\cdot \vec{r}\right)}\\
+        0
+        & \Omega_{i}^*(t) \hat{b}^{\dagger} e^{i(-\omega_I + \omega_{II} + \omega_s) t + i \left(\vec{k}_I - \vec{k}_{II} - \vec{k}_s - \vec{k}_{i}\right) \cdot \vec{r}}
+        & \Omega_{II}^*(t) e^{2 \left(i \omega_{II}t - i \vec{k}_{II}\cdot \vec{r}\right)}
+        & \omega_4
+    \end{array}\right) \nonumber \\
+    &\;\;\;\;+ \omega_1 \hat{\sigma}_{11} + \omega_2 \hat{\sigma}_{22} + \omega_3 \hat{\sigma}_{33} + \omega_4 \hat{\sigma}_{44}\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{I}(t) \hat{\sigma}_{12} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{21} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{II}(t) \hat{\sigma}_{34} e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}} + \Omega_{II}^*(t) \hat{\sigma}_{43} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}}\right)\nonumber\\
+    &\;\;\;\;+ \left(\Omega_{s}(t) \hat{\sigma}_{13} \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{31} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
+    &\;\;\;\;+ \left(\Omega_{i}(t) \hat{\sigma}_{24} \hat{b} e^{i \vec{k}_{i} \cdot \vec{r}} + \Omega_{i}^*(t) \hat{\sigma}_{42} \hat{b}^{\dagger}e^{-i \vec{k}_{i} \cdot \vec{r}}\right) \nonumber \\
+    &\;\;\;\;+ \omega_{13} \hat{a}^{\dagger}\hat{a} + \omega_{24} \hat{b}^{\dagger}\hat{b} \nonumber \\
+    &= \left(\begin{array}{cccc}
+        \omega_1
+        & \Omega_{I}(t) e^{2\left(-i \omega_I t + i \vec{k}_I \cdot \vec{r}\right)}
+        & \Omega_{s}(t) \hat{a} e^{-i \omega_s t + i 2\vec{k}_s \cdot \vec{r}}
+        & 0\\
+        \Omega_{I}^*(t) e^{2\left(i \omega_I t - i \vec{k}_I \cdot \vec{r}\right)}
+        & \omega_2
+        & 0
+        & \Omega_{i}(t) \hat{b} e^{i(\omega_I - \omega_{II} - \omega_s) t + i \left(-\vec{k}_I + \vec{k}_{II} + \vec{k}_s + \vec{k}_{i}\right) \cdot \vec{r}}\\
+        \Omega_{s}^*(t) \hat{a}^{\dagger} e^{i \omega_s t - i 2\vec{k}_s \cdot \vec{r}}
+        & 0
+        & \omega_3
+        & \Omega_{II}(t) e^{2 \left(-i \omega_{II}t + i \vec{k}_{II}\cdot \vec{r}\right)}\\
+        0
+        & \Omega_{i}^*(t) \hat{b}^{\dagger} e^{i(-\omega_I + \omega_{II} + \omega_s) t + i \left(\vec{k}_I - \vec{k}_{II} - \vec{k}_s - \vec{k}_{i}\right) \cdot \vec{r}}
+        & \Omega_{II}^*(t) e^{2 \left(i \omega_{II}t - i \vec{k}_{II}\cdot \vec{r}\right)}
+        & \omega_4
+    \end{array}\right) \nonumber \\
+    &+ \left(\begin{array}{cccc}
+        \omega_1
+        & \Omega_{I}(t) e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}}
+        & \Omega_{s}(t) \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}}
+        & 0\\
+        \Omega_{I}^*(t) e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}}
+        & \omega_2
+        & 0
+        & \Omega_{i}(t) \hat{b} e^{i \vec{k}_{i} \cdot \vec{r}}\\
+       0
+        & \Omega_{s}^*(t) \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}}
+        & \omega_3
+        & \Omega_{II}(t) e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}}\\
+        0
+        & \Omega_{i}^*(t) \hat{b}^{\dagger}e^{-i \vec{k}_{i} \cdot \vec{r}}
+        & \Omega_{II}^*(t) e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}}
+        & \omega_4
+    \end{array}\right) \nonumber\\
+    &\;\;\;\;+ \omega_{13} \hat{a}^{\dagger}\hat{a} + \omega_{24} \hat{b}^{\dagger}\hat{b}
+\end{align}
 
 \bibliography{refs}
 
