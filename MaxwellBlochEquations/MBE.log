@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  3 FEB 2026 18:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  3 FEB 2026 19:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -833,7 +833,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 177.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Figs/DiamondAtom.png, id=34, 366.36874pt x 281.05pt>
+<Figs/DiamondAtom.png, id=44, 366.36874pt x 281.05pt>
 File: Figs/DiamondAtom.png Graphic file (type png)
 <use Figs/DiamondAtom.png>
 Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 183.
@@ -842,55 +842,49 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 184.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 184.
-<Figs/DrivenDiamondAtom.png, id=36, 451.6875pt x 294.09875pt>
+<Figs/DrivenDiamondAtom.png, id=46, 451.6875pt x 294.09875pt>
 File: Figs/DrivenDiamondAtom.png Graphic file (type png)
 <use Figs/DrivenDiamondAtom.png>
 Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 190.
 (pdftex.def)             Requested size: 229.49844pt x 149.43192pt.
  [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./Figs/DiamondAtom.png> <./Figs/DrivenDiamondAtom.png>]
 
-Package natbib Warning: Citation `TODO' on page 3 undefined on input line 254.
+Package natbib Warning: Citation `TODO' on page 3 undefined on input line 256.
 
-[3] [4] [5
-pdfTeX warning (ext4): destination with the same identifier (name{equation.1.25}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.382 \end{align}
-                 ] [6] [7] [8] [9] [10] [11]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 651.
+[3] [4] [5] [6]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 433.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-)
-Overfull \hbox (55.90878pt too wide) detected at line 759
-[]
- []
+) [7]
 
-[12] [13] [14]
-Overfull \hbox (91.32527pt too wide) detected at line 914
-[]
- []
+Package natbib Warning: Citation `TODO' on page 8 undefined on input line 501.
 
-[15] (./MBE.bbl)
+[8] [9] [10
+pdfTeX warning (ext4): destination with the same identifier (name{equation.1.60}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.645 \end{align}
+                 ] [11] [12] [13] [14] [15] [16] (./MBE.bbl [17])
 
 Package natbib Warning: There were undefined citations.
 
-[16] (./MBE.aux)
+[18] (./MBE.aux)
 Package rerunfilecheck Info: File `MBE.out' has not changed.
-(rerunfilecheck)             Checksum: 21E2DB1ED55B31BCD2046FFB04A20E0E;925.
+(rerunfilecheck)             Checksum: 421492881FBEC7877ACFF495BD03517B;1529.
  ) 
 Here is how much of TeX's memory you used:
- 29528 strings out of 476025
- 568382 string characters out of 5790017
- 1916388 words of memory out of 5000000
- 49322 multiletter control sequences out of 15000+600000
+ 29554 strings out of 476025
+ 568714 string characters out of 5790017
+ 1906388 words of memory out of 5000000
+ 49325 multiletter control sequences out of 15000+600000
  566599 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,17n,90p,996b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,16n,90p,996b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MBE.pdf (16 pages, 309411 bytes).
+Output written on MBE.pdf (18 pages, 315636 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 281 compressed objects within 3 object streams
- 116 named destinations out of 1000 (max. 500000)
- 55 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 388 PDF objects out of 1000 (max. 8388607)
+ 318 compressed objects within 4 object streams
+ 139 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
