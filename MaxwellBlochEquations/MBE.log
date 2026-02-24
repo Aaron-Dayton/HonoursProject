@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  3 FEB 2026 19:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  23 FEB 2026 11:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -833,7 +833,7 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 177.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Figs/DiamondAtom.png, id=44, 366.36874pt x 281.05pt>
+<Figs/DiamondAtom.png, id=54, 366.36874pt x 281.05pt>
 File: Figs/DiamondAtom.png Graphic file (type png)
 <use Figs/DiamondAtom.png>
 Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 183.
@@ -842,7 +842,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 184.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 184.
-<Figs/DrivenDiamondAtom.png, id=46, 451.6875pt x 294.09875pt>
+<Figs/DrivenDiamondAtom.png, id=56, 451.6875pt x 294.09875pt>
 File: Figs/DrivenDiamondAtom.png Graphic file (type png)
 <use Figs/DrivenDiamondAtom.png>
 Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 190.
@@ -864,27 +864,36 @@ pdfTeX warning (ext4): destination with the same identifier (name{equation.1.60}
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.645 \end{align}
-                 ] [11] [12] [13] [14] [15] [16] (./MBE.bbl [17])
+                 ] [11] [12] [13] [14] [15] [16] [17]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 939.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Overfull \hbox (64.6713pt too wide) detected at line 968
+[]
+ []
+
+(./MBE.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-[18] (./MBE.aux)
+[18{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./MBE.aux)
 Package rerunfilecheck Info: File `MBE.out' has not changed.
-(rerunfilecheck)             Checksum: 421492881FBEC7877ACFF495BD03517B;1529.
+(rerunfilecheck)             Checksum: 3D3C97721B5784BBCC650F13DD472B16;1796.
  ) 
 Here is how much of TeX's memory you used:
- 29554 strings out of 476025
- 568714 string characters out of 5790017
+ 29599 strings out of 476025
+ 569725 string characters out of 5790017
  1906388 words of memory out of 5000000
- 49325 multiletter control sequences out of 15000+600000
- 566599 words of font info for 74 fonts, out of 8000000 for 9000
+ 49357 multiletter control sequences out of 15000+600000
+ 566964 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,16n,90p,996b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on MBE.pdf (18 pages, 315636 bytes).
+ 84i,16n,90p,996b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm7.600pk> </Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on MBE.pdf (18 pages, 349843 bytes).
 PDF statistics:
- 388 PDF objects out of 1000 (max. 8388607)
- 318 compressed objects within 4 object streams
- 139 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 425 PDF objects out of 1000 (max. 8388607)
+ 349 compressed objects within 4 object streams
+ 147 named destinations out of 1000 (max. 500000)
+ 87 words of extra memory for PDF output out of 10000 (max. 10000000)
 
