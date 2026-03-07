@@ -17,9 +17,8 @@
 
 \usepackage[normalem]{ulem}
 
-\graphicspath{{FIGs/}}
 
- \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
 \usepackage{beramono}
@@ -984,15 +983,15 @@ we have
 \end{align*}
 
 \begin{equation}
-    \frac{d \hat{\rho}}{dt} = - \frac{i}{\hbar} \left[\tilde{H}, \hat{\rho} \right] + \sum_{i} \gamma_i \left( \hat{L}_i \hat{\rho} \hat{L}_i^{\dagger} - \frac{1}{2} \left\{ \hat{L}_i^{\dagger} \hat{L}_i, \hat{\rho} \right\} \right)
+    \frac{d \hat{\rho}}{dt} = - \frac{i}{\hbar} \left[\tilde{H}(\Omega_s, \Omega_t), \hat{\rho} \right] + \sum_{i} \gamma_i \left( \hat{L}_i \hat{\rho} \hat{L}_i^{\dagger} - \frac{1}{2} \left\{ \hat{L}_i^{\dagger} \hat{L}_i, \hat{\rho} \right\} \right)
 \end{equation}
 
 \begin{equation}
-    \partial_z E_s = i \frac{\omega_s |\hat{d}_{13}|^2}{2 \epsilon_0 \hbar} \hat{\rho}_{13}
+    \frac{\partial \Omega_s}{\partial z} = i \frac{\omega_s |d_{13}|^2}{2 \epsilon_0 \hbar} \rho_{13}
 \end{equation}
 
 \begin{equation}
-    \partial_z E_t = i \frac{\omega_t |\hat{d}_{24}|^2}{2 \epsilon_0 \hbar} \hat{\rho}_{24}
+    \frac{\partial \Omega_t}{\partial z} = i \frac{\omega_t |d_{24}|^2}{2 \epsilon_0 \hbar} \rho_{24}
 \end{equation}
 
 

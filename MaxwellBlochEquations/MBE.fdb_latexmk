@@ -1,17 +1,17 @@
 # Fdb version 4
-["bibtex MBE"] 1771811752 "MBE.aux" "MBE.bbl" "MBE" 1771876055 0
-  "./MBENotes.bib" 1771876055 104 3df53be75d46dc364236f6bd8a7721a4 ""
+["bibtex MBE"] 1771968160 "MBE.aux" "MBE.bbl" "MBE" 1771970164 0
+  "./MBENotes.bib" 1771970163 104 3df53be75d46dc364236f6bd8a7721a4 ""
   "./refs.bib" 1769543519 456 e9e96a8a608c8d684a8e10421f66aab0 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/revtex4-1/apsrev4-1.bst" 1602107945 71515 e333383ed72bf24aa6de7e8cabb55f84 ""
-  "MBE.aux" 1771876055 4948 6d670f3923bafcf979416810a3d7dbe2 "pdflatex"
+  "MBE.aux" 1771970163 4948 6d670f3923bafcf979416810a3d7dbe2 "pdflatex"
   (generated)
   "MBE.bbl"
   "MBE.blg"
   (rewritten before read)
-["pdflatex"] 1771876054 "/Users/aarondayton/repos/HonoursProject/MaxwellBlochEquations/MBE.tex" "MBE.pdf" "MBE" 1771876055 0
+["pdflatex"] 1771970162 "/Users/aarondayton/repos/HonoursProject/MaxwellBlochEquations/MBE.tex" "MBE.pdf" "MBE" 1771970164 0
   "/Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk" 1746469172 6964 0039f65cdc126dd4283420b3e8ae7072 ""
   "/Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm7.600pk" 1771809106 4840 38ea8aedf850d45528cefbe999ae2d61 ""
-  "/Users/aarondayton/repos/HonoursProject/MaxwellBlochEquations/MBE.tex" 1771876052 72409 e76378df030e1e188d012a2f3036bfc5 ""
+  "/Users/aarondayton/repos/HonoursProject/MaxwellBlochEquations/MBE.tex" 1771970162 72425 86ebd3c612034b633c90ce0ca10b5935 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -255,11 +255,11 @@
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "Figs/DiamondAtom.png" 1769539897 18845 423fa421c6ea5aafb13c33326111e613 ""
   "Figs/DrivenDiamondAtom.png" 1769542829 15382 a13b39dbdd6e0ba4a9532727f83178bd ""
-  "MBE.aux" 1771876055 4948 6d670f3923bafcf979416810a3d7dbe2 "pdflatex"
-  "MBE.bbl" 1771811752 3168 37014b0a71ebc7536393f0c47d7611ff "bibtex MBE"
-  "MBE.out" 1771876055 1796 3d3c97721b5784bbcc650f13dd472b16 "pdflatex"
-  "MBE.tex" 1771876052 72409 e76378df030e1e188d012a2f3036bfc5 ""
-  "MBE.toc" 1771876055 746 5c5250f78001830e75f74a0159e47342 "pdflatex"
+  "MBE.aux" 1771970163 4948 6d670f3923bafcf979416810a3d7dbe2 "pdflatex"
+  "MBE.bbl" 1771968160 3168 37014b0a71ebc7536393f0c47d7611ff "bibtex MBE"
+  "MBE.out" 1771970163 1796 3d3c97721b5784bbcc650f13dd472b16 "pdflatex"
+  "MBE.tex" 1771970162 72425 86ebd3c612034b633c90ce0ca10b5935 ""
+  "MBE.toc" 1771970163 746 5c5250f78001830e75f74a0159e47342 "pdflatex"
   (generated)
   "MBE.aux"
   "MBE.log"

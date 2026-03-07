@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  23 FEB 2026 11:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  24 FEB 2026 13:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -728,15 +728,15 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip66
 )
-Class revtex4-1 Info: Unrecognized LaTeX tabular. Please update this document class! (Proceeding with fingers crossed.) on input line 166.
+Class revtex4-1 Info: Unrecognized LaTeX tabular. Please update this document class! (Proceeding with fingers crossed.) on input line 165.
 
 
 Class revtex4-1 Warning: Repair the float package.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 166.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 166.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 166.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 166.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 165.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 165.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 165.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 165.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -746,24 +746,24 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 ) (./MBE.aux)
 \openout1 = `MBE.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 166.
-LaTeX Font Info:    ... okay on input line 166.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count344
@@ -785,14 +785,14 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 
-Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices automatically placed. You can disable this warning by setting /tikzfeynman/warn luatex=false on input line 166.
+Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices automatically placed. You can disable this warning by setting /tikzfeynman/warn luatex=false on input line 165.
 
-Package hyperref Info: Link coloring OFF on input line 166.
+Package hyperref Info: Link coloring OFF on input line 165.
 (./MBE.out) (./MBE.out)
 \@outlinefile=\write5
 \openout5 = `MBE.out'.
 
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 166.
+Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 165.
 \openout3 = `MBENotes.bib'.
 
 
@@ -803,73 +803,73 @@ Class revtex4-1 Warning: Assuming \noaffiliation for authors.
 \tf@toc=\write6
 \openout6 = `MBE.toc'.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 177.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 176.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 177.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 176.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 177.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 176.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 177.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 176.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 177.
+(Font)              <10> on input line 176.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 177.
+(Font)              <7> on input line 176.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 177.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 177.
+(Font)              <5> on input line 176.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 176.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 177.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 176.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <Figs/DiamondAtom.png, id=54, 366.36874pt x 281.05pt>
 File: Figs/DiamondAtom.png Graphic file (type png)
 <use Figs/DiamondAtom.png>
-Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 183.
+Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 182.
 (pdftex.def)             Requested size: 229.49844pt x 176.05463pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 184.
+(Font)              <9> on input line 183.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 184.
+(Font)              <6> on input line 183.
 <Figs/DrivenDiamondAtom.png, id=56, 451.6875pt x 294.09875pt>
 File: Figs/DrivenDiamondAtom.png Graphic file (type png)
 <use Figs/DrivenDiamondAtom.png>
-Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 190.
+Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 189.
 (pdftex.def)             Requested size: 229.49844pt x 149.43192pt.
  [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./Figs/DiamondAtom.png> <./Figs/DrivenDiamondAtom.png>]
 
-Package natbib Warning: Citation `TODO' on page 3 undefined on input line 256.
+Package natbib Warning: Citation `TODO' on page 3 undefined on input line 255.
 
 [3] [4] [5] [6]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 433.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 432.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [7]
 
-Package natbib Warning: Citation `TODO' on page 8 undefined on input line 501.
+Package natbib Warning: Citation `TODO' on page 8 undefined on input line 500.
 
 [8] [9] [10
 pdfTeX warning (ext4): destination with the same identifier (name{equation.1.60}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.645 \end{align}
+l.644 \end{align}
                  ] [11] [12] [13] [14] [15] [16] [17]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 939.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 938.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-Overfull \hbox (64.6713pt too wide) detected at line 968
+Overfull \hbox (64.6713pt too wide) detected at line 967
 []
  []
 
@@ -890,7 +890,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  84i,16n,90p,996b,592s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm7.600pk> </Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on MBE.pdf (18 pages, 349843 bytes).
+Output written on MBE.pdf (18 pages, 349891 bytes).
 PDF statistics:
  425 PDF objects out of 1000 (max. 8388607)
  349 compressed objects within 4 object streams
