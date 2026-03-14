@@ -3,8 +3,10 @@
 \contentsline {section}{\numberline {}Contents}{2}{section*.2}%
 \tocdepth@restore 
 \contentsline {section}{\numberline {I}Hamiltonian Formulation}{2}{section*.3}%
-\contentsline {subsection}{\numberline {A}Fully Semi-Classical Approach (Kupchak's Procedure)}{3}{section*.5}%
-\contentsline {subsection}{\numberline {B}Quantized Field Approach (Du's Procedure)}{8}{section*.6}%
-\contentsline {subsection}{\numberline {C}NEXT STEPS}{18}{section*.7}%
-\contentsline {subsection}{\numberline {D}TEMPORARY FOR POSTER}{18}{section*.8}%
-\contentsline {section}{\numberline {}References}{18}{section*.9}%
+\contentsline {subsection}{\numberline {A}Quantized Field Approach (Du's Procedure)}{3}{section*.5}%
+\contentsline {subsubsection}{\numberline {1}Classical Field Simplification Rotating Wave Approximation}{3}{section*.6}%
+\contentsline {subsubsection}{\numberline {2}Quantum Field Simplification Rotating Wave Approximation}{4}{section*.7}%
+\contentsline {subsubsection}{\numberline {3}Hamiltonian Expression}{5}{section*.8}%
+\contentsline {subsection}{\numberline {B}NEXT STEPS}{14}{section*.9}%
+\contentsline {subsection}{\numberline {C}TEMPORARY FOR POSTER}{14}{section*.10}%
+\contentsline {section}{\numberline {}References}{15}{section*.11}%
