@@ -1144,18 +1144,30 @@ we have
             0 & \Omega_{i}^*(t) \hat{b} & \Omega_{II}^*(t) & \Delta_{II} + \Delta_s\\
         \end{array}
     \right) +
-    \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
-    \hbar \Delta_b  \hat{b}^{\dagger}\hat{b}
+    \hbar \Delta_s \hat{a}^{\dagger}\hat{a} +
+    \hbar \Delta_i  \hat{b}^{\dagger}\hat{b}
 \end{align}
 
 
+\section{Maxwell-Bloch Equation Derivation}
 
-\subsection{NEXT STEPS}
+\textcolor{red}{TODO - Ask MacRae}
 
-\textcolor{red}{TODO}
-\begin{itemize}
-    \item Solve quantized Maxwell-Bloch equations with very few photons
-\end{itemize}
+\textcolor{blue}{I am confused here. Operator time evolution in the Heisenberg picture is
+\begin{equation}
+    \frac{d}{dt}A_{H}(t) = \frac{i}{\hbar} \left[ H_H(t), A_H(t) \right] + {\left( \frac{\partial A_S}{\partial t} \right)}_H
+\end{equation}
+We would want to do this with the weak quantized electric fields $\hat{\vec{E}}_s(t) = \vec{\varepsilon}_s(t) \hat{a} e^{i \vec{k}_s \cdot \vec{r}} + h.c.$, so we would have
+\begin{equation}
+    {\left( \frac{\partial \hat{\vec{E}}_s}{\partial t} \right)}_H = {\left(\hat{a} e^{i \vec{k}_s \cdot \vec{r}}  \frac{\partial \vec{\varepsilon}_s(t)}{\partial t} + h.c.\right)}_H
+\end{equation}
+So we end up with
+\begin{equation}
+    \frac{d}{dt}\hat{\vec{E}}_{H,s}(t) = \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\vec{E}}_{H,s}(t) \right] + {\left(\hat{a} e^{i \vec{k}_s \cdot \vec{r}}  \frac{\partial \vec{\varepsilon}_s(t)}{\partial t}  + h.c.\right)}_H
+\end{equation}
+This then couples $(d/d_t) \hat{\vec{E}}_{H,s}(t)$ and $\partial_t \vec{\varepsilon}_s(t)$. This differs from Kupchak's approach where $\partial_t \vec{\varepsilon}_s(t)$ is not involved as he takes ${\left( \partial_t \hat{\vec{E}}_s \right)}_H=0$. Am I incorrect in my equation for $\hat{\vec{E}}_s(t) = \vec{\varepsilon}_s(t) \hat{a} e^{i \vec{k}_s \cdot \vec{r}} + h.c.$? Should it not be time dependent yet? This would solve this discrepancy, and then we should be able to use Kupchak's approach.
+}
+
 
 
 \subsection{TEMPORARY FOR POSTER}
