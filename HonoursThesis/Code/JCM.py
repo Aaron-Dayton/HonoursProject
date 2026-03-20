@@ -11,7 +11,7 @@ gamma = 0.005
 xi = 0.0025
 eta = 0.05
 h = 1.0
-N = 7 # Truncate the Fock basis to N=10 photons
+N = 10 # Truncate the Fock basis to N photons
 times = np.linspace(0, 2500, 10000)
 
 # Set up operators in the relevant basis

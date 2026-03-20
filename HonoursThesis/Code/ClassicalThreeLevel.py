@@ -67,8 +67,8 @@ def plot_susceptibility_expectation_over_delta(Δ_end, Δ_c=0, n=500):
     # d_13 = - ℏ * Ω_s * (ket1 * ket3.dag())
     # d_13 = - ℏ * Ω_s * (ket3 * ket1.dag() + ket3*ket1.dag())
 
-    dissipation_op_13 = Γ13*(ket1 * ket3.dag())
-    dissipation_op_23 = Γ23*(ket2 * ket3.dag())
+    dissipation_op_13 = np.sqrt(Γ13)*(ket1 * ket3.dag())
+    dissipation_op_23 = np.sqrt(Γ23)*(ket2 * ket3.dag())
     c_ops = [dissipation_op_13, dissipation_op_23]
 
     # Other option
@@ -116,7 +116,7 @@ def plot_susceptibility_expectation_over_delta(Δ_end, Δ_c=0, n=500):
     fig, ax = plt.subplots()
     ax.plot(Δ_vals, real_results)
     ax.plot(Δ_vals, imag_results)
-    ax.set_xlabel('Δ')
+    ax.set_xlabel('Δ_s')
     ax.set_ylabel(r'$\langle d_{13} \rangle$')
     ax.legend(('Real', 'Imag'))
     plt.title('EIT phenomenon for a 3-level atom in a classical EM field')
