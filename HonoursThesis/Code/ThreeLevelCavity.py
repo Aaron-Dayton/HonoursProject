@@ -19,7 +19,7 @@ Delta = 0.01
 epsilon = 1.0 * kappa
 Gamma_31 = 0.1 * kappa
 Gamma_32 = 0.1 * kappa
-N = 7 # Truncate the Fock basis to N=10 photons
+N = 7 # Truncate the Fock basis to N photons
 
 # Atomic basis kets
 atomicKet1 = basis(3, 0) # |1>
@@ -163,5 +163,7 @@ def steady_evo(num_vals):
     # THIS IS WHAT WE WANT!!!
     # This matches Fig 1 in paper
     plt.semilogy(Delta_vals, photon_numbers)
-    plt.legend(('Number operator'))
+    plt.xlabel(r'$\Delta$')
+    plt.ylabel('Expected Photon Number')
+    plt.title("Expected Photon Count of Resonant Field in a CEIT System over Detunings")
     plt.show()
