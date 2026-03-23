@@ -61,6 +61,9 @@
 
 \newcommand{\patbox}[1]{\vspace{2mm}\noindent\fbox{\parbox{0.47\textwidth}{\hspace{1mm}\parbox{\columnwidth}{\hspace{1mm}\\#1\vspace{1.5mm}}}}\\}
 
+
+\newcommand{\todo}[1]{\textcolor{red}{TODO - #1}}
+
 \lstdefinelanguage{julia}%
   {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
       end,export,false,for,function,immutable,import,importall,if,in,%
@@ -198,17 +201,21 @@ After this, the problem becomes advancing techniques for minimizing losses in qu
 
 Progress has been made on forming quantum-optical networks, such as in America where an advanced quantum network architecture has been developed on Long Island~\cite{Du}, or in China where a 4600 kilometer land-based quantum network~\cite{Chen}.
 
-This thesis covers a theoretically viable method for frequency conversion of quantum information encoded in an electromagnetic field (continuous variable quantum information). The technique involves interfering electromagnetic fields within a sample of Rubidium-87 gas to induce transitions such that one additional field is produced. Rubidium-87 is a widely studied candidate for applications in short-timescale quantum memory~\cite{Hosseini}\cite{Strassel}, quantum repeaters~\cite{Langenfeld}, and quantum computation~\cite{Saffman}. We will focus on a 4-level transition substructure with one transition frequency compatible with modern quantum methods, one transition frequency compatible with telecom frequencies in the communication band (C-band), and two frequencies which will be leveraged for interference effects in a process known as Four Wave Mixing.
+This thesis covers a theoretically viable method for frequency conversion of quantum information encoded in an electromagnetic field (continuous variable quantum information). The technique involves interfering three electromagnetic fields within a sample of Rubidium-87 gas to induce transitions such that one additional field is produced. Rubidium-87 is a widely studied candidate for applications in short-timescale quantum memory~\cite{Hosseini}\cite{Strassel}, quantum repeaters~\cite{Langenfeld}, and quantum computation~\cite{Saffman}. We will focus on a 4-level transition substructure with one transition frequency compatible with modern quantum methods, one transition frequency compatible with telecom frequencies in the conventional band (C-band), and two frequencies which will be leveraged for interference effects in a process known as four wave mixing (FWM)~\cite{Diamond}.
+
 
 \textcolor{red}{TODO - Write what the outline of the thesis will be here!!!}
 
 
 \section{Background Information}
 
+This project involves understanding how hot atomic vapours interact with external electromagnetic fields to induce desirable physical phenomena. To convert frequencies, FWM can be applied with the added bonus that it can generate squeezed light~\cite{Slusher}, which is useful in continuous variable quantum information applications since optical squeezing causes uncertainty in one quadrature (amplitude or phase) to be reduced while being increased in the other. FWM may be enhanced by electromagnetically induced transparency (EIT)~\cite{Xiao}, a process in which an atomic medium becomes effectively transparent to a frequency of light near-resonance with one of its transition frequencies under certain conditions. We will tackle these topics in reverse order to build up to the idea of optical squeezing.
+
+\todo{Write a bit more here on the other topics like the master equation and solution methods}
 
 \subsection{Electromagnetically Induced Transparency}
 
-In order to gain an intuition on electromagnetically induced transparency (EIT), we will start with a classical toy model of the atom. As is a common theme in physics, a hydrogenic atom in a time dependent electromagnetic field can be approximately modelled as a driven harmonic oscillator. So rather than dealing with quantized photons, we will consider a classical oscillating electromagnetic fields with frequencies nearly resonant with those of the atomic transitions.
+In order to gain an intuition on EIT, we will start with a classical toy model of the atom. As is a common theme in physics, a hydrogenic atom in a time dependent electromagnetic field can be approximately modelled as a driven harmonic oscillator. So rather than dealing with quantized photons, we will consider a classical oscillating electromagnetic fields with frequencies nearly resonant with those of the atomic transitions.
 
 To do this, a few assumptions will be made~\cite{Tong}: first, the wavelengths of the light sources interacting with the atom have wavelengths much greater than the Bohr radius of the atom ($\lambda \gg a_0$); second, the detunings of incoming beams are small in proportion to the transition frequencies considered. These two assumption happen to be consistent with one another.
 
@@ -336,7 +343,7 @@ The interaction between an atom and the electromagnetic field is not a linear in
 where $\hat{\mathbf{d}} = e\hat{\mathbf{r}}$ is the dipole transition operator and $\hat{\mathbf{r}}$ is the position operator~\cite{TODO atomic book}.
 
 If $\mathbf{\mu}_{ji} = 0$, then the transition between states $\ket{i}$ and $\ket{j}$ is a `forbidden' dipole transition, otherwise the transition is an allowed dipole transition. This criterion enforces the dipole selection rules that~\cite{Atomic}
-\begin{align}
+\begin{align}\label{TransitionRules}
     &\Delta l = \pm 1\\
     &\Delta m_l = 0, \pm 1\\
     &\Delta F = 0, \pm 1\\
@@ -346,13 +353,15 @@ If $\mathbf{\mu}_{ji} = 0$, then the transition between states $\ket{i}$ and $\k
 It is important to note that these transition rules are not always perfectly enforced. Since perturbation theory was applied to obtain them, there exist transitions which disobey these rules, however, such transitions occur with significantly decreased probability.
 
 
-\subsubsection{Three-level atoms}
+\subsubsection{Three-level atoms}\label{ThreeLevelSection}
 
 In order to meaningfully utilize the power of quantum information via quantum states, it is beneficial to work with simplified, yet somewhat abstract, systems. It would be ideal if we could realize any imaginary quantum systems that exactly match our mathematical descriptions. Reality is not so convenient, however. We must work within the constraints enforced by the available quantum systems in terms of allowed states and transitions between those states.
 
 With enough ingenuity, we can use existing systems to approximate useful mathematical abstractions. Enter, the three-level (hydrogenic) atom. All hydrogenic atoms, in theory, have infinitely many states up to ionization ($n \in \mathbb{N}$), and transition probabilities between many of these states can be non-zero. Though by finding a subset of states with desired characteristics and leveraging transition rules where any undesired state transitions are suppressed, a physical atom can be used to approximate a model system. This becomes especially useful in the limit of a large number of atoms where, statistically, the desired transitions are the most probable, and any undesired transitions are vastly outnumbered, such that the system tends towards the desired behaviour in the limit of many particles.
 
-A three-level atom has three distinct states with some set of allowed transitions between those states. There exist $\Lambda$-systems (see Fig.~\ref{Lambda-system}), V-systems (see Fig.~\ref{V-system}), and $\Xi$-systems (see Fig.~\ref{Ladder-system}). An common example of a $\Lambda$-system exists in $Rb^{87}$ with the collection of hyperfine split states $5^{2}S_{1/2}$ for $F=1$ and $F=2$ with energy differece given according to~\eqref{hyperfine} so that they take on the roles of states $\ket{1}$ and $\ket{2}$, respectively, and state $5^{2}P_{1/2}$ for $F=1$ acts as the excited state $\ket{3}$~\cite{Xiao}. Note that state $5^{2}S_{1/2}$ $F=1$ is the absolute ground state of the system.
+A three-level atom has three distinct states with some set of allowed transitions between those states. There exist $\Lambda$-systems (see Fig.~\ref{Lambda-system}), V-systems (see Fig.~\ref{V-system}), and $\Xi$-systems (see Fig.~\ref{Ladder-system}). An common example of a $\Lambda$-system exists in $^{87}Rb$ with the collection of hyperfine split states $5^{2}S_{1/2}$ for $F=1$ and $F=2$ with energy differece given according to~\eqref{hyperfine} so that they take on the roles of states $\ket{1}$ and $\ket{2}$, respectively, and state $5^{2}P_{1/2}$ for $F=1$ acts as the excited state $\ket{3}$~\cite{Xiao}.
+
+Some points of note in this system are as follows. State $5^{2}S_{1/2}$ $F=1$ is the absolute ground state of the system. The nuclear spin of $^{87}Rb$ is $3/2$~\cite{Millman}, so states $\ket{1}$ and $\ket{2}$ differ by the direction of electron spin $s = \pm 1/2$, so the energy difference between these states is the result of hyperfine splitting. State $\ket{3}$ has the same principle quantum number of $n=5$ as states $\ket{1}$ and $\ket{2}$ but a different angular momentum quantum number, indicating that this state is due to fine structure (with a hyperfine energy correction). Since states $\ket{1}$ and $\ket{2}$ have the same $l$ value, the transition between these levels is forbidden as per eqs.~\eqref{TransitionRules}.
 
 \begin{figure}
     \centering
@@ -396,17 +405,36 @@ The main idea is that the system then becomes effectively `transparent' to the p
     \label{ThreeLevelAtom}
 \end{figure}
 
-It is also useful to note that EIT can also be achieved in a $\Xi$-system of rubidium between the $5^2S_{1/2}$ ($\ket{1}$), $5^2P_{3/2}$ ($\ket{2}$), and $5^2D_{5/2}$ ($\ket{3}$) states by resonantly driving the $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ transitions such that transition pathways interfere to induce transparency~\cite{Jones}.
+EIT can also be achieved in a $\Xi$-system of rubidium between the $\ket{1}=5^2S_{1/2}$, $\ket{2}=5^2P_{3/2}$, and $\ket{3}=5^2D_{5/2}$ states by resonantly driving the $\ket{1} \leftrightarrow \ket{2}$ and $\ket{2} \leftrightarrow \ket{3}$ transitions such that transition pathways interfere to induce transparency~\cite{Jones}. This is sometimes called `cascade' EIT.
+
+EIT in V-systems is less widely applied and studied in comparison to $\Lambda$ and cascade EIT since there is no stable dark state in V-systems~\cite{Higgins}. Since two excited states may decay to ground, decoherence effects decrease the efficiency of producing EIT.
 
 
 \subsubsection{Diamond configuration four-level atoms}
 
-\textcolor{red}{TODO - Write this section!!}
+In order to convert electromagnetically encoded quantum information to telecom wavelengths we require a structure with a transition wavelength in the telecom band. Once candidate of note is the diamond transition structure of $^{87}Rb$ depicted in Fig.~\ref{FirstDiamondAtom}. This transition structure can be through of like 2 parallel $\Xi$-systems which meet at the $\ket{1}$ and $\ket{4}$ states, or as a V-system connected with a $\Lambda$-system sharing states $\ket{2}$ and $\ket{3}$.
 
-\subsubsection{Real-world limitations on EIT}
+It has been shown that high efficiency frequency conversion to the original band (O-band) using EIT is possible with an alternative diamond configuration transition structure~\cite{Diamond}. Chen et al.~report that cascade-type and V-type EIT is present in their diamond configuration system, resulting in higher efficiency conversion.
 
-Consider a system composed of Avogadro's number of three-level or four-level atoms. In the ideal scenario, all atoms would have the exact same transition frequencies such that when the probe and control beams are fired through the cloud, the frequency of transparency is exact. In reality, this is not so. The system needs to be in a gaseous excited state where the electromagnetic fields of nearby atoms interact, inducing Stark and Zeeman shifts in their spectra, and Doppler shifts in the observed frequency of light would occur as some atoms would be moving away from the laser while some would be moving towards it. In addition, the laser used will have some bandwidth of emission frequencies. These effects combine to cause spectral broadening such that the transparency window allowed by EIT is suppressed.
+We are instead concerned with conversion to the C-band of range 1530 nm to 1565 nm~\cite{Cband}. Henc, we consider the alternative diamond configuration transition structure depicted in Fig.~\ref{FirstDiamondAtom}, of which, the $\ket{2} \leftrightarrow \ket{4}$ transition has a wavelength within the C-band. Applying slight detunings to the driving lasers can allow the conversion wavelength to be slightly altered such that minimal losses may be achieved within the C-band window.
 
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\columnwidth]{Figs/DiamondAtom.png}
+    \caption{A diamond configuration atomic system with  non-degenerate energy levels $\ket{1}, \ket{2}, \ket{3}, \ket{4}$. The system has allowed transitions $\ket{1} \leftrightarrow \ket{2}$, $\ket{1} \leftrightarrow \ket{3}$, $\ket{2} \leftrightarrow \ket{4}$, and $\ket{3} \leftrightarrow \ket{4}$ with respective energies $\hbar \omega_{12}$, $\hbar \omega_{13}$, $\hbar \omega_{24}$, and $\hbar \omega_{34}$ and corresponding wavelengths $\lambda_{12}$, $\lambda_{13}$, $\lambda_{24}$, and $\lambda_{34}$.}
+    \label{FirstDiamondAtom}
+\end{figure}
+
+\subsubsection{Electromagnetically induced transparency in hot vapours versus ultracold systems}
+
+Consider a system composed of Avogadro's number of three-level or four-level atoms. In the ideal scenario, all atoms would have the exact same transition frequencies such that when the probe and control beams are fired through the cloud. For hot atomic vapours, this is not the case. When the system is in a gaseous excited state: the electromagnetic fields of nearby atoms may interact to induce Stark and Zeeman shifts in their spectra, atoms can collide resulting in state decoherence, and atoms can experience Doppler shifts in the observed frequency of light resulting in a distribution of Doppler shifts throughout the medium in a process known as Doppler broadening. In addition, the laser used will have some bandwidth of emission frequencies. These effects combine to cause spectral broadening such that the transparency window allowed by EIT is suppressed~\cite{Fleischhauer}.
+
+However, it is known that in $\Lambda$-systems composed of `hyperfine-split metastable states' (as described in Section~\ref{ThreeLevelSection}) are unaffected by Doppler broadening if the two applied fields are copropagating~\cite{Fleischhauer}. This is because for a copropagating pump and control beam (i.e.~beams travelling in opposite directions) the Doppler shift observed by any one atom with respect to the pump is equal and opposite to that of the control beam, so they cancel out. This type of system is called Doppler insensitive.
+
+Improved behaviour is achievable for an ultracold atomic system where temperatures are cooled to near-zero-kelvin in order to minimize~\cite{Fleischhauer}. This is possible with advanced hardware such as a magneto optical trap~\cite{Geng}, however deploying such technology is currently costly and labor-intensive, so application to large scale networks is not economically viable in the near-term. Therefore, for telecom transmission purposes, it would be favorable to deploy hot atomic frequency converters as opposed to ultracold ones.
+
+If it can be shown that a hot atomic vapour composed of four-level diamond-configuration atoms can be made to behave as Doppler insensitive, then this would be a step towards actualizing a hot C-band frequency converter for electromagnetically encoded quantum information. This is because EIT can be applied to improve FWM efficiency~\cite{Xiao}, and FWM can be used to generate squeezed light~\cite{Slusher}.
 
 \subsection{Four Wave Mixing}
 
@@ -775,6 +803,8 @@ We can however include many more atoms to increase n to lower group velocity. Th
 
 \textcolor{red}{TODO - Write this}
 
+\textcolor{blue}{TODO - It may be the case that the system is Doppler insensitive as is the case with $\Lambda$-systems. Do the math to find out if this may be the case!!}
+
 \section{Temp Section - Next Steps}
 
 I have covered a sufficient amount of background and written enough on it. My meeting notes document to sufficient detail that I can write them out formally to approximately the same degree now vs later. If anything, they will benefit from being written later with hindsight into how things actually work.
@@ -883,7 +913,7 @@ The goal is now conversion efficiency. Look into Capckuck's stuff. Squeezing is 
 
 \section{Main results from research block}
 
-\textcolor{blue}{I read a handul of papers and here are some main points that stuck out.}
+\textcolor{blue}{I read a handful of papers and here are some main points that stuck out.}
 
 Paper list:
 \begin{itemize}
@@ -1002,15 +1032,17 @@ They state `Often, the various processes compete with each other, whereby some p
 
 \section{Hamiltonian Formulation}\label{Hamiltonian_Formulation}
 
-The first step in Hamiltonian formulation is system definition. We are modelling a 4-level diamond system as depicted in Fig.~\ref{DiamondAtom}. For this system, the choice of the ground state energy is arbitrary, and all other energies can be defined in terms of their differences as $\omega_2 = \omega_1 + \omega_{12}$, $\omega_3 = \omega_1 + \omega_{13}$, and $\omega_4 = \omega_{2} + \omega_{24} = \omega_{3} + \omega_{34}$.
+\textcolor{red}{TODO - I MESSED UP THE STATE DIAGRAM!! WE WANT TO USE THE 795 nm TRANSITION FOR SIGNAL AND THE 1530 FOR IDLER!!! CHANGE FOR THIS!!!}
+
+The first step in Hamiltonian formulation is system definition. We are modelling a 4-level diamond system as depicted in Fig.~\ref{SecondDiamondAtom}. For this system, the choice of the ground state energy is arbitrary, and all other energies can be defined in terms of their differences as $\omega_2 = \omega_1 + \omega_{12}$, $\omega_3 = \omega_1 + \omega_{13}$, and $\omega_4 = \omega_{2} + \omega_{24} = \omega_{3} + \omega_{34}$.
 
 \begin{figure}[htbp]
   \centering
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\columnwidth]{Figs/DiamondAtom.png}
-    \caption{A diamond configuration atomic system with  non-degenerate energy levels $\ket{1}, \ket{2}, \ket{3}, \ket{4}$ and respective energies $\hbar \omega_1$, $\hbar \omega_2$, $\hbar \omega_3$, and $\hbar \omega_4$. The system has allowed transitions $\ket{1} \leftrightarrow \ket{2}$, $\ket{1} \leftrightarrow \ket{3}$, $\ket{2} \leftrightarrow \ket{4}$, and $\ket{3} \leftrightarrow \ket{4}$}
-    \label{DiamondAtom}
+    \caption{Duplicate of Fig.~\ref{FirstDiamondAtom} placed for convenience. A diamond configuration atomic system with  non-degenerate energy levels $\ket{1}, \ket{2}, \ket{3}, \ket{4}$. The system has allowed transitions $\ket{1} \leftrightarrow \ket{2}$, $\ket{1} \leftrightarrow \ket{3}$, $\ket{2} \leftrightarrow \ket{4}$, and $\ket{3} \leftrightarrow \ket{4}$ with respective energies $\hbar \omega_{12}$, $\hbar \omega_{13}$, $\hbar \omega_{24}$, and $\hbar \omega_{34}$ and corresponding wavelengths $\lambda_{12}$, $\lambda_{13}$, $\lambda_{24}$, and $\lambda_{34}$.}
+    \label{SecondDiamondAtom}
   \end{subfigure}
   \hfill
   \begin{subfigure}{0.45\textwidth}

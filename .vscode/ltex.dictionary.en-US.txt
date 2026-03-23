@@ -22,3 +22,7 @@ Rabi
 defence
 Fibre
 behaviour
+hyperfine-split
+copropagating
+vapour
+vapours
