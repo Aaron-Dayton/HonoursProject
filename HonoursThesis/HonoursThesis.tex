@@ -359,7 +359,7 @@ In order to meaningfully utilize the power of quantum information via quantum st
 
 With enough ingenuity, we can use existing systems to approximate useful mathematical abstractions. Enter, the three-level (hydrogenic) atom. All hydrogenic atoms, in theory, have infinitely many states up to ionization ($n \in \mathbb{N}$), and transition probabilities between many of these states can be non-zero. Though by finding a subset of states with desired characteristics and leveraging transition rules where any undesired state transitions are suppressed, a physical atom can be used to approximate a model system. This becomes especially useful in the limit of a large number of atoms where, statistically, the desired transitions are the most probable, and any undesired transitions are vastly outnumbered, such that the system tends towards the desired behaviour in the limit of many particles.
 
-A three-level atom has three distinct states with some set of allowed transitions between those states. There exist $\Lambda$-systems (see Fig.~\ref{Lambda-system}), V-systems (see Fig.~\ref{V-system}), and $\Xi$-systems (see Fig.~\ref{Ladder-system}). An common example of a $\Lambda$-system exists in $^{87}Rb$ with the collection of hyperfine split states $5^{2}S_{1/2}$ for $F=1$ and $F=2$ with energy differece given according to~\eqref{hyperfine} so that they take on the roles of states $\ket{1}$ and $\ket{2}$, respectively, and state $5^{2}P_{1/2}$ for $F=1$ acts as the excited state $\ket{3}$~\cite{Xiao}.
+A three-level atom has three distinct states with some set of allowed transitions between those states. There exist $\Lambda$-systems, V-systems , and $\Xi$-systems, each depicted in Fig.~\ref{ThreeLevelDiagrams}. An common example of a $\Lambda$-system exists in $^{87}Rb$ with the collection of hyperfine split states $5^{2}S_{1/2}$ for $F=1$ and $F=2$ with energy differece given according to~\eqref{hyperfine} so that they take on the roles of states $\ket{1}$ and $\ket{2}$, respectively, and state $5^{2}P_{1/2}$ for $F=1$ acts as the excited state $\ket{3}$~\cite{Xiao}.
 
 Some points of note in this system are as follows. State $5^{2}S_{1/2}$ $F=1$ is the absolute ground state of the system. The nuclear spin of $^{87}Rb$ is $3/2$~\cite{Millman}, so states $\ket{1}$ and $\ket{2}$ differ by the direction of electron spin $s = \pm 1/2$, so the energy difference between these states is the result of hyperfine splitting. State $\ket{3}$ has the same principle quantum number of $n=5$ as states $\ket{1}$ and $\ket{2}$ but a different angular momentum quantum number, indicating that this state is due to fine structure (with a hyperfine energy correction). Since states $\ket{1}$ and $\ket{2}$ have the same $l$ value, the transition between these levels is forbidden as per eqs.~\eqref{TransitionRules}.
 
@@ -369,26 +369,21 @@ Some points of note in this system are as follows. State $5^{2}S_{1/2}$ $F=1$ is
     \begin{subfigure}{0.32\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{Lambda-system.png}
-        \caption{$\Lambda$-system}
-        \label{Lambda-system}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.32\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{V-system.png}
-        \caption{V-system}
-        \label{V-system}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.1\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{Ladder-system.png}
-        \caption{$\Xi$-system}
-        \label{Ladder-system}
     \end{subfigure}
     \hspace{50pt}
     
-    \caption{Three-level atomic configurations: (a) $\Lambda$, (b) V, and (c) $\Xi$ systems.}
+    \caption{Three-level atomic configurations: (left) $\Lambda$-system, (middle) V-system, and (right) $\Xi$-system.}
+    \label{ThreeLevelDiagrams}
 \end{figure}
 
 Of course, a transition could place the electron into some state outside this state subset (for example, the $5^{2}P_{1/2}$ $F=2$ state), so to promote population only between these states driving lasers tuned near the transition frequencies are shone on the system to induce only the desired transitions. Then in the limit of Avogadro's number of atoms the desired system behaviour becomes statistically enforced.
@@ -419,7 +414,7 @@ It has been shown that high efficiency frequency conversion to the original band
 We are instead concerned with conversion to the C-band of range 1530 nm to 1565 nm~\cite{Cband}. Henc, we consider the alternative diamond configuration transition structure depicted in Fig.~\ref{FirstDiamondAtom}, of which, the $\ket{2} \leftrightarrow \ket{4}$ transition has a wavelength within the C-band. Applying slight detunings to the driving lasers can allow the conversion wavelength to be slightly altered such that minimal losses may be achieved within the C-band window.
 
 
-\begin{figure}[htbp]
+\begin{figure}
     \centering
     \includegraphics[width=0.5\columnwidth]{Figs/DiamondAtom.png}
     \caption{A diamond configuration atomic system with  non-degenerate energy levels $\ket{1}, \ket{2}, \ket{3}, \ket{4}$. The system has allowed transitions $\ket{1} \leftrightarrow \ket{2}$, $\ket{1} \leftrightarrow \ket{3}$, $\ket{2} \leftrightarrow \ket{4}$, and $\ket{3} \leftrightarrow \ket{4}$ with respective energies $\hbar \omega_{12}$, $\hbar \omega_{13}$, $\hbar \omega_{24}$, and $\hbar \omega_{34}$ and corresponding wavelengths $\lambda_{12}$, $\lambda_{13}$, $\lambda_{24}$, and $\lambda_{34}$.}
@@ -438,37 +433,49 @@ If it can be shown that a hot atomic vapour composed of four-level diamond-confi
 
 \subsection{Four Wave Mixing}
 
+\todo{Read paper then write this}
 
-\subsubsection{Raman paths}
-
-\textcolor{red}{TODO - IDK if this should be a section, but the key points and definition should be included somewhere}
-
-\begin{itemize}
-    \item Two-photon transition path in $\Lambda$-systems from $| g_1 \rangle \xrightarrow{stimulated} | e \rangle \xrightarrow{stimulated} | g_2 \rangle$ 
-    \item In EIT used to suppress excited states
-    \item In FWM multiple Raman paths interfere simultaneously yielding a four-photon scattering event (events do not happen sequentially but as a superpotion of all possible paths - think Feynman diagrams)
-\end{itemize}
-
-
-\subsubsection{Squeezed states}
-
-According to Heisenberg's uncertainty principle, the product of the standard deviations of two canonically conjugate observables, $x$ and $p$, must satisfy
-
-\begin{equation}
-    \Delta x \Delta p \geq \frac{\hbar}{2}.
-\end{equation}
-
-For light of sufficient intensity, one can consider its amplitude and phase as canonically conjugate variables~\cite{TODO}. For a generically produced beam, one would expect the standard deviations of  amplitude and phaseto to be roughly equal. If measurement were to be performed in a single quadrature (amplitude for example), then reducing the uncertainty in that quadrature would result in a more percise overall reading.
-
-This leads to the idea of a squeezed state in which one quadrature has its uncertainty decreased below the shot noise level at the expense of the other, such that the uncertainty principle is still observed. It has been shown that optical squeezed states can be produced through a FWM process in optical cavities \cite{Slusher}.
 
 
 \subsubsection{Continuous variable quantum information}
 
-If multiple beams are entangled such that a measurement of one of these variables on one beam yields information about the other beams, then we have what is called continuous variable entanglement~\cite{TODO}. In this way, quantum information can be stored, processed, and transmitted using continuous beams rather than with individual photons.
+\todo{Read paper then write this}
+
+\subsubsection{Squeezed states}
+
+According to Heisenberg's uncertainty principle, the product of the standard deviations of two canonically conjugate observables, $\hat{x}$ and $\hat{p}$, must satisfy
+
+\begin{equation}
+    \Delta \hat{x} \Delta \hat{p} \geq \frac{\hbar}{2}.
+\end{equation}
+
+For light of sufficient intensity (i.e.~for sufficiently many photons), one can consider its amplitude and phase as canonically conjugate variables~\cite{Slusher}. For a generically produced beam, one would expect the standard deviations of amplitude and phaseto to be roughly equal. If measurement were to be performed in a single quadrature (amplitude for example), then reducing the uncertainty in that quadrature would result in a more precise overall reading.
+
+This leads to the idea of a squeezed state in which one quadrature has its uncertainty decreased at the expense of the other, such that the uncertainty principle is still observed. It has been shown that optical squeezed states can be produced through a FWM process in optical cavities~\cite{Slusher}\cite{Glorieux}.
+
+The operators for amplitude $\hat{X}$ and phase $\hat{P}$ are given as
+\begin{align}
+    &\hat{X} = \frac{1}{2}\left( \hat{a} + \hat{a}^{\dagger} \right)\\
+    &\hat{P} = \frac{1}{i2}\left( \hat{a} - \hat{a}^{\dagger} \right)
+\end{align}
+with associated uncertainties
+\begin{align}
+    &\Delta\hat{X} = \frac{1}{2} \sqrt{1 + 2\delta\left(\hat{a}^{\dagger} \hat{a}\right) + 2Re\left(\delta \left( \hat{a} \hat{a} \right)\right)}\\
+    &\Delta\hat{P} = \frac{1}{2} \sqrt{1 + 2\delta\left(\hat{a}^{\dagger} \hat{a}\right) - 2Re\left(\delta \left( \hat{a} \hat{a} \right)\right)}
+\end{align}
+where $\delta\left( \hat{x} \hat{y} \right) = \expect{\hat{x} \hat{y}} - \expect{\hat{x}} \expect{\hat{y}}$~\cite{Patel}. This tells us that the amount of squeezing produced between quadratures is a function of $Re\left(\delta\left( \hat{a} \hat{a} \right)\right) = Re\left(\expect{\hat{a} \hat{a}} - \expect{\hat{a}} \expect{\hat{a}}\right)$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\columnwidth]{Figs/Squeezing.png}
+    \caption{Cartoon depiction of optical squeezing in the conjugate phase and amplitude quadratures.}
+    \label{Squeezing}
+\end{figure}
+
+There are actually two forms of squeezing: single-mode and two-mode squeezing. Single-mode squeezing is typically the result of a phase relationship between emitted photon pairs of the same frequency, while in two-mode squeezing the two photons produces are of different frequencies such that there are correlations between the phase and amplitude of the two beams~\cite{Glorieux}. We are specifically concerned with single-mode squeezed states, and so any mention of squeezing will be in reference to single-mode squeezing.
 
 
-\subsection{How Sub-Poissonian Light and Photon Anti-Bunching Effects Affect Continuous Variable Measuements}
+\subsubsection{How Sub-Poissonian Light and Photon Anti-Bunching Effects Affect Continuous Variable Measuements}
 
 Continuous variable measurements allow for small quantum fluctuations to be less significant in measurement procedures when compared to individual photon entanglement, though there still exist challenges in performing measurements. Continuous variable measurements are typically performed with homodyne detectors~\cite{TODO}, a type of interferometer which compares some input beam against a controlled probe beam and takes the difference between their readings~\cite{TODO}.
 
@@ -477,17 +484,21 @@ Light is quantized and beam intensity is not that high. Individual photons arriv
 It has been shown that applying cavity EIT to three-level atoms can produce sub-Poissonian light~\cite{Souza}, and that applying FWM to three-level systems can produce photon anti-bunching effects~\cite{Du}. Combining these techniques theoretically allows for the information of continuous variable beams to be more reliably transmitted to some measurement device, such that readings fall below the shot-noise level.
 
 
+\subsection{Quantum Methods}
 
 
-\subsection{Fock Basis}
 
-\subsection{Master Equation}
+\subsubsection{Master equation}
 
 \begin{itemize}
     \item Born-Markov approximation (Born = weak interactions between bath and system. Markov = Memoryless system)
     \item Applying rotating wave approximation to Born-Markov equation for $\dot{\rho}(t)_S$ yields Lindblad Master equation
     \item Dissipative operators
 \end{itemize}
+
+
+\subsubsection{Maxwell-Bloch equations}
+
 
 \section{The First Steps - Learning to use QuTiP}
 
@@ -506,16 +517,14 @@ In the Jaynes-Cummings model we consider a two-level atom within a resonant cavi
     \begin{subfigure}{0.4\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{JCM1.png}
-        \caption{Single atom within resonant cavity in the presence of a driving electromagnetic field resonant with the cavity frequency of $\omega_c$.}
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.3\columnwidth}
         \centering
         \includegraphics[width=\linewidth]{JCM2.png}
-        \caption{The simplified two-level transition structure in the Jaynes-Cummings model.}
     \end{subfigure}
     
-    \caption{Depiction of the system for a Jaynes-Cummings model with (a) a resonant cavity of frequency $\omega_c$ containing (b) a two-level atom of transition frequency $\omega_a$.}
+    \caption{Depiction of the system for a Jaynes-Cummings model with (left) a  resonant cavity containing a single atom in the presence of a driving electromagnetic field resonant with the cavity frequency of $\omega$, with (right) the atomic system depicted as a two-level atom of transition frequency $\omega_a$.}
     \label{Jaynes-Cummings}
 \end{figure}
 
@@ -567,7 +576,7 @@ This is not the whole story, however. Any real cavity has some photonic decay ra
 \end{equation}
 
 
-To learn the QuTiP package, the Jaynes-Cummings model was coded (see Code.~\ref{JCM-Code}) based on an implementation by Robert Johansson \cite{Qutip-lectures}. This code differs slightly from the above description in that the atomic Hamiltonian basis is shifted such that it is in the rotating frame $\hat{H}_{Atom} = \hbar \omega \ket{e}\bra{e}$.
+To learn the QuTiP package, the Jaynes-Cummings model was coded (see Code Block.~\ref{JCM-Code}) based on an implementation by Robert Johansson \cite{Qutip-lectures}. This code differs slightly from the above description in that the atomic Hamiltonian basis is shifted such that it is in the rotating frame $\hat{H}_{Atom} = \hbar \omega \ket{e}\bra{e}$.
 
 \lstinputlisting[caption={Python code for the Jaynes-Cummings Model}, language=Python, firstline=6, lastline=39]{./Code/JCM.py}\label{JCM-Code}
 
@@ -1041,17 +1050,15 @@ The first step in Hamiltonian formulation is system definition. We are modelling
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\columnwidth]{Figs/DiamondAtom.png}
-    \caption{Duplicate of Fig.~\ref{FirstDiamondAtom} placed for convenience. A diamond configuration atomic system with  non-degenerate energy levels $\ket{1}, \ket{2}, \ket{3}, \ket{4}$. The system has allowed transitions $\ket{1} \leftrightarrow \ket{2}$, $\ket{1} \leftrightarrow \ket{3}$, $\ket{2} \leftrightarrow \ket{4}$, and $\ket{3} \leftrightarrow \ket{4}$ with respective energies $\hbar \omega_{12}$, $\hbar \omega_{13}$, $\hbar \omega_{24}$, and $\hbar \omega_{34}$ and corresponding wavelengths $\lambda_{12}$, $\lambda_{13}$, $\lambda_{24}$, and $\lambda_{34}$.}
     \label{SecondDiamondAtom}
   \end{subfigure}
   \hfill
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\columnwidth]{Figs/DrivenDiamondAtom.png}
-    \caption{A strong pump drives transition $\ket{1} \leftrightarrow \ket{2}$ at frequency $\omega_I$ with detuning $\Delta_I = \omega_I - \omega_{12}$, a separate strong pump drives transition $\ket{3} \leftrightarrow \ket{4}$ with detuning $\Delta_{II} = \omega_{II} - \omega_{34}$, a weak signal beam drives transition $\ket{1} \leftrightarrow \ket{3}$ with detuning $\Delta_{s} = \omega_{s} - \omega_{13}$, and a weak idler beam drives transition $\ket{2} \leftrightarrow \ket{4}$ with detuning $\Delta_{i} = \omega_{i} - \omega_{24}$.}
     \label{DrivenDiamondAtom}
   \end{subfigure}
-  \caption{Diamond configuration atom diagrams.}
+  \caption{Diamond configuration atom diagrams. (Left) Duplicate of Fig.~\ref{FirstDiamondAtom} placed for convenience. A diamond configuration atomic system with  non-degenerate energy levels $\ket{1}, \ket{2}, \ket{3}, \ket{4}$. The system has allowed transitions $\ket{1} \leftrightarrow \ket{2}$, $\ket{1} \leftrightarrow \ket{3}$, $\ket{2} \leftrightarrow \ket{4}$, and $\ket{3} \leftrightarrow \ket{4}$ with respective energies $\hbar \omega_{12}$, $\hbar \omega_{13}$, $\hbar \omega_{24}$, and $\hbar \omega_{34}$ and corresponding wavelengths $\lambda_{12}$, $\lambda_{13}$, $\lambda_{24}$, and $\lambda_{34}$. (Right) A strong pump drives transition $\ket{1} \leftrightarrow \ket{3}$ at frequency $\omega_I$ with detuning $\Delta_I = \omega_I - \omega_{13}$, a separate strong pump drives transition $\ket{2} \leftrightarrow \ket{4}$ with detuning $\Delta_{II} = \omega_{II} - \omega_{24}$, a weak signal beam drives transition $\ket{1} \leftrightarrow \ket{2}$ with detuning $\Delta_{s} = \omega_{s} - \omega_{12}$, and a weak idler field (undriven) is induced by the presence of the other fields through a FWM process, resulting in transition $\ket{3} \leftrightarrow \ket{4}$ with emission detuning $\Delta_{i} = \omega_{i} - \omega_{34}$.}
   \label{fig:twosidebyside}
 \end{figure}
 
@@ -2029,6 +2036,6 @@ This then couples $(d/d_t) \hat{\vec{E}}_{H,s}(t)$ and $\partial_t \vec{\varepsi
 }
 
 
-
+\todo{Use the Glorieux reference to do Kupchak's pressure equations}
 
 \end{document}
