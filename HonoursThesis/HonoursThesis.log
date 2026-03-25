@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  24 MAR 2026 18:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  25 MAR 2026 15:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -639,7 +639,18 @@ File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/local/texlive/2023/texmf-dist/tex/latex/tikz-feynman/tikzfeynman.keys.code.tex))) (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/tikz-feynman/tikzfeynman.keys.code.tex))) (/usr/local/texlive/2023/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2021/07/05 v2.14 Sectioning titles
+\ttl@box=\box88
+\beforetitleunit=\skip66
+\aftertitleunit=\skip67
+\ttl@plus=\dimen293
+\ttl@minus=\dimen294
+\ttl@toksa=\toks52
+\titlewidth=\dimen295
+\titlewidthlast=\dimen296
+\titlewidthfirst=\dimen297
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
  (/usr/local/texlive/2023/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
@@ -658,7 +669,7 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count332
 )
-\@linkdim=\dimen293
+\@linkdim=\dimen298
 \Hy@linkcounter=\count333
 \Hy@pagecounter=\count334
  (/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
@@ -686,15 +697,15 @@ Package hyperref Info: Bookmarks ON on input line 4425.
 LaTeX Info: Redefining \href on input line 4674.
 \c@Hy@tempcnt=\count336
 LaTeX Info: Redefining \url on input line 4763.
-\XeTeXLinkMargin=\dimen294
+\XeTeXLinkMargin=\dimen299
  (/usr/local/texlive/2023/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
  (/usr/local/texlive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count337
-\Field@Width=\dimen295
-\Fld@charsize=\dimen296
+\Field@Width=\dimen300
+\Fld@charsize=\dimen301
 Package hyperref Info: Hyper figures OFF on input line 6042.
 Package hyperref Info: Link nesting OFF on input line 6047.
 Package hyperref Info: Hyper index ON on input line 6050.
@@ -726,58 +737,57 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
-\Hy@SectionHShift=\skip66
+\Hy@SectionHShift=\skip68
 )
-Class revtex4-1 Info: Unrecognized LaTeX tabular. Please update this document class! (Proceeding with fingers crossed.) on input line 165.
+Class revtex4-1 Info: Unrecognized LaTeX tabular. Please update this document class! (Proceeding with fingers crossed.) on input line 168.
 
 
 Class revtex4-1 Warning: Repair the float package.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 165.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 165.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 165.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 165.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 168.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 168.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 168.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 168.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count343
-\l__pdf_internal_box=\box88
-)
-No file HonoursThesis.aux.
+\l__pdf_internal_box=\box89
+) (./HonoursThesis.aux)
 \openout1 = `HonoursThesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 165.
-LaTeX Font Info:    ... okay on input line 165.
-(/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 168.
+LaTeX Font Info:    ... okay on input line 168.
+ (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count344
-\scratchdimen=\dimen297
-\scratchbox=\box89
+\scratchdimen=\dimen302
+\scratchbox=\box90
 \nofMPsegments=\count345
 \nofMParguments=\count346
-\everyMPshowfont=\toks52
+\everyMPshowfont=\toks53
 \MPscratchCnt=\count347
-\MPscratchDim=\dimen298
+\MPscratchDim=\dimen303
 \MPnumerator=\count348
 \makeMPintoPDFobject=\count349
-\everyMPtoPDFconversion=\toks53
+\everyMPtoPDFconversion=\toks54
 )
 \c@lstlisting=\count350
 Package caption Info: Begin \AtBeginDocument code.
@@ -786,13 +796,13 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 
-Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices automatically placed. You can disable this warning by setting /tikzfeynman/warn luatex=false on input line 165.
+Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices automatically placed. You can disable this warning by setting /tikzfeynman/warn luatex=false on input line 168.
 
-Package hyperref Info: Link coloring OFF on input line 165.
+Package hyperref Info: Link coloring OFF on input line 168.
 \@outlinefile=\write5
 \openout5 = `HonoursThesis.out'.
 
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 165.
+Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 168.
 \openout3 = `HonoursThesisNotes.bib'.
 
 
@@ -803,387 +813,485 @@ No file HonoursThesis.toc.
 \tf@toc=\write6
 \openout6 = `HonoursThesis.toc'.
 
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 182.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 185.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-Package natbib Warning: Citation `DFT' on page 2 undefined on input line 192.
+Package natbib Warning: Citation `DFT' on page 2 undefined on input line 195.
 
 
-Package natbib Warning: Citation `Philip' on page 2 undefined on input line 194.
+Package natbib Warning: Citation `Philip' on page 2 undefined on input line 197.
 
 
-Package natbib Warning: Citation `Harvest' on page 2 undefined on input line 196.
+Package natbib Warning: Citation `Harvest' on page 2 undefined on input line 199.
 
 
-Package natbib Warning: Citation `Shor' on page 2 undefined on input line 196.
+Package natbib Warning: Citation `Shor' on page 2 undefined on input line 199.
 
 
-Package natbib Warning: Citation `QKD' on page 2 undefined on input line 196.
+Package natbib Warning: Citation `QKD' on page 2 undefined on input line 199.
 
 
-Package natbib Warning: Citation `Qin' on page 2 undefined on input line 200.
+Package natbib Warning: Citation `Qin' on page 2 undefined on input line 203.
 
 
-Package natbib Warning: Citation `Shannon' on page 2 undefined on input line 200.
+Package natbib Warning: Citation `Shannon' on page 2 undefined on input line 203.
 
 
-Package natbib Warning: Citation `QuantumInternet' on page 2 undefined on input line 202.
+Package natbib Warning: Citation `QuantumInternet' on page 2 undefined on input line 205.
 
 
-Package natbib Warning: Citation `Chen' on page 2 undefined on input line 202.
-
-
-Package natbib Warning: Citation `Hosseini' on page 2 undefined on input line 204.
-
-
-Package natbib Warning: Citation `Strassel' on page 2 undefined on input line 204.
-
-
-Package natbib Warning: Citation `Langenfeld' on page 2 undefined on input line 204.
-
-
-Package natbib Warning: Citation `Saffman' on page 2 undefined on input line 204.
-
-
-Package natbib Warning: Citation `Diamond' on page 2 undefined on input line 204.
+Package natbib Warning: Citation `Chen' on page 2 undefined on input line 205.
 
 [2{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
 
-Package natbib Warning: Citation `Slusher' on page 3 undefined on input line 212.
+Package natbib Warning: Citation `Hosseini' on page 3 undefined on input line 207.
 
 
-Package natbib Warning: Citation `Xiao' on page 3 undefined on input line 212.
+Package natbib Warning: Citation `Strassel' on page 3 undefined on input line 207.
 
 
-Package natbib Warning: Citation `Tong' on page 3 undefined on input line 220.
+Package natbib Warning: Citation `Langenfeld' on page 3 undefined on input line 207.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 220.
+
+Package natbib Warning: Citation `Saffman' on page 3 undefined on input line 207.
+
+
+Package natbib Warning: Citation `Diamond' on page 3 undefined on input line 207.
+
+
+Package natbib Warning: Citation `Slusher' on page 3 undefined on input line 215.
+
+
+Package natbib Warning: Citation `Xiao' on page 3 undefined on input line 215.
+
+
+Package natbib Warning: Citation `Tong' on page 3 undefined on input line 223.
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 223.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 220.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 223.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 220.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 223.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 220.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 223.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 220.
+(Font)              <10> on input line 223.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 220.
+(Font)              <7> on input line 223.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 220.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 220.
+(Font)              <5> on input line 223.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 223.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 220.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 223.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-Package natbib Warning: Citation `Atomic book p.23' on page 3 undefined on input line 236.
+Package natbib Warning: Citation `Atomic book p.23' on page 3 undefined on input line 239.
 
 [3{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 
-Package natbib Warning: Citation `Peatross' on page 4 undefined on input line 253.
+Package natbib Warning: Citation `Peatross' on page 4 undefined on input line 256.
 
 
-Package natbib Warning: Citation `Optics' on page 4 undefined on input line 255.
+Package natbib Warning: Citation `Optics' on page 4 undefined on input line 258.
 
 
-Package natbib Warning: Citation `Nonlinear' on page 4 undefined on input line 257.
+Package natbib Warning: Citation `Nonlinear' on page 4 undefined on input line 260.
 
 
-Package natbib Warning: Citation `MacRae' on page 4 undefined on input line 274.
+LaTeX Warning: Reference `chi1eq' on page 4 undefined on input line 273.
 
 
-Package natbib Warning: Citation `Peatross' on page 4 undefined on input line 282.
+LaTeX Warning: Reference `chi1eq' on page 4 undefined on input line 273.
+
+
+Package natbib Warning: Citation `MacRae' on page 4 undefined on input line 279.
 
 [4]
 
-Package natbib Warning: Citation `GroupVelocity' on page 5 undefined on input line 286.
+Package natbib Warning: Citation `Peatross' on page 5 undefined on input line 287.
 
 
-Package natbib Warning: Citation `McIntyre' on page 5 undefined on input line 297.
+Package natbib Warning: Citation `GroupVelocity' on page 5 undefined on input line 291.
 
 
-Package natbib Warning: Citation `TODO Tong' on page 5 undefined on input line 312.
+Package natbib Warning: Citation `McIntyre' on page 5 undefined on input line 302.
 
 
-Package natbib Warning: Citation `Tong' on page 5 undefined on input line 314.
+Package natbib Warning: Citation `TODO Tong' on page 5 undefined on input line 317.
 
 
 Package natbib Warning: Citation `Tong' on page 5 undefined on input line 319.
 
 
-LaTeX Warning: Reference `unperturbed' on page 5 undefined on input line 319.
+Package natbib Warning: Citation `Tong' on page 5 undefined on input line 324.
 
 
-Package natbib Warning: Citation `McIntyre' on page 5 undefined on input line 322.
+LaTeX Warning: Reference `unperturbed' on page 5 undefined on input line 324.
 
 [5]
-
-Package natbib Warning: Citation `Tong' on page 6 undefined on input line 327.
-
 
 Package natbib Warning: Citation `McIntyre' on page 6 undefined on input line 327.
 
 
-Package natbib Warning: Citation `Atomic' on page 6 undefined on input line 333.
+Package natbib Warning: Citation `Tong' on page 6 undefined on input line 332.
 
 
-Package natbib Warning: Citation `TODO atomic book' on page 6 undefined on input line 339.
+Package natbib Warning: Citation `McIntyre' on page 6 undefined on input line 332.
 
 
-Package natbib Warning: Citation `TODO atomic book' on page 6 undefined on input line 343.
+Package natbib Warning: Citation `Atomic' on page 6 undefined on input line 338.
 
 
-Package natbib Warning: Citation `Atomic' on page 6 undefined on input line 345.
+Package natbib Warning: Citation `TODO atomic book' on page 6 undefined on input line 344.
 
 
-LaTeX Warning: Reference `ThreeLevelDiagrams' on page 6 undefined on input line 362.
+Package natbib Warning: Citation `TODO atomic book' on page 6 undefined on input line 348.
 
 
-LaTeX Warning: Reference `hyperfine' on page 6 undefined on input line 362.
+Package natbib Warning: Citation `Atomic' on page 6 undefined on input line 350.
 
 
-Package natbib Warning: Citation `Xiao' on page 6 undefined on input line 362.
+LaTeX Warning: Reference `ThreeLevelDiagrams' on page 6 undefined on input line 367.
 
 
-Package natbib Warning: Citation `Millman' on page 6 undefined on input line 364.
+LaTeX Warning: Reference `hyperfine' on page 6 undefined on input line 367.
 
 
-LaTeX Warning: Reference `TransitionRules' on page 6 undefined on input line 364.
+Package natbib Warning: Citation `Xiao' on page 6 undefined on input line 367.
 
 [6]
-<FIGs//Lambda-system.png, id=83, 338.26375pt x 190.7125pt>
-File: FIGs//Lambda-system.png Graphic file (type png)
-<use FIGs//Lambda-system.png>
-Package pdftex.def Info: FIGs//Lambda-system.png  used on input line 371.
+
+Package natbib Warning: Citation `Millman' on page 7 undefined on input line 369.
+
+
+LaTeX Warning: Reference `TransitionRule1' on page 7 undefined on input line 369.
+
+
+LaTeX Warning: Reference `TransitionRule2' on page 7 undefined on input line 369.
+
+
+LaTeX Warning: Reference `TransitionRule3' on page 7 undefined on input line 369.
+
+
+LaTeX Warning: Reference `TransitionRule4' on page 7 undefined on input line 369.
+
+<Figs//Lambda-system.png, id=81, 338.26375pt x 190.7125pt>
+File: Figs//Lambda-system.png Graphic file (type png)
+<use Figs//Lambda-system.png>
+Package pdftex.def Info: Figs//Lambda-system.png  used on input line 376.
 (pdftex.def)             Requested size: 163.20374pt x 92.01529pt.
-<FIGs//V-system.png, id=85, 343.2825pt x 181.67876pt>
-File: FIGs//V-system.png Graphic file (type png)
-<use FIGs//V-system.png>
-Package pdftex.def Info: FIGs//V-system.png  used on input line 376.
+<Figs//V-system.png, id=83, 343.2825pt x 181.67876pt>
+File: Figs//V-system.png Graphic file (type png)
+<use Figs//V-system.png>
+Package pdftex.def Info: Figs//V-system.png  used on input line 381.
 (pdftex.def)             Requested size: 163.20374pt x 86.37314pt.
-<FIGs//Ladder-system.png, id=86, 132.495pt x 283.0575pt>
-File: FIGs//Ladder-system.png Graphic file (type png)
-<use FIGs//Ladder-system.png>
-Package pdftex.def Info: FIGs//Ladder-system.png  used on input line 381.
+<Figs//Ladder-system.png, id=84, 132.495pt x 283.0575pt>
+File: Figs//Ladder-system.png Graphic file (type png)
+<use Figs//Ladder-system.png>
+Package pdftex.def Info: Figs//Ladder-system.png  used on input line 386.
 (pdftex.def)             Requested size: 51.00311pt x 108.96234pt.
 
+Package natbib Warning: Citation `Fleischhauer' on page 7 undefined on input line 398.
 
-Package natbib Warning: Citation `Fleischhauer' on page 7 undefined on input line 393.
 
+LaTeX Warning: Reference `ThreeLevelAtom' on page 7 undefined on input line 398.
 
-LaTeX Warning: Reference `ThreeLevelAtom' on page 7 undefined on input line 393.
-
-<FIGs//ThreeLevelAtom.png, id=87, 337.26pt x 222.8325pt>
-File: FIGs//ThreeLevelAtom.png Graphic file (type png)
-<use FIGs//ThreeLevelAtom.png>
-Package pdftex.def Info: FIGs//ThreeLevelAtom.png  used on input line 398.
+<Figs//ThreeLevelAtom.png, id=85, 337.26pt x 222.8325pt>
+File: Figs//ThreeLevelAtom.png Graphic file (type png)
+<use Figs//ThreeLevelAtom.png>
+Package pdftex.def Info: Figs//ThreeLevelAtom.png  used on input line 403.
 (pdftex.def)             Requested size: 255.0pt x 168.48402pt.
 
-Package natbib Warning: Citation `Jones' on page 7 undefined on input line 403.
-
-[7 <./FIGs//Lambda-system.png> <./FIGs//V-system.png> <./FIGs//Ladder-system.png> <./FIGs//ThreeLevelAtom.png>]
-
-Package natbib Warning: Citation `Higgins' on page 8 undefined on input line 405.
+Package natbib Warning: Citation `Jones' on page 7 undefined on input line 408.
 
 
-LaTeX Warning: Reference `FirstDiamondAtom' on page 8 undefined on input line 410.
+Package natbib Warning: Citation `Higgins' on page 7 undefined on input line 410.
 
 
-Package natbib Warning: Citation `Diamond' on page 8 undefined on input line 412.
+LaTeX Warning: Reference `FirstDiamondAtom' on page 7 undefined on input line 415.
 
 
-Package natbib Warning: Citation `Cband' on page 8 undefined on input line 414.
+Package natbib Warning: Citation `Diamond' on page 7 undefined on input line 417.
 
 
-LaTeX Warning: Reference `FirstDiamondAtom' on page 8 undefined on input line 414.
+Package natbib Warning: Citation `Cband' on page 7 undefined on input line 419.
 
-<Figs/DiamondAtom.png, id=99, 376.40625pt x 301.125pt>
+
+LaTeX Warning: Reference `FirstDiamondAtom' on page 7 undefined on input line 419.
+
+[7 <./Figs//Lambda-system.png> <./Figs//V-system.png> <./Figs//Ladder-system.png>]
+<Figs/DiamondAtom.png, id=96, 376.40625pt x 301.125pt>
 File: Figs/DiamondAtom.png Graphic file (type png)
 <use Figs/DiamondAtom.png>
-Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 419.
+Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 424.
 (pdftex.def)             Requested size: 255.0pt x 204.00414pt.
 
-Package natbib Warning: Citation `Fleischhauer' on page 8 undefined on input line 426.
+
+Package natbib Warning: Citation `Fleischhauer' on page 8 undefined on input line 431.
+
+<Figs//Doppler.png, id=97, 357.335pt x 261.97874pt>
+File: Figs//Doppler.png Graphic file (type png)
+<use Figs//Doppler.png>
+Package pdftex.def Info: Figs//Doppler.png  used on input line 436.
+(pdftex.def)             Requested size: 255.0pt x 186.9536pt.
+
+LaTeX Warning: Reference `ThreeLevelSection' on page 8 undefined on input line 441.
 
 
-LaTeX Warning: Reference `ThreeLevelSection' on page 8 undefined on input line 428.
+Package natbib Warning: Citation `Fleischhauer' on page 8 undefined on input line 441.
+
+[8 <./Figs//ThreeLevelAtom.png> <./Figs/DiamondAtom.png>]
+
+Package natbib Warning: Citation `Fleischhauer' on page 9 undefined on input line 443.
 
 
-Package natbib Warning: Citation `Fleischhauer' on page 8 undefined on input line 428.
-
-[8 <./Figs/DiamondAtom.png>]
-
-Package natbib Warning: Citation `Fleischhauer' on page 9 undefined on input line 430.
+Package natbib Warning: Citation `Geng' on page 9 undefined on input line 443.
 
 
-Package natbib Warning: Citation `Geng' on page 9 undefined on input line 430.
+Package natbib Warning: Citation `Xiao' on page 9 undefined on input line 445.
 
 
-Package natbib Warning: Citation `Xiao' on page 9 undefined on input line 432.
+Package natbib Warning: Citation `Slusher' on page 9 undefined on input line 445.
 
 
-Package natbib Warning: Citation `Slusher' on page 9 undefined on input line 432.
+Package natbib Warning: Citation `Glorieux' on page 9 undefined on input line 449.
 
 
-Package natbib Warning: Citation `Glorieux' on page 9 undefined on input line 436.
+Package natbib Warning: Citation `Patel' on page 9 undefined on input line 449.
 
 
-Package natbib Warning: Citation `Patel' on page 9 undefined on input line 436.
+Package natbib Warning: Citation `QuantumInternet' on page 9 undefined on input line 449.
+
+<Figs//FWM.png, id=107, 385.44pt x 132.495pt>
+File: Figs//FWM.png Graphic file (type png)
+<use Figs//FWM.png>
+Package pdftex.def Info: Figs//FWM.png  used on input line 458.
+(pdftex.def)             Requested size: 203.99689pt x 70.12294pt.
+
+LaTeX Warning: Reference `FirstDiamondAtom' on page 9 undefined on input line 463.
+
+[9 <./Figs//Doppler.png>]
+
+LaTeX Warning: Reference `ConservationEq1' on page 10 undefined on input line 481.
 
 
-Package natbib Warning: Citation `QuantumInternet' on page 9 undefined on input line 436.
+LaTeX Warning: Reference `ConservationEq2' on page 10 undefined on input line 481.
 
 
-LaTeX Warning: Reference `FirstDiamondAtom' on page 9 undefined on input line 443.
+Package natbib Warning: Citation `Nonlinear' on page 10 undefined on input line 481.
 
 
-LaTeX Warning: Reference `ConservationEqs' on page 9 undefined on input line 461.
+Package natbib Warning: Citation `Nonlinear' on page 10 undefined on input line 481.
 
 
-Package natbib Warning: Citation `Nonlinear' on page 9 undefined on input line 461.
+Package natbib Warning: Citation `Nonlinear' on page 10 undefined on input line 483.
 
 
-Package natbib Warning: Citation `Nonlinear' on page 9 undefined on input line 461.
+LaTeX Warning: Reference `FirstDiamondAtom' on page 10 undefined on input line 485.
 
 
-Package natbib Warning: Citation `Nonlinear' on page 9 undefined on input line 463.
+Package natbib Warning: Citation `Slusher' on page 10 undefined on input line 496.
 
 
-LaTeX Warning: Reference `FirstDiamondAtom' on page 9 undefined on input line 465.
-
-[9]
-
-Package natbib Warning: Citation `Slusher' on page 10 undefined on input line 476.
+Package natbib Warning: Citation `Sonoyama' on page 10 undefined on input line 498.
 
 
-Package natbib Warning: Citation `Sonoyama' on page 10 undefined on input line 478.
+Package natbib Warning: Citation `Andersen' on page 10 undefined on input line 498.
 
 
-Package natbib Warning: Citation `Andersen' on page 10 undefined on input line 478.
+Package natbib Warning: Citation `Slusher' on page 10 undefined on input line 500.
 
 
-Package natbib Warning: Citation `Slusher' on page 10 undefined on input line 480.
+Package natbib Warning: Citation `Glorieux' on page 10 undefined on input line 500.
 
+[10 <./Figs//FWM.png>]
 
-Package natbib Warning: Citation `Glorieux' on page 10 undefined on input line 480.
+Package natbib Warning: Citation `Patel' on page 11 undefined on input line 512.
 
-
-Package natbib Warning: Citation `Patel' on page 10 undefined on input line 492.
-
-<Figs/Squeezing.png, id=119, 711.65875pt x 321.2pt>
+<Figs/Squeezing.png, id=132, 711.65875pt x 321.2pt>
 File: Figs/Squeezing.png Graphic file (type png)
 <use Figs/Squeezing.png>
-Package pdftex.def Info: Figs/Squeezing.png  used on input line 496.
+Package pdftex.def Info: Figs/Squeezing.png  used on input line 516.
 (pdftex.def)             Requested size: 255.0pt x 115.08789pt.
 
-Package natbib Warning: Citation `Glorieux' on page 10 undefined on input line 501.
+Package natbib Warning: Citation `Glorieux' on page 11 undefined on input line 521.
 
 
-Package natbib Warning: Citation `Xiao' on page 10 undefined on input line 506.
+Package natbib Warning: Citation `Xiao' on page 11 undefined on input line 527.
 
 
-Package natbib Warning: Citation `Glorieux' on page 10 undefined on input line 506.
-
-[10 <./Figs/Squeezing.png>]
-
-Package natbib Warning: Citation `Souza' on page 11 undefined on input line 508.
+Package natbib Warning: Citation `Glorieux' on page 11 undefined on input line 527.
 
 
-Package natbib Warning: Citation `Souza' on page 11 undefined on input line 508.
+Package natbib Warning: Citation `Souza' on page 11 undefined on input line 529.
 
 
-Package natbib Warning: Citation `FWM' on page 11 undefined on input line 508.
+Package natbib Warning: Citation `Souza' on page 11 undefined on input line 529.
 
 
-Package natbib Warning: Citation `Souza' on page 11 undefined on input line 510.
+Package natbib Warning: Citation `FWM' on page 11 undefined on input line 529.
 
 
-Package natbib Warning: Citation `FWM' on page 11 undefined on input line 510.
+Package natbib Warning: Citation `Souza' on page 11 undefined on input line 531.
 
 
-Package natbib Warning: Citation `Manzano' on page 11 undefined on input line 525.
+Package natbib Warning: Citation `FWM' on page 11 undefined on input line 531.
 
 
-Package natbib Warning: Citation `Brasil' on page 11 undefined on input line 525.
+Package natbib Warning: Citation `Lezama' on page 11 undefined on input line 539.
 
 
-Package natbib Warning: Citation `Manzano' on page 11 undefined on input line 525.
+Package natbib Warning: Citation `Goren' on page 11 undefined on input line 539.
 
 
-Package natbib Warning: Citation `Lidar' on page 11 undefined on input line 529.
+Package natbib Warning: Citation `Lee' on page 11 undefined on input line 539.
+
+[11 <./Figs/Squeezing.png>]
+
+LaTeX Warning: Reference `Beer' on page 12 undefined on input line 541.
 
 
-Package natbib Warning: Citation `MacRae' on page 11 undefined on input line 531.
+Package natbib Warning: Citation `Goren' on page 12 undefined on input line 541.
 
 
-Package natbib Warning: Citation `MacRae' on page 11 undefined on input line 535.
+Package natbib Warning: Citation `Lee' on page 12 undefined on input line 541.
 
 
-Package natbib Warning: Citation `NOS' on page 11 undefined on input line 535.
+Package natbib Warning: Citation `Manzano' on page 12 undefined on input line 555.
 
 
-LaTeX Warning: Reference `AtomicMedium' on page 11 undefined on input line 535.
+Package natbib Warning: Citation `Brasil' on page 12 undefined on input line 555.
 
-[11]
-<FIGs//AtomicMedium.png, id=141, 596.2275pt x 184.69pt>
-File: FIGs//AtomicMedium.png Graphic file (type png)
-<use FIGs//AtomicMedium.png>
-Package pdftex.def Info: FIGs//AtomicMedium.png  used on input line 538.
+
+Package natbib Warning: Citation `Manzano' on page 12 undefined on input line 555.
+
+
+Package natbib Warning: Citation `Lidar' on page 12 undefined on input line 559.
+
+
+Package natbib Warning: Citation `MacRae' on page 12 undefined on input line 561.
+
+
+Package natbib Warning: Citation `MacRae' on page 12 undefined on input line 565.
+
+
+Package natbib Warning: Citation `NOS' on page 12 undefined on input line 565.
+
+
+LaTeX Warning: Reference `AtomicMedium' on page 12 undefined on input line 565.
+
+<Figs//AtomicMedium.png, id=143, 596.2275pt x 184.69pt>
+File: Figs//AtomicMedium.png Graphic file (type png)
+<use Figs//AtomicMedium.png>
+Package pdftex.def Info: Figs//AtomicMedium.png  used on input line 568.
 (pdftex.def)             Requested size: 408.00156pt x 126.38506pt.
+[12]
+
+Package natbib Warning: Citation `Nonlinear' on page 13 undefined on input line 577.
 
 
-Package natbib Warning: Citation `Nonlinear' on page 12 undefined on input line 547.
+Package natbib Warning: Citation `NOS' on page 13 undefined on input line 577.
 
 
-Package natbib Warning: Citation `NOS' on page 12 undefined on input line 547.
+Package natbib Warning: Citation `Nonlinear' on page 13 undefined on input line 581.
 
 
-Package natbib Warning: Citation `Nonlinear' on page 12 undefined on input line 551.
+Package natbib Warning: Citation `NOS' on page 13 undefined on input line 581.
 
 
-Package natbib Warning: Citation `NOS' on page 12 undefined on input line 551.
+Package natbib Warning: Citation `Nonlinear' on page 13 undefined on input line 587.
+
+[13 <./Figs//AtomicMedium.png>]
+
+Package natbib Warning: Citation `MacRae' on page 14 undefined on input line 648.
 
 
-Package natbib Warning: Citation `Nonlinear' on page 12 undefined on input line 557.
-
-[12 <./FIGs//AtomicMedium.png>]
-
-Package natbib Warning: Citation `MacRae' on page 13 undefined on input line 618.
+LaTeX Warning: Reference `LindbladMasterEquation' on page 14 undefined on input line 659.
 
 
-LaTeX Warning: Reference `Alg' on page 13 undefined on input line 627.
+LaTeX Warning: Reference `MaxwellBlochEquation' on page 14 undefined on input line 659.
 
-[13]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 630.
+
+LaTeX Warning: Reference `Alg' on page 14 undefined on input line 659.
+
+[14]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 662.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 632.
+(Font)              <9> on input line 664.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 632.
+(Font)              <6> on input line 664.
 
 
-LaTeX Warning: Reference `LindbladMasterEquation' on page 14 undefined on input line 634.
+LaTeX Warning: Reference `LindbladMasterEquation' on page 15 undefined on input line 666.
 
 
-LaTeX Warning: Reference `MaxwellBlochEquation' on page 14 undefined on input line 636.
+LaTeX Warning: Reference `MaxwellBlochEquation' on page 15 undefined on input line 668.
 
 
-Package natbib Warning: Citation `QuTiP' on page 14 undefined on input line 651.
+LaTeX Warning: Reference `FirstDiamondAtom' on page 15 undefined on input line 682.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 651.
+
+LaTeX Warning: Reference `MaxwellBlochEquation' on page 15 undefined on input line 684.
+
+
+LaTeX Warning: Reference `LindbladMasterEquation' on page 15 undefined on input line 684.
+
+
+LaTeX Warning: Reference `QuadratureUncertainty1' on page 15 undefined on input line 684.
+
+
+LaTeX Warning: Reference `QuadratureUncertainty2' on page 15 undefined on input line 684.
+
+
+LaTeX Warning: Reference `chi1eq' on page 15 undefined on input line 684.
+
+
+LaTeX Warning: Reference `Beer' on page 15 undefined on input line 684.
+
+
+LaTeX Warning: Reference `ThreeFieldDiamond' on page 15 undefined on input line 690.
+
+
+Package natbib Warning: Citation `Lee' on page 15 undefined on input line 690.
+
+
+Package natbib Warning: Citation `Lee' on page 15 undefined on input line 690.
+
+<Figs//ThreeFieldDiamondAtom.png, id=183, 427.5975pt x 284.06125pt>
+File: Figs//ThreeFieldDiamondAtom.png Graphic file (type png)
+<use Figs//ThreeFieldDiamondAtom.png>
+Package pdftex.def Info: Figs//ThreeFieldDiamondAtom.png  used on input line 693.
+(pdftex.def)             Requested size: 255.0pt x 169.40211pt.
+[15]
+
+LaTeX Warning: Reference `Hamiltonian_Formulation' on page 16 undefined on input line 712.
+
+
+Package natbib Warning: Citation `QuantumInternet' on page 16 undefined on input line 734.
+
+[16 <./Figs//ThreeFieldDiamondAtom.png>]
+
+LaTeX Warning: Reference `Hamiltonian_Formulation' on page 17 undefined on input line 758.
+
+
+Package natbib Warning: Citation `QuTiP' on page 17 undefined on input line 783.
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 783.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
@@ -1194,78 +1302,80 @@ File: latin1.def 2021/02/14 v1.3d Input encoding file
 File: latin1.def 2021/02/14 v1.3d Input encoding file
 )
 
-LaTeX Warning: Reference `Jaynes-Cummings' on page 14 undefined on input line 657.
+LaTeX Warning: Reference `Jaynes-Cummings' on page 17 undefined on input line 789.
 
 
-Package natbib Warning: Citation `Tong' on page 14 undefined on input line 657.
+Package natbib Warning: Citation `Tong' on page 17 undefined on input line 789.
 
-<FIGs//JCM1.png, id=173, 240.9pt x 220.825pt>
-File: FIGs//JCM1.png Graphic file (type png)
-<use FIGs//JCM1.png>
-Package pdftex.def Info: FIGs//JCM1.png  used on input line 665.
+<Figs//JCM1.png, id=211, 240.9pt x 220.825pt>
+File: Figs//JCM1.png Graphic file (type png)
+<use Figs//JCM1.png>
+Package pdftex.def Info: Figs//JCM1.png  used on input line 797.
 (pdftex.def)             Requested size: 203.99689pt x 187.00127pt.
-<FIGs//JCM2.png, id=174, 140.525pt x 142.5325pt>
-File: FIGs//JCM2.png Graphic file (type png)
-<use FIGs//JCM2.png>
-Package pdftex.def Info: FIGs//JCM2.png  used on input line 670.
+<Figs//JCM2.png, id=212, 140.525pt x 142.5325pt>
+File: Figs//JCM2.png Graphic file (type png)
+<use Figs//JCM2.png>
+Package pdftex.def Info: Figs//JCM2.png  used on input line 802.
 (pdftex.def)             Requested size: 153.00156pt x 155.19638pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[17]
 
-Package natbib Warning: Citation `Tong' on page 14 undefined on input line 679.
-
-
-Package natbib Warning: Citation `Scala' on page 14 undefined on input line 679.
-
-[14]
-
-Package natbib Warning: Citation `Scala' on page 15 undefined on input line 709.
+Package natbib Warning: Citation `Tong' on page 18 undefined on input line 811.
 
 
-Package natbib Warning: Citation `Scala' on page 15 undefined on input line 719.
+Package natbib Warning: Citation `Scala' on page 18 undefined on input line 811.
 
 
-LaTeX Warning: Reference `JCM-Code' on page 15 undefined on input line 725.
+Package natbib Warning: Citation `Scala' on page 18 undefined on input line 841.
+
+[18 <./Figs//JCM1.png> <./Figs//JCM2.png>]
+
+Package natbib Warning: Citation `Scala' on page 19 undefined on input line 851.
 
 
-Package natbib Warning: Citation `Qutip-lectures' on page 15 undefined on input line 725.
+LaTeX Warning: Reference `JCM-Code' on page 19 undefined on input line 857.
+
+
+Package natbib Warning: Citation `Qutip-lectures' on page 19 undefined on input line 857.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 727.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 859.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
-) (./Code/JCM.py [15 <./FIGs//JCM1.png> <./FIGs//JCM2.png>]) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
+) (./Code/JCM.py) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
 )
 
-LaTeX Warning: Reference `JCM-Rabi' on page 16 undefined on input line 729.
+LaTeX Warning: Reference `JCM-Rabi' on page 19 undefined on input line 861.
 
-<FIGs//JCM-Rabi.png, id=203, 584.1825pt x 457.71pt>
-File: FIGs//JCM-Rabi.png Graphic file (type png)
-<use FIGs//JCM-Rabi.png>
-Package pdftex.def Info: FIGs//JCM-Rabi.png  used on input line 732.
+<Figs//JCM-Rabi.png, id=236, 584.1825pt x 457.71pt>
+File: Figs//JCM-Rabi.png Graphic file (type png)
+<use Figs//JCM-Rabi.png>
+Package pdftex.def Info: Figs//JCM-Rabi.png  used on input line 864.
 (pdftex.def)             Requested size: 510.0pt x 399.60132pt.
+[19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 739.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 739.
+(hyperref)                removing `math shift' on input line 871.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 739.
+(hyperref)                removing `\Lambda' on input line 871.
 
 
-LaTeX Warning: Reference `Hamiltonian_Formulation' on page 16 undefined on input line 743.
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 871.
 
-[16]
 
-Package natbib Warning: Citation `Fleischhauer' on page 17 undefined on input line 745.
+LaTeX Warning: Reference `Hamiltonian_Formulation' on page 20 undefined on input line 875.
+
+[20 <./Figs//JCM-Rabi.png>]
+
+Package natbib Warning: Citation `Fleischhauer' on page 21 undefined on input line 877.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
@@ -1273,71 +1383,70 @@ File: latin1.def 2021/02/14 v1.3d Input encoding file
 File: latin1.def 2021/02/14 v1.3d Input encoding file
 )
 
-Package natbib Warning: Citation `Fleischhauer' on page 17 undefined on input line 757.
+Package natbib Warning: Citation `Fleischhauer' on page 21 undefined on input line 889.
 
 
-LaTeX Warning: Reference `SemiClassicalEIT' on page 17 undefined on input line 759.
+LaTeX Warning: Reference `SemiClassicalEIT' on page 21 undefined on input line 891.
 
-<FIGs//SemiClassicalEIT.png, id=243, 631.35875pt x 475.7775pt>
-File: FIGs//SemiClassicalEIT.png Graphic file (type png)
-<use FIGs//SemiClassicalEIT.png>
-Package pdftex.def Info: FIGs//SemiClassicalEIT.png  used on input line 763.
+<Figs//SemiClassicalEIT.png, id=287, 631.35875pt x 475.7775pt>
+File: Figs//SemiClassicalEIT.png Graphic file (type png)
+<use Figs//SemiClassicalEIT.png>
+Package pdftex.def Info: Figs//SemiClassicalEIT.png  used on input line 895.
 (pdftex.def)             Requested size: 510.0pt x 384.33224pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 770.
+(hyperref)                removing `math shift' on input line 902.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 770.
+(hyperref)                removing `\Lambda' on input line 902.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 770.
+(hyperref)                removing `math shift' on input line 902.
 
-<FIGs//ThreeLevelCEIT.png, id=244, 1105.12875pt x 695.59875pt>
-File: FIGs//ThreeLevelCEIT.png Graphic file (type png)
-<use FIGs//ThreeLevelCEIT.png>
-Package pdftex.def Info: FIGs//ThreeLevelCEIT.png  used on input line 775.
+<Figs//ThreeLevelCEIT.png, id=288, 1105.12875pt x 695.59875pt>
+File: Figs//ThreeLevelCEIT.png Graphic file (type png)
+<use Figs//ThreeLevelCEIT.png>
+Package pdftex.def Info: Figs//ThreeLevelCEIT.png  used on input line 907.
 (pdftex.def)             Requested size: 510.0pt x 320.99825pt.
-[17 <./FIGs//JCM-Rabi.png>]
-<FIGs//PhotonCountThreeLevel.png, id=252, 767.86874pt x 541.02126pt>
-File: FIGs//PhotonCountThreeLevel.png Graphic file (type png)
-<use FIGs//PhotonCountThreeLevel.png>
-Package pdftex.def Info: FIGs//PhotonCountThreeLevel.png  used on input line 782.
+[21 <./Figs//SemiClassicalEIT.png>]
+<Figs//PhotonCountThreeLevel.png, id=296, 767.86874pt x 541.02126pt>
+File: Figs//PhotonCountThreeLevel.png Graphic file (type png)
+<use Figs//PhotonCountThreeLevel.png>
+Package pdftex.def Info: Figs//PhotonCountThreeLevel.png  used on input line 914.
 (pdftex.def)             Requested size: 458.99689pt x 323.40172pt.
+ [22 <./Figs//ThreeLevelCEIT.png>]
 
+Package natbib Warning: Citation `TODO' on page 23 undefined on input line 937.
 
-Package natbib Warning: Citation `TODO' on page 18 undefined on input line 804.
-
-[18 <./FIGs//SemiClassicalEIT.png>] [19 <./FIGs//ThreeLevelCEIT.png>] [20 <./FIGs//PhotonCountThreeLevel.png>] [21]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1021.
-
+[23 <./Figs//PhotonCountThreeLevel.png>] [24] [25]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 1021.
+(hyperref)                removing `math shift' on input line 1149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1021.
+(hyperref)                removing `\Lambda' on input line 1149.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1149.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
-) (./Code/ThreeLevelCavity.py [22]
+) (./Code/ThreeLevelCavity.py [26]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 45.
- [23])
-File: FIGs//ThreeLevelCEIT.png Graphic file (type png)
-<use FIGs//ThreeLevelCEIT.png>
-Package pdftex.def Info: FIGs//ThreeLevelCEIT.png  used on input line 1032.
+ [27])
+File: Figs//ThreeLevelCEIT.png Graphic file (type png)
+<use Figs//ThreeLevelCEIT.png>
+Package pdftex.def Info: Figs//ThreeLevelCEIT.png  used on input line 1160.
 (pdftex.def)             Requested size: 510.0pt x 320.99825pt.
- [24] [25] [26] [27] (./HonoursThesis.bbl
+ [28] [29] [30] (./HonoursThesis.bbl [31]
 
-LaTeX Warning: Reference `LastBibItem' on page 28 undefined on input line 9.
+LaTeX Warning: Reference `LastBibItem' on page 32 undefined on input line 9.
 
-[28]
 ./HonoursThesis.bbl:105: Misplaced alignment tab character &.
 <argument> &
             ~Ware~M.
@@ -1374,57 +1483,57 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-) [29]
+[32]) [33]
 
-LaTeX Warning: Reference `SecondDiamondAtom' on page 30 undefined on input line 1192.
+LaTeX Warning: Reference `SecondDiamondAtom' on page 34 undefined on input line 1318.
 
 File: Figs/DiamondAtom.png Graphic file (type png)
 <use Figs/DiamondAtom.png>
-Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 1198.
+Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 1324.
 (pdftex.def)             Requested size: 229.49844pt x 183.60326pt.
-<Figs/DrivenDiamondAtom.png, id=552, 428.60126pt x 295.1025pt>
+<Figs/DrivenDiamondAtom.png, id=598, 428.60126pt x 295.1025pt>
 File: Figs/DrivenDiamondAtom.png Graphic file (type png)
 <use Figs/DrivenDiamondAtom.png>
-Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 1204.
+Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 1330.
 (pdftex.def)             Requested size: 229.49844pt x 158.0156pt.
 
-LaTeX Warning: Reference `FirstDiamondAtom' on page 30 undefined on input line 1207.
+LaTeX Warning: Reference `FirstDiamondAtom' on page 34 undefined on input line 1333.
 
 
-LaTeX Warning: Reference `DrivenDiamondAtom' on page 30 undefined on input line 1240.
+LaTeX Warning: Reference `DrivenDiamondAtom' on page 34 undefined on input line 1366.
 
 
-Package natbib Warning: Citation `QuantumInternet' on page 30 undefined on input line 1240.
+Package natbib Warning: Citation `QuantumInternet' on page 34 undefined on input line 1366.
 
-[30 <./Figs/DrivenDiamondAtom.png>] [31]
+[34 <./Figs/DrivenDiamondAtom.png>] [35]
 
-Package natbib Warning: Citation `TODO' on page 32 undefined on input line 1381.
+Package natbib Warning: Citation `TODO' on page 36 undefined on input line 1508.
 
-[32] [33] [34
+[36] [37] [38
 pdfTeX warning (ext4): destination with the same identifier (name{equation.A.43}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1529 \begin{align}
-                    ] [35] [36]
+l.1661 \begin{align}
+                    ] [39] [40]
 
-LaTeX Warning: Reference `Beq' on page 37 undefined on input line 1707.
+LaTeX Warning: Reference `Beq' on page 41 undefined on input line 1839.
 
-[37] [38]
+[41] [42]
 
-LaTeX Warning: Reference `Unsimplified_B_eq' on page 39 undefined on input line 1867.
+LaTeX Warning: Reference `Unsimplified_B_eq' on page 43 undefined on input line 2002.
 
 
-LaTeX Warning: Reference `Unsimplified_C_eq' on page 39 undefined on input line 1929.
+LaTeX Warning: Reference `Unsimplified_C_eq' on page 43 undefined on input line 2064.
 
-[39] [40]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 2098.
+[43] [44]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 2233.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [41]
+) [45]
 
 Package natbib Warning: There were undefined citations.
 
-[42] (./HonoursThesis.aux
+[46] (./HonoursThesis.aux
 
 Package natbib Warning: Citation(s) may have changed.
 (natbib)                Rerun to get citations correct.
@@ -1443,21 +1552,21 @@ Package rerunfilecheck Warning: File `HonoursThesis.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `HonoursThesis.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  CCF126DD6A30C59D48D660096C1B9C99;12892.
+(rerunfilecheck)             After:  DDE2E90A62E4B4E90D1F25BB9CC31B10;14222.
  ) 
 Here is how much of TeX's memory you used:
- 30797 strings out of 476025
- 585863 string characters out of 5790017
- 2133388 words of memory out of 5000000
- 50195 multiletter control sequences out of 15000+600000
- 575175 words of font info for 80 fonts, out of 8000000 for 9000
+ 31166 strings out of 476025
+ 591348 string characters out of 5790017
+ 2172388 words of memory out of 5000000
+ 50533 multiletter control sequences out of 15000+600000
+ 581172 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,16n,90p,1545b,2598s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,16n,90p,1859b,2506s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/aarondayton/Library/texlive/2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on HonoursThesis.pdf (42 pages, 1242309 bytes).
+Output written on HonoursThesis.pdf (46 pages, 1278785 bytes).
 PDF statistics:
- 946 PDF objects out of 1000 (max. 8388607)
- 807 compressed objects within 9 object streams
- 465 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 996 PDF objects out of 1000 (max. 8388607)
+ 847 compressed objects within 9 object streams
+ 487 named destinations out of 1000 (max. 500000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 

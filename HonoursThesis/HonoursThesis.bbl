@@ -6,7 +6,7 @@
 %Control: page (1) range
 %Control: year (0) verbatim
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{43}%
+\begin{thebibliography}{46}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -157,6 +157,15 @@
 \bibitem [{\citenamefont {Du}\ \emph {et~al.}(2007)\citenamefont {Du}, \citenamefont {Oh}, \citenamefont {Wen},\ and\ \citenamefont {Rubin}}]{FWM}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Shengwang}\ \bibnamefont {Du}}, \bibinfo {author} {\bibfnamefont {Eun}\ \bibnamefont {Oh}}, \bibinfo {author} {\bibfnamefont {Jianming}\ \bibnamefont {Wen}}, \ and\ \bibinfo {author} {\bibfnamefont {Morton~H.}\ \bibnamefont {Rubin}},\ }\bibfield  {title} {\enquote {\bibinfo {title} {Four-wave mixing in three-level systems: Interference and entanglement},}\ }\href {\doibase 10.1103/PhysRevA.76.013803} {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {76}},\ \bibinfo {pages} {013803} (\bibinfo {year} {2007})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lezama}\ \emph {et~al.}(1999)\citenamefont {Lezama}, \citenamefont {Barreiro},\ and\ \citenamefont {Akulshin}}]{Lezama}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Lezama}}, \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Barreiro}}, \ and\ \bibinfo {author} {\bibfnamefont {A.~M.}\ \bibnamefont {Akulshin}},\ }\bibfield  {title} {\enquote {\bibinfo {title} {Electromagnetically induced absorption},}\ }\href {\doibase 10.1103/PhysRevA.59.4732} {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {59}},\ \bibinfo {pages} {4732--4735} (\bibinfo {year} {1999})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Goren}\ \emph {et~al.}(2003)\citenamefont {Goren}, \citenamefont {Wilson-Gordon}, \citenamefont {Rosenbluh},\ and\ \citenamefont {Friedmann}}]{Goren}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont {Goren}}, \bibinfo {author} {\bibfnamefont {A.~D.}\ \bibnamefont {Wilson-Gordon}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Rosenbluh}}, \ and\ \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont {Friedmann}},\ }\bibfield  {title} {\enquote {\bibinfo {title} {Electromagnetically induced absorption due to transfer of coherence and to transfer of population},}\ }\href {\doibase 10.1103/PhysRevA.67.033807} {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. A}\ }\textbf {\bibinfo {volume} {67}},\ \bibinfo {pages} {033807} (\bibinfo {year} {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lee}\ and\ \citenamefont {Moon}(2017)}]{Lee}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {Yoon-Seok}\ \bibnamefont {Lee}}\ and\ \bibinfo {author} {\bibfnamefont {Han~Seb}\ \bibnamefont {Moon}},\ }\bibfield  {title} {\enquote {\bibinfo {title} {Doppler-free three-photon coherence in doppler-broadened diamond-type atomic system},}\ }\href {\doibase 10.1364/OE.25.005316} {\bibfield  {journal} {\bibinfo  {journal} {Opt. Express}\ }\textbf {\bibinfo {volume} {25}},\ \bibinfo {pages} {5316--5326} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Manzano}(2020)}]{Manzano}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Manzano}},\ }\bibfield  {title} {\enquote {\bibinfo {title} {A short introduction to the lindblad master equation},}\ }\href {\doibase doi:10.1063/1.5115323} {\bibfield  {journal} {\bibinfo  {journal} {AIP Advances}\ }\textbf {\bibinfo {volume} {10}} (\bibinfo {year} {2020}),\ doi:10.1063/1.5115323}\BibitemShut {NoStop}%

@@ -1,56 +1,59 @@
 \contentsline {title}{Honours Thesis - Simulation of Squeezed Light Generation in an Optical Resonator}{1}{section*.1}%
 \tocdepth@munge 
-\contentsline {section}{\numberline {}Contents}{2}{section*.2}%
 \tocdepth@restore 
-\contentsline {section}{\numberline {I}TODO}{2}{section*.3}%
-\contentsline {section}{\numberline {II}Project Motivation}{2}{section*.4}%
-\contentsline {section}{\numberline {III}Background Information}{3}{section*.5}%
-\contentsline {subsection}{\numberline {A}Electromagnetically Induced Transparency}{3}{section*.6}%
-\contentsline {subsubsection}{\numberline {1}Structure of atomic spectra}{5}{section*.7}%
-\contentsline {subsubsection}{\numberline {2}Atomic transitions}{6}{section*.8}%
-\contentsline {subsubsection}{\numberline {3}Three-level atoms}{6}{section*.9}%
-\contentsline {subsubsection}{\numberline {4}Diamond configuration four-level atoms}{8}{section*.12}%
-\contentsline {subsubsection}{\numberline {5}Electromagnetically induced transparency in hot vapours versus ultracold systems}{8}{section*.14}%
-\contentsline {subsection}{\numberline {B}Four Wave Mixing}{9}{section*.15}%
-\contentsline {subsubsection}{\numberline {1}Squeezed states}{10}{section*.16}%
-\contentsline {subsubsection}{\numberline {2}FWM and EIT}{11}{section*.18}%
-\contentsline {subsection}{\numberline {C}Quantum Methods}{11}{section*.19}%
-\contentsline {subsubsection}{\numberline {1}Master equation}{11}{section*.20}%
-\contentsline {subsubsection}{\numberline {2}Maxwell-Bloch equations}{12}{section*.21}%
-\contentsline {subsubsection}{\numberline {3}Combined Solution Algorithm}{14}{section*.23}%
-\contentsline {section}{\numberline {IV}The First Steps - Learning to use QuTiP}{14}{section*.24}%
-\contentsline {subsection}{\numberline {A}The Jaynes-Cummings Model}{14}{section*.25}%
-\contentsline {subsection}{\numberline {B}Electromagnetically Induced Transparency in a $\Lambda $-system with Classical Driving Fields}{16}{section*.28}%
-\contentsline {subsection}{\numberline {C}Cavity Electromagnetically Induced Transparency in a $\Lambda $-system with Quantized Driving Fields}{18}{section*.30}%
-\contentsline {subsection}{\numberline {D}IDK}{18}{section*.33}%
-\contentsline {subsection}{\numberline {E}Meeting 2 with MacRae}{19}{section*.34}%
-\contentsline {subsubsection}{\numberline {1}Hamiltonian derivation with light as a classical field}{19}{section*.35}%
-\contentsline {subsubsection}{\numberline {2}a}{21}{section*.36}%
-\contentsline {subsection}{\numberline {F}Meeting 3 with MacRae}{21}{section*.37}%
-\contentsline {section}{\numberline {V}Problem Definition}{21}{section*.38}%
-\contentsline {section}{\numberline {VI}Temp Section - Next Steps}{22}{section*.39}%
-\contentsline {section}{\numberline {VII}Semi-Classical three-level atom}{22}{section*.40}%
-\contentsline {subsection}{\numberline {A}Cavity EIT with a $\Lambda $-System}{23}{section*.41}%
-\contentsline {section}{\numberline {VIII}Meeting Dec 3}{24}{section*.43}%
-\contentsline {section}{\numberline {IX}Meeting Jan 8}{25}{section*.44}%
-\contentsline {section}{\numberline {X}Meeting Jan 12}{25}{section*.45}%
-\contentsline {section}{\numberline {XI}Main results from research block}{25}{section*.46}%
-\contentsline {subsection}{\numberline {A}Microscopic Theory of Squeezed Light in Quantum Dot Systems}{26}{section*.47}%
-\contentsline {subsection}{\numberline {B}Theory of cavity-enhanced spontaneous four wave mixing}{26}{section*.48}%
-\contentsline {subsection}{\numberline {C}Generation of 87Rb resonant bright two-mode squeezed light with four-wave mixing}{26}{section*.49}%
-\contentsline {subsection}{\numberline {D}Quantum Noise and Correlations in Resonantly Enhanced Wave Mixing Based on Atomic Coherence}{27}{section*.50}%
-\contentsline {subsection}{\numberline {E}Slow light propagation and amplification via electromagnetically induced transparency and four-wave mixing in an optically dense atomic vapor}{27}{section*.51}%
-\contentsline {subsection}{\numberline {F}Parametric amplification in an electromagnetically-induced-transparency medium}{27}{section*.52}%
-\contentsline {subsection}{\numberline {G}Competition between electromagnetically induced transparency and Raman processes}{28}{section*.53}%
-\contentsline {section}{\numberline {XII}Hamiltonian Formulation}{28}{section*.54}%
-\contentsline {section}{\numberline {XIII}Computational Methods}{28}{section*.55}%
-\contentsline {section}{\numberline {XIV}Results}{28}{section*.56}%
-\contentsline {section}{\numberline {XV}Discussion}{28}{section*.57}%
-\contentsline {subsection}{\numberline {A}Conditions for Optical Squeezing}{28}{section*.58}%
-\contentsline {section}{\numberline {}References}{28}{section*.59}%
+\contentsline {section}{\numberline {I}TODO}{2}{section.1}%
+\contentsline {section}{\numberline {II}Project Motivation}{2}{section.2}%
+\contentsline {section}{\numberline {III}Background Information}{3}{section.3}%
+\contentsline {subsection}{\numberline {A}Electromagnetically Induced Transparency}{3}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {1}Structure of atomic spectra}{5}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {2}Atomic transitions}{6}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3}Three-level atoms}{6}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {4}Diamond configuration four-level atoms}{7}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {5}Electromagnetically induced transparency in hot vapours}{8}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {B}Four Wave Mixing}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {1}Squeezed states}{10}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {2}Four wave mixing and electromagnetically induced transparency}{11}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3}Four wave mixing and electromagnetically induced absorption}{11}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {C}Quantum Methods}{12}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {1}Master equation}{12}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {2}Maxwell-Bloch equations}{12}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3}The iterative Lindblad-Maxwell-Bloch solution method}{15}{subsubsection.3.3.3}%
+\contentsline {section}{\numberline {IV}Problem Definition}{15}{section.4}%
+\contentsline {subsection}{\numberline {A}Doppler Broadening and Doppler Insensitivity}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {B}System Hamiltonian}{16}{subsection.4.2}%
+\contentsline {subsection}{\numberline {C}Lindbladian and Maxwell-Bloch Equations}{17}{subsection.4.3}%
+\contentsline {section}{\numberline {V}Computational Methods}{17}{section.5}%
+\contentsline {subsection}{\numberline {A}Learning to use QuTiP}{17}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {1}The Jaynes-Cummings model}{17}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {2}Electromagnetically induced transparency in a $\Lambda $-system with classical driving fields}{20}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {3}Cavity electromagnetically induced transparency in a $\Lambda $-system with quantized driving fields}{22}{subsubsection.5.1.3}%
+\contentsline {subsection}{\numberline {B}IDK}{23}{subsection.5.2}%
+\contentsline {subsection}{\numberline {C}Meeting 2 with MacRae}{24}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {1}Hamiltonian derivation with light as a classical field}{24}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {2}a}{25}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {D}Meeting 3 with MacRae}{25}{subsection.5.4}%
+\contentsline {section}{\numberline {VI}Temp Section - Next Steps}{25}{section.6}%
+\contentsline {section}{\numberline {VII}Semi-Classical three-level atom}{26}{section.7}%
+\contentsline {subsection}{\numberline {A}Cavity EIT with a $\Lambda $-System}{26}{subsection.7.1}%
+\contentsline {section}{\numberline {VIII}Meeting Dec 3}{28}{section.8}%
+\contentsline {section}{\numberline {IX}Meeting Jan 8}{28}{section.9}%
+\contentsline {section}{\numberline {X}Meeting Jan 12}{29}{section.10}%
+\contentsline {section}{\numberline {XI}Main results from research block}{29}{section.11}%
+\contentsline {subsection}{\numberline {A}Microscopic Theory of Squeezed Light in Quantum Dot Systems}{30}{subsection.11.1}%
+\contentsline {subsection}{\numberline {B}Theory of cavity-enhanced spontaneous four wave mixing}{30}{subsection.11.2}%
+\contentsline {subsection}{\numberline {C}Generation of 87Rb resonant bright two-mode squeezed light with four-wave mixing}{30}{subsection.11.3}%
+\contentsline {subsection}{\numberline {D}Quantum Noise and Correlations in Resonantly Enhanced Wave Mixing Based on Atomic Coherence}{31}{subsection.11.4}%
+\contentsline {subsection}{\numberline {E}Slow light propagation and amplification via electromagnetically induced transparency and four-wave mixing in an optically dense atomic vapor}{31}{subsection.11.5}%
+\contentsline {subsection}{\numberline {F}Parametric amplification in an electromagnetically-induced-transparency medium}{31}{subsection.11.6}%
+\contentsline {subsection}{\numberline {G}Competition between electromagnetically induced transparency and Raman processes}{31}{subsection.11.7}%
+\contentsline {section}{\numberline {XII}Computational Methods}{32}{section.12}%
+\contentsline {section}{\numberline {XIII}Results}{32}{section.13}%
+\contentsline {section}{\numberline {XIV}Discussion}{32}{section.14}%
+\contentsline {subsection}{\numberline {A}Conditions for Optical Squeezing}{32}{subsection.14.1}%
+\contentsline {section}{\numberline {}References}{32}{section*.16}%
 \appendix 
-\contentsline {section}{\numberline {A}Hamiltonian Formulation}{30}{section*.60}%
-\contentsline {subsection}{\numberline {1}Classical Field Simplification via Rotating Wave Approximation}{31}{section*.62}%
-\contentsline {subsection}{\numberline {2}Quantum Field Simplification via Rotating Wave Approximation}{32}{section*.63}%
-\contentsline {subsection}{\numberline {3}Hamiltonian Simplification}{32}{section*.64}%
-\contentsline {section}{\numberline {B}Maxwell-Bloch Equation Derivation}{42}{section*.65}%
+\contentsline {section}{\numberline {A}Hamiltonian Formulation}{34}{appendix.A}%
+\contentsline {subsection}{\numberline {1}Classical Field Simplification via Rotating Wave Approximation}{35}{subsection.A.1}%
+\contentsline {subsection}{\numberline {2}Quantum Field Simplification via Rotating Wave Approximation}{36}{subsection.A.2}%
+\contentsline {subsection}{\numberline {3}Hamiltonian Simplification}{36}{subsection.A.3}%
+\contentsline {section}{\numberline {B}Maxwell-Bloch Equation Derivation}{46}{appendix.B}%
