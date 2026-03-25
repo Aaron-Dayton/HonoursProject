@@ -199,7 +199,7 @@ Currently, there are two main hurdles in developing large scale quantum networks
 
 After this, the problem becomes advancing techniques for minimizing losses in quantum coherence during fibre optic transmission~\cite{Qin} and all other forms of efficiency such that amount of information transmitted through the channel may be maximized~\cite{Shannon}. 
 
-Progress has been made on forming quantum-optical networks, such as in America where an advanced quantum network architecture has been developed on Long Island~\cite{Du}, or in China where a 4600 kilometer land-based quantum network~\cite{Chen}.
+Progress has been made on forming quantum-optical networks, such as in America where an advanced quantum network architecture has been developed on Long Island~\cite{QuantumInternet}, or in China where a 4600 kilometer land-based quantum network~\cite{Chen}.
 
 This thesis covers a theoretically viable method for frequency conversion of quantum information encoded in an electromagnetic field (continuous variable quantum information). The technique involves interfering three electromagnetic fields within a sample of Rubidium-87 gas to induce transitions such that one additional field is produced. Rubidium-87 is a widely studied candidate for applications in short-timescale quantum memory~\cite{Hosseini}\cite{Strassel}, quantum repeaters~\cite{Langenfeld}, and quantum computation~\cite{Saffman}. We will focus on a 4-level transition substructure with one transition frequency compatible with modern quantum methods, one transition frequency compatible with telecom frequencies in the conventional band (C-band), and two frequencies which will be leveraged for interference effects in a process known as four wave mixing (FWM)~\cite{Diamond}.
 
@@ -211,7 +211,7 @@ This thesis covers a theoretically viable method for frequency conversion of qua
 
 This project involves understanding how hot atomic vapours interact with external electromagnetic fields to induce desirable physical phenomena. To convert frequencies, FWM can be applied with the added bonus that it can generate squeezed light~\cite{Slusher}, which is useful in continuous variable quantum information applications since optical squeezing causes uncertainty in one quadrature (amplitude or phase) to be reduced while being increased in the other. FWM may be enhanced by electromagnetically induced transparency (EIT)~\cite{Xiao}, a process in which an atomic medium becomes effectively transparent to a frequency of light near-resonance with one of its transition frequencies under certain conditions. We will tackle these topics in reverse order to build up to the idea of optical squeezing.
 
-\todo{Write a bit more here on the other topics like the master equation and solution methods}
+In order to solve for signal propagation, we must find the steady state system dynamics via the Lindblad master equation, then use the result to solve for the field propagation through the medium step by step using the Maxwell-Bloch equations. The master equation is a function of field strength, so we can produce a combined solution algorithm to obtain the field strength of the converted frequency field at the end of the sample. This result tells us how much of the signal has been converted via FWM.
 
 \subsection{Electromagnetically Induced Transparency}
 
@@ -227,23 +227,23 @@ There exists the relation between the electric and magnetic field strengths of l
 \end{equation}
 The Lorentz force is
 \begin{equation}
-    \mathbf{F} = q \left(\mathbf{E} + \mathbf{v} \times \mathbf{B} \right)
+    \vec{F} = q \left(\vec{E} + \vec{v} \times \vec{B} \right)
 \end{equation}
-where $q$ is charge, and $\mathbf{v}$ is particle velocity. Using the Bohr model for approximation, we have that quantized electron velocities for a hydrogenic atom have magnitude
+where $q$ is charge, and $\vec{v}$ is particle velocity. Using the Bohr model for approximation, we have that quantized electron velocities for a hydrogenic atom have magnitude
 \begin{equation}
     v_n = \alpha \frac{Z}{n} c
 \end{equation}
 where $\alpha$ is the fine structure constant, $Z$ is the atomic number, and $n$ is the principle quantum number \cite{Atomic book p.23}. We can therefore see by rough approximation that we have
 \begin{equation}
-    |\mathbf{v} \times \mathbf{B}| \lessapprox \alpha Z c \frac{E}{c} = \alpha Z E.
+    |\vec{v} \times \vec{B}| \lessapprox \alpha Z c \frac{E}{c} = \alpha Z E.
 \end{equation}
 We are considering Rubidium with atomic number $Z = 37$, but this neglects the effects of screening caused by the electrons in inner shells of the atom. Electron position is distributed in a cloud about the atom for any orbital, though we can expect the $36$ electrons of inner shells between the valence electron (singular in its shell) and the nuclear charge of $37e$ to roughly cancel $36e$ of charge such that the valence electron experiences about $1e$. By this line of reasoning we have
 \begin{equation}
-    |\mathbf{v} \times \mathbf{B}| \lessapprox \alpha E.
+    |\vec{v} \times \vec{B}| \lessapprox \alpha E.
 \end{equation}
 Thus, the force due to the external magnetic field is about $1/137$ that of the external electric field. So we may neglect the external magnetic field for simplification.
 \begin{equation}
-    \mathbf{F} \approx q \mathbf{E}
+    \vec{F} \approx q \vec{E}
 \end{equation}
 
 All of these approximations can be justified from the perspective that this model is a first estimate for system behaviour which will be refined and iterated upon.
@@ -252,26 +252,26 @@ This brings us to a physicist's favorite abstraction: the harmonic oscillator. T
 
 When a charge accelerates, it emits photons as its movement produces a changing electric and magnetic field. So when our system is driven on resonance, then an electromagnetic field of that same frequency will be produced. Here lies the idea behind electromagnetically induced transparency: by driving a cloud of these hydrogenic atoms on resonance, the field essentially `passes through' the medium as the dipole response of the medium matches the driving frequency. This abstraction is known as the Lorentz oscillator~\cite{Peatross}.
 
-It is helpful to imagine the dipole response of the medium as a vector field coupled to the external driving field of frequency $\omega$. When we quantize the system, this is encapsulated by the expectation value of the dipole moment of the atomic medium $\expect{\hat{\mathbf{d}}} = -e \expect{\hat{\mathbf{r}}}$ since the polarization is given by $\mathbf{P} = N \expect{\hat{\mathbf{d}}}$, where $\mathbf{r}$ is the relative position vector and $N$ is the number of atoms in the medium~\cite{Optics}.
+It is helpful to imagine the dipole response of the medium as a vector field coupled to the external driving field of frequency $\omega$. When we quantize the system, this is encapsulated by the expectation value of the dipole moment of the atomic medium $\expect{\hat{\vec{d}}} = -e \expect{\hat{\vec{r}}}$ since the polarization is given by $\vec{P} = N \expect{\hat{\vec{d}}}$, where $\vec{r}$ is the relative position vector and $N$ is the number of atoms in the medium~\cite{Optics}.
 
 So far we have considered the atomic system to behave with a linear response to the external field, however, this is not the case. The true polarization of the system actually behaves in a nonlinear fashion with respect to the driving field. This response is medium dependent and encapsulates all the interactions of the system, so it can be quite complicated. For this reason, it is often abstractly written in the expanded polynomial form~\cite{Nonlinear}
-\begin{equation}
-    \mathbf{P} = \epsilon_0 \left( \chi^{(1)} \mathbf{E} + \chi^{(2)} \mathbf{E}\mathbf{E} + \chi^{(3)} \mathbf{E}\mathbf{E}\mathbf{E} + \ldots\right)
+\begin{equation}\label{PolarizationEq}
+    \vec{P} = \epsilon_0 \left( \chi^{(1)} \vec{E} + \chi^{(2)} \vec{E}\vec{E} + \chi^{(3)} \vec{E}\vec{E}\vec{E} + \ldots\right)
 \end{equation}
 where $\chi^{(i)}$ is the $i^{th}$ order electric susceptibility rank $i+1$ tensor. For weak electric fields, the linear approximation may be made to give
 \begin{equation}
-    \mathbf{P} \approx \epsilon_0 \chi^{(1)} \mathbf{E}
+    \vec{P} \approx \epsilon_0 \chi^{(1)} \vec{E}
 \end{equation}
-then by $N \expect{\hat{\mathbf{d}}} = \epsilon_0 \chi^{(1)} \mathbf{E}$ we have
+then by $N \expect{\hat{\vec{d}}} = \epsilon_0 \chi^{(1)} \vec{E}$ we have
 \begin{equation}
-    \chi^{(1)} = \frac{N |\expect{\hat{\mathbf{d}}}|}{\epsilon_0|\mathbf{E}|}.
+    \chi^{(1)} = \frac{N |\expect{\hat{\vec{d}}}|}{\epsilon_0|\vec{E}|}.
 \end{equation}
 
 What frequencies are allowed to pass through the atomic medium is decided by the linear electric susceptibility of the material $\chi^{(1)}$. When light travels through some material with complex electric susceptibility (i.e.~complex index of refraction), then the light will receive some phase shift due to the real-valued component of susceptibility $\chi^{(1)}_R$ and some decay due to the imaginary-valued component $\chi^{(1)}_I$, such that the oscillating electric field will propagate as
 \begin{equation}\label{Beer}
     E = E_0 e^{i(k z - \omega t)}e^{i\chi^{(1)}_R k z / 2}e^{-\chi^{(1)}_I k z / 2}
 \end{equation}
-where the rate of decay then grows exponentially with distance traveled $z$ through the medium. The decay term $e^{-\chi^{(1)}_I k z / 2}$ is known as Beer-Lambert law.
+where the rate of decay then grows exponentially with distance traveled $z$ through the medium. The decay term $e^{-\chi^{(1)}_I k z / 2}$ is known as Beer-Lambert law~\cite{MacRae}.
 
 So, we can say that when the imaginary component of linear susceptibility goes to zero, the medium becomes `transparent' to the driving field. This gives us a mathematical way to determine if EIT is present in a system.
 
@@ -338,11 +338,11 @@ In a hydrogenic atom, the transitions between states are mediated by excitations
 
 The interaction between an atom and the electromagnetic field is not a linear interaction, creating difficulty in finding an exact solution. To obtain approximate behaviour, first order perturbation theory can be applied to dominating effects of this interaction~\cite{TODO atomic book}. From this, one obtains the transition dipole matrix with elements
 \begin{equation}
-    \mathbf{\mu}_{ji} = \bra{j}\hat{\mathbf{d}}\ket{i} = e\bra{j}\hat{\mathbf{r}}\ket{i}
+    \vec{\mu}_{ji} = \bra{j}\hat{\vec{d}}\ket{i} = e\bra{j}\hat{\vec{r}}\ket{i}
 \end{equation}
-where $\hat{\mathbf{d}} = e\hat{\mathbf{r}}$ is the dipole transition operator and $\hat{\mathbf{r}}$ is the position operator~\cite{TODO atomic book}.
+where $\hat{\vec{d}} = e\hat{\vec{r}}$ is the dipole transition operator and $\hat{\vec{r}}$ is the position operator~\cite{TODO atomic book}.
 
-If $\mathbf{\mu}_{ji} = 0$, then the transition between states $\ket{i}$ and $\ket{j}$ is a `forbidden' dipole transition, otherwise the transition is an allowed dipole transition. This criterion enforces the dipole selection rules that~\cite{Atomic}
+If $\vec{\mu}_{ji} = 0$, then the transition between states $\ket{i}$ and $\ket{j}$ is a `forbidden' dipole transition, otherwise the transition is an allowed dipole transition. This criterion enforces the dipole selection rules that~\cite{Atomic}
 \begin{align}\label{TransitionRules}
     &\Delta l = \pm 1\\
     &\Delta m_l = 0, \pm 1\\
@@ -433,23 +433,49 @@ If it can be shown that a hot atomic vapour composed of four-level diamond-confi
 
 \subsection{Four Wave Mixing}
 
-\todo{Read paper then write this}
+FWM is a nonlinear optical process in which three electromagnetic fields of distinct frequencies interact with some medium to produce quantum coherence and interference effects such that an additional distinct field is produced~\cite{Glorieux}. In an atomic medium, FWM is a $\chi^{(3)}$ process~\cite{Patel} in which energy conservation and momentum conservation are upheld~\cite{QuantumInternet}.
 
+\begin{align}\label{ConservationEqs}
+    &\hbar \omega_a + \hbar \omega_b = \hbar \omega_c + \hbar \omega_d\\
+    &\vec{k}_a + \vec{k}_b = \vec{k}_c + \vec{k}_d
+\end{align}
 
+This allows FWM to be used for optical field frequency conversion. We will be considering FWM in a diamond-configuration atom (see Fig.~\ref{FirstDiamondAtom}) where transitions $\ket{1} \leftrightarrow \ket{2}$, $\ket{1} \leftrightarrow \ket{3}$, and $\ket{2} \leftrightarrow \ket{4}$ are driven by near-resonant beams to produce the emission of photons via the $\ket{3} \leftrightarrow \ket{4}$ transition, as previously discussed.
 
-\subsubsection{Continuous variable quantum information}
+For an atomic vapour, the $\chi^{(2)}$ term is zero valued such that the polarization becomes
+\begin{equation}\label{ApproxPolarization}
+    \vec{P} \approx \epsilon_0 \chi^{(1)} \vec{E} +  \epsilon_0 \chi^{(3)} \vec{E}\vec{E}\vec{E}
+\end{equation}
+and with three driving fields we have
+\begin{equation}
+    \vec{E} = \vec{E}_a e^{-i \omega_a t} +  \vec{E}_b e^{-i \omega_b t} +  \vec{E}_c e^{-i \omega_c t} + c.c.
+\end{equation}
+such that the nonlinear third order polarization response of the medium becomes
+\begin{align}
+    \vec{P}^{(3)} =  \epsilon_0 \chi^{(3)} \left( \vec{E}_a e^{-i \omega_a t} +  \vec{E}_b e^{-i \omega_b t} +  \vec{E}_c e^{-i \omega_c t} + c.c.\right)^3
+\end{align}
+and so it involves the term
+\begin{align}
+    \epsilon_0 \chi^{(3)} \left(\vec{E}_a \vec{E}_b \vec{E}_c^* e^{-i (\omega_a + \omega_b - \omega_c) t} + c.c.\right)
+\end{align}
+so by the conservation equations Eqs.~\eqref{ConservationEqs} the polarization response of the medium produces a wave of frequency $\omega_d$ and wavevector $\vec{k}_d$~\cite{Nonlinear}. Of course, there are other terms involved in the expansion as well. For example, consider term $\chi^{(3)} \vec{E}_a \vec{E}_b \vec{E}_c e^{-i (\omega_a + \omega_b + \omega_c) t}$, which generates a polarization response at frequency $\omega_a + \omega_b + \omega_c$ in a process known as sum-frequency generation, or term $\chi^{(3)} \vec{E}_a \vec{E}_a \vec{E}_a e^{-i 3 \omega_a t}$ which produces a field at frequency $3\omega_a$ in a process called third-harmonic generation~\cite{Nonlinear}.
 
-\todo{Read paper then write this}
+So why is the $\omega_d$ field produced so important? What about all the other fields? Well, a photon is emitted when a charge accelerates, so for an electromagnetic field to be produced the valance electron must transition between states. By cleverly selecting the level structure and driving beam frequencies, many undesired transitions pathways can be suppressed and a transition near frequency $\omega_d$ can be driven~\cite{Nonlinear}. Rogue transitions may produce photons outside the set of frequencies $\{\omega_a, \omega_b, \omega_c, \omega_d\}$, but their number will be negligible in comparison to that of the $\omega_d$ field.
+
+For the four-level diamond configuration atom of consideration (see Fig.~\ref{FirstDiamondAtom}), driving fields of transition frequency $\omega_{12}$, $\omega_{13}$, and $\omega_{24}$ will be applied to induce a near-$\omega_{34}$ transition within the telecom C-band frequency range.
+
 
 \subsubsection{Squeezed states}
 
-According to Heisenberg's uncertainty principle, the product of the standard deviations of two canonically conjugate observables, $\hat{x}$ and $\hat{p}$, must satisfy
+A significant property of FWM is that the additional field generated can be `squeezed'. Optical squeezing gives a way to decrease the noise (i.e.~loss in quantum information) of the resulting beam, making it a crucial factor to consider. A frequency converter which produces a signal with excessive noise is not useful in quantum information applications. According to Heisenberg's uncertainty principle, the product of the standard deviations of two canonically conjugate observables, $\hat{x}$ and $\hat{p}$ where $[\hat{x}, \hat{p}] = i\hbar$, must satisfy
 
 \begin{equation}
     \Delta \hat{x} \Delta \hat{p} \geq \frac{\hbar}{2}.
 \end{equation}
 
 For light of sufficient intensity (i.e.~for sufficiently many photons), one can consider its amplitude and phase as canonically conjugate variables~\cite{Slusher}. For a generically produced beam, one would expect the standard deviations of amplitude and phaseto to be roughly equal. If measurement were to be performed in a single quadrature (amplitude for example), then reducing the uncertainty in that quadrature would result in a more precise overall reading.
+
+When quantum information is stored in the amplitude and phase quadratures of light, it is called continuous variable quantum information~\cite{Sonoyama}. Continuous variable measurements are typically performed with homodyne detectors, compare some input beam against a controlled probe beam and takes the difference between their readings~\cite{Andersen}.
 
 This leads to the idea of a squeezed state in which one quadrature has its uncertainty decreased at the expense of the other, such that the uncertainty principle is still observed. It has been shown that optical squeezed states can be produced through a FWM process in optical cavities~\cite{Slusher}\cite{Glorieux}.
 
@@ -468,20 +494,22 @@ where $\delta\left( \hat{x} \hat{y} \right) = \expect{\hat{x} \hat{y}} - \expect
 \begin{figure}
     \centering
     \includegraphics[width=0.5\columnwidth]{Figs/Squeezing.png}
-    \caption{Cartoon depiction of optical squeezing in the conjugate phase and amplitude quadratures.}
+    \caption{Cartoon depiction of optical squeezing in the conjugate phase and amplitude quadratures with (left) unmodified light and (right) squeezed light.}
     \label{Squeezing}
 \end{figure}
 
 There are actually two forms of squeezing: single-mode and two-mode squeezing. Single-mode squeezing is typically the result of a phase relationship between emitted photon pairs of the same frequency, while in two-mode squeezing the two photons produces are of different frequencies such that there are correlations between the phase and amplitude of the two beams~\cite{Glorieux}. We are specifically concerned with single-mode squeezed states, and so any mention of squeezing will be in reference to single-mode squeezing.
 
 
-\subsubsection{How Sub-Poissonian Light and Photon Anti-Bunching Effects Affect Continuous Variable Measuements}
+\subsubsection{FWM and EIT}
 
-Continuous variable measurements allow for small quantum fluctuations to be less significant in measurement procedures when compared to individual photon entanglement, though there still exist challenges in performing measurements. Continuous variable measurements are typically performed with homodyne detectors~\cite{TODO}, a type of interferometer which compares some input beam against a controlled probe beam and takes the difference between their readings~\cite{TODO}.
+FWM and EIT tend to be regarded as complementary phenomena since EIT can enhance FWM~\cite{Xiao}. If transparency is induced for the generated transmission field, then it can coherently propagate through the medium with minimal losses. In the presence of both phenomena, the polarization response of the medium would oscillate at the desired fourth frequency to coherently produce a field. In theory, quantum information imposed onto one of the input beams could be coherently absorbed by the medium and re-applied to its response field (this idea is also used in rubidium quantum memories)~\cite{Glorieux}.
 
-Light is quantized and beam intensity is not that high. Individual photons arrive at the detector in a Poisson process, resulting in shot noise for the detector~\cite{TODO}. Due to this, the reading of the input beam can be swayed by individual photon arrival events. It would be highly desirable for the input beam to follow sub-Poissonian statistics (with the same mean as a Poisson distribution but a lower variance)~\cite{TODO} and for the beam to display photon anti-bunching (arrival events are distributed more evenly as opposed to having intensity spikes)~\cite{TODO}.
+One dimension of consideration is as follows. Light is quantized, and any beam containing quantum information is typically weak. Individual photons arrive at the detector in a Poisson process, resulting in shot noise for the detector~\cite{Souza}. The random rate at which photons arrive at the detector causes signal noise. It would be highly desirable for the input beam to follow sub-Poissonian statistics (with the same mean as a Poisson distribution but a lower variance)~\cite{Souza} and for the beam to display photon anti-bunching (arrival events are distributed more evenly as opposed to having intensity spikes)~\cite{FWM}.
 
-It has been shown that applying cavity EIT to three-level atoms can produce sub-Poissonian light~\cite{Souza}, and that applying FWM to three-level systems can produce photon anti-bunching effects~\cite{Du}. Combining these techniques theoretically allows for the information of continuous variable beams to be more reliably transmitted to some measurement device, such that readings fall below the shot-noise level.
+It has been shown that applying cavity EIT to three-level atoms can produce sub-Poissonian light~\cite{Souza}, and that applying FWM to three-level systems can produce photon anti-bunching effects~\cite{FWM}. Combining these techniques theoretically allows for the information of continuous variable beams to be more reliably transmitted to some measurement device, such that readings fall below the shot-noise level.
+
+This makes the combination of FWM and EIT processes in hot atomic vapour composed of four-level diamond configuration atoms an attractive possibility. If achievable, then its implementation could lead to an efficient frequency conversion and transmission method for quantum information.
 
 
 \subsection{Quantum Methods}
@@ -490,14 +518,132 @@ It has been shown that applying cavity EIT to three-level atoms can produce sub-
 
 \subsubsection{Master equation}
 
-\begin{itemize}
-    \item Born-Markov approximation (Born = weak interactions between bath and system. Markov = Memoryless system)
-    \item Applying rotating wave approximation to Born-Markov equation for $\dot{\rho}(t)_S$ yields Lindblad Master equation
-    \item Dissipative operators
-\end{itemize}
+For any quantum system, the total amount of information must be conserved, yet when dealing with atomic systems states can decay and the corresponding photon can be lost to the environment. This type of loss must be accounted for and is not included in typical quantum mechanical descriptions of systems unless the entire environment (i.e.~the rest of the universe) is also described. This information would all be contained in the von Neumann density matrix time evolution equation
+\begin{equation}
+    \frac{d \hat{\rho}_T}{dt} = -i \left[ \hat{H}_T, \hat{\rho}_T \right]
+\end{equation}
+where $\hat{\rho}_T$ is the total system density matrix and $\hat{H}_T$ is the total Hamiltonian~\cite{Manzano}. Needless to say, solving this is not an option. By tracing out the environment to isolate the subsystem $\hat{\rho}_S = Tr_E\left[ \hat{\rho}_T \right]$, applying the Born approximation where all interactions between the system and environment are assumed to be weak such that they may be traced out for simplification, applying the Markov approximation assuming that the system is memoryless (past states do not affect future states), then finally applying the rotating wave approximation where rapidly evolving components are averaged out and neglected (since time evolution can be factored in terms of complex exponentials $e^{-i \omega t}$) such that the resulting density matrix is strictly non-negative~\cite{Brasil}\cite{Manzano}. Additional simplification yields the Lindblad master equation as
+\begin{equation}\label{LindbladMasterEquation}
+    \frac{d \hat{\rho}_S}{dt} = -i \left[ \hat{H}_S, \hat{\rho}_S \right] + \sum_{\alpha} \gamma_{\alpha} \left( \hat{L}_{\alpha} \hat{\rho}_S \hat{L}_{\alpha}^{\dagger} - \frac{1}{2} \left\{ \hat{L}_{\alpha}^{\dagger} \hat{L}_{\alpha}, \hat{\rho}_S \right\}\right)
+\end{equation}
+where $\hat{L}_{\alpha}$ is the $\alpha^{th}$ dissipative operator (or jump operator), $\gamma_{\alpha}$ is the corresponding decay rate, and $\left\{ \hat{a}, \hat{b} \right\} = \hat{a} \hat{b} + \hat{b}\hat{a}$ is the anti-commutator~\cite{Lidar}.
 
+By solving for $d \hat{\rho}_S / dt = 0$ one may find the steady state density matrix of the system. For large systems this is typically done via computational methods. We are interested in the steady state regime as we will assume that the timescale of laser pulses is much greater than the transient response time of the medium. For short laser pulses, considering transient dynamics is important~\cite{MacRae}, but as a first step towards frequency conversion of continuous variable quantum information longer pulses should be used. With refinement, shorter pulse durations may be achievable, and then transient dynamics would become relevant, but that is a future engineering challenge.
 
 \subsubsection{Maxwell-Bloch equations}
+
+There is one problem with solving for the steady state density matrix of an atomic sample alone: it neglects propagation effects~\cite{MacRae}. Even though the entire system may be in a steady state that does not mean that the field strengths are uniform throughout. Any neighboring regions within the sample may experience different fields. Assume that the system can be broken up into cross-sectional regions which all experience approximately the same field strength, which would be the case if the beams were co-propagating or counter-propagating plane waves under the paraxial approximation~\cite{NOS}. Then one could consider the field strength of neighboring slices, see Fig.~\ref{AtomicMedium}.
+
+\begin{figure}
+    \includegraphics[width=0.8\columnwidth]{AtomicMedium.png}
+    \caption{(Left) the electric field experienced by a point within a region of an atomic medium and (right) a different electric field experienced by a neighboring region.}
+    \label{AtomicMedium}
+\end{figure}
+
+The Maxwell-Bloch equations can be derived and applied to account for propagation through the medium. Under the assumptions that the medium is non-magnetic, has no free charges, and no currents due to free charges, we may use Maxwell's equations to obtain the expression
+\begin{equation}
+    \nabla \times \nabla \times \vec{E} + \frac{n^2}{c^2} \frac{\partial^2}{\partial t^2} \vec{E} = - \mu_0 \frac{\partial^2}{\partial t^2} \vec{P}
+\end{equation}
+where $n$ is the index of refraction~\cite{Nonlinear}\cite{NOS}. We may express $\nabla \times \nabla \times \vec{E} = \nabla \left( \nabla \cdot \vec{E} \right) - \nabla^2 \vec{E}$, and apply the slowly varying amplitude approximation such that
+\begin{equation}
+    \vec{E} = \vec{\varepsilon}(z, t) e^{-i (\omega t - kz)}  + c.c.
+\end{equation}
+where the electromagnetic amplitude envelope $\vec{\varepsilon}(z, t)$ varies in time and space much slower than the carrier wave such that~\cite{Nonlinear}\cite{NOS}
+\begin{align}
+    &\left| \frac{\partial^2}{\partial t^2} \vec{\varepsilon}(z, t) \right| \ll \left| \omega \frac{\partial}{\partial t} \vec{\varepsilon}(z, t) \right|\\
+    &\left| \frac{\partial^2}{\partial z^2} \vec{\varepsilon}(z, t) \right| \ll \left| k \frac{\partial}{\partial z} \vec{\varepsilon}(z, t) \right|\\
+\end{align}
+
+In this regime, the $\nabla \left( \nabla \cdot \vec{E} \right)$ term then becomes negligibly small such that we may write~\cite{Nonlinear}
+\begin{equation}
+    \left(\nabla^2 - \frac{n^2}{c^2} \frac{\partial^2}{\partial t^2}\right) \vec{E} = \mu_0 \frac{\partial^2}{\partial t^2} \vec{P}.
+\end{equation}
+Then since we are assuming plane wave propagation in the paraxial approximation we have
+\begin{equation}
+    \left(\frac{\partial^2}{\partial z^2} - \frac{n^2}{c^2} \frac{\partial^2}{\partial t^2}\right) \vec{E} = \mu_0 \frac{\partial^2}{\partial t^2} \vec{P}.
+\end{equation}
+By evaluating our derivatives we find that
+\begin{align}
+   &\frac{\partial^2}{\partial t^2} \vec{E} = \left(-2 i \omega \frac{\partial}{\partial t} \vec{\varepsilon}(z, t) + \frac{\partial^2}{\partial t^2}\vec{\varepsilon}(z, t) - \omega^2 \vec{\varepsilon}(z, t)\right) e^{-i (\omega t - kz)} + c.c.\\
+   &\frac{\partial^2}{\partial z^2} \vec{E} = \left(2 i k \frac{\partial}{\partial z} \vec{\varepsilon}(z, t) + \frac{\partial^2}{\partial z^2}\vec{\varepsilon}(z, t) - k^2 \vec{\varepsilon}(z, t)\right) e^{-i (\omega t - kz)} + c.c.
+\end{align}
+and by the slowly varying amplitude approximation we have that the $\partial_t^2 \vec{\varepsilon}(z, t)$ $\partial_z^2 \vec{\varepsilon}(z, t)$ terms are negligible. So we have
+\begin{align}
+    &\left(2 i k \frac{\partial}{\partial z} \vec{\varepsilon}(z, t) - k^2 \vec{\varepsilon}(z, t)\right) e^{-i (\omega t - kz)}
+    - \frac{n^2}{c^2} \left(-2 i \omega \frac{\partial}{\partial t} \vec{\varepsilon}(z, t) - \omega^2 \vec{\varepsilon}(z, t)\right) e^{-i (\omega t - kz)} + c.c. = \mu_0 \frac{\partial^2}{\partial t^2} \vec{P} \nonumber\\
+    &\left(\frac{2 i n^2 \omega}{c^2} \frac{\partial}{\partial t} \vec{\varepsilon}(z, t) + 2 i k \frac{\partial}{\partial z} \vec{\varepsilon}(z, t) \right)e^{-i (\omega t - kz)} + \left(\frac{n^2 \omega^2}{c^2} - k^2 \right) \vec{\varepsilon}(z, t) e^{-i (\omega t - kz)} + c.c. = \mu_0 \frac{\partial^2}{\partial t^2} \vec{P}. \nonumber
+\end{align}
+The phase velocity of light may be expressed as
+\begin{equation}
+    v_p = \frac{\omega}{k} = \frac{c}{n}
+\end{equation}
+so we have the relation
+\begin{align}
+    &k = \frac{n \omega}{c}\\
+    &\frac{n^2 \omega^2}{c^2} - k^2 = 0
+\end{align}
+thus our expression simplifies to
+\begin{align}
+    &\left(\frac{2 i n k}{c} \frac{\partial}{\partial t} \vec{\varepsilon}(z, t) + 2 i k \frac{\partial}{\partial z} \vec{\varepsilon}(z, t) \right)e^{-i (\omega t - kz)} + c.c. = \frac{1}{\epsilon_0 c^2} \frac{\partial^2}{\partial t^2} \vec{P} \nonumber\\
+    &\left(\frac{\partial}{\partial t} \vec{\varepsilon}(z, t) + \frac{c}{n} \frac{\partial}{\partial z} \vec{\varepsilon}(z, t) \right)e^{-i (\omega t - kz)} + c.c. = -i\frac{1}{2nk \epsilon_0 c} \frac{\partial^2}{\partial t^2} \vec{P}  \nonumber
+\end{align}
+
+We can then also apply the slowly varying envelope approximation to $\vec{P}$ such that 
+\begin{equation}
+\vec{P} = \vec{\pi}(z, t) e^{-i (\omega t - kz)} + c.c.
+\end{equation}
+\begin{equation}
+   \frac{\partial^2}{\partial t^2} \vec{P} = \left(-2 i \omega \frac{\partial}{\partial t} \vec{\pi}(z, t) + \frac{\partial^2}{\partial t^2}\vec{\pi}(z, t) - \omega^2 \vec{\pi}(z, t)\right) e^{-i (\omega t - kz)} + c.c.\\
+\end{equation}
+then we have that
+\begin{align}
+    \left| \frac{\partial^2}{\partial t^2}\vec{\pi}(z, t) \right| \ll \left| \omega \frac{\partial}{\partial t} \vec{\pi}(z, t) \right| \ll \left| \omega^2 \vec{\pi}(z, t) \right|
+\end{align}
+so we may neglet the other terms to obtain
+\begin{equation}
+   \frac{\partial^2}{\partial t^2} \vec{P} \approx - \omega^2 \vec{\pi}(z, t) e^{-i (\omega t - kz)} + c.c.\\
+\end{equation}
+
+Thus, we may write
+\begin{align}
+    &\frac{\partial}{\partial t} \vec{\varepsilon}(z, t) + v_p \frac{\partial}{\partial z} \vec{\varepsilon}(z, t) = i\frac{ \omega^2}{2nk \epsilon_0 c}  \vec{\pi}(z, t). \nonumber
+\end{align}
+All vectors will be aligned in an isotropic gaseous media and $k = n \omega / c$, so we can write
+\begin{align}
+    &\frac{\partial}{\partial t} \varepsilon(z, t) + v_p \frac{\partial}{\partial z} \varepsilon(z, t) = i\frac{ \omega}{2n^2 \epsilon_0} \pi(z, t) \nonumber \\
+    &\frac{1}{v_p} \frac{\partial}{\partial t} \varepsilon(z, t) + \frac{\partial}{\partial z} \varepsilon(z, t) = i \frac{1}{v_p} \frac{ \omega}{2n^2 \epsilon_0} \pi(z, t) \nonumber \\
+    &\frac{1}{v_p} \frac{\partial}{\partial t} \varepsilon(z, t) + \frac{\partial}{\partial z} \varepsilon(z, t) = i \frac{ \omega}{2n \epsilon_0 c} \pi(z, t).
+\end{align}
+
+This can be simplified even further by moving to a co-moving frame via the transformation $\zeta = z$, $\tau = t - z / v_p$ to obtain~\cite{MacRae}
+\begin{align}\label{MaxwellBlochEquation}
+    \frac{\partial}{\partial \zeta} \varepsilon(\zeta, \tau) = i \frac{ \omega}{2n \epsilon_0 c} \pi(\zeta, \tau)
+\end{align}
+
+
+
+\subsubsection{Combined Solution Algorithm}
+
+With this, all that remains is finding the dipole response of the system in question. We can use the master equation in tandem with the Maxwell-Bloch equations to solve for the steady state density matrix, then find the expected polarization, then find the electric field strength at the next cross-sectional region. This process can be performed iteratively throughout the medium via computational methods in order to find the desired field strength at the end of the medium. For an idler field, this could then tell us how much field intensity is produced as output via FWM. Due to the use of a co-moving frame, no time evolution is required. This all comes together in Alg.~\ref{Alg}
+
+\begin{algorithm}[H]\label{Alg}
+    \caption{Lindblad-Maxwell-Bloch Algorithm}
+    \begin{algorithmic}[1]
+        \State Initialize the electric field strength, frequency, and propagation direction for each field at location $\zeta=0$ along the atomic medium. Also initialize step size $\Delta \zeta$ and sample length $Z$ (stopping condition).
+
+        \State Solve the Lindblad master equation Eq.~\eqref{LindbladMasterEquation} for the steady state density matrix satisfying $d\hat{\rho} / dt = 0$.
+        
+        \State Use the steady state density matrix $\hat \rho$ to find the expected polarization amplitude required in Eq.~\eqref{MaxwellBlochEquation} and use it to update the relevant electric field at $\zeta + \Delta \zeta$ as $\varepsilon \rightarrow \varepsilon + \partial_\zeta \varepsilon$ via approximation.
+
+        \State Update $\zeta \rightarrow \zeta + \Delta \zeta$.
+
+        \State Repeat steps 2 through 4 until $\zeta \geq Z$.
+
+        \State Return $\varepsilon$ and $\hat \rho$.
+
+    \end{algorithmic}
+\end{algorithm}
+
 
 
 \section{The First Steps - Learning to use QuTiP}
@@ -653,9 +799,9 @@ We will treat our atom as a three-level system with discrete states while lights
 
 The polarization vector of the atomic cloud may be given by
 \begin{equation}
-    \mathbf{P} = N \langle \hat{\mathbf{d}} \rangle = \epsilon_0 \chi \mathbf{E}
+    \vec{P} = N \langle \hat{\vec{d}} \rangle = \epsilon_0 \chi \vec{E}
 \end{equation}
-where $N$ is atomic density, $\hat{\mathbf{d}}$ is the average dipole moment, and $\chi$ is the magnetic susceptibility \cite{TODO}. One can find that for a three-level atom \textcolor{red}{(TODO derive or cite?)}
+where $N$ is atomic density, $\hat{\vec{d}}$ is the average dipole moment, and $\chi$ is the magnetic susceptibility \cite{TODO}. One can find that for a three-level atom \textcolor{red}{(TODO derive or cite?)}
 \begin{equation}
     \chi = \frac{-N d^2}{\epsilon_0 \hbar} \frac{\delta}{|\Omega_c|^2 - \delta (\Delta + i \Gamma)}
 \end{equation}
@@ -718,13 +864,13 @@ Neglect $\hat H_{Light}$
 
 $\hat H_a = \hbar (\omega_{3,1} - \omega_{3,1}) \hat \sigma_{2,2} + \hbar \omega_{3,1} \hat \sigma_{3,3}$
 
-$\hat H_{Light Atom} = - \hat{\mathbf{d} }_{1,3} \cdot \mathbf E_s - \hat{\mathbf{d} }_{2,3} \cdot \mathbf E_c$
+$\hat H_{Light Atom} = - \hat{\vec{d} }_{1,3} \cdot \vec E_s - \hat{\vec{d} }_{2,3} \cdot \vec E_c$
 
 Expand dipole operators and $E$ in terms of complex exponentials.
 
-$\hbar \Omega_s = \mathbf{d}_{1,3} \cdot \mathbf{E}_s$
+$\hbar \Omega_s = \vec{d}_{1,3} \cdot \vec{E}_s$
 
-$\hbar \Omega_c = \mathbf{d}_{2,3} \cdot \mathbf{E}_c$
+$\hbar \Omega_c = \vec{d}_{2,3} \cdot \vec{E}_c$
 
 Plug in $\Omega_i$ values into hamiltonian, replacing dipoles and $E$
 
@@ -771,7 +917,7 @@ Do some math, then we find that
 
 $<\hat A> = Tr[\hat \rho \hat A]$
 
-For linear media, the polarization is $\mathbf{D} = \epsilon_0 \mathbf{E} + \mathbf{P} = \epsilon_0 (1 + \xi) \mathbf{E}  = \epsilon \mathbf{E}$ and $\mathbf{P} = N <\hat \mathbf{d}>$
+For linear media, the polarization is $\vec{D} = \epsilon_0 \vec{E} + \vec{P} = \epsilon_0 (1 + \xi) \vec{E}  = \epsilon \vec{E}$ and $\vec{P} = N <\hat \vec{d}>$
 
 $ 1 + \xi = \frac{\epsilon}{\epsilon_0}$
 
@@ -785,7 +931,7 @@ Write up derivation to the point that we obtain
 
 $\xi = \frac{N<d>}{\epsilon_0 \hbar \Omega}$
 
-$<\mathbf{d}> = Tr[\hat \rho (\hat{\mathbf{d}} \hat{\sigma}_{i,j} + h.c.)]$
+$<\vec{d}> = Tr[\hat \rho (\hat{\vec{d}} \hat{\sigma}_{i,j} + h.c.)]$
 
 Expand out (Find a textbook with this) and we obtain
 

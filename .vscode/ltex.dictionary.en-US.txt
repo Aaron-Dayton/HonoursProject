@@ -26,3 +26,5 @@ hyperfine-split
 copropagating
 vapour
 vapours
+Poissonian
+quadratures
