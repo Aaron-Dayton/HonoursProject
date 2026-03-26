@@ -1,157 +1,107 @@
 \begin{thebibliography}{10}
 
-\bibitem{Harvest}
-Harvest now, decrypt later (hndl): The quantum-era threat.
-\newblock \url{https://www.paloaltonetworks.com/cyberpedia/harvest-now-decrypt-later-hndl}.
-\newblock accessed Mar. 19, 2026.
-
-\bibitem{Cband}
-Conventional band (c-band).
-\newblock \url{https://www.fiberlabs.com/glossary/conventional-band/}.
-\newblock accessed Mar. 23, 2026.
-
-\bibitem{QuTiP}
-Qutip.
-\newblock \url{https://github.com/qutip}.
-\newblock accessed Mar. 19, 2026.
-
-\bibitem{MacRae}
-MacRae A. and Kupchak Connor.
-\newblock Propagation dynamics and transient amplification in warm and cold atomic eit systems.
-\newblock {\em Optics Communications}, 606:132893, 2026.
-
-\bibitem{Andersen}
-U.L. Andersen, G.~Leuchs, and C.~Silberhorn.
-\newblock Continuous-variable quantum information processing.
-\newblock {\em Laser and Photonics Reviews}, 4(3):337--354, 2010.
+\bibitem{DFT}
+R.~O. Jones.
+\newblock Density functional theory: Its origins, rise to prominence, and future.
+\newblock {\em Rev. Mod. Phys.}, 87:897--923, Aug 2015.
 
 \bibitem{Philip}
 P.~W. Anderson.
 \newblock More is different - broken symmetry and the nature of the hierarchical structure of science.
 \newblock {\em Science}, 177:393--396, August 1972.
 
-\bibitem{Nonlinear}
-Robert~W. Boyd.
-\newblock {\em Nonlinear Optics}.
-\newblock Elsevier Science and Technology, 2020.
+\bibitem{Harvest}
+Harvest now, decrypt later (hndl): The quantum-era threat.
+\newblock \url{https://www.paloaltonetworks.com/cyberpedia/harvest-now-decrypt-later-hndl}.
+\newblock accessed Mar. 19, 2026.
 
-\bibitem{Brasil}
-Carlos~Alexandre Brasil, Felipe~Fernandes Fanchini, and Reginaldo de~Jesus Napolitano.
-\newblock A simple derivation of the lindblad equation.
-\newblock {\em Revista Brasileira de Ensino de Física}, 35(1):01–09, March 2013.
+\bibitem{Shor}
+Peter~W. Shor.
+\newblock Polynomial-time algorithms for prime factorization and discrete logarithms on a quantum computer.
+\newblock {\em SIAM Journal on Computing}, 26(5):1484–1509, October 1997.
 
-\bibitem{Diamond}
-Ling-Chun Chen, Meng-Yi Lin, Jiun-Shiuan Shiu, Xuan-Qing Zhong, Po-Han Tseng, and Yong-Fan Chen.
-\newblock High-efficiency telecom frequency conversion via a diamond-type atomic ensemble.
-\newblock {\em Phys. Rev. A}, 112:013709, Jul 2025.
+\bibitem{QKD}
+Davide Rusca and Nicolas Gisin.
+\newblock Quantum cryptography: an overview of quantum key distribution, 2024.
+
+\bibitem{Qin}
+Jiliang Qin, Jialin Cheng, Shaocong Liang, Zhihui Yan, Huadong Lu, and Xiaojun Jia.
+\newblock Noiseless and efficient quantum information transmission for fiber-based continuous-variable quantum networks.
+\newblock {\em Phys. Rev. Appl.}, 21:064026, Jun 2024.
+
+\bibitem{Shannon}
+C.~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock {\em Bell System Technical Journal}, 27(3):379--423, 1948.
+
+\bibitem{QuantumInternet}
+Dounan Du, Leonardo Castillo-Veneros, Dillion Cottrill, Guo-Dong Cui, Paul Stankus, Dimitrios Katramatos, Julián Martínez-Rincón, and Eden Figueroa.
+\newblock A long-distance quantum-capable internet testbed, 2024.
 
 \bibitem{Chen}
 Yu-Ao Chen, Qiang Zhang, Teng-Yun Chen, and et~al.
 \newblock An integrated space-to-ground quantum communication network over 4,600 kilometres.
 \newblock {\em Nature}, 589:214--219, January 2021.
 
-\bibitem{QuantumInternet}
-Dounan Du, Leonardo Castillo-Veneros, Dillion Cottrill, Guo-Dong Cui, Paul Stankus, Dimitrios Katramatos, Julián Martínez-Rincón, and Eden Figueroa.
-\newblock A long-distance quantum-capable internet testbed, 2024.
-
-\bibitem{FWM}
-Shengwang Du, Eun Oh, Jianming Wen, and Morton~H. Rubin.
-\newblock Four-wave mixing in three-level systems: Interference and entanglement.
-\newblock {\em Phys. Rev. A}, 76:013803, Jul 2007.
-
-\bibitem{Geng}
-J.~Geng et~al.
-\newblock Electromagnetically induced transparency and four-wave mixing in a cold atomic ensemble with large optical depth.
-\newblock {\em New Journal of Physics}, 16:113053, Nov 2014.
-
-\bibitem{Fleischhauer}
-Michael Fleischhauer, Atac Imamoglu, and Jonathan~P. Marangos.
-\newblock Electromagnetically induced transparency: Optics in coherent media.
-\newblock {\em Rev. Mod. Phys.}, 77:633--673, Jul 2005.
-
-\bibitem{Atomic}
-Mark Fox.
-\newblock {\em A Students Guide to Atomic Physics}.
-\newblock Cambridge University Press, 2018.
-
-\bibitem{Glorieux}
-Q.~Glorieux, T.~Aladjidi, P.~D. Lett, and R.~Kaiser.
-\newblock Hot atomic vapors for nonlinear and quantum optics.
-\newblock {\em New Journal of Physics}, 25:051201, May 2023.
-
-\bibitem{Goren}
-C.~Goren, A.~D. Wilson-Gordon, M.~Rosenbluh, and H.~Friedmann.
-\newblock Electromagnetically induced absorption due to transfer of coherence and to transfer of population.
-\newblock {\em Phys. Rev. A}, 67:033807, Mar 2003.
-
-\bibitem{Optics}
-Eugene Hecht.
-\newblock {\em Optics}.
-\newblock Pearson, fifth edition, 2017.
-
-\bibitem{Higgins}
-C.~R. Higgins and I.~G. Hughes.
-\newblock Electromagnetically induced transparency in a v-system with 87rb vapour in the hyperfine paschen-back regime.
-\newblock {\em Journal of Physics B: Atomic, Molecular and Optical Physics}, 54, Sept 2021.
-
 \bibitem{Hosseini}
 M.~Hosseini, B.M. Sparkes, G.~Campbell, P.K. Lam, and B.C. Buchler.
 \newblock High efficiency coherent optical memory with warm rubidium vapour.
 \newblock {\em Nature Communications}, 2(1), February 2011.
 
-\bibitem{Jones}
-D.~E. Jones, J.~D. Franson, and T.~B. Pittman.
-\newblock Ladder-type electromagnetically induced transparency using nanofiber-guided light in a warm atomic vapor.
-\newblock {\em Phys. Rev. A}, 92:043806, Oct 2015.
-
-\bibitem{DFT}
-R.~O. Jones.
-\newblock Density functional theory: Its origins, rise to prominence, and future.
-\newblock {\em Rev. Mod. Phys.}, 87:897--923, Aug 2015.
+\bibitem{Strassel}
+T.~Strassel.
+\newblock {\em Quantum Memory with Atomic Ensembles of Rubidium and Single Photons for Long Distance Quantum Communication}.
+\newblock PhD thesis, Ruperto–Carola University of Heidelberg, 2008.
 
 \bibitem{Langenfeld}
 S.~Langenfeld, P.~Thomas, O.~Morin, and G.~Rempe.
 \newblock Quantum repeater node demonstrating unconditionally secure key distribution.
 \newblock {\em Phys. Rev. Lett.}, 126:230506, Jun 2021.
 
-\bibitem{Lee}
-Yoon-Seok Lee and Han~Seb Moon.
-\newblock Doppler-free three-photon coherence in doppler-broadened diamond-type atomic system.
-\newblock {\em Opt. Express}, 25(5):5316--5326, Mar 2017.
+\bibitem{Saffman}
+M.~Saffman, T.~G. Walker, and K.~M\o{}lmer.
+\newblock Quantum information with rydberg atoms.
+\newblock {\em Rev. Mod. Phys.}, 82:2313--2363, Aug 2010.
 
-\bibitem{Lezama}
-A.~Lezama, S.~Barreiro, and A.~M. Akulshin.
-\newblock Electromagnetically induced absorption.
-\newblock {\em Phys. Rev. A}, 59:4732--4735, Jun 1999.
+\bibitem{Diamond}
+Ling-Chun Chen, Meng-Yi Lin, Jiun-Shiuan Shiu, Xuan-Qing Zhong, Po-Han Tseng, and Yong-Fan Chen.
+\newblock High-efficiency telecom frequency conversion via a diamond-type atomic ensemble.
+\newblock {\em Phys. Rev. A}, 112:013709, Jul 2025.
+
+\bibitem{Slusher}
+R.~E. Slusher, L.~W. Hollberg, B.~Yurke, J.~C. Mertz, and J.~F. Valley.
+\newblock Observation of squeezed states generated by four-wave mixing in an optical cavity.
+\newblock {\em Phys. Rev. Lett.}, 55:2409--2412, Nov 1985.
 
 \bibitem{Xiao}
 Y.~Li and M.~Xiao.
 \newblock Enhancement of nondegenerate four-wave mixing based on electromagnetically induced transparency in rubidium atoms.
 \newblock {\em Optics Letters}, 21:1064--1066, Jul 1996.
 
-\bibitem{Lidar}
-Daniel~A. Lidar.
-\newblock Lecture notes on the theory of open quantum systems, 2020.
+\bibitem{Tong}
+David Tong.
+\newblock {\em Quantum Mechanics}.
+\newblock Cambridge University Press, 2025.
 
-\bibitem{NOS}
-L.~A. Lugiato, Prati F., and Brambilla M.
-\newblock {\em Nonlinear Optical Systems}.
-\newblock Cambridge University Press, 2015.
+\bibitem{Peatross}
+J.~Peatross and M.~Ware.
+\newblock {\em Physics of light and Optics}.
+\newblock Brigham Young University, 2023.
 
-\bibitem{Manzano}
-D.~Manzano.
-\newblock A short introduction to the lindblad master equation.
-\newblock {\em AIP Advances}, 10(2), Feb 2020.
+\bibitem{Optics}
+Eugene Hecht.
+\newblock {\em Optics}.
+\newblock Pearson, fifth edition, 2017.
 
-\bibitem{McIntyre}
-D.~H. McIntyre.
-\newblock {\em Quantum Mechanics: A Paradigms Approach}.
-\newblock Cambridge University Press, 2023.
+\bibitem{Nonlinear}
+Robert~W. Boyd.
+\newblock {\em Nonlinear Optics}.
+\newblock Elsevier Science and Technology, 2020.
 
-\bibitem{Millman}
-S.~Millman and M.~Fox.
-\newblock Nuclear spins and magnetic moments of ${\mathrm{rb}}^{85}$ and ${\mathrm{rb}}^{87}$.
-\newblock {\em Phys. Rev.}, 50:220--225, Aug 1936.
+\bibitem{MacRae}
+MacRae A. and Kupchak Connor.
+\newblock Propagation dynamics and transient amplification in warm and cold atomic eit systems.
+\newblock {\em Optics Communications}, 606:132893, 2026.
 
 \bibitem{GroupVelocity}
 R\"{u}diger Paschotta.
@@ -159,73 +109,138 @@ R\"{u}diger Paschotta.
 \newblock \url{https://www.rp-photonics.com/group_velocity.html}, 2021.
 \newblock accessed: Mar. 20, 2026.
 
+\bibitem{McIntyre}
+D.~H. McIntyre.
+\newblock {\em Quantum Mechanics: A Paradigms Approach}.
+\newblock Cambridge University Press, 2023.
+
+\bibitem{Atomic}
+Mark Fox.
+\newblock {\em A Students Guide to Atomic Physics}.
+\newblock Cambridge University Press, 2018.
+
+\bibitem{Millman}
+S.~Millman and M.~Fox.
+\newblock Nuclear spins and magnetic moments of ${\mathrm{rb}}^{85}$ and ${\mathrm{rb}}^{87}$.
+\newblock {\em Phys. Rev.}, 50:220--225, Aug 1936.
+
+\bibitem{Fleischhauer}
+Michael Fleischhauer, Atac Imamoglu, and Jonathan~P. Marangos.
+\newblock Electromagnetically induced transparency: Optics in coherent media.
+\newblock {\em Rev. Mod. Phys.}, 77:633--673, Jul 2005.
+
+\bibitem{Jones}
+D.~E. Jones, J.~D. Franson, and T.~B. Pittman.
+\newblock Ladder-type electromagnetically induced transparency using nanofiber-guided light in a warm atomic vapor.
+\newblock {\em Phys. Rev. A}, 92:043806, Oct 2015.
+
+\bibitem{Higgins}
+C.~R. Higgins and I.~G. Hughes.
+\newblock Electromagnetically induced transparency in a v-system with 87rb vapour in the hyperfine paschen-back regime.
+\newblock {\em Journal of Physics B: Atomic, Molecular and Optical Physics}, 54, Sept 2021.
+
+\bibitem{Cband}
+Conventional band (c-band).
+\newblock \url{https://www.fiberlabs.com/glossary/conventional-band/}.
+\newblock accessed Mar. 23, 2026.
+
+\bibitem{Geng}
+J.~Geng et~al.
+\newblock Electromagnetically induced transparency and four-wave mixing in a cold atomic ensemble with large optical depth.
+\newblock {\em New Journal of Physics}, 16:113053, Nov 2014.
+
+\bibitem{Glorieux}
+Q.~Glorieux, T.~Aladjidi, P.~D. Lett, and R.~Kaiser.
+\newblock Hot atomic vapors for nonlinear and quantum optics.
+\newblock {\em New Journal of Physics}, 25:051201, May 2023.
+
 \bibitem{Patel}
 Sahil~D. Patel, Sean Doan, Chen Shang, Frederic Grillot, Frank Jahnke, John~E. Bowers, Galan Moody, and Weng~W. Chow.
 \newblock Microscopic theory of squeezed light in quantum-dot systems.
 \newblock {\em Phys. Rev. A}, 113:013712, Jan 2026.
 
-\bibitem{Peatross}
-J.~Peatross and M.~Ware.
-\newblock {\em Physics of light and Optics}.
-\newblock Brigham Young University, 2023.
+\bibitem{Kim}
+S~Kim and A.~M. Marino.
+\newblock Generation of 87rb resonant bright two-mode squeezed light with four-wave mixing.
+\newblock {\em Opt. Express}, 26(25):33366--33375, Dec 2018.
 
-\bibitem{Qin}
-Jiliang Qin, Jialin Cheng, Shaocong Liang, Zhihui Yan, Huadong Lu, and Xiaojun Jia.
-\newblock Noiseless and efficient quantum information transmission for fiber-based continuous-variable quantum networks.
-\newblock {\em Phys. Rev. Appl.}, 21:064026, Jun 2024.
-
-\bibitem{Qutip-lectures}
-Johansson Robert.
-\newblock qutip-lectures.
-\newblock \url{https://github.com/jrjohansson/qutip-lectures}, 2021.
-\newblock Accessed: 2025-11-11.
-
-\bibitem{QKD}
-Davide Rusca and Nicolas Gisin.
-\newblock Quantum cryptography: an overview of quantum key distribution, 2024.
-
-\bibitem{Saffman}
-M.~Saffman, T.~G. Walker, and K.~M\o{}lmer.
-\newblock Quantum information with rydberg atoms.
-\newblock {\em Rev. Mod. Phys.}, 82:2313--2363, Aug 2010.
-
-\bibitem{Scala}
-M.~Scala, B.~Militello, A.~Messina, J.~Piilo, and S.~Maniscalco.
-\newblock Microscopic derivation of the jaynes-cummings model with cavity losses.
-\newblock {\em Phys. Rev. A}, 75:013811, Jan 2007.
-
-\bibitem{Shannon}
-C.~E. Shannon.
-\newblock A mathematical theory of communication.
-\newblock {\em Bell System Technical Journal}, 27(3):379--423, 1948.
-
-\bibitem{Shor}
-Peter~W. Shor.
-\newblock Polynomial-time algorithms for prime factorization and discrete logarithms on a quantum computer.
-\newblock {\em SIAM Journal on Computing}, 26(5):1484–1509, October 1997.
-
-\bibitem{Slusher}
-R.~E. Slusher, L.~W. Hollberg, B.~Yurke, J.~C. Mertz, and J.~F. Valley.
-\newblock Observation of squeezed states generated by four-wave mixing in an optical cavity.
-\newblock {\em Phys. Rev. Lett.}, 55:2409--2412, Nov 1985.
+\bibitem{Agarwal}
+G.~S. Agarwal, T.~N. Dey, and Daniel~J. Gauthier.
+\newblock Competition between electromagnetically induced transparency and raman processes.
+\newblock {\em Phys. Rev. A}, 74:043805, Oct 2006.
 
 \bibitem{Sonoyama}
 Tatsuki Sonoyama, Tomoki Sano, Takumi Suzuki, Kazuma Takahashi, Takefumi Nomura, Akito Kawasaki, Asuka Inoue, Takahiro Kashiwazaki, Takeshi Umeki, Masahiro Yabuno, Shigehito Miki, Hirotaka Terai, Kan Takase, Warit Asavanant, Mamoru Endo, and Akira Furusawa.
 \newblock Hybridization of pulse and continuous-wave based optical quantum computation, 2025.
+
+\bibitem{Andersen}
+U.L. Andersen, G.~Leuchs, and C.~Silberhorn.
+\newblock Continuous-variable quantum information processing.
+\newblock {\em Laser and Photonics Reviews}, 4(3):337--354, 2010.
 
 \bibitem{Souza}
 J.~A. Souza, E.~Figueroa, H.~Chibani, C.~J. Villas-Boas, and G.~Rempe.
 \newblock Coherent control of quantum fluctuations using cavity electromagnetically induced transparency.
 \newblock {\em Phys. Rev. Lett.}, 111:113602, Sep 2013.
 
-\bibitem{Strassel}
-T.~Strassel.
-\newblock {\em Quantum Memory with Atomic Ensembles of Rubidium and Single Photons for Long Distance Quantum Communication}.
-\newblock PhD thesis, Ruperto–Carola University of Heidelberg, 2008.
+\bibitem{FWM}
+Shengwang Du, Eun Oh, Jianming Wen, and Morton~H. Rubin.
+\newblock Four-wave mixing in three-level systems: Interference and entanglement.
+\newblock {\em Phys. Rev. A}, 76:013803, Jul 2007.
 
-\bibitem{Tong}
-David Tong.
-\newblock {\em Quantum Mechanics}.
-\newblock Cambridge University Press, 2025.
+\bibitem{Lezama}
+A.~Lezama, S.~Barreiro, and A.~M. Akulshin.
+\newblock Electromagnetically induced absorption.
+\newblock {\em Phys. Rev. A}, 59:4732--4735, Jun 1999.
+
+\bibitem{Goren}
+C.~Goren, A.~D. Wilson-Gordon, M.~Rosenbluh, and H.~Friedmann.
+\newblock Electromagnetically induced absorption due to transfer of coherence and to transfer of population.
+\newblock {\em Phys. Rev. A}, 67:033807, Mar 2003.
+
+\bibitem{Lee}
+Yoon-Seok Lee and Han~Seb Moon.
+\newblock Doppler-free three-photon coherence in doppler-broadened diamond-type atomic system.
+\newblock {\em Opt. Express}, 25(5):5316--5326, Mar 2017.
+
+\bibitem{Manzano}
+D.~Manzano.
+\newblock A short introduction to the lindblad master equation.
+\newblock {\em AIP Advances}, 10(2), Feb 2020.
+
+\bibitem{Brasil}
+Carlos~Alexandre Brasil, Felipe~Fernandes Fanchini, and Reginaldo de~Jesus Napolitano.
+\newblock A simple derivation of the lindblad equation.
+\newblock {\em Revista Brasileira de Ensino de Física}, 35(1):01–09, March 2013.
+
+\bibitem{Lidar}
+Daniel~A. Lidar.
+\newblock Lecture notes on the theory of open quantum systems, 2020.
+
+\bibitem{Phillips}
+N.~B. Phillips, A.~V. Gorshkov, and I.~Novikova.
+\newblock Slow light propagation and amplification via electromagnetically induced transparency and four-wave mixing in an optically dense atomic vapor.
+\newblock {\em Journal of Modern Optics}, 56(18-19):1916--1925, 2009.
+
+\bibitem{NOS}
+L.~A. Lugiato, Prati F., and Brambilla M.
+\newblock {\em Nonlinear Optical Systems}.
+\newblock Cambridge University Press, 2015.
+
+\bibitem{QuTiP}
+Qutip.
+\newblock \url{https://github.com/qutip}.
+\newblock accessed Mar. 19, 2026.
+
+\bibitem{Scala}
+M.~Scala, B.~Militello, A.~Messina, J.~Piilo, and S.~Maniscalco.
+\newblock Microscopic derivation of the jaynes-cummings model with cavity losses.
+\newblock {\em Phys. Rev. A}, 75:013811, Jan 2007.
+
+\bibitem{Qutip-lectures}
+Johansson Robert.
+\newblock qutip-lectures.
+\newblock \url{https://github.com/jrjohansson/qutip-lectures}, 2021.
+\newblock Accessed: 2025-11-11.
 
 \end{thebibliography}

@@ -493,6 +493,8 @@ so by the conservation equations Eqs.~\eqref{ConservationEq1},~\eqref{Conservati
 
 So why is the $\omega_d$ field produced so important? What about all the other fields? Well, a photon is emitted when a charge accelerates, so for an electromagnetic field to be produced the valance electron must transition between states. By cleverly selecting the level structure and driving beam frequencies, many undesired transitions pathways can be suppressed and a transition near frequency $\omega_d$ can be driven~\cite{Nonlinear}. Rogue transitions may produce photons outside the set of frequencies $\{\omega_a, \omega_b, \omega_c, \omega_d\}$, but their number will be negligible in comparison to that of the $\omega_d$ field.
 
+However, this is more of a theoretical hope than a scientific fact. The probability of any given competing non-lienar processes is likely to be diminished, but there are many of them. All of these additional non-linear effects compete with FWM~\cite{Kim}, turning FWM generation into a parameter optimizaition problem in which the system must be set up to support the FWM process while other maximally suppressing any other non-linear mixing processes such as third-harmonic generation~\cite{Agarwal}.
+
 For the four-level diamond configuration atom of consideration (see Fig.~\ref{FirstDiamondAtom}), driving fields of transition frequency $\omega_{12}$, $\omega_{13}$, and $\omega_{24}$ will be applied to induce a near-$\omega_{34}$ transition within the telecom C-band frequency range.
 
 
@@ -531,6 +533,13 @@ where $\delta\left( \hat{x} \hat{y} \right) = \expect{\hat{x} \hat{y}} - \expect
 
 There are actually two forms of squeezing: single-mode and two-mode squeezing. Single-mode squeezing is typically the result of a phase relationship between emitted photon pairs of the same frequency, while in two-mode squeezing the two photons produces are of different frequencies such that there are correlations between the phase and amplitude of the two beams~\cite{Glorieux}. We are specifically concerned with single-mode squeezed states, and so any mention of squeezing will be in reference to single-mode squeezing.
 
+It is crucial to note that any practilcal implementation of a system in which the production of squeezed light is attempted, that `amplitude squeezing is maintained only if classical pump relative-intensity noise (RIN) is suppressed below shot noise'~\cite{Patel}.
+
+
+\subsubsection{The effects of optical depth on squeezed light generation}
+
+\todo{WRITE THIS SECTION REFERENCING PAPER}
+
 
 
 \subsubsection{Four wave mixing and electromagnetically induced transparency}
@@ -555,9 +564,9 @@ Overall, if EIA can be induced with respect to the input signal field to strengt
 
 \subsection{Quantum Methods}
 
+In order to make any quantitative statements about the systems and phenomena we have been considering thus far, we must have a mathematical framework for decribing them. To this end, we may apply the Lindblad master equation to find steady-state solutions for our system, and the Maxwell-Bloch equations to find the electric field strength within the medium. We may algorithmically combine these approaches to find the steady state of each region within a theoretical sample of $^{87}Rb$ by propagating the electromagnetic fields throughout.
 
-
-\subsubsection{Master equation}
+\subsubsection{Lindblad Master equation}
 
 For any quantum system, the total amount of information must be conserved, yet when dealing with atomic systems states can decay and the corresponding photon can be lost to the environment. This type of loss must be accounted for and is not included in typical quantum mechanical descriptions of systems unless the entire environment (i.e.~the rest of the universe) is also described. This information would all be contained in the von Neumann density matrix time evolution equation
 \begin{equation}
@@ -573,7 +582,7 @@ By solving for $d \hat{\rho}_S / dt = 0$ one may find the steady state density m
 
 \subsubsection{Maxwell-Bloch equations}
 
-There is one problem with solving for the steady state density matrix of an atomic sample alone: it neglects propagation effects~\cite{MacRae}. Even though the entire system may be in a steady state that does not mean that the field strengths are uniform throughout. Any neighboring regions within the sample may experience different fields. Assume that the system can be broken up into cross-sectional regions which all experience approximately the same field strength, which would be the case if the beams were co-propagating or counter-propagating plane waves under the paraxial approximation~\cite{NOS}. Then one could consider the field strength of neighboring slices, see Fig.~\ref{AtomicMedium}.
+There is one problem with solving for the steady state density matrix of an atomic sample alone: it neglects propagation effects~\cite{MacRae}\cite{Phillips}. Even though the entire system may be in a steady state that does not mean that the field strengths are uniform throughout. Any neighboring regions within the sample may experience different fields. Assume that the system can be broken up into cross-sectional regions which all experience approximately the same field strength, which would be the case if the beams were co-propagating or counter-propagating plane waves under the paraxial approximation~\cite{NOS}. Then one could consider the field strength of neighboring slices, see Fig.~\ref{AtomicMedium}.
 
 \begin{figure}
     \includegraphics[width=0.8\columnwidth]{AtomicMedium.png}
@@ -716,6 +725,12 @@ where $\vec{k}_i$ is the idler beam field which we wish to induce via FWM. This 
 This setup is mutually beneficial for Maxwell-Bloch solution steps. Consider solving for the change in electric field strength through a slice of an atomic cell. By taking $\vec{k}_s$ (or any $k$-vector for that matter) as the normal vector of the slice plane we can justify the approximation that the signal, pump I, and pump II field strengths are all uniform about the plane. Additionally, for strong pump I and pump II fields, we can assume that their intensities do not change significantly through propagation (approximately fixed beam strength). Therefore, we can justifiably state that we know the field strength of all three input beams at the location of the first slice. This allows us to then find the field strength for all subsequent slices of the medium in an iterative process.
 
 
+\subsection{Cavity Enhancement}
+
+\todo{TALK ABOUT THE INTRODUCTION OF A CAVITY AND HOW IT WOULD AFFECT OUR SYSTEM (i.e.~quantizing fields vs not) THEN MENTION THE ISSUE THIS CAUSES WITH LINING UP k-vectors}
+
+
+
 \subsection{System Hamiltonian}
 
 \todo{TALK ABOUT THIS!!!}
@@ -783,6 +798,9 @@ where $\vec{\varepsilon}_0$ acts as a slowly-varying envelope which changes slow
 \end{align}
 
 
+\todo{INCLUDE CLASSICAL VERSION OF HAMILTONIAN REPRESENTING A CAVITY-FREE SYSTEM}
+
+\todo{INCLUDE HAMILTONIAN WITH QUANTIZED FIELD NOISE AS WAS DONE BY SOUZA}
 
 
 \subsection{Lindbladian and Maxwell-Bloch Equations} 
@@ -859,7 +877,7 @@ In order to combine the Hilbert spaces for these two separate quantizes systems,
     \end{array}\right) + \hbar \omega \hat{a}^{\dagger} \hat{a}
 \end{align}
 We may then choose to arbitraily shift the ground state as to obtain
-\begin{align}\cite{JCMHamiltonian}
+\begin{align}\label{JCMHamiltonian}
     \hat{H}_{JC} &= \frac{\hbar}{2} \left(\begin{array}{cc}
         0 & \Omega \hat{a}\\
         \Omega \hat{a}^{\dagger} & 2\omega
@@ -879,7 +897,7 @@ To learn the QuTiP package, the Jaynes-Cummings model was coded (see Code Block.
 This code uses the \lstinline|mesolve| function for time evolving a quantum system such that we may inspect the evolution of the state. For an initial state where the atom is excited and there are no photons present in the cavity, we obtain decaying Rabi oscillations as expected (see Fig.~\ref{JCM-Rabi}).
 
 \begin{figure}%[h!]
-    \includegraphics[width=\columnwidth]{JCM-Rabi.png}
+    \includegraphics[width=0.8\columnwidth]{JCM-Rabi.png}
     \caption{Decaying Rabi oscillation produced by the Jaynes-Cummings model with initial state $\ket{\psi}_0 = \ket{e} \otimes \ket{0}$.}
     \label{JCM-Rabi}
 \end{figure}
@@ -954,409 +972,38 @@ where $g$ is the atom-field coupling strength for the weak pump field, $\Omega_c
 There is one particular term of note here which has not yet shown up: $\varepsilon \hat{a} + \varepsilon^{*} \hat{a}^{\dagger}$. To understand this term, we may take a step back to the Jaynes-Cummings model. By including the $\varepsilon \hat{a} + \varepsilon^{*} \hat{a}^{\dagger}$ term to our Hamiltonian with $\varepsilon = 0.5$ we find the introduction of noise to our model as the probe field populates the cavity in Fig.~\ref{NoisyJCM-Rabi}. Notice also, that the total probability of having an excitation in the field and the cavity surpasses 1 since we have introduced an external source.
 
 \begin{figure}[h!]
-    \includegraphics[width=\columnwidth]{NoisyJCM-Rabi.png}
+    \includegraphics[width=0.8\columnwidth]{NoisyJCM-Rabi.png}
     \caption{Decaying Rabi oscillation produced by the Jaynes-Cummings model with initial state $\ket{\psi}_0 = \ket{e} \otimes \ket{0}$ with the intoduction of noise by including $\varepsilon \hat{a} + \varepsilon^{*} \hat{a}^{\dagger}$ to the Hamiltonian in Eq.~\eqref{JCMHamiltonian}.}
     \label{NoisyJCM-Rabi}
 \end{figure}
 
-They then define decay operators for their cavity field mode $\sqrt{\kappa} \hat{a}$, and their atomic states $\sqrt{\Gamma_{13}} \hat{\sigma}_{13}$, $\sqrt{\Gamma_{23}} \hat{\sigma}_{23}$. Implementing this Hamiltonian with QuTiP and solving for the steady-state density matrix via the Lindblad mater equation with the specified decay operators allowed us to reproduce some of the results presented by Souze et al.~\cite{Souza}. Fig.~\ref{PhotonCountThreeLevel} reprocuces the portion of figure 1(c) depicting the transmission profile over a range of $\Delta$ detunings with cavity EIT (CEIT). Fig.~\ref{ThreeLevelCEIT} reproduces figure 2(b) depicting the state expectation values over the range of detunings, where we have opted to split the original figure into two to avoid overcrowding. Additionally, the expectation value of atomic state $\ket{3}$ was added, where we observe a sharp dip in state population on resonance. This indicates the presence of a dark state, giving evidence to the presence of EIT. Fig.~\ref{PhotonCountThreeLevel} also suggests that the cavity mode becomes more populated on resonance, sopporting evidence of EIT; with increases also observed at other detunings corresponding to alternative transition frequencies introduced by `Autler-Townes-like' energy level splitting~\cite{Souza}.
+They then define decay operators for their cavity field mode $\sqrt{\kappa} \hat{a}$, and their atomic states $\sqrt{\Gamma_{13}} \hat{\sigma}_{13}$, $\sqrt{\Gamma_{23}} \hat{\sigma}_{23}$. Implementing this Hamiltonian with QuTiP and solving for the steady-state density matrix via the Lindblad mater equation with the specified decay operators allowed us to reproduce some of the results presented by Souza et al.~\cite{Souza}. Fig.~\ref{PhotonCountThreeLevel} reprocuces the portion of figure 1(c) depicting the transmission profile over a range of $\Delta$ detunings with cavity EIT (CEIT). Fig.~\ref{ThreeLevelCEIT} reproduces figure 2(b) depicting the state expectation values over the range of detunings, where we have opted to split the original figure into two to avoid overcrowding. Additionally, the expectation value of atomic state $\ket{3}$ was added, where we observe a sharp dip in state population on resonance. This indicates the presence of a dark state, giving evidence to the presence of EIT. Fig.~\ref{PhotonCountThreeLevel} also suggests that the cavity mode becomes more populated on resonance, sopporting evidence of EIT; with increases also observed at other detunings corresponding to alternative transition frequencies introduced by `Autler-Townes-like' energy level splitting~\cite{Souza}.
 
 \begin{figure}[h!]
-    \includegraphics[width=0.9\columnwidth]{PhotonCountThreeLevel.png}
-    \caption{Reproduction of a protion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souze et al.~\cite{Souza} depicting the expected photon count within the cavity over a range of drequency $\Delta$ detunings.}
+    \includegraphics[width=0.74\columnwidth]{PhotonCountThreeLevel.png}
+    \caption{Reproduction of a protion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souza et al.~\cite{Souza} depicting the expected photon count within the cavity over a range of drequency $\Delta$ detunings.}
     \label{PhotonCountThreeLevel}
 \end{figure}
 
 
 \begin{figure}[h!]
-    \includegraphics[width=\columnwidth]{ThreeLevelCEIT.png}
-    \caption{Reproduction of a protion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souze et al.~\cite{Souza} --- which has been slightly modified and added upon for clarity --- depicting (top) the state expectation values of states in an energy split and rotated basis over a range of detuings and (bottom) the state expectation values of states in the atomic basis over a range of detunings.}
+    \includegraphics[width=0.74\columnwidth]{ThreeLevelCEIT.png}
+    \caption{Reproduction of a protion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souza et al.~\cite{Souza} --- which has been slightly modified and added upon for clarity --- depicting (top) the state expectation values of states in an energy split and rotated basis over a range of detuings and (bottom) the state expectation values of states in the atomic basis over a range of detunings.}
     \label{ThreeLevelCEIT}
 \end{figure}
 
 
 
 
-\pagebreak
-\pagebreak
 
-
-\subsection{IDK}
-
-We will treat our atom as a three-level system with discrete states while lights behaves as a continuous field such that we do not need to discretize light in the Fock basis of photon number.
-
-The polarization vector of the atomic cloud may be given by
-\begin{equation}
-    \vec{P} = N \langle \hat{\vec{d}} \rangle = \epsilon_0 \chi \vec{E}
-\end{equation}
-where $N$ is atomic density, $\hat{\vec{d}}$ is the average dipole moment, and $\chi$ is the magnetic susceptibility \cite{TODO}. One can find that for a three-level atom \textcolor{red}{(TODO derive or cite?)}
-\begin{equation}
-    \chi = \frac{-N d^2}{\epsilon_0 \hbar} \frac{\delta}{|\Omega_c|^2 - \delta (\Delta + i \Gamma)}
-\end{equation}
-where \textcolor{red}{TODO - Define detunings and dissipation rate along with a figure for a three-level atom}.
-
-The Hamiltonian of the three-level atom can be given as
-\begin{equation}
-    H_{atom} = TODO (diagonal-slides)
-\end{equation}
-and the Hamiltonian of the light-matter interaction can be given as
-\begin{equation}
-    H_{atom} = TODO (see_slides)
-\end{equation}
-The dissipative operators...
-
-Solve master equation with...
-
-Here's the plot...
-
-\subsection{Meeting 2 with MacRae}
-
-\subsubsection{Hamiltonian derivation with light as a classical field}
-
-To construct the Hamiltonian, it is advantageous to first express it as a sum of the contributions to be considered
-
-\begin{equation}
-    \hat H = \hat H_{Atom} + \hat H_{Light\;Atom\;Interaction} + \hat H_{Light}.
-\end{equation}
-
-Since we are considering the simplified system where light acts as a continuous field, all we care about is how that field interacts with the atom. So at this point, we choose to neglect the term $\hat H_{Light}$ to obtain
-
-\begin{equation}
-    \hat H = \hat H_{Atom} + \hat H_{Light\;Atom\;Interaction}.
-\end{equation}
-
-Let $\hat \sigma_{i,j} = \ket{i}\bra{j}$ express the atomic transition operators which operate on state vectors to transition from state $j$ to $i$. For example,
-
-\begin{equation}
-    \hat \sigma_{1,3} = \ket{1}\bra{3} = \left(\begin{array}{ccc}
-        0 & 0 & 1\\
-        0 & 0 & 0\\
-        0 & 0 & 0
-    \end{array}\right)
-\end{equation}
-and acting this operator on basis state $\ket{i}$ yields
-\begin{equation}
-    \hat \sigma_{1,3} \ket{i} = \ket{1}\braket{3}{i} = \delta_{3,i}\ket{1}
-\end{equation}
-where $\delta$ denotes the usual Kronecker delta. 
-
-
-\textcolor{red}{TODO}
-
-
-3-level system frequency 2-3 = $\Omega_c$. $\Gamma_{3->2}$ and $\Gamma_{3->1}$ emission. $\hat \sigma_{i,j} = |i><j|$. $\Delta \omega_s - \omega_{3,1}$. $\delta = \Delta_c - \Delta$
-
-$\hat H = \hat H_a + \hat H_{Light Atom} + \hat H_{Light}$
-
-Neglect $\hat H_{Light}$
-
-$\hat H_a = \hbar (\omega_{3,1} - \omega_{3,1}) \hat \sigma_{2,2} + \hbar \omega_{3,1} \hat \sigma_{3,3}$
-
-$\hat H_{Light Atom} = - \hat{\vec{d} }_{1,3} \cdot \vec E_s - \hat{\vec{d} }_{2,3} \cdot \vec E_c$
-
-Expand dipole operators and $E$ in terms of complex exponentials.
-
-$\hbar \Omega_s = \vec{d}_{1,3} \cdot \vec{E}_s$
-
-$\hbar \Omega_c = \vec{d}_{2,3} \cdot \vec{E}_c$
-
-Plug in $\Omega_i$ values into hamiltonian, replacing dipoles and $E$
-
-We need the interacting picture
-
-$\hat H = \hat H_0 + \hat H_I$
-
-$\hat H_0 = \omega_s \hat \sigma_{3,3} + (\omega_s - \omega_c) \hat \sigma_{2,2}$
-
-$\frac{\hat H_I}{\hbar} = \frac{\hat H - \hat H_0}{\hbar} = (\omega_{3,1} - \omega_s - \omega_s + \omega_{3,2}) \hat \sigma_{2,2} + (\omega_{3,1} - \omega_s) \hat \sigma_{3,3} + \hat H_{Light Atom}$
-
-Plug in $\Delta$ and $\delta$ then $\hat H_{Light Atom}$ to obtain interaction hamiltonian
-
-$\hat H_I = \left(\begin{array}{ccc}
-        0 & 0 &  \Omega_s e^{i \omega_s t} \tilde \Omega_s e^{i \omega_s t}\\
-        0 & \delta & \Omega_c e^{i \omega_c t} \tilde \Omega_c e^{i \omega_c t}\\
-        c.c & c.c & \Delta
-    \end{array}\right)$
-
-Then 
-
-$V = e^{-i \hat H_0 t} \hat H_I e^{i \hat H_0 t}$
-
-Notice that $e^{-i \hat H_0 t} $ is diagonal so this is simple
-
-Multiply through, then apply rotating wave approximation to obtain
-
-$\hat V = \left(\begin{array}{ccc}
-        0 & 0 &  \Omega_s \\
-        0 & \delta & \Omega_c \\
-        c.c & c.c & \Delta
-    \end{array}\right)$
-
-
-\subsubsection{a}
-
-Density matrix times an operator
-
-$\hat \rho \hat A = |\psi> (<\psi| \hat A)$
-
-$\hat B = I \hat B = \sum_c |c> (\hat B |c>)^{\dagger}$
-
-Do some math, then we find that 
-
-$<\hat A> = Tr[\hat \rho \hat A]$
-
-For linear media, the polarization is $\vec{D} = \epsilon_0 \vec{E} + \vec{P} = \epsilon_0 (1 + \xi) \vec{E}  = \epsilon \vec{E}$ and $\vec{P} = N <\hat \vec{d}>$
-
-$ 1 + \xi = \frac{\epsilon}{\epsilon_0}$
-
-For non-magnetic materials $\mu \approx \mu_0$, so
-
-$ 1 + \xi = \frac{\epsilon}{\epsilon_0} = \frac{\epsilon \mu}{\epsilon_0 \mu_0} = \left(\frac{c}{v}\right)^2 = n^2$
-
-Something like this, check all these derivations
-
-Write up derivation to the point that we obtain
-
-$\xi = \frac{N<d>}{\epsilon_0 \hbar \Omega}$
-
-$<\vec{d}> = Tr[\hat \rho (\hat{\vec{d}} \hat{\sigma}_{i,j} + h.c.)]$
-
-Expand out (Find a textbook with this) and we obtain
-
-$\xi = \frac{Nd^2}{\epsilon_0 \hbar \Omega} \rho_{i,j}$
-
-The density matrix should be a unitary
-
-
-\subsection{Meeting 3 with MacRae}
-
-Note that Polarization is real as $P = P_0 e^iwt + P_0^* e^-iwt$ as real valued
-
-We use the result we obtained $<d>$ with Beer's Law to obtain $E(t)$ (wave propagation, phase shift, and absorption). We get no phase shift and no absorption for perfect EIT. In reality, we send a pulse through. Some of the pulse frequencies will be absorbed! The longer the pulse, the less we lose. This is the effect of the medium responding.
-
-For a pulse of length $\Delta \tau$. If $\Delta \tau = 10^{-5}$ then the light pulse will be about 3 km long! We need the pulse to fit in the EIT window. Slowed light helps here such that the pulse fits in the cell. Widening the frequency window increases the speed of the slowed light, so we need a very precise frequency. The narrower the transparency window, the greater the group velocity (see the equation for group velocity dependent on $dn/dw$).
-
-We can however include many more atoms to increase n to lower group velocity. This is called `increasing optical depth'.
-
-\begin{equation}
-    v_g = \frac{c}{n + \omega \frac{dn}{d\omega}}
-\end{equation}
-
-
-\section{Temp Section - Next Steps}
-
-I have covered a sufficient amount of background and written enough on it. My meeting notes document to sufficient detail that I can write them out formally to approximately the same degree now vs later. If anything, they will benefit from being written later with hindsight into how things actually work.
-
-So, I can leave the thesis here for now. My next steps then are the following:
-
-\begin{itemize}
-    \item Read and re-read relevant CEIT papers
-    \item Find how to model the three-level system within a cavity using classical electromagnetic fields with dissipative operators for Lindbladian time evolution
-    \item Find how to quantize the system (optional - but probably in the papers I will read)
-    \item Read FWM papers
-    \item Learn how to computationally model FWM
-\end{itemize}
-
-\section{Semi-Classical three-level atom}
-
-We can begin to understand the behaviour of EIT in three-level $\Lambda$-type atoms through semi-classical modelling. We can consider a single three-level atom with quantized states in the presence of a classically oscillating electromagnetic field
-\begin{equation}
-    \vec{E} = \vec{E}_0 e^{i \omega t}.
-\end{equation}
-In this limit, we consider $E_0$ to be sufficiently large such that photon quantization can be neglected (i.e.~in the classical limit, the behaviour of the quantized electromagnetic field must converge to the classical behaviour). We may express the full Hamiltonian as the sum
-\begin{equation}
-    \hat H = \hat H_{Atom} + \hat H_{Light} + \hat H_{Light\;Atom\;Interaction}.
-\end{equation}
-We may the neglect the term $\hat H_{Light}$ to approximate our full Hamiltonian since the state of the electromagnetic field is not significantly affected by the atom in the (i.e.~there are is little coupling between the state of the laser field and the single atom). Our Hamiltonian then becomes 
-\begin{equation}
-    \hat H = \hat H_{Atom} + \hat H_{Light\;Atom\;Interaction}.
-\end{equation}
-where \textcolor{red}{TODO - Define $\omega$ values?}
-\begin{align}
-    \hat H_{atom} &= \omega_s \hat \sigma_{3,3} + (\omega_s - \omega_c) \hat \sigma_{2,2} \nonumber\\
-    &= \left(\begin{array}{ccc}
-        0 & 0 & 0\\
-        0 & \omega_s - \omega_c & 0\\
-        0 & 0 & \omega_s
-    \end{array}\right)
-\end{align}
-and
-\begin{align}
-    \hat H_{Light\;Atom\;Interaction} = - \hat{\vec{d}}_{1,3} \cdot \vec{E}_s - \hat{\vec{d}}_{2,3} \cdot \vec{E}_c
-\end{align}
-
-\textcolor{red}{TODO - Finish rest of derivation!!}
-
-Thus, we obtain
-\begin{equation}
-    \hat H = \left(\begin{array}{ccc}
-        0 & 0 & \Omega_s \\
-        0 & \delta & \Omega_c \\
-        \Omega_s^{*} & \Omega_c^{*} & \Delta
-    \end{array}\right)
-\end{equation}
-
-
-\textcolor{red}{TODO - This has been coded, include code snippets here and talk about results.}
-
-
-
-\subsection{Cavity EIT with a $\Lambda$-System}
-
-
-% \textcolor{red}{TODO - Delete or use somehow?}
-% Consider a 3-level atom (Lambda-system) in a cavity from the paper "Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency". Let ω_{31} denote the transition frequency between levels 3 and 1 and ω_{32} be that of levels 3 and 2. The cavity is resonant at frequency ω_{cav}. A probe beam drive the cavity at frequency ω_P and strength ε. Transitions \ket{1} -> \ket{3} and \ket{2} -> \ket{3} are coupled by a quantum cavity mode with vacuum Rabi frequency 2g and by a classical control field with frequency ω_C and Rabi frequency 2Ω_C. Let Δ = ω_{cav} - ω_P, Δ_1 = ω_{31} - ω_{cav}, and Δ_2 = ω_{32} - ω_C denote the relevant detunings. Through some approximation methods, the Hamiltonian is then given by $H = Δ_1 σ_{33} + (Δ_1 - Δ_2) σ_{22} - Δ σ_{11} + Δ a^{\dagger} a + (ε a + g a σ_{31} + Ω_C σ_{32} + h.c.)$ where σ_{ij}, $i \neq j$, are atomic operators, σ_{ij}, $i = j$, are atomic energy level population operators, and $a^{\dagger}, a$ are creation and annihilation operators respectively. The master equation is then $\dot{ρ} = -i [H, ρ] + \kappa (2 a ρ a^{\dagger} - a^{\dagger} a ρ - ρ a^{\dagger} a) + Γ_{31}(2 σ_{13} ρ σ_{31} - σ_{33} ρ - ρ σ_{33}) + Γ_{32}(2 σ_{23} ρ σ_{32} - σ_{33} ρ - ρ σ_{33})$ where κ is the cavity-field decay rate, and Γ_{31}, Γ_{32} are polarization decay rates of the excited level \ket{3} to levels \ket{1} and \ket{2}, respectively.
-
-\textcolor{red}{TODO - change line numbers relevant to final code}
-\textcolor{blue}{TODO - Place in appendix}
-\lstinputlisting[caption={Python code for CEIT with a three-level atom}, language=Python, firstline=11, lastline=111]{./Code/ThreeLevelCavity.py}\label{TLC-Code}
-
-\begin{figure}%[h!]
-    \includegraphics[width=\columnwidth]{ThreeLevelCEIT.png}
-    \caption{TODO}
-    \label{ThreeLevelCEIT}
-\end{figure}
-
-
-\section{Meeting Dec 3}
-
-Classical susceptibility / index of refraction within cavity calculation for sanity check. We can calculate quantum stuff, but we need something to check against. This is the purpose of this step.
-
-What kind of imperfections will kill the result? When does decoherence occur in classical model? 
-
-We might want to find photon number in quantum case to find light intensity.
-
-Plotting Fig 1 with number operators matches Fig 1 peaks in paper. This is what we want
-
-Next step: Get classical result that we can compare against later for sanity check (they should match). This also tells us if the experiment is possible in the first place. If parameters don't work out, then it may not be possible.
-
-
-
-\section{Meeting Jan 8}
-
-With 2 driving beams we cannot use RWA
-
-$k = n(\omega) \frac{\omega}{c}$ in a medium
-
-We need to conserve momentum and energy (frequency) to get phase matching
-
-If we have rubidium atoms in an optical resonator, can we predict the squeezing?
-
-Go through papers
-
-
-\section{Meeting Jan 12}
-
-The goal is now conversion efficiency. Look into Capckuck's stuff. Squeezing is gravy (if we can get it). Effieceincy calculations of a upconversion -> fiber optic transmission -> downconversion (end-to-end conversion efficiency) would be awesome!
-
-\section{Main results from research block}
-
-\textcolor{blue}{I read a handful of papers and here are some main points that stuck out.}
-
-Paper list:
-\begin{itemize}
-    \item Microscopic Theory of Squeezed Light in Quantum Dot Systems
-    \item Theory of cavity-enhanced spontaneous four wave mixing
-    \item Generation of 87Rb resonant bright two-mode squeezed light with four-wave mixing
-    \item Quantum Noise and Correlations in Resonantly Enhanced Wave Mixing Based on Atomic Coherence
-    \item Slow light propagation and amplification via electromagnetically induced transparency and four-wave mixing in an optically dense atomic vapor
-    \item (Didn't read fully, but used) Parametric amplification in an electromagnetically-induced-transparency medium
-    \item (Didn't read fully, but used) Competition between electromagnetically induced transparency and Raman processes
-\end{itemize}
-
-\subsection{Microscopic Theory of Squeezed Light in Quantum Dot Systems}
-
-They give operators for quadratures which need to be squeezed. MacRae said that these are conventional and we would likely use the same ones $\hat X = \frac{1}{2}(a + a^{\dagger})$ and $\hat Y = \frac{1}{2i}(a - a^{\dagger})$. The amount of squeezing is then expressed by getting expressions for $\Delta X$ and $\Delta Y$, which have difference $\Delta X - \Delta Y = 4 Re(\delta \langle aa \rangle)$ where $\delta \langle aa \rangle = \langle aa \rangle - \langle a\rangle \langle a\rangle$. They also give the operator for the $g^{(2)}(0)$ correlations (simultaneous photon emission operator)
-
-$$
-g^{(2)}(0) = \frac{\langle a^{\dagger}a^{\dagger} aa \rangle}{\langle a^{\dagger}a \rangle \langle a^{\dagger}a \rangle}
-$$
-
-They also give a Hamiltonian for their system (could be useful).
-
-Their data shows that different system parameters can result in different amounts of squeezing. This tells me that we need to balance parameters to obtain significant squeezing, FWM, and EIT all at once.
-
-THey make a statement that MacRae thought was useful: `In practice, amplitude squeezing is maintained only if classical pump relative-intensity noise (RIN) is suppressed below shot noise.' He said this may be difficult, but should be possible.
-
-Another result is stated as `This underscores the need for narrow-linewidth sources and good thermo-mechanical stability to preserve quadrature squeezing in the presence of injection-induced phase noise.' Also `From an engineering perspective, three levers govern performance, cavity decay, seed strength, and dephasing.'
-
-
-
-\subsection{Theory of cavity-enhanced spontaneous four wave mixing}
-
-This paper focuses on a system which I think is quite different from what we will be working with. Some mathematical techniques they used (Fourier transform techniques and interpretations) may be useful to us. 
-
-One result is `Thus, for a higher coeﬃcient of finesse, there will be more cavity round trip times, and the dimension of the Hilbert space which describes each photon will increase.' which seems straightforward to me. They then go on to say `Thus, interestingly, this physical system leads to higher-dimensional entanglement in the temporal-mode degree of freedom with a dimension which can be tailored by adjusting the cavity finesse.'
-
-Stated another way `increasing the finesse leads to more signal and idler cavity round-trips and hence to a greater correlation time.'
-
-They calculate the flux out of the cavity based on a few parameters and give some different regimes. Could be useful.
-
-
-
-\subsection{Generation of 87Rb resonant bright two-mode squeezed light with four-wave mixing}
-
-This paper focuses on using a double-$\Lambda$-system to produce FWM far off resonance in 85Rb such that the output photons produced are resonant with a transition of an 87Rb double-$\Lambda$-system which is more useful for quantum memory. They made a statement that I thought was very important: `While the original proposals for the double-lambda configuration [41–43] suggest that it should be possible to use EIT to eliminate absorption when operating on resonance, in practice this is not the case and residualabsorption dominates over the FWM process whenthe probe frequency is tuned closer to resonance.'
-
-So avoid needing to use EIT, they tune far off resonance to prevent significant absorption in the 85Rb sample material but in a regime where they can still obtain FWM and squeezing. They then use EIT with the 87Rb for quantum memory.
-
-Not in this paper, but related to quantum memory: MacRae said that we can create quantum memory with 87Rb and EIT by having a signal and control beam which put the system into a dark state, then if we send in a pulse of light with quantum information encoded, then turn off the control beam, we can get short-lived quantum memory storage. Once the control beam is turned back on, the pulse is re-emitted from the material. There is some decoherence of course, making this storage method somewhat short-lived, but it could be useful in quantum optical circuits.
-
-They later state that there are multiple competing non-linear processes (including FWM) which makes it difficult to get FWM alone.
-
-
-
-\subsection{Quantum Noise and Correlations in Resonantly Enhanced Wave Mixing Based on Atomic Coherence}
-
-This paper looks into supressing quantum noise fluctuations via non-linear optical processes. Squeezing can be used for limited noise reduction. Quantum coherence and interference can be used to improve the degree of noise reduction. They generate Stokes and anti-Stokes fields with a near complete supression of quantum fluctuations and a perfect correlation structure (100\% squeezing).
-
-They use a double-$\Lambda$-system with FWM to produce squeezing. They use quite a bit of math, make some approximations, and show a regime where those approximations hold to obtain the desired correlation structure. They state that their methods can be applied in the few-photon limit, meaning that the theory may allow for single-photon quantum contol via non-linear optical processes.
-
-
-
-\subsection{Slow light propagation and amplification via electromagnetically induced transparency and four-wave mixing in an optically dense atomic vapor}
-
-They state `In the limit of low optical depth, it is suﬃcient to take into account only the eﬀects of this single $\Lambda$. However, many applications require operation at high optical depth [9, 10], where additional nonlinear eﬀects may become important [11, 12, 13, 14]. One such eﬀect is resonant fourwave mixing a nonlinear process arising from the far oﬀ-resonant interaction of the control field.' so they use a double-$\Lambda$-system
-
-They also state `under certain conditions, FWM may lead to gain for both the signal and Stokes fields, which could compensate for any optical losses'
-
-They use some math to solve, including Floquet theory. They express a Hamiltonian for their system (may be helpful). They express as a system of differential equations and solve for analytic expressions to fully describe the propagation of light through the medium. They then give conditions for EIT and FWM based on the equations they obtained.
-
-They importantly state `Spectra taken at higher optical depth reveal more clear evidence of the constructive and destructive interference between EIT and FWM.' EIT and FWM can compete if the Raman paths destructively interfere (is what I gather from this).
-
-They compare theory against expreimental results, which match quite well, but indicate that they may not be considering some processes for some cases. They state that signal field absorption is underrepresented by the model, and that they may not be considering some decay mechanism.
-
-They state `modeled by a simple double-$\Lambda$ system, where the output signal and stokes field amplitudes are the results of interference of “traditional” EIT and FWM.'
-
-
-\subsection{Parametric amplification in an electromagnetically-induced-transparency medium}
-
-They state: `Experimental and theoretical analyses have revealed that, while the EIT picture is valid for relatively low atomic densities, the PA picture becomes dominant for high atomic densities and high coupling powers. We have also found that the parametric coupling between the probe and Stokes waves can be nullified by the proper choice of the coupling detuning frequency, due to destructive interference of two elementary processes.' and `The last terms of the two equations represent the parametric coupling, and if we neglect them, Eq. 2 is simply reduced to the ordinary EIT process, i.e., the linear absorption of each wave is cancelled by the presence of the factor c. In the limit of c →1, the medium becomes transparent for both the probe and Stokes waves, but it never amplifies them. If the last terms are included, however, the situation is totally different. In this case the two waves are parametrically coupled and the two waves can be amplified by the proper choice of parameters.'
-
-
-
-\subsection{Competition between electromagnetically induced transparency and Raman processes}
-
-They state `Often, the various processes compete with each other, whereby some processes are suppressed or interference between processes renders the medium transparent to the applied fields. Well-known examples include competition between third-harmonic generation and multiphoton ionization,and between four-wave mixing and two-photon absorption. Very recently, Harada et al. demonstrated experimentally that stimulated Raman scattering can disrupt electromagnetically induced transparency EIT, where the incident probe beam is depleted and new fields are generated via Raman processes.'
-
-
-
-
-
-
-
-
-\section{Computational Methods}
-
-
-\section{Results}
+\section{Outook}
 
 
 \section{Discussion}
 
 \subsection{Conditions for Optical Squeezing}
 
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
 \bibliography{refs}
 
 \pagebreak
