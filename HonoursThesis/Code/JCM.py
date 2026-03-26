@@ -6,7 +6,7 @@ from qutip import (Qobj, tensor, basis, create, destroy, qeye, mesolve, steadyst
 # Initial Arguments
 w_a = 2.0
 w_c = 2.0
-W = 0.01
+W = 0.02
 gamma = 0.005
 xi = 0.0025
 eta = 0.05
@@ -20,7 +20,7 @@ s_minus = tensor(destroy(2), qeye(N)) # Acts on atomic basis with 2 states as lo
 s_atom = tensor(Qobj([[0, 0], [0, 1]]), qeye(N)) # Acts on atomic basis with a shifted ground states
 
 # Set up the Hamiltonian
-H = (h * w_a) * s_atom + (h * w_c) * a.dag() * a + (h * W) * (s_minus.dag() * a + s_minus * a.dag())
+H = (h * w_a) * s_atom + (h * w_c) * a.dag() * a + (h * W)/2 * (s_minus.dag() * a + s_minus * a.dag())
 
 # Set up dissipative operator for a lossy cavity
 cavity_decay = np.sqrt(gamma) * a

@@ -149,6 +149,8 @@
 
 
 
+
+
    \newenvironment{xabstract}
 {\onecolumngrid
     \list{}{%
@@ -839,22 +841,29 @@ where we may shift by the zero-point energy since it is a constant term to obtai
 \end{equation*}
 Then finally, the interaction term is given by
 \begin{align}
-    \hat H_{Interaction} &= \frac{\hbar \Omega}{2} \left( \hat{\sigma}_+ \otimes \hat{a} + \hat{\sigma}_- \otimes \hat{a}^{\dagger} \right) \nonumber\\
+    \hat H_{Interaction} &= -\frac{\hbar \Omega}{2} \left( \hat{\sigma}_+ \otimes \hat{a} + \hat{\sigma}_- \otimes \hat{a}^{\dagger} \right) \nonumber\\
     &= \frac{\hbar \Omega}{2} \left(\begin{array}{cc}
         0 & \hat{a}\\
         \hat{a}^{\dagger} & 0
     \end{array}\right)
 \end{align}
-where $\Omega$ is the Rabi frequency and $\hat{\sigma}_{\pm}$ are the atomic raising and lowering operators.
+where $\Omega$ is the Rabi frequency, $\hat{\sigma}_{\pm}$ are the atomic raising and lowering operators, and we have changed the state convention such that we have $-\sigma_z$ as opposed to $\sigma_z$ in the original work~\cite{Scala}.
 
 In order to combine the Hilbert spaces for these two separate quantizes systems, block-operator notation is applied. Notice that $\hat H_{Atom}$ acts on the two-state atomic basis, while $\hat H_{Photon}$ acts on the infinite Fock basis of photons. We then must combine the two bases in $\hat H_{Interaction}$ which describes the creation of a photon in the Fock basis upon atomic emission, and the annihilation of a photon upon absorption. So this Hamiltonian should not be thought of as a two-by-two matrix acting on the atomic basis, but rather an infinite matrix enumerating the interactions between all possible states. All together, the final Hamiltonian is then~\cite{Scala}
 
 \begin{align}
-    \hat{H}_{JC} &= \frac{\hbar \omega}{2} \hat \sigma_z + \hbar \omega \hat{a}^{\dagger} \hat{a} + \frac{\hbar \Omega}{2} \left( \hat{\sigma}_+ \otimes \hat{a} + \hat{\sigma}_- \otimes \hat{a}^{\dagger} \right) \nonumber \\
+    \hat{H}_{JC} &= -\frac{\hbar \omega}{2} \hat \sigma_z + \hbar \omega \hat{a}^{\dagger} \hat{a} + \frac{\hbar \Omega}{2} \left( \hat{\sigma}_+ \otimes \hat{a} + \hat{\sigma}_- \otimes \hat{a}^{\dagger} \right) \nonumber \\
     &= \frac{\hbar}{2} \left(\begin{array}{cc}
-        \omega & \Omega \hat{a}\\
-        \Omega \hat{a}^{\dagger} & -\omega
+        -\omega & \Omega \hat{a}\\
+        \Omega \hat{a}^{\dagger} & \omega
     \end{array}\right) + \hbar \omega \hat{a}^{\dagger} \hat{a}
+\end{align}
+We may then choose to arbitraily shift the ground state as to obtain
+\begin{align}\cite{JCMHamiltonian}
+    \hat{H}_{JC} &= \frac{\hbar}{2} \left(\begin{array}{cc}
+        0 & \Omega \hat{a}\\
+        \Omega \hat{a}^{\dagger} & 2\omega
+    \end{array}\right) + \hbar \omega \hat{a}^{\dagger} \hat{a}.
 \end{align}
 
 This is not the whole story, however. Any real cavity has some photonic decay rate, meaning we must include dissipative operators and apply Lindbladian dynamics to solve for a steady state via the master equation. Our dissipative operator then becomes $L = \sqrt{\gamma} \hat{a}$ where $\gamma$ gives the decay rate such that our master equation is \cite{Scala}
@@ -890,7 +899,7 @@ The Hamiltonian for this system in the atomic basis can be obtained by writing d
         \Omega_s^* & \Omega_c^* & 2\Delta
     \end{array}\right)
 \end{equation}
-where $\delta = \Delta_s - \Delta_c$ and for simplicities sake we redefine $\Delta = \Delta_s$.
+where $\delta = \Delta_s - \Delta_c$ and for the sake of simplicity we redefine $\Delta = \Delta_s$.
 
 In order to consider the effect of the environment for Lindbladian time evolution, we must mathematically express the decay operators of the system. We have decay operator $\Gamma_{13}$ which acts on transition $\sigma_{13}$ and $\Gamma_{23}$ which acts on $\sigma_{23}$. We can then follow the template given by the Jaynes-Cummings model in Code Block~\ref{JCM-Code}, changing out the \lstinline|mesolve| time evolution function for the \lstinline|steadystate| function which numerically solves the Lindblad master equation for $\hat{\rho}$ when $d \hat{\rho} / dt = 0$.
 
@@ -902,10 +911,10 @@ where removing the zero-valued $d_{ij}$ terms and noticing that $\rho_{ji} = \ex
 \begin{align}
     \expect{\hat{d}} = d_{13} \rho_{31} + d_{31} \rho_{13} + d_{23} \rho_{32} + d_{32} \rho_{23}.
 \end{align}
-This expression can then be re-expressed fully in terms of $\rho_{31}$ as~\cite{Fleischhauer}
+This expression can then be re-expressed fully in terms of $d_{13}$ as~\cite{Fleischhauer}
 
 \begin{equation}
-    \chi^{(1)} = \frac{N |d_{13} \rho_{31}|^2}{V \hbar \epsilon_0} \left[
+    \chi^{(1)} = \frac{N |d_{13}|^2}{V \hbar \epsilon_0} \left[
         \frac{4 \delta (|\Omega_c| - 4 \delta \Delta) - 4 \Delta \Gamma_{21}^2}{||\Omega_c|^2 + (\Gamma_{31} + i 2 \Delta) (\Gamma_{21} + i 2 \delta)|^2} +
         i\frac{8 \delta^2 \Gamma_{31} + 2 \Gamma_{21} (|\Omega_c|^2 + \Gamma_{21} \Gamma_{31})}{||\Omega_c|^2 + (\Gamma_{31} + i 2 \Delta) (\Gamma_{21} + i 2 \delta)|^2}
     \right]
@@ -921,7 +930,7 @@ By setting $\Delta_c$ to be fixed, we can scan over $\Delta$ values to find the 
 We may also check the validity of our approximation $\rho_{12} \approx \rho_{23} \approx 0$ by inspecting the density matrix elements at each detuning. For all detunings applied, both values are near-zero valued, thereby giving further justification to our approximation.
 
 
-\begin{figure}%[h!]
+\begin{figure}[h]
     \includegraphics[width=0.8\columnwidth]{SemiClassicalEIT.png}
     \caption{The real and imaginary components of the density matrix element $\rho_{31} = \expect{\hat{\sigma}}$ over a range of detunings $\Delta_s$. The response indicates the presence of EIT and slowed light propagation at resonance.}
     \label{SemiClassicalEIT}
@@ -930,23 +939,40 @@ We may also check the validity of our approximation $\rho_{12} \approx \rho_{23}
 
 \subsubsection{Cavity electromagnetically induced transparency in a $\Lambda$-system with quantized driving fields}
 
-\textcolor{red}{TODO - Write what we did here to reproduce the results}
+The final stepping stone towards developing system-specific code comes with reproducing a known result of a more advanced and modern system. In the paper `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souza et al.~they describe a three-level $\Lambda$-system within a resonant cavity of frequency $\omega_{cav}$ in the presence of a strong calssical pump field of frequency$\omega_c$ and a weak quantized probe beam of frequency $\omega_p$ and solve for steady state solutions via the Lindblad master equation~\cite{Souza}. This combines all the techniques seen thus far. They give their Hamiltonian as
+\begin{align}
+    \hat{H} &= \Delta \hat{\sigma}_{33} + (\Delta_1 - \Delta_2) \hat{\sigma}_{22} - \Delta \hat{\sigma}_{11} + \Delta \hat{a}^{\dagger} \hat{a} + \left( \varepsilon \hat{a} + g \hat{a} \hat{\sigma}_{31} + \Omega_{32} + h.c.\right) \nonumber \\
+    &=
+    \left(\begin{array}{ccc}
+        -\Delta & 0 & g^* \hat{a}^{\dagger} \\
+        0 & (\Delta_1 - \Delta_2) & \Omega_c^* \\
+        g \hat{a} & \Omega_c & \Delta_1
+    \end{array}\right) + \varepsilon \hat{a} + \varepsilon^{*} \hat{a}^{\dagger}  + \Delta \hat{a}^{\dagger} \hat{a}
+\end{align}
+where $g$ is the atom-field coupling strength for the weak pump field, $\Omega_c$ is the strong pump field dependent Rabi frequency, $\varepsilon$ is the weak probe field strength, $\Delta = \omega_{cav} - \omega_p$, $\Delta_1 = \omega_{31} - \omega_{cav}$, and $\Delta_2 = \omega_{32} - \omega_c$.
 
-\begin{figure}%[h!]
-    \includegraphics[width=\columnwidth]{ThreeLevelCEIT.png}
-    \caption{TODO}
-    \label{ThreeLevelCEIT}
+There is one particular term of note here which has not yet shown up: $\varepsilon \hat{a} + \varepsilon^{*} \hat{a}^{\dagger}$. To understand this term, we may take a step back to the Jaynes-Cummings model. By including the $\varepsilon \hat{a} + \varepsilon^{*} \hat{a}^{\dagger}$ term to our Hamiltonian with $\varepsilon = 0.5$ we find the introduction of noise to our model as the probe field populates the cavity in Fig.~\ref{NoisyJCM-Rabi}. Notice also, that the total probability of having an excitation in the field and the cavity surpasses 1 since we have introduced an external source.
+
+\begin{figure}[h!]
+    \includegraphics[width=\columnwidth]{NoisyJCM-Rabi.png}
+    \caption{Decaying Rabi oscillation produced by the Jaynes-Cummings model with initial state $\ket{\psi}_0 = \ket{e} \otimes \ket{0}$ with the intoduction of noise by including $\varepsilon \hat{a} + \varepsilon^{*} \hat{a}^{\dagger}$ to the Hamiltonian in Eq.~\eqref{JCMHamiltonian}.}
+    \label{NoisyJCM-Rabi}
 \end{figure}
 
+They then define decay operators for their cavity field mode $\sqrt{\kappa} \hat{a}$, and their atomic states $\sqrt{\Gamma_{13}} \hat{\sigma}_{13}$, $\sqrt{\Gamma_{23}} \hat{\sigma}_{23}$. Implementing this Hamiltonian with QuTiP and solving for the steady-state density matrix via the Lindblad mater equation with the specified decay operators allowed us to reproduce some of the results presented by Souze et al.~\cite{Souza}. Fig.~\ref{PhotonCountThreeLevel} reprocuces the portion of figure 1(c) depicting the transmission profile over a range of $\Delta$ detunings with cavity EIT (CEIT). Fig.~\ref{ThreeLevelCEIT} reproduces figure 2(b) depicting the state expectation values over the range of detunings, where we have opted to split the original figure into two to avoid overcrowding. Additionally, the expectation value of atomic state $\ket{3}$ was added, where we observe a sharp dip in state population on resonance. This indicates the presence of a dark state, giving evidence to the presence of EIT. Fig.~\ref{PhotonCountThreeLevel} also suggests that the cavity mode becomes more populated on resonance, sopporting evidence of EIT; with increases also observed at other detunings corresponding to alternative transition frequencies introduced by `Autler-Townes-like' energy level splitting~\cite{Souza}.
 
-\begin{figure}%[h!]
+\begin{figure}[h!]
     \includegraphics[width=0.9\columnwidth]{PhotonCountThreeLevel.png}
-    \caption{TODO}
+    \caption{Reproduction of a protion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souze et al.~\cite{Souza} depicting the expected photon count within the cavity over a range of drequency $\Delta$ detunings.}
     \label{PhotonCountThreeLevel}
 \end{figure}
 
 
-
+\begin{figure}[h!]
+    \includegraphics[width=\columnwidth]{ThreeLevelCEIT.png}
+    \caption{Reproduction of a protion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souze et al.~\cite{Souza} --- which has been slightly modified and added upon for clarity --- depicting (top) the state expectation values of states in an energy split and rotated basis over a range of detuings and (bottom) the state expectation values of states in the atomic basis over a range of detunings.}
+    \label{ThreeLevelCEIT}
+\end{figure}
 
 
 
@@ -1330,7 +1356,7 @@ They state `Often, the various processes compete with each other, whereby some p
 
 \subsection{Conditions for Optical Squeezing}
 
-
+\bibliographystyle{plain}
 \bibliography{refs}
 
 \pagebreak
