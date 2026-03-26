@@ -136,7 +136,16 @@
 \newcommand{\expect}[1]{\bigl\langle #1 \bigr\rangle}
 
 
-
+\newcommand{\appropto}{
+    \mathrel{
+        \vcenter{
+            \offinterlineskip\halign{
+                \hfil$##$\cr
+                \propto\cr\noalign{\kern2pt}\sim\cr\noalign{\kern-2pt}
+            }
+        }
+    }
+}
 
 
 
@@ -267,10 +276,10 @@ where $\chi^{(i)}$ is the $i^{th}$ order electric susceptibility rank $i+1$ tens
 \end{equation}
 then by $N \expect{\hat{\vec{d}}} = \epsilon_0 \chi^{(1)} \vec{E}$ we have
 \begin{equation}\label{chi1eq}
-    \chi^{(1)} = \frac{N |\expect{\hat{\vec{d}}}|}{\epsilon_0|\vec{E}|}.
+    \chi^{(1)} = \frac{N \expect{\hat{d}}}{\epsilon_0 E}.
 \end{equation}
 
-What frequencies are allowed to pass through the atomic medium is decided by the linear electric susceptibility of the material $\chi^{(1)}$. For this reason, the above form of Eq.~\eqref{chi1eq} will not actually be applied as the relevant equation is frequency dependent, but in order to obtain any frequency dependent equation for $\chi^{(1)}$ the system must first be defined. Thus, Eq.~\eqref{chi1eq} is merely an illustrative equation to depict the pysics in broad detail.
+What frequencies are allowed to pass through the atomic medium is decided by the linear electric susceptibility of the material $\chi^{(1)}$. For this reason, the above form of Eq.~\eqref{chi1eq} will not actually be applied as the relevant equation is frequency dependent, but in order to obtain any frequency dependent equation for $\chi^{(1)}$ the system must first be defined. Thus, Eq.~\eqref{chi1eq} is merely an illustrative equation to depict the physics in broad detail.
 
 When light travels through some material with complex electric susceptibility (i.e.~complex index of refraction), then the light will receive some phase shift due to the real-valued component of susceptibility $Re\left( \chi^{(1)} \right)$ and some decay due to the imaginary-valued component $Im\left( \chi^{(1)} \right)$, such that the oscillating electric field will propagate as
 \begin{equation}\label{Beer}
@@ -282,13 +291,13 @@ So, we can say that when the imaginary component of linear susceptibility goes t
 
 One additional phenomenon which happens in tandem with EIT is slowed light. The index of refraction of a material is 
 \begin{equation}
-    n = \sqrt{1 + \chi^{(1)}},
+    n = \sqrt{1 + \chi}
 \end{equation}
-and $\chi^{(1)}$ for the Lorentz oscillator may be expressed as~\cite{Peatross}
+and may be approximated by $n = \sqrt{1 + \chi^{(1)}}$ for sufficiently weak electromagnetic fields. $\chi^{(1)}$ for the Lorentz oscillator may be expressed as~\cite{Peatross}
 \begin{equation}
     \chi^{(1)}(\omega) = \frac{Ne^2}{\epsilon_0 m_e} \frac{1}{\omega_0^2 - \omega^2 - i \gamma \omega}
 \end{equation}
-where $\omega_0$ is the resonant frequency of the system, $\omega$ is the driving frequency, and $\gamma$ is the decay rate (takes on the role of drag in the oscillator approximation). The group velocity of a wave can be written~\cite{GroupVelocity}
+where $\omega_0$ is the resonant frequency of the system, $\omega$ is the driving frequency, $\gamma$ is the decay rate (takes on the role of drag in the oscillator approximation), $e$ is the electron charge, and $m_e$ is electron mass. The group velocity of a wave can be written~\cite{GroupVelocity}
 \begin{equation}
     v_g = \frac{\partial \omega}{\partial k} = \frac{c}{n + \omega \frac{\partial n}{\partial \omega}}.
 \end{equation}
@@ -872,32 +881,52 @@ This code will be a base for all quantum code going forward, but before we can d
 
 Consider a quantized 3-level $\Lambda$-system of states driven by strong external electromagnetic fields. We consider the fields to be so strong that the quantum mechanical nature of the beams is reduced to classical behaviour in accordance with Ehrenfest's theorem (i.e.~the correspondence principle). This makes the system semi-classical since the atomic system is quantized while the driving fields are treated classically.
 
-The Hamiltonian for this system in the atomic basis can be obtained by writing down the diagonal atomic Hamiltonian and shifting it such that $\bra{1} \hat{H} \ket{1} = 0$, then adding on the effects of the electromagnetic fields which drive the allowed transitions $\ket{1} \leftrightarrow \ket{3}$ and $\ket{2} \leftrightarrow \ket{3}$ at frequencies $\omega_s \approx \omega_{13}$ and $\omega_c \approx \omega_{23}$. The rotating wave approximation may then be applied to simplify the off-diagonal transitional entries as Rabi frequencies $\Omega_s$, $\Omega_c$, and a unitary transformation may be applied to write the diagonal entries in terms of the detunings due to the driving beams $\Delta_s = \omega_{13} - \omega_s$ and $Delta_c = \omega_{23} - \omega_c$. A similar procedure is applied to obtain the Hamiltonian for the 4-level system of focus in the appendix~\ref{Hamiltonian_Formulation}.
-
-The Hamiltonian in this form is well known to be~\cite{Fleischhauer}
+The Hamiltonian for this system in the atomic basis can be obtained by writing down the diagonal atomic Hamiltonian and shifting it such that $\bra{1} \hat{H} \ket{1} = 0$, then adding on the effects of the electromagnetic fields which drive the allowed transitions $\ket{1} \leftrightarrow \ket{3}$ and $\ket{2} \leftrightarrow \ket{3}$ at frequencies $\omega_s \approx \omega_{13}$ and $\omega_c \approx \omega_{23}$. The rotating wave approximation may then be applied to simplify the off-diagonal transitional entries as Rabi frequencies $\Omega_s$, $\Omega_c$, and a unitary transformation may be applied to write the diagonal entries in terms of the detunings due to the driving beams $\Delta_s = \omega_{13} - \omega_s$ and $\Delta_c = \omega_{23} - \omega_c$. A similar procedure is applied to obtain the Hamiltonian for the 4-level system of focus in the appendix~\ref{Hamiltonian_Formulation}. The $\Lambda$-system Hamiltonian in this form is well known to be~\cite{Fleischhauer}
 
 \begin{equation}
     \hat H = -\frac{\hbar}{2}\left(\begin{array}{ccc}
         0 & 0 &  \Omega_s \\
-        0 & -(\Delta_s - \Delta_c) & \Omega_c \\
-        \Omega_s^* & \Omega_c^* & \Delta_s
-    \end{array}\right).
+        0 & -2\delta & \Omega_c \\
+        \Omega_s^* & \Omega_c^* & 2\Delta
+    \end{array}\right)
 \end{equation}
+where $\delta = \Delta_s - \Delta_c$ and for simplicities sake we redefine $\Delta = \Delta_s$.
 
-In order to consider the effect of the environment for Lindbladian time evolution, we must mathematically express the decay operators of the system. We have decay operator $\Gamma_{13}$ which acts on transition $\sigma_{13}$ and $\Gamma_{23}$ which acts on $\sigma_{23}$. We can then follow the template given by the Jaynes-Cummings model, changing out the \lstinline|mesolve| time evolution function for the \lstinline|steadystate| function which numerically solves the Lindblad master equation.
+In order to consider the effect of the environment for Lindbladian time evolution, we must mathematically express the decay operators of the system. We have decay operator $\Gamma_{13}$ which acts on transition $\sigma_{13}$ and $\Gamma_{23}$ which acts on $\sigma_{23}$. We can then follow the template given by the Jaynes-Cummings model in Code Block~\ref{JCM-Code}, changing out the \lstinline|mesolve| time evolution function for the \lstinline|steadystate| function which numerically solves the Lindblad master equation for $\hat{\rho}$ when $d \hat{\rho} / dt = 0$.
 
-This results in a density matrix, which can then be used to obtain the expectation value of the dipole transition operator $\hat{d}_{13} \propto \sigma_{13}$. The linear electric susceptibility $\chi^{(1)}$ of the system is proportional to the square of the expectation value of the dipole transition operator $\hat{d}_{13}$, which itself is proportional to the expectation value $\langle \sigma_{13} \rangle$~\cite{Fleischhauer}.
+Now consider the linear electric susceptibility in Eq.~\eqref{chi1eq}. It tells us that $\chi^{(1)} \propto \expect{\hat{d}}$. We may expand $\expect{\hat{d}}$ as
+\begin{align}
+    \expect{\hat{d}} = \sum_{i,j} d_{ij} \expect{\hat{\sigma}_{ji}}
+\end{align}
+where removing the zero-valued $d_{ij}$ terms and noticing that $\rho_{ji} = \expect{\hat{\sigma}_{ji}}$ leaves us with
+\begin{align}
+    \expect{\hat{d}} = d_{13} \rho_{31} + d_{31} \rho_{13} + d_{23} \rho_{32} + d_{32} \rho_{23}.
+\end{align}
+This expression can then be re-expressed fully in terms of $\rho_{31}$ as~\cite{Fleischhauer}
 
-By setting $\Delta_c$ to be fixed, we can scan over $\Delta_s$ values to find the optimal conditions for EIT at the given $\Delta_c$ (and any other necessary parameters). Solving for the steady state then expectation value at each detuning produces fig.~\ref{SemiClassicalEIT}.
+\begin{equation}
+    \chi^{(1)} = \frac{N |d_{13} \rho_{31}|^2}{V \hbar \epsilon_0} \left[
+        \frac{4 \delta (|\Omega_c| - 4 \delta \Delta) - 4 \Delta \Gamma_{21}^2}{||\Omega_c|^2 + (\Gamma_{31} + i 2 \Delta) (\Gamma_{21} + i 2 \delta)|^2} +
+        i\frac{8 \delta^2 \Gamma_{31} + 2 \Gamma_{21} (|\Omega_c|^2 + \Gamma_{21} \Gamma_{31})}{||\Omega_c|^2 + (\Gamma_{31} + i 2 \Delta) (\Gamma_{21} + i 2 \delta)|^2}
+    \right]
+\end{equation}
+where $V$ is volume. However, we can get an intuitive sense for how the system behaves making some approximations. Fleischhauer et al.~\cite{Fleischhauer} give an expression where $\rho_{32} \propto \rho_{12}$ (with a prefactor that is not particularly large under typical circumstances), but the $\ket{1} \leftrightarrow \ket{2}$ transition is forbidden such that in the steady-state regime where the system is only driven by beams tuned near the transition resonances $\omega_{13}$ and $\omega_{23}$ we can expect $\rho_{12}$ to be near-zero valued. This then leads us to suspect that we may have $\rho_{23} \approx 0$. Assume this is the case. Then we may write the much simpler expression 
+\begin{align}
+    \expect{\hat{d}} \approx d_{13} \rho_{31} + d_{31} \rho_{13}
+\end{align}
+such that $\chi^{(1)} \appropto \rho_{31}$.
+
+By setting $\Delta_c$ to be fixed, we can scan over $\Delta$ values to find the optimal conditions for EIT at the given $\Delta_c$ (and any other necessary parameters). Solving for the steady state and taking the corresponding $\rho_{31}$ value at each detuning produces fig.~\ref{SemiClassicalEIT}. This plot depicts the real and imaginary components of $\chi^{(1)}$ over a range of detunings where we see $Im(\chi^{(1)})$ decreases on resonance indicating EIT, and in the same region $Re(\chi^{(1)})$ has a large slope indicating slowed light propagation.
+
+We may also check the validity of our approximation $\rho_{12} \approx \rho_{23} \approx 0$ by inspecting the density matrix elements at each detuning. For all detunings applied, both values are near-zero valued, thereby giving further justification to our approximation.
 
 
 \begin{figure}%[h!]
-    \includegraphics[width=\columnwidth]{SemiClassicalEIT.png}
-    \caption{\textcolor{red}{TODO - Explain figure}}
+    \includegraphics[width=0.8\columnwidth]{SemiClassicalEIT.png}
+    \caption{The real and imaginary components of the density matrix element $\rho_{31} = \expect{\hat{\sigma}}$ over a range of detunings $\Delta_s$. The response indicates the presence of EIT and slowed light propagation at resonance.}
     \label{SemiClassicalEIT}
 \end{figure}
 
-\textcolor{red}{TODO - Talk about figure and relation to EIT}
 
 \subsubsection{Cavity electromagnetically induced transparency in a $\Lambda$-system with quantized driving fields}
 

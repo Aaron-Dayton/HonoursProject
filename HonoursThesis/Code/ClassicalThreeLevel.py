@@ -7,10 +7,10 @@ from qutip import (Qobj, basis, create, destroy, mesolve, steadystate, expect)
 ℏ = 1
 
 def init_system(Δ=0.01, δ=0.001, Ω_c=4.6, Ω_s=0.3): 
-    H_array = -ℏ * np.array([
+    H_array = -ℏ/2 * np.array([
                     [0,             0,             Ω_s],
-                    [0,             δ,             Ω_c],
-                    [np.conj(Ω_s),  np.conj(Ω_c),  Δ  ]
+                    [0,             2*δ,           Ω_c],
+                    [np.conj(Ω_s),  np.conj(Ω_c),  2*Δ]
                 ])
 
     # Convert to Qobj
@@ -30,8 +30,8 @@ def plot_susceptibility_expectation_over_delta(Δ_end, Δ_c=0, n=500):
     # Δ_c = 0.3 * Γ # Other behaviour between the two
     # Δ_c = 0.5 * Γ # Raman peak
 
-    Ω_c = 0.1 * Γ
-    Ω_s = 10.0**(-5) * Γ
+    Ω_c = 0.2 * Γ
+    Ω_s = 20.0**(-5) * Γ
 
     Δ_vals = np.linspace(-Δ_end, Δ_end, n)
     Γ_times = np.linspace(0.0, 1000.0, 2000) # Just read off the last time step result
@@ -60,8 +60,8 @@ def plot_susceptibility_expectation_over_delta(Δ_end, Δ_c=0, n=500):
     #
     # Although, d = - ℏ Ω_s |3><1| gives a more accurate result and MacRae didn't seem entirely sure.
 
-    d_13 = - ℏ * Ω_s * (ket3 * ket1.dag())
-    e_ops = [d_13]
+    d_31 = - ℏ * Ω_s * (ket3 * ket1.dag())
+    e_ops = [d_31]
 
     # Other options
     # d_13 = - ℏ * Ω_s * (ket1 * ket3.dag())
@@ -117,7 +117,7 @@ def plot_susceptibility_expectation_over_delta(Δ_end, Δ_c=0, n=500):
     ax.plot(Δ_vals, real_results)
     ax.plot(Δ_vals, imag_results)
     ax.set_xlabel('Δ_s')
-    ax.set_ylabel(r'$\langle d_{13} \rangle$')
+    ax.set_ylabel(r'$\langle \sigma_{31} \rangle$')
     ax.legend(('Real', 'Imag'))
     plt.title('EIT phenomenon for a 3-level atom in a classical EM field')
     ax.axhline(y=0, color='black', linestyle='--', linewidth=1)
