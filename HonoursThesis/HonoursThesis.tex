@@ -744,9 +744,7 @@ This setup is mutually beneficial for Maxwell-Bloch solution steps. Consider sol
 
 \subsection{System Hamiltonian}
 
-\todo{TALK ABOUT THIS!!!}
-
-In Appendix~\ref{Hamiltonian_Formulation} we derive the Hamiltonian for our four-level atom as
+In Appendix~\ref{Hamiltonian_Formulation} we derive the Hamiltonian for our four-level atom by following a similar procedure to that of Du et al.~\cite{QuantumInternet}. The Hamiltonian is obtained as
 \begin{align}
     \tilde{H}
     &=
@@ -758,21 +756,23 @@ In Appendix~\ref{Hamiltonian_Formulation} we derive the Hamiltonian for our four
             0 & \Omega_{II}^*(t) & \Omega_{i}^*(t) \hat{b} & \Delta_{II} + \Delta_s\\
         \end{array}
     \right) +
-    \hbar \Delta_s \hat{a}^{\dagger}\hat{a} +
-    \hbar \Delta_i  \hat{b}^{\dagger}\hat{b}
+    \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
+    \hbar \Delta_b  \hat{b}^{\dagger}\hat{b}
 \end{align}
 where $\Omega_{x}(t),\;x \in \{s,i,I,II\}$ are the Rabi frequencies for each, and we have the detunings defined as
 \begin{align}
 &\Delta_s = \omega_{12} - \omega_s\\
 &\Delta_I = \omega_{13} - \omega_I\\
 &\Delta_{II} = \omega_{24} - \omega_{II}\\
-&\Delta_i = \omega_{34} - \omega_i
+&\Delta_i = \omega_{34} - \omega_i\\
+&\Delta_a = \omega_a - \omega_s\\
+&\Delta_b = \omega_b - \omega_i
 \end{align}
-where $\omega_s$ and $\omega_i$ are the weak signal and idler beams frequencies, respectively, $\omega_I$ and $\omega_{II}$ are the strong pump beam frequencies. This Hamiltonian couples the 4-state atomic basis with the distinct electromagnetic field modes of $\hat{a}$ and $\hat{b}$ at respective frequencies $\omega_{12}$ and $\omega_{34}$. Note that we choose these frequencies for the $\hat{a}$ and $\hat{b}$ field modes instead of $\omega_s$ and $\omega_i$ since we are working in the regime of small detunings and energy may not be perfectly conserved among frequencies as it could leak into many other physical processes (such as Doppler cooling). Therefore, $\omega_{12}$ and $\omega_{34}$ are more like target frequencies, since any actual laser field would have some linewidth. As $\Delta_s$ and $\Delta_i$ are small relative to the beam frequencies, we expect that the relevant linewidths would include non-negligent components of both their respective transition frequencies and beam frequencies. Fields $\hat{a}$ and $\hat{b}$ therefore act as representative fields which can be used to predict actual system behaviour. In fact, the choice could be made to make the frequencies of these fields arbitrary such that we instead have the field term in the Hamiltonian expressed as $\hbar \Delta_a \hat{a}^{\dagger}\hat{a} + \hbar \Delta_b  \hat{b}^{\dagger}\hat{b}$ where $\Delta_a = \omega_a - \omega_s$ and $\Delta_b = \omega_b - \omega_s$ for any $\omega_a$ and $\omega_b$, though one should expect the accuracy of the model to decrease with significantly large $\Delta_a$ and $\Delta_b$. This approach is taken Du et al. in~\cite{QuantumInternet}. However, since the choice is arbitrary, we opt to select the former for the sake of simplicity.
+where $\omega_s$ and $\omega_i$ are the weak signal and idler beams frequencies, respectively, $\omega_I$ and $\omega_{II}$ are the strong pump beam frequencies, and $\omega_a$ and $\omega_b$ are the resonant cavity frequencies. This Hamiltonian couples the 4-state atomic basis with the distinct electromagnetic field modes of $\hat{a}$ and $\hat{b}$ at respective frequencies $\omega_{a}$ (tuned near $\omega_{12}$) and $\omega_{b}$ (tuned near $\omega_{34}$), respectively. Note that we choose these frequencies for the $\hat{a}$ and $\hat{b}$ field modes because we cannot simply assume that the cavity is perfectly on resonance with the driving field or the relevant atomic transition frequency.
 
-We will be working with this Hamiltonian in the steady-state limit such that we can assume that each $\Omega_x$ is constant for all times $t$. These values will, however, vary in space. Out Hamiltonian may then be expressed
+We will be working with this Hamiltonian in the steady-state limit such that we can assume that each $\Omega_x,\; x \in \{s, i, I, II\}$ is constant for all times $t$. These values will, however, vary in space. Out Hamiltonian may then be expressed
 \begin{align}
-    \tilde{H}
+    \tilde{H}'
     &=
     \hbar \left(
         \begin{array}{cccc}
@@ -782,43 +782,83 @@ We will be working with this Hamiltonian in the steady-state limit such that we 
             0 & \Omega_{II}^* & \Omega_{i}^* \hat{b} & \Delta_{II} + \Delta_s\\
         \end{array}
     \right) +
-    \hbar \Delta_s \hat{a}^{\dagger}\hat{a} +
-    \hbar \Delta_i  \hat{b}^{\dagger}\hat{b}
+    \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
+    \hbar \Delta_b  \hat{b}^{\dagger}\hat{b}
 \end{align}
 
 
-It is important to note that our definition deviates from the conventional definition. To see this, consider a real-valued electromagnetic field
+It is important to note that some of the definitions involved in this Hamiltonian deviate from the conventions. To see this, first consider a real-valued electromagnetic field
 \begin{align}
-    \vec{E}(z, t) = \vec{\varepsilon}_0 \cos(\omega t - kz)\nonumber\\
-    \vec{E}(z, t) = \frac{\vec{\varepsilon}_0}{2} \left( e^{-i(\omega t - kz)} + e^{i(\omega t - kz)}\right).\nonumber\\
+    &\vec{E}(z, t) = \vec{\varepsilon}_0 \cos(\omega t - kz)\nonumber\\
+    &\vec{E}(z, t) = \frac{\vec{\varepsilon}_0}{2} \left( e^{-i(\omega t - kz)} + e^{i(\omega t - kz)}\right).\nonumber
 \end{align}
-where $\vec{\varepsilon}_0$ acts as a slowly-varying envelope which changes slowly on the timescale of oscillation to allow for steady-state dynamics to occur. In Appendix~\ref{Hamiltonian_Formulation}, each $\vec{\varepsilon}$ was taken to include the factor of 2 to simplify calculations. However, also by convention, weak quantized fields are expressed with the factor of 2 absorbed where the symbol $g$ takes the place of $\Omega$ to represent the atom-field coupling. So the conventional form of the Hamiltonian then becomes
+where $\vec{\varepsilon}_0$ acts as a slowly-varying envelope which changes slowly on the timescale of oscillation to allow for steady-state dynamics to occur. In Appendix~\ref{Hamiltonian_Formulation}, each $\vec{\varepsilon}$ was taken to include the factor of 2 to simplify calculations. Also by convention, weak quantized fields are expressed with the factor of 2 absorbed where the symbol $g$ takes the place of $\Omega$ to represent the atom-field coupling strength. So the conventional form of the Hamiltonian then becomes
 \begin{align}
-    \tilde{H}
+    \tilde{H}_{Conventional}
     &=
-    \hbar \left(
+    \frac{\hbar}{2} \left(
         \begin{array}{cccc}
-            0 & g_{s} \hat{a}^{\dagger} & \frac{\Omega_{I}}{2} & 0\\
-            g_{s}^* \hat{a} & \Delta_s & 0 & \frac{\Omega_{II}}{2}\\
-            \frac{\Omega_{I}^*}{2} & 0 & \Delta_I & g_{i} \hat{b}^{\dagger}\\
-            0 & \frac{\Omega_{II}^*}{2} & g_{i}^* \hat{b} & \Delta_{II} + \Delta_s\\
+            0 & 2g_{s} \hat{a}^{\dagger} & \Omega_{I} & 0\\
+            2g_{s}^* \hat{a} & 2\Delta_s & 0 & \Omega_{II}\\
+            \Omega_{I}^* & 0 & 2\Delta_I & 2g_{i} \hat{b}^{\dagger}\\
+            0 & \Omega_{II}^* & 2g_{i}^* \hat{b} & 2(\Delta_{II} + \Delta_s)\\
         \end{array}
     \right) +
-    \hbar \Delta_s \hat{a}^{\dagger}\hat{a} +
-    \hbar \Delta_i  \hat{b}^{\dagger}\hat{b}
+    \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
+    \hbar \Delta_b  \hat{b}^{\dagger}\hat{b}
 \end{align}
 
 
-\todo{INCLUDE CLASSICAL VERSION OF HAMILTONIAN REPRESENTING A CAVITY-FREE SYSTEM}
+However, there are still alternative Hamiltonians which may be applicable to this problem. Notice that the signal and idler beams do not populate the cavity mode in the current form. To handle this, Souza et al.~include a field population term $\varepsilon \hat{a} + h.c.$ to their Hamiltonian~\cite{Souza}, which introduces a degree of realistic noise. We can do the same for our two cavity modes, yielding
+\begin{align}
+    \tilde{H}_{ab}
+    &=
+    \frac{\hbar}{2} \left(
+        \begin{array}{cccc}
+            0 & 2g_{s} \hat{a}^{\dagger} & \Omega_{I} & 0\\
+            2g_{s}^* \hat{a} & 2\Delta_s & 0 & \Omega_{II}\\
+            \Omega_{I}^* & 0 & 2\Delta_I & 2g_{i} \hat{b}^{\dagger}\\
+            0 & \Omega_{II}^* & 2g_{i}^* \hat{b} & 2(\Delta_{II} + \Delta_s)\\
+        \end{array}
+    \right) +
+    \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
+    \hbar \Delta_b  \hat{b}^{\dagger}\hat{b} +
+    \hbar \frac{\varepsilon_s}{2} \left(\hat{a} + \hat{a}^{\dagger}\right) +
+    \hbar \frac{\varepsilon_i}{2} \left(\hat{b} + \hat{b}^{\dagger}\right)
+\end{align}
+where we take the $\varepsilon_s$ and $\varepsilon_i$ to be real-valued as they represent the electromagnetic amplitudes of our beams, and we have also reduced it by a factor of 2 in line with our previous reasoning (whereas Souza et al.~scaled $\varepsilon$ for simplicity~\cite{Souza}).
 
-\todo{INCLUDE HAMILTONIAN WITH QUANTIZED FIELD NOISE AS WAS DONE BY SOUZA}
+On top of this, we must also take the use of cavities into consideration and ask: is it practical to use resonant cavities for this system? Recall that the condition for Doppler insensitivity is that $\vec{k}_s$ and $\vec{k}_I$ must co-propagate, $\vec{k}_i$ and $\vec{k}_{II}$ must co-propagate, and $\vec{k}_s$ and $\vec{k}_i$ must counter-propagate such that all four beams travel along the same line. But how does one place two resonant cavities of distinct frequencies along the same line? It is possible that there is a way to cleverly engineer a system to alleviate this issue, but considering such a problem is out of the scope of this report. Instead, we present the other possible Hamiltonains obtained by de-quantizing one of the two fields.
+\begin{align}
+    \tilde{H}_{a}
+    &=
+    \frac{\hbar}{2} \left(
+        \begin{array}{cccc}
+            0 & 2g_{s} \hat{a}^{\dagger} & \Omega_{I} & 0\\
+            2g_{s}^* \hat{a} & 2\Delta_s & 0 & \Omega_{II}\\
+            \Omega_{I}^* & 0 & 2\Delta_I & \Omega_{i} \\
+            0 & \Omega_{II}^* & \Omega_{i}^* & 2(\Delta_{II} + \Delta_s)\\
+        \end{array}
+    \right) +
+    \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
+    \hbar \frac{\varepsilon_s}{2} \left(\hat{a} + \hat{a}^{\dagger}\right)
+\end{align}
+\begin{align}
+    \tilde{H}_{b}
+    &=
+    \frac{\hbar}{2} \left(
+        \begin{array}{cccc}
+            0 & \Omega_{s} & \Omega_{I} & 0\\
+            \Omega_{s}^* & 2\Delta_s & 0 & \Omega_{II}\\
+            \Omega_{I}^* & 0 & 2\Delta_I & 2g_{i} \hat{b}^{\dagger}\\
+            0 & \Omega_{II}^* & 2g_{i}^* \hat{b} & 2(\Delta_{II} + \Delta_s)\\
+        \end{array}
+    \right) +
+    \hbar \Delta_b  \hat{b}^{\dagger}\hat{b} +
+    \hbar \frac{\varepsilon_i}{2} \left(\hat{b} + \hat{b}^{\dagger}\right)
+\end{align}
 
-
-\subsubsection{Concerns with cavity enhancement}
-
-
-
-\todo{TALK ABOUT THE INTRODUCTION OF A CAVITY AND HOW IT WOULD AFFECT OUR SYSTEM (i.e.~quantizing fields vs not) THEN MENTION THE ISSUE THIS CAUSES WITH LINING UP k-vectors}
+$\tilde{H}_{ab}$, $\tilde{H}_{a}$, and $\tilde{H}_{b}$, are the main systems of concern. Technically, we could de-quantize both weak fields, but then we would have no meaningful way to discuss FWM or squeezing. The system described by $\tilde{H}_{b}$ may be the most relevant since it allows us to quantify the amount of squeezing via expectation values, and it realistically involves only a single cavity. System $\tilde{H}_{ab}$ could be applicable, but (likely) only if the possible benefit of Doppler insensitivity is abandoned.
 
 
 
@@ -992,22 +1032,22 @@ There is one particular term of note here which has not yet shown up: $\varepsil
 
 \begin{figure}[h!]
     \includegraphics[width=0.8\columnwidth]{NoisyJCM-Rabi.png}
-    \caption{Decaying Rabi oscillation produced by the Jaynes-Cummings model with initial state $\ket{\psi}_0 = \ket{e} \otimes \ket{0}$ with the intoduction of noise by including $\varepsilon \hat{a} + \varepsilon^{*} \hat{a}^{\dagger}$ to the Hamiltonian in Eq.~\eqref{JCMHamiltonian}.}
+    \caption{Decaying Rabi oscillation produced by the Jaynes-Cummings model with initial state $\ket{\psi}_0 = \ket{e} \otimes \ket{0}$ with the introduction of noise by including $\varepsilon \hat{a} + \varepsilon^{*} \hat{a}^{\dagger}$ to the Hamiltonian in Eq.~\eqref{JCMHamiltonian}.}
     \label{NoisyJCM-Rabi}
 \end{figure}
 
-They then define decay operators for their cavity field mode $\sqrt{\kappa} \hat{a}$, and their atomic states $\sqrt{\Gamma_{13}} \hat{\sigma}_{13}$, $\sqrt{\Gamma_{23}} \hat{\sigma}_{23}$. Implementing this Hamiltonian with QuTiP and solving for the steady-state density matrix via the Lindblad mater equation with the specified decay operators allowed us to reproduce some of the results presented by Souza et al.~\cite{Souza}. Fig.~\ref{PhotonCountThreeLevel} reprocuces the portion of figure 1(c) depicting the transmission profile over a range of $\Delta$ detunings with cavity EIT (CEIT). Fig.~\ref{ThreeLevelCEIT} reproduces figure 2(b) depicting the state expectation values over the range of detunings, where we have opted to split the original figure into two to avoid overcrowding. Additionally, the expectation value of atomic state $\ket{3}$ was added, where we observe a sharp dip in state population on resonance. This indicates the presence of a dark state, giving evidence to the presence of EIT. Fig.~\ref{PhotonCountThreeLevel} also suggests that the cavity mode becomes more populated on resonance, sopporting evidence of EIT; with increases also observed at other detunings corresponding to alternative transition frequencies introduced by `Autler-Townes-like' energy level splitting~\cite{Souza}.
+They then define decay operators for their cavity field mode $\sqrt{\kappa} \hat{a}$, and their atomic states $\sqrt{\Gamma_{13}} \hat{\sigma}_{13}$, $\sqrt{\Gamma_{23}} \hat{\sigma}_{23}$. Implementing this Hamiltonian with QuTiP and solving for the steady-state density matrix via the Lindblad mater equation with the specified decay operators allowed us to reproduce some of the results presented by Souza et al.~\cite{Souza}. Fig.~\ref{PhotonCountThreeLevel} reproduces the portion of figure 1(c) depicting the transmission profile over a range of $\Delta$ detunings with cavity EIT (CEIT). Fig.~\ref{ThreeLevelCEIT} reproduces figure 2(b) depicting the state expectation values over the range of detunings, where we have opted to split the original figure into two to avoid overcrowding. Additionally, the expectation value of atomic state $\ket{3}$ was added, where we observe a sharp dip in state population on resonance. This indicates the presence of a dark state, giving evidence to the presence of EIT. Fig.~\ref{PhotonCountThreeLevel} also suggests that the cavity mode becomes more populated on resonance, sopporting evidence of EIT; with increases also observed at other detunings corresponding to alternative transition frequencies introduced by `Autler-Townes-like' energy level splitting~\cite{Souza}.
 
 \begin{figure}[h!]
     \includegraphics[width=0.74\columnwidth]{PhotonCountThreeLevel.png}
-    \caption{Reproduction of a protion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souza et al.~\cite{Souza} depicting the expected photon count within the cavity over a range of drequency $\Delta$ detunings.}
+    \caption{Reproduction of a portion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souza et al.~\cite{Souza} depicting the expected photon count within the cavity over a range of frequency detunings $\Delta$.}
     \label{PhotonCountThreeLevel}
 \end{figure}
 
 
 \begin{figure}[h!]
     \includegraphics[width=0.74\columnwidth]{ThreeLevelCEIT.png}
-    \caption{Reproduction of a protion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souza et al.~\cite{Souza} --- which has been slightly modified and added upon for clarity --- depicting (top) the state expectation values of states in an energy split and rotated basis over a range of detuings and (bottom) the state expectation values of states in the atomic basis over a range of detunings.}
+    \caption{Reproduction of a portion of figure 1(c) from `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souza et al.~\cite{Souza} --- which has been slightly modified and added upon for clarity --- depicting (top) the state expectation values of states in an energy split and rotated basis over a range of detunings and (bottom) the state expectation values of states in the atomic basis over a range of detunings.}
     \label{ThreeLevelCEIT}
 \end{figure}
 
@@ -1068,10 +1108,10 @@ These states can be described without any interactions by the simple Hamiltonian
 \end{align}
 
 
-The reason we are attempting to obtain optical squeezing in the up-converted idler field is to transmit quantum information at telecom wavelengths. Therefore, we care about the quantized fields of the signal (input carrier of quantum information) and idler (output of frequency-converted quantum information) beams. Apply the theoretical resonant cavity approximation such that we consider photons in the Fock bases of the exact frequencies of the signal and idler beams to obtain the Hamiltonian
+The reason we are attempting to obtain optical squeezing in the up-converted idler field is to transmit quantum information at telecom wavelengths. Therefore, we care about the quantized fields of the signal (input carrier of quantum information) and idler (output of frequency-converted quantum information) beams. Apply the theoretical resonant cavity approximation such that we consider photons in the Fock bases of the exact frequencies of a cavity tuned near the signal field frequency $\omega_a$ where $\omega_a - \omega_s \ll \omega_s$ and a cavity tuned near the idler frequency $\omega_b$ where $\omega_b - \omega_i \ll \omega_i$ to obtain the Hamiltonian
 
 \begin{equation}
-    \hat{H}_{photon} = \hbar \omega_{12} \hat{a}^{\dagger} \hat{a} + \hbar \omega_{34} \hat{b}^{\dagger} \hat{b}
+    \hat{H}_{photon} = \hbar \omega_{a} \hat{a}^{\dagger} \hat{a} + \hbar \omega_{b} \hat{b}^{\dagger} \hat{b}
 \end{equation}
 
 We then have the Hamiltonian describing these separate systems as
@@ -1080,7 +1120,7 @@ We then have the Hamiltonian describing these separate systems as
 \begin{align}
     \hat{H}_S &= \hat{H}_0 + \hat{H}_{photon}\\
     &= \hbar \omega_1 \hat{\sigma}_{11} + \hbar \omega_2 \hat{\sigma}_{22} + \hbar \omega_3 \hat{\sigma}_{33} + \hbar \omega_4 \hat{\sigma}_{44}\nonumber \\
-    &\;\;\;\;+ \hbar \omega_{12} \hat{a}^{\dagger} \hat{a} + \hbar \omega_{34} \hat{b}^{\dagger} \hat{b}
+    &\;\;\;\;+ \hbar \omega_{a} \hat{a}^{\dagger} \hat{a} + \hbar \omega_{b} \hat{b}^{\dagger} \hat{b}
 \end{align}
 
 
@@ -1246,7 +1286,7 @@ Combining this with $\hat{H}_S$ we obtain a Hamiltonian coupling atomic states w
 \begin{align}
     \hat{H} &= \hat{H}_S + \hat{H}_{Int}\\
     &= \hbar \omega_1 \hat{\sigma}_{11} + \hbar \omega_2 \hat{\sigma}_{22} + \hbar \omega_3 \hat{\sigma}_{33} + \hbar \omega_4 \hat{\sigma}_{44}\nonumber \\
-    &\;\;\;\;+ \hbar \omega_{12} \hat{a}^{\dagger} \hat{a} + \hbar \omega_{34} \hat{b}^{\dagger} \hat{b}\nonumber \\
+    &\;\;\;\;+ \hbar \omega_{a} \hat{a}^{\dagger} \hat{a} + \hbar \omega_{b} \hat{b}^{\dagger} \hat{b}\nonumber \\
     &\;\;\;\;+ \left(\hbar \Omega_{s}(t) \hat{\sigma}_{12} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}} + h.c.\right)\nonumber \\
     &\;\;\;\;+ \left(\hbar \Omega_{I}(t) \hat{\sigma}_{13} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}} + c.c.\right)\nonumber \\
     &\;\;\;\;+ \left(\hbar \Omega_{II}(t) \hat{\sigma}_{24} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}} + c.c.\right)\nonumber \\
@@ -1363,7 +1403,7 @@ Then expanding the other term we have
     \left(\hat{\sigma}_{11} + e^{i \omega_s t - i \vec{k}_s \cdot \vec{r}} \hat{\sigma}_{22} + e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}} \hat{\sigma}_{33}  + e^{i(\omega_{II} + \omega_s) t - i(\vec{k}_{II} + \vec{k}_s) \cdot \vec{r}} \hat{\sigma}_{44}\right)
     \otimes e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\nonumber\\
     &\;\;\;\;\cdot\biggl[ \hbar \omega_1 \hat{\sigma}_{11} + \hbar \omega_2 \hat{\sigma}_{22} + \hbar \omega_3 \hat{\sigma}_{33} + \hbar \omega_4 \hat{\sigma}_{44}\nonumber \\
-    &\;\;\;\;\;\;\;\;+ \hbar \omega_{12} \hat{a}^{\dagger} \hat{a} + \hbar \omega_{34} \hat{b}^{\dagger} \hat{b}\nonumber \\
+    &\;\;\;\;\;\;\;\;+ \hbar \omega_{a} \hat{a}^{\dagger} \hat{a} + \hbar \omega_{b} \hat{b}^{\dagger} \hat{b}\nonumber \\
     &\;\;\;\;\;\;\;\;+ \hbar \left(\Omega_{s}(t) \hat{\sigma}_{12} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{21} \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
     &\;\;\;\;\;\;\;\;+ \hbar \left(\Omega_{I}(t) \hat{\sigma}_{13} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{31} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
     &\;\;\;\;\;\;\;\;+ \hbar \left(\Omega_{II}(t) \hat{\sigma}_{24} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}} + \Omega_{II}^*(t) \hat{\sigma}_{42} e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}}\right)\biggr] \nonumber\\
@@ -1386,7 +1426,7 @@ we have
     \left(\hat{\sigma}_{11} + e^{i \omega_s t - i \vec{k}_s \cdot \vec{r}} \hat{\sigma}_{22} + e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}} \hat{\sigma}_{33} + e^{i(\omega_{II} + \omega_s) t - i(\vec{k}_{II} + \vec{k}_s) \cdot \vec{r}} \hat{\sigma}_{44}\right) \nonumber\\
     &\;\;\;\;\cdot\biggl[
         \omega_1 \hat{\sigma}_{11} + \omega_2 \hat{\sigma}_{22} + \omega_3 \hat{\sigma}_{33} + \omega_4 \hat{\sigma}_{44}\nonumber \\
-        &\;\;\;\;\;\;\;\;+ \omega_{12} \hat{a}^{\dagger} \hat{a} + \omega_{34} \hat{b}^{\dagger} \hat{b}\nonumber \\
+        &\;\;\;\;\;\;\;\;+ \omega_{a} \hat{a}^{\dagger} \hat{a} + \omega_{b} \hat{b}^{\dagger} \hat{b}\nonumber \\
         &\;\;\;\;\;\;\;\;+ \left(\Omega_{s}(t) \hat{\sigma}_{12} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{21} \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
         &\;\;\;\;\;\;\;\;+ \left(\Omega_{I}(t) \hat{\sigma}_{13} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{31} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
         &\;\;\;\;\;\;\;\;+ \left(\Omega_{II}(t) \hat{\sigma}_{24} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}} + \Omega_{II}^*(t) \hat{\sigma}_{42} e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}}\right)\nonumber \\
@@ -1396,7 +1436,7 @@ we have
     \left(\hat{\sigma}_{11} + e^{-i \omega_s t + i \vec{k}_s \cdot \vec{r}} \hat{\sigma}_{22} + e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}} \hat{\sigma}_{33} + e^{-i(\omega_{II} + \omega_s) t + i(\vec{k}_{II} + \vec{k}_s) \cdot \vec{r}} \hat{\sigma}_{44}\right) \nonumber \\
     &\;\;\;\;\otimes e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \nonumber \\
     &\;\;\;\;+ e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}
-    \left(\omega_{12} \hat{a}^{\dagger} \hat{a} + \omega_{34} \hat{b}^{\dagger} \hat{b}\right)
+    \left(\omega_{a} \hat{a}^{\dagger} \hat{a} + \omega_{b} \hat{b}^{\dagger} \hat{b}\right)
     e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \nonumber \\
 \end{align}
 
@@ -1408,7 +1448,7 @@ Separate the terms as
     \left(\hat{\sigma}_{11} + e^{i \omega_s t - i \vec{k}_s \cdot \vec{r}} \hat{\sigma}_{22} + e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}} \hat{\sigma}_{33} + e^{i(\omega_{II} + \omega_s) t - i(\vec{k}_{II} + \vec{k}_s) \cdot \vec{r}} \hat{\sigma}_{44}\right) \nonumber\\
     &\;\;\;\;\cdot\biggl[
         \omega_1 \hat{\sigma}_{11} + \omega_2 \hat{\sigma}_{22} + \omega_3 \hat{\sigma}_{33} + \omega_4 \hat{\sigma}_{44}\nonumber \\
-        &\;\;\;\;\;\;\;\;+ \omega_{12} \hat{a}^{\dagger} \hat{a} + \omega_{34} \hat{b}^{\dagger} \hat{b}\nonumber \\
+        &\;\;\;\;\;\;\;\;+ \omega_{a} \hat{a}^{\dagger} \hat{a} + \omega_{b} \hat{b}^{\dagger} \hat{b}\nonumber \\
         &\;\;\;\;\;\;\;\;+ \left(\Omega_{s}(t) \hat{\sigma}_{12} \hat{a}^{\dagger} e^{-i \vec{k}_{s} \cdot \vec{r}} + \Omega_{s}^*(t) \hat{\sigma}_{21} \hat{a} e^{i \vec{k}_{s} \cdot \vec{r}}\right)\nonumber \\
         &\;\;\;\;\;\;\;\;+ \left(\Omega_{I}(t) \hat{\sigma}_{13} e^{i \omega_I t - i \vec{k}_I \cdot \vec{r}} + \Omega_{I}^*(t) \hat{\sigma}_{31} e^{-i \omega_I t + i \vec{k}_I \cdot \vec{r}}\right)\nonumber \\
         &\;\;\;\;\;\;\;\;+ \left(\Omega_{II}(t) \hat{\sigma}_{24} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}} + \Omega_{II}^*(t) \hat{\sigma}_{42} e^{-i \omega_{II} t + i \vec{k}_{II} \cdot \vec{r}}\right)\nonumber \\
@@ -1421,7 +1461,7 @@ Separate the terms as
     e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \hat{A} e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t} \label{Beq} \\\nonumber\\
     \hat{C}
     &=
-    \left(e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \left(\omega_{12} \hat{a}^{\dagger}\hat{a} + \omega_{34} \hat{b}^{\dagger}\hat{b}\right)\left(e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \label{Unsimplified_C_eq}
+    \left(e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \left(\omega_{a} \hat{a}^{\dagger}\hat{a} + \omega_{b} \hat{b}^{\dagger}\hat{b}\right)\left(e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \label{Unsimplified_C_eq}
 \end{align}
 Let us compute $\hat{A}$ using the facts that
 \begin{equation}
@@ -1784,8 +1824,8 @@ So we can simplify Eq.~\eqref{Unsimplified_B_eq} to
 
 Now consider the next component from Eq.~\eqref{Unsimplified_C_eq}
 \begin{align}
-    \hat{C} &= \left(e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \left(\omega_{12} \hat{a}^{\dagger}\hat{a} + \omega_{34} \hat{b}^{\dagger}\hat{b}\right)\left(e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \nonumber \\
-    &= \omega_{12} e^{i\omega_s \hat{a}^{\dagger} \hat{a}t} \hat{a}^{\dagger}\hat{a} e^{-i\omega_s \hat{a}^{\dagger} \hat{a}} + \omega_{34} e^{\omega_i \hat{b}^{\dagger} \hat{b}t} \hat{b}^{\dagger}\hat{b} e^{-\omega_i \hat{b}^{\dagger} \hat{b}t}
+    \hat{C} &= \left(e^{i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \left(\omega_{a} \hat{a}^{\dagger}\hat{a} + \omega_{b} \hat{b}^{\dagger}\hat{b}\right)\left(e^{-i(\omega_s \hat{a}^{\dagger} \hat{a} + \omega_i \hat{b}^{\dagger} \hat{b})t}\right) \nonumber \\
+    &= \omega_{a} e^{i\omega_s \hat{a}^{\dagger} \hat{a}t} \hat{a}^{\dagger}\hat{a} e^{-i\omega_s \hat{a}^{\dagger} \hat{a}} + \omega_{b} e^{\omega_i \hat{b}^{\dagger} \hat{b}t} \hat{b}^{\dagger}\hat{b} e^{-\omega_i \hat{b}^{\dagger} \hat{b}t}
 \end{align}
 using the commutation relation for the distinct fields
 \begin{equation}
@@ -1806,7 +1846,7 @@ which follows similarly for
 \end{equation}
 yielding
 \begin{equation}
-    \hat{C} = \omega_{12} \hat{a}^{\dagger}\hat{a} + \omega_{34} \hat{b}^{\dagger}\hat{b}
+    \hat{C} = \omega_{a} \hat{a}^{\dagger}\hat{a} + \omega_{b} \hat{b}^{\dagger}\hat{b}
 \end{equation}
 Thus, we have
 \begin{align}
@@ -1836,8 +1876,8 @@ Thus, we have
         \Omega_{i}^*(t) \hat{b} \hat{\sigma}_{43}
     \right) \nonumber \\
     &\;\;\;\;+
-    \omega_{12} \hat{a}^{\dagger}\hat{a} +
-    \omega_{34} \hat{b}^{\dagger}\hat{b}
+    \omega_{a} \hat{a}^{\dagger}\hat{a} +
+    \omega_{b} \hat{b}^{\dagger}\hat{b}
 \end{align}
 Then we have the unitary transformation as
 \begin{align}
@@ -1871,8 +1911,8 @@ Then we have the unitary transformation as
             \Omega_{i}^*(t) \hat{b} \hat{\sigma}_{43}
         \right) \nonumber \\
         &\;\;\;\;\;\;+
-        \omega_{12} \hat{a}^{\dagger}\hat{a} +
-        \omega_{34} \hat{b}^{\dagger}\hat{b}
+        \omega_{a} \hat{a}^{\dagger}\hat{a} +
+        \omega_{b} \hat{b}^{\dagger}\hat{b}
     \biggr]\nonumber \\
     &\;\;\;\;+
     \hbar \biggl[
@@ -1912,8 +1952,8 @@ Then we have the unitary transformation as
             \Omega_{i}^*(t) \hat{b} \hat{\sigma}_{43}
         \right) \nonumber \\
         &\;\;\;\;+
-        (\omega_{12} - \omega_s) \hat{a}^{\dagger}\hat{a} +
-        (\omega_{34} - \omega_i) \hat{b}^{\dagger}\hat{b}
+        (\omega_{a} - \omega_s) \hat{a}^{\dagger}\hat{a} +
+        (\omega_{b} - \omega_i) \hat{b}^{\dagger}\hat{b}
     \biggr]
 \end{align}
 
@@ -1948,8 +1988,8 @@ We can then choose to arbitrarily shift the energy levels of the Hamiltonian by
             \Omega_{i}^*(t) \hat{b} \hat{\sigma}_{43}
         \right) \nonumber \\
         &\;\;\;\;+
-        (\omega_{12} - \omega_s) \hat{a}^{\dagger}\hat{a} +
-        (\omega_{34} - \omega_i) \hat{b}^{\dagger}\hat{b}
+        (\omega_{a} - \omega_s) \hat{a}^{\dagger}\hat{a} +
+        (\omega_{b} - \omega_i) \hat{b}^{\dagger}\hat{b}
     \biggr] \nonumber \\
 \end{align}
 Apply the relations
@@ -1962,6 +2002,8 @@ Apply the relations
     &\Delta_I = \omega_{13} - \omega_I\\
     &\Delta_{II} = \omega_{24} - \omega_{II}\\
     &\Delta_i = \omega_{34} - \omega_i\\
+    &\Delta_a = \omega_{a} - \omega_s\\
+    &\Delta_b = \omega_{b} - \omega_i\\
 \end{align}
 we have
 \begin{align}
@@ -1997,8 +2039,8 @@ we have
             \Omega_{i}^*(t) \hat{b} \hat{\sigma}_{43}
         \right) \nonumber \\
         &\;\;\;\;\;\;+
-        \Delta_s \hat{a}^{\dagger}\hat{a} +
-        \Delta_i  \hat{b}^{\dagger}\hat{b}
+        \Delta_a \hat{a}^{\dagger}\hat{a} +
+        \Delta_b \hat{b}^{\dagger}\hat{b}
     \biggr]
 \end{align}
 
@@ -2013,8 +2055,8 @@ we have
             0 & \Omega_{II}^*(t) & \Omega_{i}^*(t) \hat{b} & \Delta_{II} + \Delta_s\\
         \end{array}
     \right) +
-    \hbar \Delta_s \hat{a}^{\dagger}\hat{a} +
-    \hbar \Delta_i  \hat{b}^{\dagger}\hat{b}
+    \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
+    \hbar \Delta_b  \hat{b}^{\dagger}\hat{b}
 \end{align}
 
 
