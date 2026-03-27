@@ -216,18 +216,6 @@ Y.~Li, S.~Tian, J.~Zhao, G.~Zhou, X.~Dong, X.~Gao, and X.~Liu.
   by kalman filter.
 \newblock {\em Photonics}, 10(5), 2023.
 
-\bibitem{Souza}
-J.~A. Souza, E.~Figueroa, H.~Chibani, C.~J. Villas-Boas, and G.~Rempe.
-\newblock Coherent control of quantum fluctuations using cavity
-  electromagnetically induced transparency.
-\newblock {\em Phys. Rev. Lett.}, 111:113602, Sep 2013.
-
-\bibitem{FWM}
-S.~Du, E.~Oh, J.~Wen, and M.~H. Rubin.
-\newblock Four-wave mixing in three-level systems: Interference and
-  entanglement.
-\newblock {\em Phys. Rev. A}, 76:013803, Jul 2007.
-
 \bibitem{Lezama}
 A.~Lezama, S.~Barreiro, and A.~M. Akulshin.
 \newblock Electromagnetically induced absorption.
@@ -244,6 +232,18 @@ Y.~S. Lee and H.~S. Moon.
 \newblock Doppler-free three-photon coherence in doppler-broadened diamond-type
   atomic system.
 \newblock {\em Opt. Express}, 25(5):5316--5326, Mar 2017.
+
+\bibitem{Souza}
+J.~A. Souza, E.~Figueroa, H.~Chibani, C.~J. Villas-Boas, and G.~Rempe.
+\newblock Coherent control of quantum fluctuations using cavity
+  electromagnetically induced transparency.
+\newblock {\em Phys. Rev. Lett.}, 111:113602, Sep 2013.
+
+\bibitem{FWM}
+S.~Du, E.~Oh, J.~Wen, and M.~H. Rubin.
+\newblock Four-wave mixing in three-level systems: Interference and
+  entanglement.
+\newblock {\em Phys. Rev. A}, 76:013803, Jul 2007.
 
 \bibitem{Manzano}
 D~Manzano.

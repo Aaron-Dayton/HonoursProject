@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  26 MAR 2026 22:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  26 MAR 2026 22:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1323,7 +1323,7 @@ Package natbib Warning: There were undefined citations.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `HonoursThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0FE923B907F3139E181CDC037E1E0113;8842.
+(rerunfilecheck)             Checksum: FF295ED24420383E71A3E9876F84F651;8842.
  ) 
 Here is how much of TeX's memory you used:
  31013 strings out of 476025
@@ -1356,7 +1356,7 @@ public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/
 lmtt9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbo
 ls/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on HonoursThesis.pdf (41 pages, 1298960 bytes).
+Output written on HonoursThesis.pdf (41 pages, 1298967 bytes).
 PDF statistics:
  1087 PDF objects out of 1200 (max. 8388607)
  944 compressed objects within 10 object streams

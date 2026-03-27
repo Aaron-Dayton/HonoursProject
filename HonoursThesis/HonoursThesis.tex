@@ -554,6 +554,14 @@ Atomic density alkili metal vapour in a cell has the well-defined relationship w
 \end{equation}
 where $A$ and $B$ are material dependent constants (for rubidium vapour these are $A = 31.178$ and$B = 4040$)~\cite{Vapour}. Therefore, there is a way to significantly increase this measure of optical depth which may be correlated with increased FWM conversion efficiency for our system of interest.
 
+\subsubsection{Four wave mixing and electromagnetically induced absorption}
+
+A less talked about, but relevant phenomenon is that of electromagnetically induced absorption (EIA): the process by which absorption of a medium is significantly increased via coherent quantum interference between driving fields and an atomic medium~\cite{Lezama}. It has been observed that there is a correlation between EIA and increased FWM efficiency~\cite{Goren}\cite{Lee}.
+
+The theory behind EIA is out of the scope of this work, but we may apply the physics intuition built up this far to approximate it. By the Beer-Lambert law (see Eq.~\eqref{Beer}), absorption exponentially increases with the imaginary component of electric susceptibility $Im(\chi)$. So by maximizing $Im(\chi)$, it may be possible to find approximate system behaviour corresponding to EIA. However, the spike in absorption is typically quite narrow with respect to a parameter such as field detuning~\cite{Goren}\cite{Lee}, so searching for such conditions may be difficult.
+
+Interestingly, the statement that EIA results in greater FWM conversion efficiency is in line with the statement that optical depth has a strong positive correlation with conversion efficiency~\cite{Zhang}, taking the definition of optical depth to be that which is given be Eq.~\eqref{OD1} rather than Eq.~\eqref{OD2} here. This supports the ladder statement across both conventions of defining optical depth, as consistent results have been found for each.
+
 
 \subsubsection{Four wave mixing and electromagnetically induced transparency}
 
@@ -565,17 +573,9 @@ It has been shown that applying cavity EIT to three-level atoms can produce sub-
 
 This makes the combination of FWM and EIT processes in hot atomic vapour composed of four-level diamond configuration atoms an attractive possibility. If achievable, then its implementation could lead to an efficient frequency conversion and transmission method for quantum information.
 
+Overall, if EIA can be induced with respect to the input signal field to strengthen the output transmission field produced via FWM, and EIT can be induced to decrease the self-absorption of the transmission field, then conversion efficiency could theoretically be maximized. That is, assuming all these phenomena can occur simultaneously in a Doppler broadened medium.
 
 
-\subsubsection{Four wave mixing and electromagnetically induced absorption}
-
-A less talked about, but relevant phenomenon is that of electromagnetically induced absorption (EIA): the process by which absorption of a medium is significantly increased via coherent quantum interference between driving fields with an atomic ensemble~\cite{Lezama}. It has been observed that there is a correlation between EIA and increased FWM efficiency~\cite{Goren}\cite{Lee}.
-
-The theory behind EIA is out of the scope of this work, but we may apply the physics intuition built up this far to approximate it. By the Beer-Lambert law (see Eq.~\eqref{Beer}), absorption exponentially increases with the imaginary component of electric susceptibility $Im(\chi)$. So by maximizing $Im(\chi)$, it may be possible to find approximate system behaviour corresponding to EIA. However, the spike in absorption is typically quite narrow with respect to a parameter such as field detuning~\cite{Goren}\cite{Lee}, so searching for such conditions may be difficult.
-
-Interestingly, the statement that EIA results in greater FWM conversion efficiency is in line with the statement that optical depth has a strong positive correlation with conversion efficiency~\cite{Zhang}, taking the definition of optical depth to be that which is given be Eq.~\eqref{OD1} rather than Eq.~\eqref{OD2} here. This confirms the ladder statement across both conventions of defining optical depth, as consistent results have been found for each.
-
-Overall, if EIA can be induced with respect to the input signal field to strengthen the output transmission field produced via FWM, and EIT can be induced to decrease the self-absorption of the transmission field, then conversion efficiency could be maximized. That is, assuming all these phenomena can occur simultaneously in a Doppler broadened medium.
 
 \subsection{Quantum Methods}
 

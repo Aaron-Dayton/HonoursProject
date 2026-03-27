@@ -13,8 +13,8 @@
 \contentsline {subsection}{\numberline {B}Four Wave Mixing}{10}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {1}Squeezed states}{11}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {2}The effects of optical depth on four wave mixing}{12}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3}Four wave mixing and electromagnetically induced transparency}{13}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {4}Four wave mixing and electromagnetically induced absorption}{13}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3}Four wave mixing and electromagnetically induced absorption}{13}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {4}Four wave mixing and electromagnetically induced transparency}{13}{subsubsection.3.2.4}%
 \contentsline {subsection}{\numberline {C}Quantum Methods}{13}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {1}Lindblad Master equation}{14}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {2}Maxwell-Bloch equations}{14}{subsubsection.3.3.2}%
