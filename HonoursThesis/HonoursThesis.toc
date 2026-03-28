@@ -35,5 +35,6 @@
 \contentsline {subsection}{\numberline {1}Classical Field Simplification via Rotating Wave Approximation}{33}{subsection.A.1}%
 \contentsline {subsection}{\numberline {2}Quantum Field Simplification via Rotating Wave Approximation}{34}{subsection.A.2}%
 \contentsline {subsection}{\numberline {3}Hamiltonian Simplification}{34}{subsection.A.3}%
-\contentsline {section}{\numberline {B}Maxwell-Bloch Equations Derivation}{43}{appendix.B}%
+\contentsline {section}{\numberline {B}Maxwell-Bloch Equations Derivation}{44}{appendix.B}%
 \contentsline {subsection}{\numberline {1}Considering Noise}{48}{subsection.B.1}%
+\contentsline {section}{\numberline {C}Four-Level Diamond Configuration Atom Code}{49}{appendix.C}%

@@ -1106,21 +1106,23 @@ They then define decay operators for their cavity field mode $\sqrt{\kappa} \hat
     \label{ThreeLevelCEIT}
 \end{figure}
 
-\subsection{Computational Tools}
+\subsection{Computational Tools}\label{ComputationalTools}
 
-A set of computational tools were developed specifically to model the four-level diamond configuration atomic system. The main function is defined as \lstinline|iterative_solve| taking inputs as the initial Rabi frequencies $\Omega_s$, $\Omega_i$, $\Omega_I$, $\Omega_{II}$, the detunings $\Delta_s$, $\Delta_i$, $\Delta_I$, $\Delta_{II}$, $\Delta_a$, $\Delta_b$, temperature $T$, cell length $l$, step size $\delta$, the number of velocity subclasses $M$, and the desired Hamiltonian function.
+A set of computational tools were developed specifically to model the four-level diamond configuration atomic system. The code for these tools is presented in Appendix~\ref{SimulatorCode}. The main function is defined as \lstinline|iterative_solve| taking inputs as the initial Rabi frequencies $\Omega_s$, $\Omega_i$, $\Omega_I$, $\Omega_{II}$, the detunings $\Delta_s$, $\Delta_i$, $\Delta_I$, $\Delta_{II}$, $\Delta_a$, $\Delta_b$, temperature $T$, cell length $l$, step size $\delta$, the number of velocity subclasses $M$, and the desired Hamiltonian function.
 
+It is closely aligned with the algorithm outlined in Alg.~\ref{Alg}, adding the additional step of including Doppler broadening. For the purposes of this code, the phase matching condition given by Eq.~\eqref{DopplerFreePhaseMatching} is applied. Otherwise, the algorithmic time complexity would increase drastically.
 
-
-It is closely aligned with the algorithm outlined in Code Block~\ref{Alg}, adding the additional step of including Doppler broadening. For the purposes of this code, the phase matching condition given by Eq.~\eqref{DopplerFreePhaseMatching} is applied. Otherwise, the algorithmic time complexity would increase drastically.
-
-To perform the Doppler broadening procedure, $M$ evenly spaced velocities are generated from Eq.~\eqref{GaussianPDF} about the mean extending 2 standard deviations on either side. For each velocity, the Doppler shift with respect to each field is calculated and added to its respective detuning. This is used to form the Hamiltonian. Each of the 3 Hamiltonians $\tilde{H}_{ab}$, $\tilde{H}_{a}$, and $\tilde{H}_{b}$ from Eqs.~\eqref{Hab},\eqref{Ha},\eqref{Hb} have been implemented as fucntions called \lstinline|form_Hamiltonian_ab|, \lstinline|form_Hamiltonian_a|, and \lstinline|form_Hamiltonian_b|, each with input arguments $\Omega_s$, $\Omega_i$, $\Omega_I$, $\Omega_{II}$, $\Delta_s$, $\Delta_i$, $\Delta_I$, $\Delta_{II}$, $\Delta_a$, and $\Delta_b$.
+To perform the Doppler broadening procedure, $M$ evenly spaced velocities are generated from Eq.~\eqref{GaussianPDF} about the mean extending 2 standard deviations on either side. For each velocity, the Doppler shift with respect to each field is calculated and added to its respective detuning. This is used to form the Hamiltonian. Each of the 3 Hamiltonians $\tilde{H}_{ab}$, $\tilde{H}_{a}$, and $\tilde{H}_{b}$ from Eqs.~\eqref{Hab},\eqref{Ha},\eqref{Hb} have been implemented as functions called \lstinline|form_Hamiltonian_ab|, \lstinline|form_Hamiltonian_a|, and \lstinline|form_Hamiltonian_b|, each with input arguments $\Omega_s$, $\Omega_i$, $\Omega_I$, $\Omega_{II}$, $\Delta_s$, $\Delta_i$, $\Delta_I$, $\Delta_{II}$, $\Delta_a$, and $\Delta_b$.
 
 This Hamiltonian is then passed into the QuTiP \lstinline|steadystate| function along with the decay operators listed in Sec.~\ref{LMBE} to find the steady state density matrix for a single velocity. This is repeated for all velocity subclasses, then the mean density matrix is calculated according to Eq.~\eqref{SingleDopplerMean}. The result is renormalized to unity.
 
 With this, the Maxwell-BLoch equations of Eqs.~\eqref{MBE1},\eqref{MBE2} are calculated and the Rabi frequencies are updated as $\Omega_s \leftarrow \Omega_s + \partial_z \Omega_s \cdot \delta$ and $\Omega_i \leftarrow \Omega_i + \partial_z \Omega_i \cdot \delta$. This entire process is repeated for every step until the end of the cell is reached and the final density matrix $\hat{\rho}$, signal field Rabi frequency $\Omega_s$, and idler field Rabi frequency $\Omega_i$ are returned.
 
 This code makes the following approximations and assumptions: it assumes the mono-axial phase matching condition of Eq.~\eqref{DopplerFreePhaseMatching} such that Eq.~\eqref{SingleDopplerMean} may be applied to reduce computational complexity; the frequency-dependent index of refraction involved in calculating the Doppler shift from Eq.~\eqref{TrueDopplerShift} was taken to be constant as in Eq.~\eqref{ApproxDopplerShift} since we have not investigated a way to accurately calculate this; and the group velocity $v_g$ in the maxwell bloch equations~\eqref{MBE1},\eqref{MBE2} is taken to be the speed of light $c$ since we have not yet investigated a well-defined way of computationally calculating $v_g$. Each of these points can be improved upon in future iteration.
+
+Additionally, within this code constants such as $c$, $\epsilon_0$, $\hbar$, etc.~are all set to $1$ as placeholders. In fact, all constants within the \lstinline|CONSTANTS, BASIS STATES, AND OPERATORS| section of Code Block~\ref{SimulatorCode} are placeholders. Some of their values are set to give intuition as to how they should be used, but are meant to be modified. This is because many of these constant values are often expressed using unit conventions that result in them differing by orders of magnitude. Multiplication of such floating point numbers results in floating point errors. With the amount of computations performed in this algorithm and the prevalence of these constants, the choice of an ill-suited unit convention would be detrimental to any computational results as floating point errors would propagate throughout every step of calculation and compound.
+
+Therefore, the code presented in Code Block~\ref{SimulatorCode} is meant to act as a template for further development and research. It is recommended that any choice of unit convention scales such constants to unity if possible, and that any other physically relevant parameters are defined in terms of some other parameter. The latter has been done in the presented code such that atomic decay rates are expressed in terms of the cavity decay rate, giving relative meaning to parameter choices.
 
 \section{Discussion}
 
@@ -2088,7 +2090,7 @@ to finally obtain our Hamiltonian as
 
 
 
-
+\pagebreak
 \section{Maxwell-Bloch Equations Derivation}\label{MBEDerivation}
 
 Operator time evolution in the Heisenberg picture is given by
@@ -2392,6 +2394,13 @@ where we have introduced a noise term for just field $\hat{a}$. This would then 
 \end{align}
 
 Thus, the Maxwell-Bloch equations of Eq.~\eqref{MaxwellBlochForSystem} are suitable for a system in which such a noise term is included in the Hamiltonian.
+
+\pagebreak
+\section{Four-Level Diamond Configuration Atom Code}\label{SimulatorCode}
+
+The following is code simulating the four-level atomic system outlined in Sec.~\ref{ProblemDefinition} and code specification as outlined in Sec.~\ref{ComputationalTools}.
+
+\lstinputlisting[caption={Python code for simulating the properties of a four-level diamond configuration atom in the presence of external driving fields tuned near resonant transition frequencies.}, language=Python]{./Code/FourLevelAtom.py}\label{FourLevelAtomCode}
 
 
 \end{document}
