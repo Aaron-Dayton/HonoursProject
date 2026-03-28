@@ -8,45 +8,45 @@ I'm skipping whatever remains of this command
 The style file: unsrt.bst
 Database file #1: HonoursThesisNotes.bib
 Database file #2: refs.bib
-You've used 51 entries,
+You've used 52 entries,
             1791 wiz_defined-function locations,
-            789 strings with 11496 characters,
-and the built_in function-call counts, 10987 in all, are:
-= -- 901
-> -- 586
+            793 strings with 11579 characters,
+and the built_in function-call counts, 11151 in all, are:
+= -- 914
+> -- 594
 < -- 0
-+ -- 218
-- -- 167
-* -- 818
-:= -- 1812
-add.period$ -- 151
-call.type$ -- 51
++ -- 221
+- -- 169
+* -- 823
+:= -- 1838
+add.period$ -- 154
+call.type$ -- 52
 change.case$ -- 44
 chr.to.int$ -- 0
-cite$ -- 51
-duplicate$ -- 424
-empty$ -- 1073
-format.name$ -- 167
-if$ -- 2369
+cite$ -- 52
+duplicate$ -- 434
+empty$ -- 1092
+format.name$ -- 169
+if$ -- 2408
 int.to.chr$ -- 0
-int.to.str$ -- 51
-missing$ -- 48
-newline$ -- 256
-num.names$ -- 48
-pop$ -- 148
+int.to.str$ -- 52
+missing$ -- 50
+newline$ -- 261
+num.names$ -- 49
+pop$ -- 155
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 158
+skip$ -- 161
 stack$ -- 0
 substring$ -- 709
-swap$ -- 51
+swap$ -- 52
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 91
-width$ -- 53
-write$ -- 541
+while$ -- 92
+width$ -- 54
+write$ -- 551
 (There was 1 error message)

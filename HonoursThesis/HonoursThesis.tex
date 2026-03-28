@@ -685,7 +685,7 @@ This can be simplified even further by moving to a co-moving frame via the trans
     \frac{\partial}{\partial \zeta} \varepsilon(\zeta, \tau) = i \frac{ \omega}{2n \epsilon_0 c} \pi(\zeta, \tau)
 \end{align}
 
-If we can find a way to express the polarization strength in terms of the electric field strength for the relevant system, then we may use it to find the electric field strength in the neighboring region, which can then be used to find the polarization, and so on. This would allow us to simulate field propagation through the medium and find the output strength.
+Finding an expression for $\partial_\zeta \varepsilon(\zeta, \tau)$ for each relevant field gives a set of equations dubbed the Maxwell-Bloch equations. By finding a way to express the polarization strength in terms of the electric field strength for the relevant system, then we may use it to find the electric field strength in the neighboring region, which can then be used to find the polarization in said region, and so on. This would allow us to simulate field propagation through the medium and find the output strength.
 
 
 
@@ -740,7 +740,7 @@ where $\vec{k}_i$ is the idler beam field which we wish to induce via FWM. This 
 This setup is mutually beneficial for Maxwell-Bloch solution steps. Consider solving for the change in electric field strength through a slice of an atomic cell. By taking $\vec{k}_s$ (or any $k$-vector for that matter) as the normal vector of the slice plane we can justify the approximation that the signal, pump I, and pump II field strengths are all uniform about the plane. Additionally, for strong pump I and pump II fields, we can assume that their intensities do not change significantly through propagation (approximately fixed beam strength). Therefore, we can justifiably state that we know the field strength of all three input beams at the location of the first slice. This allows us to then find the field strength for all subsequent slices of the medium in an iterative process.
 
 
-\subsection{System Hamiltonian}
+\subsection{System Hamiltonian}\label{HamiltonianPresentation}
 
 In Appendix~\ref{Hamiltonian_Formulation} we derive the Hamiltonian for our four-level atom by following a similar procedure to that of Du et al.~\cite{QuantumInternet}. The Hamiltonian is obtained as
 \begin{align}
@@ -768,9 +768,9 @@ where $\Omega_{x}(t),\;x \in \{s,i,I,II\}$ are the Rabi frequencies for each, an
 \end{align}
 where $\omega_s$ and $\omega_i$ are the weak signal and idler beams frequencies, respectively, $\omega_I$ and $\omega_{II}$ are the strong pump beam frequencies, and $\omega_a$ and $\omega_b$ are the resonant cavity frequencies. This Hamiltonian couples the 4-state atomic basis with the distinct electromagnetic field modes of $\hat{a}$ and $\hat{b}$ at respective frequencies $\omega_{a}$ (tuned near $\omega_{12}$) and $\omega_{b}$ (tuned near $\omega_{34}$), respectively. Note that we choose these frequencies for the $\hat{a}$ and $\hat{b}$ field modes because we cannot simply assume that the cavity is perfectly on resonance with the driving field or the relevant atomic transition frequency.
 
-We will be working with this Hamiltonian in the steady-state limit such that we can assume that each $\Omega_x,\; x \in \{s, i, I, II\}$ is constant for all times $t$. These values will, however, vary in space. Out Hamiltonian may then be expressed
+We will be working with this Hamiltonian in the steady-state limit such that we can assume that each $\Omega_x,\; x \in \{s, i, I, II\}$ is constant for all times $t$. These values will, however, vary in space. Our Hamiltonian may then be expressed
 \begin{align}
-    \tilde{H}'
+    \tilde{H}
     &=
     \hbar \left(
         \begin{array}{cccc}
@@ -821,10 +821,11 @@ However, there are still alternative Hamiltonians which may be applicable to thi
     \right) +
     \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
     \hbar \Delta_b  \hat{b}^{\dagger}\hat{b} +
-    \hbar \frac{\varepsilon_s}{2} \left(\hat{a} + \hat{a}^{\dagger}\right) +
-    \hbar \frac{\varepsilon_i}{2} \left(\hat{b} + \hat{b}^{\dagger}\right)
+    \frac{\hbar}{2} \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right) +
+    \frac{\hbar}{2} \left(\varepsilon_i \hat{b} + \varepsilon_i^* \hat{b}^{\dagger}\right)
 \end{align}
-where we take the $\varepsilon_s$ and $\varepsilon_i$ to be real-valued as they represent the electromagnetic amplitudes of our beams, and we have also reduced it by a factor of 2 in line with our previous reasoning (whereas Souza et al.~scaled $\varepsilon$ for simplicity~\cite{Souza}).
+
+% where we take the $\varepsilon_s$ and $\varepsilon_i$ to be real-valued as they represent the electromagnetic amplitudes of our beams, and we have reduced it by a factor of 2 in line with our previous reasoning (whereas Souza et al.~scaled $\varepsilon$ for simplicity~\cite{Souza}).
 
 On top of this, we must also take the use of cavities into consideration and ask: is it practical to use resonant cavities for this system? Recall that the condition for Doppler insensitivity is that $\vec{k}_s$ and $\vec{k}_I$ must co-propagate, $\vec{k}_i$ and $\vec{k}_{II}$ must co-propagate, and $\vec{k}_s$ and $\vec{k}_i$ must counter-propagate such that all four beams travel along the same line. But how does one place two resonant cavities of distinct frequencies along the same line? It is possible that there is a way to cleverly engineer a system to alleviate this issue, but considering such a problem is out of the scope of this report. Instead, we present the other possible Hamiltonains obtained by de-quantizing one of the two fields.
 \begin{align}
@@ -839,7 +840,7 @@ On top of this, we must also take the use of cavities into consideration and ask
         \end{array}
     \right) +
     \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
-    \hbar \frac{\varepsilon_s}{2} \left(\hat{a} + \hat{a}^{\dagger}\right)
+    \frac{\hbar}{2} \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right)
 \end{align}
 \begin{align}
     \tilde{H}_{b}
@@ -853,14 +854,17 @@ On top of this, we must also take the use of cavities into consideration and ask
         \end{array}
     \right) +
     \hbar \Delta_b  \hat{b}^{\dagger}\hat{b} +
-    \hbar \frac{\varepsilon_i}{2} \left(\hat{b} + \hat{b}^{\dagger}\right)
+    \frac{\hbar}{2} \left(\varepsilon_i \hat{b} + \varepsilon_i^* \hat{b}^{\dagger}\right)
 \end{align}
 
-$\tilde{H}_{ab}$, $\tilde{H}_{a}$, and $\tilde{H}_{b}$, are the main systems of concern. Technically, we could de-quantize both weak fields, but then we would have no meaningful way to discuss FWM or squeezing. The system described by $\tilde{H}_{b}$ may be the most relevant since it allows us to quantify the amount of squeezing via expectation values, and it realistically involves only a single cavity. System $\tilde{H}_{ab}$ could be applicable, but (likely) only if the possible benefit of Doppler insensitivity is abandoned.
+$\tilde{H}_{ab}$, $\tilde{H}_{a}$, and $\tilde{H}_{b}$, are the main systems of concern. Technically, we could de-quantize both weak fields, but then we would have no meaningful way to quantify FWM or squeezing. The system described by $\tilde{H}_{b}$ may be the most relevant since it allows us to quantify the amount of squeezing via expectation values, and it realistically involves only a single cavity. System $\tilde{H}_{ab}$ could be applicable, but (likely) only if the possible benefit of Doppler insensitivity is abandoned.
 
 
 
 \subsection{Lindbladian and Maxwell-Bloch Equations} 
+
+
+\todo{Use the Glorieux reference to do Kupchak's pressure equations}
 
 \section{Computational Methods}
 
@@ -1670,7 +1674,7 @@ use the commutation relation
     \hat{a} \hat{a}^{\dagger} = 1 + \hat{a}^{\dagger} \hat{a}
 \end{align}
 to obtain
-\begin{align}
+\begin{align}\label{aaacommutator}
     [\hat{a}^{\dagger} \hat{a}, \hat{a}] &= \hat{a}^{\dagger} \hat{a} \hat{a} - (1 + \hat{a}^{\dagger} \hat{a}) \hat{a} \nonumber \\
     &= \hat{a}^{\dagger} \hat{a} \hat{a} - \hat{a} - \hat{a}^{\dagger} \hat{a}\hat{a} \nonumber \\
     &= - \hat{a}.
@@ -2015,26 +2019,309 @@ to finally obtain our Hamiltonian as
 \end{align}
 
 
-\section{Maxwell-Bloch Equation Derivation}
+\section{Maxwell-Bloch Equations Derivation}
 
-\textcolor{red}{TODO - THE WORRYING DERIVATIVE GOES TO ZERO AS WE USE A STEADY STATE!! WE'RE GOOD}
-
-\textcolor{blue}{I am confused here. Operator time evolution in the Heisenberg picture is
+Operator time evolution in the Heisenberg picture is given by
 \begin{equation}
-    \frac{d}{dt}A_{H}(t) = \frac{i}{\hbar} \left[ H_H(t), A_H(t) \right] + {\left( \frac{\partial A_S}{\partial t} \right)}_H
+    \frac{d}{dt}\hat{A}_{H}(t) = \frac{i}{\hbar} \left[ \hat{H}_H(t), \hat{A}_H(t) \right] + {\left( \frac{\partial \hat{A}_S}{\partial t} \right)}_H
 \end{equation}
-We would want to do this with the weak quantized electric fields $\hat{\vec{E}}_s(t) = \vec{\varepsilon}_s(t) \hat{a} e^{i \vec{k}_s \cdot \vec{r}} + h.c.$, so we would have
+To find the change in our electric field, we might consider applying this to a weak quantized electric field $\hat{\vec{E}}(\vec{r}, t) = \vec{\varepsilon}(\vec{r}, t) \hat{a} e^{i \vec{k} \cdot \vec{r}} + h.c.$, where $\vec{\varepsilon}(\vec{r}, t)$ behaves as a slowly-varying envelope function, to obtain. However, we expect the carrier frequency and the vector direction $\vec{\varepsilon} / \varepsilon$ to remain constant, so it would be of more use to apply this equation directly to the envelope amplitude operator. Additionally, we may consider only positions along the $\vec{k}$ direction to have $\hat{\vec{E}}(z, t)$
 \begin{equation}
-    {\left( \frac{\partial \hat{\vec{E}}_s}{\partial t} \right)}_H = {\left(\hat{a} e^{i \vec{k}_s \cdot \vec{r}}  \frac{\partial \vec{\varepsilon}_s(t)}{\partial t} + h.c.\right)}_H
+    \frac{d}{dt}\hat{\varepsilon}_H(z, t) = \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t) \right] + {\left(\frac{\partial \hat{\varepsilon}(z, t)}{\partial t}  + h.c.\right)}_H
 \end{equation}
-So we end up with
+where $\hat{\varepsilon}$ is defined as the quantum electric field operator
 \begin{equation}
-    \frac{d}{dt}\hat{\vec{E}}_{H,s}(t) = \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\vec{E}}_{H,s}(t) \right] + {\left(\hat{a} e^{i \vec{k}_s \cdot \vec{r}}  \frac{\partial \vec{\varepsilon}_s(t)}{\partial t}  + h.c.\right)}_H
+    \hat{\varepsilon} = \varepsilon \hat{a} + \varepsilon^* \hat{a}^{\dagger}.
 \end{equation}
-This then couples $(d/d_t) \hat{\vec{E}}_{H,s}(t)$ and $\partial_t \vec{\varepsilon}_s(t)$. This differs from Kupchak's approach where $\partial_t \vec{\varepsilon}_s(t)$ is not involved as he takes ${\left( \partial_t \hat{\vec{E}}_s \right)}_H=0$. Am I incorrect in my equation for $\hat{\vec{E}}_s(t) = \vec{\varepsilon}_s(t) \hat{a} e^{i \vec{k}_s \cdot \vec{r}} + h.c.$? Should it not be time dependent yet? This would solve this discrepancy, and then we should be able to use Kupchak's approach.
-}
+Note that a plane wave propagating through an atomic medium $\varepsilon$ may be expressed
+\begin{align}\label{varepsilonIdentity}
+    \varepsilon = \sqrt{\frac{\hbar \omega}{2 \epsilon_0 V}}
+\end{align}
+where $V$ is the volume of the medium~\cite{QuantumOptics}.
 
+We may consider the system to always be in a pseudo-steady-state since $\hat{\varepsilon}(z, t)$ varies on such a large timescale in comparison to the driving frequencies that any transient responses are negligible~\cite{MacRae}. Therefore, we may neglect $\partial_t \hat{\varepsilon}$ to obtain
+\begin{equation}
+    \frac{d}{dt}\hat{\varepsilon}_H(z, t) = \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t) \right]
+\end{equation}
+To work with the Hamiltonian obtained in Appendix~\ref{Hamiltonian_Formulation}, take $\varepsilon = \varepsilon_s$ and since we expect dynamics to change with position, redefine Rabi frequencies as functions of both space and time $\Omega(z, t)$. Expanding we obtain
 
-\todo{Use the Glorieux reference to do Kupchak's pressure equations}
+\begin{align}
+   \frac{d}{dt}\hat{\varepsilon}_H(z, t) &= i \left(
+        \begin{array}{cccc}
+            0 & \Omega_{s}(z,t) \hat{a}^{\dagger} & \Omega_{I}(z,t) & 0\\
+            \Omega_{s}^*(z,t) \hat{a} & \Delta_s & 0 & \Omega_{II}(z,t)\\
+            \Omega_{I}^*(z,t) & 0 & \Delta_I & \Omega_{i}(z,t) \hat{b}^{\dagger}\\
+            0 & \Omega_{II}^*(z,t) & \Omega_{i}^*(z,t) \hat{b} & \Delta_{II} + \Delta_s\\
+        \end{array}
+    \right) \hat{\varepsilon}_H(z, t)+
+    i \Delta_a \hat{a}^{\dagger}\hat{a} \hat{\varepsilon}_H(z, t) +
+    i \Delta_b  \hat{b}^{\dagger}\hat{b} \hat{\varepsilon}_H(z, t) \nonumber \\
+    &\;\;\;\;\;\;\;\; - i \hat{\varepsilon}_H(z, t) \left(
+        \begin{array}{cccc}
+            0 & \Omega_{s}(z,t) \hat{a}^{\dagger} & \Omega_{I}(z,t) & 0\\
+            \Omega_{s}^*(z,t) \hat{a} & \Delta_s & 0 & \Omega_{II}(z,t)\\
+            \Omega_{I}^*(z,t) & 0 & \Delta_I & \Omega_{i}(z,t) \hat{b}^{\dagger}\\
+            0 & \Omega_{II}^*(z,t) & \Omega_{i}^*(z,t) \hat{b} & \Delta_{II} + \Delta_s\\
+        \end{array}
+    \right) -
+    i \hat{\varepsilon}_H(z, t) \Delta_a \hat{a}^{\dagger}\hat{a} -
+    i \hat{\varepsilon}_H(z, t) \Delta_b  \hat{b}^{\dagger}\hat{b} \nonumber \\ \nonumber \\
+    &=
+    i \left(
+        \begin{array}{cccc}
+            0 & \Omega_{s}(z,t) \hat{a}^{\dagger} & \Omega_{I}(z,t) & 0\\
+            \Omega_{s}^*(z,t) \hat{a} & \Delta_s & 0 & \Omega_{II}(z,t)\\
+            \Omega_{I}^*(z,t) & 0 & \Delta_I & \Omega_{i}(z,t) \hat{b}^{\dagger}\\
+            0 & \Omega_{II}^*(z,t) & \Omega_{i}^*(z,t) \hat{b} & \Delta_{II} + \Delta_s\\
+        \end{array}
+    \right) (\varepsilon_s(z, t) \hat{a} + \varepsilon_s^*(z, t) \hat{a}^{\dagger})  \nonumber \\
+    &\;\;\;\;\;\;\;\;+ i \Delta_a \hat{a}^{\dagger}\hat{a} (\varepsilon_s(z, t) \hat{a} + \varepsilon_s^*(z, t) \hat{a}^{\dagger}) +
+    i \Delta_b  \hat{b}^{\dagger}\hat{b} (\varepsilon_s(z, t) \hat{a} + \varepsilon_s^*(z, t) \hat{a}^{\dagger}) \nonumber \\
+    &\;\;\;\;\;\;\;\;- i (\varepsilon_s(z, t) \hat{a} + \varepsilon_s^*(z, t) \hat{a}^{\dagger}) \left(
+        \begin{array}{cccc}
+            0 & \Omega_{s}(z,t) \hat{a}^{\dagger} & \Omega_{I}(z,t) & 0\\
+            \Omega_{s}^*(z,t) \hat{a} & \Delta_s & 0 & \Omega_{II}(z,t)\\
+            \Omega_{I}^*(z,t) & 0 & \Delta_I & \Omega_{i}(z,t) \hat{b}^{\dagger}\\
+            0 & \Omega_{II}^*(z,t) & \Omega_{i}^*(z,t) \hat{b} & \Delta_{II} + \Delta_s\\
+        \end{array}
+    \right) \nonumber \\
+    &\;\;\;\;\;\;\;\; - i (\varepsilon_s(z, t) \hat{a} + \varepsilon_s^*(z, t) \hat{a}^{\dagger}) \Delta_a \hat{a}^{\dagger}\hat{a} -
+    i (\varepsilon_s(z, t) \hat{a} + \varepsilon_s^*(z, t) \hat{a}^{\dagger}) \Delta_b  \hat{b}^{\dagger}\hat{b}.
+\end{align}
+Removing all the zero-valued commutation relations, rearranging, and cleaning up notation gives
+\begin{align}
+    \frac{d}{dt}\hat{\varepsilon}_H
+    &=
+    i \left(\Omega_{s} \hat{a}^{\dagger} \hat{\sigma}_{12} + \Omega_{s}^* \hat{a} \hat{\sigma}_{21}\right) (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}) - i (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger})
+    \left(\Omega_{s} \hat{a}^{\dagger} \hat{\sigma}_{12} + \Omega_{s}^* \hat{a} \hat{\sigma}_{21}\right) \nonumber \\
+    &\;\;\;\;\;\;\;\;+
+    i \Delta_a \left(\hat{a}^{\dagger}\hat{a} (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}) -
+    (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}) \hat{a}^{\dagger}\hat{a}\right)\nonumber \\\nonumber \\
+    &=
+    i \left(\Omega_{s} \hat{a}^{\dagger} \hat{\sigma}_{12} + \Omega_{s}^* \hat{a} \hat{\sigma}_{21}\right) (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}) - i (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger})
+    \left(\Omega_{s} \hat{a}^{\dagger} \hat{\sigma}_{12} + \Omega_{s}^* \hat{a} \hat{\sigma}_{21}\right) \nonumber \\
+    &\;\;\;\;\;\;\;\;+
+    i \Delta_a \left(\varepsilon_s \left(\hat{a}^{\dagger}\hat{a} \hat{a} - \hat{a} \hat{a}^{\dagger}\hat{a} \right) + \varepsilon_s^* \left(\hat{a}^{\dagger}\hat{a} \hat{a}^{\dagger} - \hat{a}^{\dagger} \hat{a}^{\dagger}\hat{a}\right)\right)\nonumber \\\nonumber \\
+    &=
+    i \left(\Omega_{s} \hat{a}^{\dagger} \hat{\sigma}_{12} + \Omega_{s}^* \hat{a} \hat{\sigma}_{21}\right) (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}) - i (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger})
+    \left(\Omega_{s} \hat{a}^{\dagger} \hat{\sigma}_{12} + \Omega_{s}^* \hat{a} \hat{\sigma}_{21}\right) \nonumber \\
+    &\;\;\;\;\;\;\;\;+
+    i \Delta_a \left(\varepsilon_s \left[\hat{a}^{\dagger}\hat{a}, \hat{a}\right] + \varepsilon_s^* \left[\hat{a}^{\dagger}\hat{a}, \hat{a}^{\dagger}\right]\right)
+\end{align}
+Similarly to Eq.~\ref{aaacommutator}, it can be shown that $\left[\hat{a}^{\dagger}\hat{a}, \hat{a}^{\dagger}\right] = \hat{a}^{\dagger}$ so then
+\begin{align}
+    \frac{d}{dt}\hat{\varepsilon}_H
+    &=
+    i \left(\Omega_{s} \hat{a}^{\dagger} \hat{\sigma}_{12} + \Omega_{s}^* \hat{a} \hat{\sigma}_{21}\right) (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}) - i (\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger})
+    \left(\Omega_{s} \hat{a}^{\dagger} \hat{\sigma}_{12} + \Omega_{s}^* \hat{a} \hat{\sigma}_{21}\right) \nonumber \\
+    &\;\;\;\;\;\;\;\;+
+    i \Delta_a \left(-\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right)\nonumber \\\nonumber \\
+    &=
+    i \left(\Omega_{s} \varepsilon_s \hat{\sigma}_{12} \hat{a}^{\dagger} \hat{a} + \Omega_{s}^* \varepsilon_s \hat{\sigma}_{21} \hat{a}\hat{a} + \Omega_{s} \varepsilon_s^* \hat{\sigma}_{12} \hat{a}^{\dagger} \hat{a}^{\dagger} + \Omega_{s}^* \varepsilon_s^* \hat{\sigma}_{21} \hat{a}\hat{a}^{\dagger} \right) \nonumber\\
+    &\;\;\;\;\;\;\;\;-
+    i \left(\Omega_{s} \varepsilon_s \hat{\sigma}_{12}\hat{a} \hat{a}^{\dagger} + \Omega_{s}^* \varepsilon_s^* \hat{\sigma}_{21} \hat{a}^{\dagger} \hat{a} + \Omega_{s} \varepsilon_s^* \hat{\sigma}_{12}\hat{a}^{\dagger} \hat{a}^{\dagger} + \Omega_{s}^* \varepsilon_s \hat{\sigma}_{21} \hat{a} \hat{a} \right) \nonumber \\
+    &\;\;\;\;\;\;\;\;+
+    i \Delta_a \left(-\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right)\nonumber \\\nonumber \\
+    &=
+    i \left(\Omega_{s} \varepsilon_s \hat{\sigma}_{12} \hat{a}^{\dagger} \hat{a} + \Omega_{s}^* \varepsilon_s^* \hat{\sigma}_{21} \hat{a}\hat{a}^{\dagger} \right) -
+    i \left(\Omega_{s} \varepsilon_s \hat{\sigma}_{12}\hat{a} \hat{a}^{\dagger} + \Omega_{s}^* \varepsilon_s^* \hat{\sigma}_{21} \hat{a}^{\dagger} \hat{a}\right) \nonumber \\
+    &\;\;\;\;\;\;\;\;+
+    i \Delta_a \left(-\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right)\nonumber \\\nonumber \\
+    &=
+    i \Omega_{s} \varepsilon_s \hat{\sigma}_{12} [\hat{a}^{\dagger}, \hat{a}] + i \Omega_{s}^* \varepsilon_s^* \hat{\sigma}_{21} [\hat{a}, \hat{a}^{\dagger}] +
+    i \Delta_a \left(-\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right)
+\end{align}
+Apply the commutation relations
+\begin{align}
+    [\hat{a}, \hat{a}^{\dagger}] = 1\\
+    [\hat{a}^{\dagger}, \hat{a}] = -1
+\end{align}
+
+\begin{align}\label{varepsilonEq1}
+    \frac{d}{dt}\hat{\varepsilon}_H
+    &=
+    i \Omega_{s} \varepsilon_s \hat{\sigma}_{12} - i \Omega_{s}^* \varepsilon_s^* \hat{\sigma}_{21} +
+    i \Delta_a \left(-\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right)\nonumber \\
+    &=
+    i \varepsilon_s \left(\Omega_{s} \hat{\sigma}_{12} - \Delta_a \hat{a}\right) - i \varepsilon_s^* \left(\Omega_{s}^* \hat{\sigma}_{21} - \Delta_a \hat{a}^{\dagger}\right)
+\end{align}
+
+Let $\hat{\varepsilon}^{(+)}(z,t) = \varepsilon_s \hat{a}$ and $\hat{\varepsilon}^{(-)}(z,t) = \varepsilon_s^* \hat{a}^{\dagger}$ and express them as a Fourier transform over all optical modes
+\begin{align}
+    \hat{\varepsilon}^{(+)}(z,t) = \int f(\kappa) \hat{a}_{\kappa}(t) e^{i \kappa z} d\kappa
+\end{align}
+where $f(\kappa)$ is some density function of optical modes. By $\omega \approx v_g k$ in a medium we then have that $\Delta_a \approx v_g \kappa_a$ where $\kappa_a = k_a - k_s$ is the phase mismatch between the cavity mode and signal mode. So then
+\begin{align}
+    i \Delta_a \hat{\varepsilon}^{(+)}(z,t)
+    &\approx i \Delta_a \int f(\kappa) \hat{a}_{\kappa}(t) e^{i \kappa z} d\kappa \nonumber \\
+    &\approx i v_g \kappa_a \int f(\kappa) \hat{a}_{\kappa}(t) e^{i \kappa z} d\kappa
+\end{align}
+Notice that
+\begin{align}
+    \partial_z \int f(\kappa) \hat{a}_{\kappa}(t) e^{i \kappa z} d\kappa
+    &= i \int \kappa f(\kappa) \hat{a}_{\kappa}(t) e^{i \kappa z} d\kappa
+\end{align}
+then in the slowly varying envelope approximation take the frequency distribution to be of a single mode $f(\kappa) \approx \delta(\kappa - \kappa_a)$, as $f(\kappa)$ would be sharply peaked about the single mode $\kappa_a$, to obtain
+\begin{align}
+    \partial_z \hat{\varepsilon}^{(+)}(z,t)
+    &\approx
+    \partial_z \int \delta(\kappa - \kappa_a) \hat{a}_{\kappa}(t) e^{i \kappa z} d\kappa \nonumber \\
+    &\approx
+    \partial_z \left( \hat{a}_{\kappa_a}(t) e^{i \kappa_a z} \right)\nonumber \\
+    &\approx i \kappa_a \hat{a}_{\kappa_a}(t) e^{i \kappa_a z} \nonumber \\
+    &\approx i \kappa_a \int \delta(\kappa - \kappa_a) \hat{a}_{\kappa}(t) e^{i \kappa z} d\kappa \nonumber\\
+    &\approx i \kappa_a \int f(\kappa) \hat{a}_{\kappa}(t) e^{i \kappa z} d\kappa \nonumber\\
+    &\approx i \kappa_a \hat{\varepsilon}^{(+)}(z,t)
+\end{align}
+such that we may write
+\begin{align}
+    & v_g \partial_z \hat{\varepsilon}^{(+)}(z,t) \approx i \Delta_a \hat{\varepsilon}^{(+)}(z,t)
+\end{align}
+Then consider
+\begin{align}
+    \hat{\varepsilon}^{(-)} &= \left(\hat{\varepsilon}^{(+)}\right)^{\dagger} \nonumber \\
+    &= \int f^*(\kappa) \hat{a}_{\kappa}^{\dagger}(t) e^{-i \kappa z} d\kappa
+\end{align}
+such that by a similar procedure we obtain
+\begin{align}
+    &v_g \partial_z \hat{\varepsilon}^{(+)} \approx -i \Delta_a \hat{\varepsilon}^{(-)}
+\end{align}
+and therefore
+\begin{align}
+    &\frac{d}{dt}\hat{\varepsilon}_H
+    \approx
+    i \varepsilon_s \Omega_{s} \hat{\sigma}_{12} - i \varepsilon_s^* \Omega_{s}^* \hat{\sigma}_{21} - v_g \partial_z \hat{\varepsilon}^{(+)} - v_g \partial_z \hat{\varepsilon}^{(-)} \nonumber \\
+    &\frac{d}{dt}\hat{\varepsilon}_H + v_g \partial_z \hat{\varepsilon}^{(+)} + v_g \partial_z \hat{\varepsilon}^{(-)}
+    \approx
+    i \varepsilon_s \Omega_{s} \hat{\sigma}_{12} - i \varepsilon_s^* \Omega_{s}^* \hat{\sigma}_{21}
+\end{align}
+Then by approximating $\partial_t \hat{\varepsilon}_H \approx d \hat{\varepsilon}_H / dt$ we have
+\begin{align}
+    &\partial_t \hat{\varepsilon}_H + v_g \partial_z \hat{\varepsilon}^{(+)} + v_g \partial_z \hat{\varepsilon}^{(-)}
+    \approx
+    i \varepsilon_s \Omega_{s} \hat{\sigma}_{12} - i \varepsilon_s^* \Omega_{s}^* \hat{\sigma}_{21} \nonumber \\
+    &\partial_t \left(\hat{\varepsilon}^{(+)} + \hat{\varepsilon}^{(-)}\right) + v_g \partial_z \hat{\varepsilon}^{(+)} + v_g \partial_z \hat{\varepsilon}^{(-)}
+    \approx
+    i \varepsilon_s \Omega_{s} \hat{\sigma}_{12} - i \varepsilon_s^* \Omega_{s}^* \hat{\sigma}_{21} \nonumber \\
+    &\left(\partial_t \hat{\varepsilon}^{(+)} + v_g \partial_z \hat{\varepsilon}^{(+)}\right) + \left(\partial_t \hat{\varepsilon}^{(-)} + v_g \partial_z \hat{\varepsilon}^{(-)}\right)
+    \approx
+    i \varepsilon_s \Omega_{s} \hat{\sigma}_{12} - i \varepsilon_s^* \Omega_{s}^* \hat{\sigma}_{21} \nonumber \\
+    &\left(\partial_t \hat{\varepsilon}^{(+)} + v_g \partial_z \hat{\varepsilon}^{(+)}\right) + \left(\partial_t \hat{\varepsilon}^{(+)} + v_g \partial_z \hat{\varepsilon}^{(+)}\right)^{\dagger}
+    \approx
+    i \varepsilon_s \Omega_{s} \hat{\sigma}_{12} + \left(i \varepsilon_s \Omega_{s} \hat{\sigma}_{12}\right)^{\dagger}
+\end{align}
+Change to the interaction picture where we have operator evolution as 
+\begin{align}
+\hat{\varepsilon}^{(+)} \rightarrow \hat{\varepsilon}^{(+)} e^{-i \omega t} \\
+\hat{\varepsilon}^{(-)} \rightarrow \hat{\varepsilon}^{(-)} e^{i \omega t}\\
+\hat{\sigma}_{12} \rightarrow \hat{\sigma}_{12} e^{-i \omega t}\\
+\hat{\sigma}_{21} \rightarrow \hat{\sigma}_{21} e^{i \omega t}
+\end{align}
+so we have that
+\begin{align}
+    &\left[\left(\partial_t \hat{\varepsilon}^{(+)} + v_g \partial_z \hat{\varepsilon}^{(+)}\right) - i \varepsilon_s \Omega_{s} \hat{\sigma}_{12}\right] e^{-i \omega t} \nonumber \\
+    &\;\;\;\;\;\;\;\;+ \left[\left(\partial_t \hat{\varepsilon}^{(+)} + v_g \partial_z \hat{\varepsilon}^{(+)}\right)^{\dagger} - \left(i \varepsilon_s \Omega_{s} \hat{\sigma}_{12}\right)^{\dagger}\right]e^{i \omega t} 
+    \approx 0
+\end{align}
+This is of the form
+\begin{align}
+    &(a - b)e^{-i \omega t} + (a^{\dagger} - b^{\dagger})e^{i \omega t} = 0 \nonumber \\
+    &(a - b)(x + iy) + (a^{\dagger} - b^{\dagger})(x - iy) = 0 \nonumber \\
+    &\text{where } x,y \in \mathbb{R},\;\; x^2 + y^2 = 1 \nonumber \\
+    &(ax - bx + iay - iby) + (a^{\dagger} x - b^{\dagger} x - i a^{\dagger} y + ib^{\dagger} y) = 0\nonumber \\
+    &(ax - bx + a^{\dagger} x - b^{\dagger} x) + i(ay - by - a^{\dagger} y + b^{\dagger} y) = 0\nonumber \\
+    &((a + a^{\dagger}) - (b + b^{\dagger}))x + i((a - a^{\dagger}) - (b - b^{\dagger}))y = 0 \nonumber \\
+    &\therefore a + a^{\dagger} = b + b^{\dagger} \;\;\text{and}\;\; a - a^{\dagger} = b - b^{\dagger} \nonumber \\
+    &\text{So it must be that } a = b
+\end{align}
+By applying this line of reasoning, we have
+\begin{align}
+    \left(\partial_t \hat{\varepsilon}^{(+)}(z,t) + v_g \partial_z \hat{\varepsilon}^{(+)}(z,t)\right)
+    \approx
+    i \varepsilon_s(z,t) \Omega_{s}(z,t) \hat{\sigma}_{12}
+\end{align}
+
+Then we may shift to the co-moving frame $\zeta= z$, $\tau = t - z / v_g$ to obtain
+\begin{align}
+    v_g \partial_\zeta \hat{\varepsilon}^{(+)}(\zeta, \tau)
+    \approx
+    i \varepsilon_s(\zeta, \tau) \Omega_{s}(\zeta, \tau) \hat{\sigma}_{12}
+\end{align}
+Transitioning to the semi-classical picture take $\hat{\varepsilon}^{(+)}(z,t) \rightarrow \varepsilon(\zeta, \tau)$ such that we then have
+\begin{align}
+    \Omega_s(\zeta, \tau) = \frac{d_{12} \varepsilon(\zeta, \tau)}{\hbar}
+\end{align}
+where it is assumed that $\vec{d} \parallel \vec{\varepsilon}$ since we are working with a gaseous isotropic medium. Applying this yields 
+\begin{align}
+    &\frac{\hbar v_g}{d_{12}} \partial_\zeta \Omega_s(\zeta, \tau)
+    \approx
+    i \varepsilon_s(\zeta, \tau) \Omega_{s}(\zeta, \tau) \rho_{12} \nonumber \\
+    &\partial_\zeta \Omega_s(\zeta, \tau)
+    \approx
+    i \frac{d_{12}}{\hbar v_g}  \varepsilon_s(\zeta, \tau) \Omega_{s}(\zeta, \tau) \rho_{12} 
+\end{align}
+By Eq.~\eqref{varepsilonIdentity} this is
+\begin{align}
+    \partial_\zeta \Omega_s(\zeta, \tau)
+    &\approx
+    i \frac{d_{12}}{\hbar v_g}  \sqrt{\frac{\hbar \omega_s}{2 \epsilon_0 V}} \Omega_{s}(\zeta, \tau) \rho_{12} \nonumber \\
+    &\approx
+    i \frac{d_{12}}{\hbar v_g}  \sqrt{\frac{\hbar \omega_s}{2 \epsilon_0 V}} \left(\frac{d_{12} \varepsilon(\zeta, \tau)}{\hbar}\right) \rho_{12} \nonumber\\
+    &\approx
+    i \frac{d_{12}^2}{\hbar^2 v_g}  \sqrt{\frac{\hbar \omega_s}{2 \epsilon_0 V}} \sqrt{\frac{\hbar \omega_s}{2 \epsilon_0 V}} \rho_{12} \nonumber\\
+    &\approx
+    i \frac{\omega_s d_{12}^2}{2 v_g \epsilon_0 \hbar V } \rho_{12}
+\end{align}
+
+Each atom will have some velocity distributed as Maxwell-Boltzmann, so the state with respect to the $m^{th}$ atom will be defined by some density matrix $\hat{\rho}^{(m)}$ which takes into account Doppler shifts any other interactions. We then have a notion for the mean density matrix and mean density matrix elements
+\begin{equation}
+    \overline{\rho}_{ij} = \frac{1}{N} \sum_{m=1}^N \rho_{ij}^{(m)}
+\end{equation}
+Additionally, consider that in this derivation we considered only a single atom to obtain our expression for $\partial_\zeta \Omega_s(\zeta, \tau)$. To generalize this to the entire system we must consider all $N$ atoms within the volume of considerations $V$. In this case, the total Hamiltonian would be $\tilde{H}_{total} = \tilde{H}_{photons} + \sum_{m=1}^{N} \left(\tilde{H}^{(m)}_{atom} + \tilde{H}^{(m)}_{interaction}\right)$. By extending our derivation to N atoms, we would obtain
+\begin{align}
+    \partial_\zeta \Omega_s(\zeta, \tau)
+    &\approx
+    \sum_{m=1}^N i \frac{\omega_s d_{12}^2}{2 v_g \epsilon_0 \hbar V } \rho_{12}^{(m)} \nonumber \\
+    &\approx
+    i \frac{\omega_s d_{12}^2}{2 v_g \epsilon_0 \hbar V } \sum_{m=1}^N \rho_{12}^{(m)} \nonumber \\
+    &\approx
+    i \frac{\omega_s d_{12}^2}{2 v_g \epsilon_0 \hbar V } N \overline{\rho}_{12} \nonumber \\
+    &\approx
+    i \frac{\omega_s n d_{12}^2}{2 v_g \epsilon_0 \hbar } \overline{\rho}_{12}
+\end{align}
+where $n = N/V$ is atomic density.
+
+Identical steps lead to a complementary equation for the idler field such that we have the Maxwell-Bloch equations for our system as
+\begin{align}\label{MaxwellBlochForSystem}
+    \partial_\zeta \Omega_s(\zeta, \tau)
+    &\approx
+    i \frac{\omega_s n d_{12}^2}{2 v_g \epsilon_0 \hbar } \overline{\rho}_{12} \\
+    \partial_\zeta \Omega_s(\zeta, \tau)
+    &\approx
+    i \frac{\omega_i n d_{34}^2}{2 v_g \epsilon_0 \hbar } \overline{\rho}_{34}
+\end{align}
+
+\subsection{Considering Noise}
+
+We must still consider an alternative possibility. In Sec.~\ref{HamiltonianPresentation} we discuss the inclusion of a noise term to our Hamiltonian as
+\begin{equation}
+    \tilde{H}_{ab} = \tilde{H} + 
+    \frac{\hbar}{2} \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right)
+\end{equation}
+where we have introduced a noise term for just field $\hat{a}$. This would then result in the equation
+\begin{align}
+    \frac{d}{dt}\hat{\varepsilon}_H(z, t)
+    &=
+    \frac{i}{\hbar} \left[ \tilde{H}(t) + \frac{\hbar}{2} \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right), \hat{\varepsilon}_H(z, t) \right] \nonumber \\
+    &=
+    \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t)\right] + \left[\frac{\hbar}{2} \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right), \hat{\varepsilon}_H(z, t) \right] \nonumber \\
+    &=
+    \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t)\right] + \left[\frac{\hbar}{2} \hat{\varepsilon}_H(z, t), \hat{\varepsilon}_H(z, t) \right] \nonumber \\
+    &=
+    \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t)\right]
+\end{align}
+
+Thus, the Maxwell-Bloch equations of Eq.~\eqref{MaxwellBlochForSystem} are suitable for a system in which such a noise term is included in the Hamiltonian.
+
 
 \end{document}

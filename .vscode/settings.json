@@ -6,6 +6,7 @@
         "Hamiltonians",
         "hydrogenic",
         "Jaynes",
-        "Lindbladian"
+        "Lindbladian",
+        "narrowband"
     ]
 }
