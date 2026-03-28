@@ -1227,6 +1227,10 @@ INPUT ./Figs//ThreeFieldDiamondAtom.png
 INPUT Figs//ThreeFieldDiamondAtom.png
 INPUT ./Figs//ThreeFieldDiamondAtom.png
 INPUT ./Figs//ThreeFieldDiamondAtom.png
+INPUT ./Figs//Gaussian.png
+INPUT Figs//Gaussian.png
+INPUT ./Figs//Gaussian.png
+INPUT ./Figs//Gaussian.png
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd

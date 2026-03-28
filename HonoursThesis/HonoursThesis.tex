@@ -179,7 +179,8 @@
 \begin{document}
 
 \title{Honours Thesis - Simulation of Squeezed Light Generation in an Optical Resonator}
-\author{Aaron Dayton}
+\author{Aaron Dayton\\ Supervisor: Prof. Andrew MacRae}
+\date{\today}
 
 \maketitle
 \tableofcontents
@@ -595,7 +596,7 @@ where $\hat{L}_{\alpha}$ is the $\alpha^{th}$ dissipative operator (or jump oper
 
 By solving for $d \hat{\rho}_S / dt = 0$ one may find the steady state density matrix of the system. For large systems this is typically done via computational methods. We are interested in the steady state regime as we will assume that the timescale of laser pulses is much greater than the transient response time of the medium. For short laser pulses, considering transient dynamics is important~\cite{MacRae}, but as a first step towards frequency conversion of continuous variable quantum information longer pulses should be used. With refinement, shorter pulse durations may be achievable, and then transient dynamics would become relevant, but that is a future engineering challenge.
 
-\subsubsection{Maxwell-Bloch equations}
+\subsubsection{Maxwell-Bloch equations}\label{MBEIntuitive}
 
 There is one problem with solving for the steady state density matrix of an atomic sample alone: it neglects propagation effects~\cite{MacRae}\cite{Phillips}. Even though the entire system may be in a steady state that does not mean that the field strengths are uniform throughout. Any neighboring regions within the sample may experience different fields. Assume that the system can be broken up into cross-sectional regions which all experience approximately the same field strength, which would be the case if the beams were co-propagating or counter-propagating plane waves under the paraxial approximation~\cite{NOS}. Then one could consider the field strength of neighboring slices, see Fig.~\ref{AtomicMedium}.
 
@@ -689,7 +690,7 @@ Finding an expression for $\partial_\zeta \varepsilon(\zeta, \tau)$ for each rel
 
 
 
-\subsubsection{The iterative Lindblad-Maxwell-Bloch solution method}
+\subsubsection{The iterative Lindblad-Maxwell-Bloch solution method}\label{iterativeLMB}
 
 The Lindblad master equation (Eq.~\eqref{LindbladMasterEquation}) can be used in tandem with the Maxwell-Bloch equations (Eq.~\eqref{MaxwellBlochEquation}) to solve for the steady state density matrix, which may be applied to find the expected polarization, then find the electric field strength at the next cross-sectional region. This process can be performed iteratively throughout the medium via computational methods in order to find the desired field strength at the end of the medium. For an idler field, this could then tell us how much field intensity is produced as output via FWM. Due to the use of a co-moving frame, no time evolution is required. This all comes together in Alg.~\ref{Alg}
 
@@ -712,7 +713,7 @@ The Lindblad master equation (Eq.~\eqref{LindbladMasterEquation}) can be used in
 \end{algorithm}
 
 
-\section{Problem Definition}
+\section{Problem Definition}\label{ProblemDefinition}
 
 The overarching goal of this research is to find out whether a hot gas composed of four-level diamond configuration atoms (see Fig.~\ref{FirstDiamondAtom}) can be resonantly driven by three external electromagnetic fields (one of which is a weak signal beam encoded with continuous variable quantum information) such that a FWM process occurs to produce a fourth field with a frequency in the telecom C-band range of 1530 nm to 1565 nm. Specifically, the field produced must be optically squeezed via the FWM process such that quantum information may be converted then transmitted with minimal noise. It would be ideal if the medium experiences EIT with respect to the frequency of the weak signal beam and/or the output telecom beam.
 
@@ -732,12 +733,77 @@ It would be highly advantageous if we could show that the diamond-configuration 
 
 
 Thus, there is evidence to suggest that the system may be Doppler insensitive by aligning $\vec{k}_s$ and $\vec{k}_I$ to be parallel while aligning $\vec{k}_{II}$ to be antiparallel to both $\vec{k}_s$ and $\vec{k}_I$. The momentum conservation equation then tells us that we must have
-\begin{equation}
+\begin{equation}\label{DopplerFreePhaseMatching}
     \left| \vec{k}_i \right| =  \left| \vec{k}_s \right| + \left| \vec{k}_I \right| - \left| \vec{k}_{II} \right|
 \end{equation}
 where $\vec{k}_i$ is the idler beam field which we wish to induce via FWM. This also tells us that $\vec{k}_i$ would need to co-propagate with $\vec{k}_{II}$.
 
 This setup is mutually beneficial for Maxwell-Bloch solution steps. Consider solving for the change in electric field strength through a slice of an atomic cell. By taking $\vec{k}_s$ (or any $k$-vector for that matter) as the normal vector of the slice plane we can justify the approximation that the signal, pump I, and pump II field strengths are all uniform about the plane. Additionally, for strong pump I and pump II fields, we can assume that their intensities do not change significantly through propagation (approximately fixed beam strength). Therefore, we can justifiably state that we know the field strength of all three input beams at the location of the first slice. This allows us to then find the field strength for all subsequent slices of the medium in an iterative process.
+
+However, if it is not possible to enforce Eq.~\eqref{DopplerFreePhaseMatching}, then Doppler broadening must be modelled. To do this, consider the velocity vector of the $m^{th}$ atom, $\vec{v}^{(m)}$. This velocity will be pulled from a multi-variate Gaussian distribution as
+\begin{align}
+    \vec{v}^{(m)} &= v_x^{(m)} \hat{x} + v_y^{(m)} \hat{y} + v_z^{(m)} \hat{z}\\
+    &v_x^{(m)} \sim \mathcal{N}(0, \sigma_x)\\
+    &v_y^{(m)} \sim \mathcal{N}(0, \sigma_y)\\
+    &v_z^{(m)} \sim \mathcal{N}(0, \sigma_z)\\
+\end{align}
+where $\mathcal{N}(\mu, \sigma)$ represents a Gaussian distribution of mean $\mu$ and standard deviation $\sigma$, where we will take 
+\begin{equation}
+\sigma_x = \sigma_y = \sigma_z = \sqrt{\frac{m}{k_b T}}
+\end{equation}
+for our isotropic medium with $k_b$ being the Boltzmann constant. We then have the PDF as
+\begin{equation}
+f(v)\biggl|_{\mu=0, \sigma=\sqrt{\frac{m}{k_b T}}} = \sqrt{\frac{m}{2 \pi k_b T}}\exp{\left(-\frac{mv^2}{2 k_v T}\right)}.
+\end{equation}
+
+Consider also any electromagnetic field of lab frame wavevector $\vec{k}$ from the perspective of the $m^{th}$ atom. If the field is of frequency $\omega$, then the Doppler shift experienced by the atom is given by
+\begin{equation}
+    \omega' = \omega - \vec{k} \cdot \vec{v}
+\end{equation}
+Consider that the index of refraction is given by $n(\omega) = c / v_p(\omega)$ and we have the phase velocity as $v_p(\omega) = \omega / k$. Combining these equations gives us the dispersion relation
+\begin{equation}
+    \vec{k} = \frac{n(\omega) \omega}{c} \frac{\vec{k}}{|\vec{k}|}
+\end{equation}
+such that we then have the Doppler shift as
+\begin{equation}
+    \omega' = \omega - \frac{n(\omega) \omega}{c} \frac{\vec{k}}{|\vec{k}|}\cdot \vec{v}
+\end{equation}
+
+So if a frequency dependent dispersion relation for our system can be derived, then an accurate Doppler shift may be applied. However, we instead take the index of refraction to be approximately constant in this context as to obtain
+\begin{equation}
+    \omega' \approx \omega - \frac{n \omega}{c} \frac{\vec{k}}{|\vec{k}|}\cdot \vec{v}
+\end{equation}
+but note that a derivation of $n(\omega)$ for inclusion in this equation would improve the accuracy of any Doppler broadening results. This derivation is out of the scope of this thesis.
+
+This single atom will have a different Doppler shift with respect to each beam. The shift is velocity direction dependent so all three velocity coordinates must be sampled with the dot product being taken with respect to each $\vec{k}$.
+
+Suppose that we apply the Doppler shift to an atom and then obtain its steady-state density matrix. Each atom experiences a different Doppler shift, so each will need to be calculated based on its sampled velocity vector. All of these density matrices can be added together and averaged as
+\begin{equation}
+    \overline \rho = \frac{1}{N} \sum_{m=1}^N \hat{\rho}^{(m)}(v_x, v_y, v_z)
+\end{equation}
+
+\begin{figure}[h!]
+    \includegraphics[width=0.7\columnwidth]{Gaussian.png}
+    \caption{Gaussian velocity distribution separated into 9 velocity subclasses marked by blue lines. Calculated for $^{87}Rb$ at $333$ K.}
+    \label{Gaussian}
+\end{figure}
+
+However, sampling Avagadro's number of atoms is not feasible. Instead, consider the average density matrix in the continuous limit and apply the Gaussian density function
+\begin{equation}
+    \overline \rho = \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(v_x) f(v_y) f(v_z )\hat{\rho}^{(m)}(v_x, v_y, v_z) dv_x dv_y dv_z
+\end{equation}
+Each density function can be broken up into a weighted slice such that we can approximately compute the mean density matrix as
+\begin{equation}\label{TripleDopplerMean}
+    \overline \rho \approx \sum_{v_x, v_y, v_z} w(v_x) w(v_y) w(v_z) \hat{\rho}^{(m)}(v_x, v_y, v_z)
+\end{equation}
+where the range of velocities is broken down into a sequence of $M$ evenly spaced velocity subclasses $v_x^{(1)} \leq v_x^{(2)} \leq \cdots \leq v_x^{(M)}$ with $v_x^{(i+1)} - v_x^{(i)} = \eta,\; \forall i$, such that $w\left(v_x^{(i)}\right) = f\left(v_x^{(i)}\right) \eta$. Similarly, for $v_y$ and $v_z$. Note that unevenly spaced velocity subclasses can also be useful, but is problem specific.
+
+This gives a computational speed up, yet $M^3$ steady state density matrices must be computed, which is still quite costly. If we, however, assume that all beams are propagating along the same axis as is the case in Eq.~\eqref{DopplerFreePhaseMatching}, then a single velocity value can be sampled (as opposed to three) as $v \sim \mathcal{N}(0, \sigma)$ could be used for all fields. We then need to calculate just $M$ steady state density matrices.
+\begin{equation}\label{SingleDopplerMean}
+    \overline \rho \approx \sum_{v} w(v) \hat{\rho}^{(m)}(v)
+\end{equation}
+
+Similarly, if beams are separated into two sets, such that all wavevectors of one set are parallel with one another, but any wavevectors from different sets are not parallel, then $M^2$ density matrices would need to be computed.
 
 
 \subsection{System Hamiltonian}\label{HamiltonianPresentation}
@@ -863,10 +929,29 @@ $\tilde{H}_{ab}$, $\tilde{H}_{a}$, and $\tilde{H}_{b}$, are the main systems of 
 
 \subsection{Lindbladian and Maxwell-Bloch Equations} 
 
+The only step left in expressing the Lindbladian for our system is specifying the decay operators. We can obtain them by simply considering each decay cannel with an associated decay rate. Consider $\tilde{H}_{ab}$. Atomic state $\ket{4}$ can decay to states $\ket{2}$ or $\ket{3}$, $\ket{3}$ can decay to $\ket{1}$, and $\ket{2}$ can decay to $\ket{1}$. Let these decay operators be denoted as $\hat{L}_{34} = \hat{\sigma}_{34}$, $\hat{L}_{24} = \hat{\sigma}_{24}$, $\hat{L}_{13} = \hat{\sigma}_{13}$, and $\hat{L}_{12} = \hat{\sigma}_{12}$, respectively, each with decay rates $\Gamma_{34}$, $\Gamma_{24}$, $\Gamma_{13}$, and $\Gamma_{12}$, respectively. We must also consider cavity decay for both quantized fields. The decay operator for the cavity field of frequency $\omega_a$ is $\hat{L}_{a} = \hat{a}$ with decay rate $\Gamma_a$ and that for the cavity field of frequency $\omega_b$ is $\hat{L}_{b} = \hat{b}$ with decay rate $\Gamma_b$.
 
-\todo{Use the Glorieux reference to do Kupchak's pressure equations}
+With these and $\tilde{H}_{ab}$ we have all the components required to fully express the Lindblad master equation Eq.~\eqref{LindbladMasterEquation}. We may also specify that of $\tilde{H}_{a}$ by simply dropping $\hat{L}_{b} = \hat{b}$ and $\Gamma_b$; or $\tilde{H}_{b}$ by dropping $\hat{L}_{a} = \hat{a}$ and $\Gamma_a$. However, we will not do so here as our goal is not to produce an analytic solution. Instead, we will opt to use highly efficient computational methods to solve for the steady state density matrix.
+
+The mean Doppler broadened density matrix can be obtained via Eq.~\eqref{TripleDopplerMean} in general or by Eq.~\eqref{SingleDopplerMean} when the Doppler insensitive phase matching condition of Eq.~\eqref{DopplerFreePhaseMatching} is enforced.
+
+As discussed in Sec.~\ref{iterativeLMB}, this density matrix will be obtained in an iterative process then used in the Maxwell-Bloch equations to solve for the change in Rabi frequency at the next point within the medium. The intuition behind the Maxwell-Bloch equations was given discussed in Sec.~\ref{MBEIntuitive}, but the specific equations for the system we are considering were derived in Appendix~\ref{MBEDerivation} to be
+\begin{align}\label{MaxwellBlochInMainBody}
+    \partial_\zeta \Omega_s(\zeta, \tau)
+    &\approx
+    i \frac{\omega_s n d_{12}^2}{2 v_g \epsilon_0 \hbar} \overline{\rho}_{12} \\
+    \partial_\zeta \Omega_s(\zeta, \tau)
+    &\approx
+    i \frac{\omega_i n d_{34}^2}{2 v_g \epsilon_0 \hbar} \overline{\rho}_{34}
+\end{align}
+where $v_g$ is group velocity, $n$ is atomic density, and we are in the co-moving frame with $\zeta = z$ and $\tau = t - z/v_g$. It was noted in the appendix that these equations hold whether or not the noise term is included in the Hamiltonian.
+
+By propagating the field throughout the entire cell, the field strength of the expectation value of the number operator $\hat{a}^{\dagger} \hat{a}$ for each field could be obtained using the final mean density matrix, the quadrature noise and the amount of squeezing can be obtained using Eqs.~\eqref{QuadratureUncertainty1},\eqref{QuadratureUncertainty2}.
 
 \section{Computational Methods}
+
+In order to handle the massive amount of information involved with such a quantized system, computational methods will be applied. Introductory computations with the QuTip python package will be performed to reproduce known results and investigate how various phenomena, then a set of computational tools based on the contents of Sec.~\ref{ProblemDefinition} will be introduced.
+
 
 \subsection{Learning to use QuTiP}
 
@@ -2019,7 +2104,11 @@ to finally obtain our Hamiltonian as
 \end{align}
 
 
-\section{Maxwell-Bloch Equations Derivation}
+
+
+
+
+\section{Maxwell-Bloch Equations Derivation}\label{MBEDerivation}
 
 Operator time evolution in the Heisenberg picture is given by
 \begin{equation}
