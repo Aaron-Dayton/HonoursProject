@@ -178,31 +178,15 @@
 
 \begin{document}
 
-\title{Honours Thesis - Simulation of Squeezed Light Generation in an Optical Resonator}
-\author{Aaron Dayton\\ Supervisor: Prof. Andrew MacRae}
-\date{\today}
+\title{\LARGE Simulation of Squeezed Light Generation in an Optical Resonator}
+\author{\Large \vspace{2.5cm}Aaron Dayton\\\vspace{3pt} Supervisor: Prof. Andrew MacRae\\\vspace{10cm}Honours Bachelor Thesis\\\vspace{3pt}Department of Physics and Astronomy\\\vspace{3pt}University of Victoria\\\vspace{5pt}\today} 
 
+\vspace*{2cm} 
 \maketitle
 \tableofcontents
-
-\section{TODO}
-
-\textcolor{blue}{
-    \begin{itemize}
-        \item Check if Tong notes are a good reference with MacRae
-        \item Derive three-level semi-classical Hamiltonian
-        \item Write section on interferometric cavities (Fabry-Perot, spherical, etc.)
-        \item Implement and write up Jaynes-Cummings Model
-    \end{itemize}
-}
+\pagebreak
 
 \section{Project Motivation}
-
-\textcolor{red}{
-    MacRae's Outline:\\
-    Quantum fluctuations of the electromagnetic field impose a fundamental limit on measurement sensitivity, known as the standard quantum limit (SQL). Exotic quantum optical states known as "squeezed light" can surpass the SQL. Squeezed states are a hot topic in research, particularly in quantum communication, metrology, and optical quantum computing. This project will explore theoretical models predicting strong squeezing when atoms are placed inside an optical cavity. The student will develop and run numerical simulations to investigate the conditions for optimal squeezing, using tools from quantum optics and cavity QED theory. Through this work, the student will gain experience in programming, numerical methods, and the theoretical framework of quantum light–matter interactions.
-}
-
 
 The past century since the formulation of quantum mechanics has led to unrivaled technological progress, especially in recent years. Methods in material sciences, such as density functional theory for computational modelling of solid state quantum mechanical systems~\cite{DFT}, have brought commercial transistors down to the scale of nanometers. With greater understanding of and ability to control quantum phenomena, further possibilities become available. Modern avenues for advancing quantum technologies include quantum key distribution, quantum sensing, and quantum computation, to name a few.
 
@@ -545,15 +529,15 @@ Recall the Beer-Lambert law of Eq.~\eqref{Beer}, which says that the field wihti
 \end{equation}
 such that the optical depth determines the amount of absorption by the medium~\cite{MacRae}. However, there is an alternative definition of optical depth which is far more coarse grained. Some define optical depth as
 \begin{equation}\label{OD2}
-    OD = r s l
+    OD = \nu s l
 \end{equation}
-where $r$ is the number density of atoms, $s$ is the resonant absorption cross-section of the medium, and $l$ is the length of the medium~\cite{Zhang}. By this definition, Zhang et al.~state that `an increase in [optical depth] indicates an increase in the number density of atoms, which implies an enhanced probability of FWM process occurring between optical fields and atoms'~\cite{Zhang}. The relationship presented is that an increase in the optical depth (by increasing atomic density) is strongly correlated with an increase in the conversion efficiency of FWM.
+where $\nu$ is the number density of atoms, $s$ is the resonant absorption cross-section of the medium, and $l$ is the length of the medium~\cite{Zhang}. By this definition, Zhang et al.~state that `an increase in [optical depth] indicates an increase in the number density of atoms, which implies an enhanced probability of FWM process occurring between optical fields and atoms'~\cite{Zhang}. The relationship presented is that an increase in the optical depth (by increasing atomic density) is strongly correlated with an increase in the conversion efficiency of FWM.
 
-Atomic density alkili metal vapour in a cell has the well-defined relationship with temperature $T$
+Atomic density alkali metal vapour in a cell has the well-defined relationship with temperature $T$
 \begin{equation}
-    r = \frac{1}{T}10^{A - B / T}
+    \nu = \frac{1}{T}10^{A - B / T}
 \end{equation}
-where $A$ and $B$ are material dependent constants (for rubidium vapour these are $A = 31.178$ and$B = 4040$)~\cite{Vapour}. Therefore, there is a way to significantly increase this measure of optical depth which may be correlated with increased FWM conversion efficiency for our system of interest.
+where $A$ and $B$ are material dependent constants (for rubidium vapour these are $A = 31.178$ and $B = 4040$)~\cite{Vapour}. Therefore, there is a way to significantly increase this measure of optical depth which may be correlated with increased FWM conversion efficiency for our system of interest.
 
 \subsubsection{Four wave mixing and electromagnetically induced absorption}
 
@@ -752,7 +736,7 @@ where $\mathcal{N}(\mu, \sigma)$ represents a Gaussian distribution of mean $\mu
 \sigma_x = \sigma_y = \sigma_z = \sqrt{\frac{m}{k_b T}}
 \end{equation}
 for our isotropic medium with $k_b$ being the Boltzmann constant. We then have the PDF as
-\begin{equation}
+\begin{equation}\label{GaussianPDF}
 f(v)\biggl|_{\mu=0, \sigma=\sqrt{\frac{m}{k_b T}}} = \sqrt{\frac{m}{2 \pi k_b T}}\exp{\left(-\frac{mv^2}{2 k_v T}\right)}.
 \end{equation}
 
@@ -765,12 +749,12 @@ Consider that the index of refraction is given by $n(\omega) = c / v_p(\omega)$ 
     \vec{k} = \frac{n(\omega) \omega}{c} \frac{\vec{k}}{|\vec{k}|}
 \end{equation}
 such that we then have the Doppler shift as
-\begin{equation}
+\begin{equation}\label{TrueDopplerShift}
     \omega' = \omega - \frac{n(\omega) \omega}{c} \frac{\vec{k}}{|\vec{k}|}\cdot \vec{v}
 \end{equation}
 
 So if a frequency dependent dispersion relation for our system can be derived, then an accurate Doppler shift may be applied. However, we instead take the index of refraction to be approximately constant in this context as to obtain
-\begin{equation}
+\begin{equation}\label{ApproxDopplerShift}
     \omega' \approx \omega - \frac{n \omega}{c} \frac{\vec{k}}{|\vec{k}|}\cdot \vec{v}
 \end{equation}
 but note that a derivation of $n(\omega)$ for inclusion in this equation would improve the accuracy of any Doppler broadening results. This derivation is out of the scope of this thesis.
@@ -805,6 +789,7 @@ This gives a computational speed up, yet $M^3$ steady state density matrices mus
 
 Similarly, if beams are separated into two sets, such that all wavevectors of one set are parallel with one another, but any wavevectors from different sets are not parallel, then $M^2$ density matrices would need to be computed.
 
+Note that any density matrix obtained by this method should be renormalized.
 
 \subsection{System Hamiltonian}\label{HamiltonianPresentation}
 
@@ -856,78 +841,61 @@ It is important to note that some of the definitions involved in this Hamiltonia
     &\vec{E}(z, t) = \vec{\varepsilon}_0 \cos(\omega t - kz)\nonumber\\
     &\vec{E}(z, t) = \frac{\vec{\varepsilon}_0}{2} \left( e^{-i(\omega t - kz)} + e^{i(\omega t - kz)}\right).\nonumber
 \end{align}
-where $\vec{\varepsilon}_0$ acts as a slowly-varying envelope which changes slowly on the timescale of oscillation to allow for steady-state dynamics to occur. In Appendix~\ref{Hamiltonian_Formulation}, each $\vec{\varepsilon}$ was taken to include the factor of 2 to simplify calculations. Also by convention, weak quantized fields are expressed with the factor of 2 absorbed where the symbol $g$ takes the place of $\Omega$ to represent the atom-field coupling strength. So the conventional form of the Hamiltonian then becomes
-\begin{align}
-    \tilde{H}_{Conventional}
-    &=
-    \frac{\hbar}{2} \left(
-        \begin{array}{cccc}
-            0 & 2g_{s} \hat{a}^{\dagger} & \Omega_{I} & 0\\
-            2g_{s}^* \hat{a} & 2\Delta_s & 0 & \Omega_{II}\\
-            \Omega_{I}^* & 0 & 2\Delta_I & 2g_{i} \hat{b}^{\dagger}\\
-            0 & \Omega_{II}^* & 2g_{i}^* \hat{b} & 2(\Delta_{II} + \Delta_s)\\
-        \end{array}
-    \right) +
-    \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
-    \hbar \Delta_b  \hat{b}^{\dagger}\hat{b}
-\end{align}
+where $\vec{\varepsilon}_0$ acts as a slowly-varying envelope which changes slowly on the timescale of oscillation to allow for steady-state dynamics to occur. In Appendix~\ref{Hamiltonian_Formulation}, each $\vec{\varepsilon}$ was taken to include the factor of 2 to simplify calculations. Also by convention, weak quantized fields are expressed with the factor of 2 absorbed where the symbol $g$ takes the place of $\Omega$ to represent the atom-field coupling strength. For consistency, we opt to not apply these conventions to avoid confusion, but make a distinct note of it.
 
-
-However, there are still alternative Hamiltonians which may be applicable to this problem. Notice that the signal and idler beams do not populate the cavity mode in the current form. To handle this, Souza et al.~include a field population term $(\varepsilon \hat{a} + h.c.)$ to their Hamiltonian~\cite{Souza}, which introduces a degree of realistic noise. We can do the same for our two cavity modes, yielding
-\begin{align}
+There are still alternative Hamiltonians which may be applicable to this problem. Notice that the signal and idler beams do not populate the cavity mode in the current form. To handle this, Souza et al.~include a field population term $(\varepsilon \hat{a} + h.c.)$ to their Hamiltonian~\cite{Souza}, which introduces a degree of realistic noise. We can do the same for our two cavity modes, yielding
+\begin{align}\label{Hab}
     \tilde{H}_{ab}
     &=
-    \frac{\hbar}{2} \left(
+    \hbar \left(
         \begin{array}{cccc}
-            0 & 2g_{s} \hat{a}^{\dagger} & \Omega_{I} & 0\\
-            2g_{s}^* \hat{a} & 2\Delta_s & 0 & \Omega_{II}\\
-            \Omega_{I}^* & 0 & 2\Delta_I & 2g_{i} \hat{b}^{\dagger}\\
-            0 & \Omega_{II}^* & 2g_{i}^* \hat{b} & 2(\Delta_{II} + \Delta_s)\\
+            0 & \Omega_{s} \hat{a}^{\dagger} & \Omega_{I} & 0\\
+            \Omega_{s}^* \hat{a} & \Delta_s & 0 & \Omega_{II}\\
+            \Omega_{I}^* & 0 & \Delta_I & \Omega_{i} \hat{b}^{\dagger}\\
+            0 & \Omega_{II}^* & \Omega_{i}^* \hat{b} & \Delta_{II} + \Delta_s\\
         \end{array}
     \right) +
     \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
     \hbar \Delta_b  \hat{b}^{\dagger}\hat{b} +
-    \frac{\hbar}{2} \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right) +
-    \frac{\hbar}{2} \left(\varepsilon_i \hat{b} + \varepsilon_i^* \hat{b}^{\dagger}\right)
+    \hbar \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right) +
+    \hbar \left(\varepsilon_i \hat{b} + \varepsilon_i^* \hat{b}^{\dagger}\right)
 \end{align}
-
-% where we take the $\varepsilon_s$ and $\varepsilon_i$ to be real-valued as they represent the electromagnetic amplitudes of our beams, and we have reduced it by a factor of 2 in line with our previous reasoning (whereas Souza et al.~scaled $\varepsilon$ for simplicity~\cite{Souza}).
 
 On top of this, we must also take the use of cavities into consideration and ask: is it practical to use resonant cavities for this system? Recall that the condition for Doppler insensitivity is that $\vec{k}_s$ and $\vec{k}_I$ must co-propagate, $\vec{k}_i$ and $\vec{k}_{II}$ must co-propagate, and $\vec{k}_s$ and $\vec{k}_i$ must counter-propagate such that all four beams travel along the same line. But how does one place two resonant cavities of distinct frequencies along the same line? It is possible that there is a way to cleverly engineer a system to alleviate this issue, but considering such a problem is out of the scope of this report. Instead, we present the other possible Hamiltonains obtained by de-quantizing one of the two fields.
-\begin{align}
+\begin{align}\label{Ha}
     \tilde{H}_{a}
     &=
-    \frac{\hbar}{2} \left(
+    \hbar \left(
         \begin{array}{cccc}
-            0 & 2g_{s} \hat{a}^{\dagger} & \Omega_{I} & 0\\
-            2g_{s}^* \hat{a} & 2\Delta_s & 0 & \Omega_{II}\\
-            \Omega_{I}^* & 0 & 2\Delta_I & \Omega_{i} \\
-            0 & \Omega_{II}^* & \Omega_{i}^* & 2(\Delta_{II} + \Delta_s)\\
+            0 & \Omega_{s} \hat{a}^{\dagger} & \Omega_{I} & 0\\
+            \Omega_{s}^* \hat{a} & \Delta_s & 0 & \Omega_{II}\\
+            \Omega_{I}^* & 0 & \Delta_I & \Omega_{i} \\
+            0 & \Omega_{II}^* & \Omega_{i}^* & \Delta_{II} + \Delta_s\\
         \end{array}
     \right) +
     \hbar \Delta_a \hat{a}^{\dagger}\hat{a} +
-    \frac{\hbar}{2} \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right)
+    \hbar\left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right)
 \end{align}
-\begin{align}
+\begin{align}\label{Hb}
     \tilde{H}_{b}
     &=
-    \frac{\hbar}{2} \left(
+    \hbar\left(
         \begin{array}{cccc}
             0 & \Omega_{s} & \Omega_{I} & 0\\
-            \Omega_{s}^* & 2\Delta_s & 0 & \Omega_{II}\\
-            \Omega_{I}^* & 0 & 2\Delta_I & 2g_{i} \hat{b}^{\dagger}\\
-            0 & \Omega_{II}^* & 2g_{i}^* \hat{b} & 2(\Delta_{II} + \Delta_s)\\
+            \Omega_{s}^* & \Delta_s & 0 & \Omega_{II}\\
+            \Omega_{I}^* & 0 & \Delta_I & \Omega_{i} \hat{b}^{\dagger}\\
+            0 & \Omega_{II}^* & \Omega_{i}^* \hat{b} & \Delta_{II} + \Delta_s\\
         \end{array}
     \right) +
     \hbar \Delta_b  \hat{b}^{\dagger}\hat{b} +
-    \frac{\hbar}{2} \left(\varepsilon_i \hat{b} + \varepsilon_i^* \hat{b}^{\dagger}\right)
+    \hbar \left(\varepsilon_i \hat{b} + \varepsilon_i^* \hat{b}^{\dagger}\right)
 \end{align}
 
 $\tilde{H}_{ab}$, $\tilde{H}_{a}$, and $\tilde{H}_{b}$, are the main systems of concern. Technically, we could de-quantize both weak fields, but then we would have no meaningful way to quantify FWM or squeezing. The system described by $\tilde{H}_{b}$ may be the most relevant since it allows us to quantify the amount of squeezing via expectation values, and it realistically involves only a single cavity. System $\tilde{H}_{ab}$ could be applicable, but (likely) only if the possible benefit of Doppler insensitivity is abandoned.
 
 
 
-\subsection{Lindbladian and Maxwell-Bloch Equations} 
+\subsection{Lindbladian and Maxwell-Bloch Equations}\label{LMBE}
 
 The only step left in expressing the Lindbladian for our system is specifying the decay operators. We can obtain them by simply considering each decay cannel with an associated decay rate. Consider $\tilde{H}_{ab}$. Atomic state $\ket{4}$ can decay to states $\ket{2}$ or $\ket{3}$, $\ket{3}$ can decay to $\ket{1}$, and $\ket{2}$ can decay to $\ket{1}$. Let these decay operators be denoted as $\hat{L}_{34} = \hat{\sigma}_{34}$, $\hat{L}_{24} = \hat{\sigma}_{24}$, $\hat{L}_{13} = \hat{\sigma}_{13}$, and $\hat{L}_{12} = \hat{\sigma}_{12}$, respectively, each with decay rates $\Gamma_{34}$, $\Gamma_{24}$, $\Gamma_{13}$, and $\Gamma_{12}$, respectively. We must also consider cavity decay for both quantized fields. The decay operator for the cavity field of frequency $\omega_a$ is $\hat{L}_{a} = \hat{a}$ with decay rate $\Gamma_a$ and that for the cavity field of frequency $\omega_b$ is $\hat{L}_{b} = \hat{b}$ with decay rate $\Gamma_b$.
 
@@ -936,15 +904,15 @@ With these and $\tilde{H}_{ab}$ we have all the components required to fully exp
 The mean Doppler broadened density matrix can be obtained via Eq.~\eqref{TripleDopplerMean} in general or by Eq.~\eqref{SingleDopplerMean} when the Doppler insensitive phase matching condition of Eq.~\eqref{DopplerFreePhaseMatching} is enforced.
 
 As discussed in Sec.~\ref{iterativeLMB}, this density matrix will be obtained in an iterative process then used in the Maxwell-Bloch equations to solve for the change in Rabi frequency at the next point within the medium. The intuition behind the Maxwell-Bloch equations was given discussed in Sec.~\ref{MBEIntuitive}, but the specific equations for the system we are considering were derived in Appendix~\ref{MBEDerivation} to be
-\begin{align}\label{MaxwellBlochInMainBody}
+\begin{align}
     \partial_\zeta \Omega_s(\zeta, \tau)
     &\approx
-    i \frac{\omega_s n d_{12}^2}{2 v_g \epsilon_0 \hbar} \overline{\rho}_{12} \\
+    i \frac{\omega_s \nu d_{12}^2}{2 v_g \epsilon_0 \hbar} \overline{\rho}_{12} \label{MBE1}\\
     \partial_\zeta \Omega_s(\zeta, \tau)
     &\approx
-    i \frac{\omega_i n d_{34}^2}{2 v_g \epsilon_0 \hbar} \overline{\rho}_{34}
+    i \frac{\omega_i \nu d_{34}^2}{2 v_g \epsilon_0 \hbar} \overline{\rho}_{34}\label{MBE2}
 \end{align}
-where $v_g$ is group velocity, $n$ is atomic density, and we are in the co-moving frame with $\zeta = z$ and $\tau = t - z/v_g$. It was noted in the appendix that these equations hold whether or not the noise term is included in the Hamiltonian.
+where $v_g$ is group velocity, $\nu$ is atomic density, and we are in the co-moving frame with $\zeta = z$ and $\tau = t - z/v_g$. It was noted in the appendix that these equations hold whether or not the noise term is included in the Hamiltonian.
 
 By propagating the field throughout the entire cell, the field strength of the expectation value of the number operator $\hat{a}^{\dagger} \hat{a}$ for each field could be obtained using the final mean density matrix, the quadrature noise and the amount of squeezing can be obtained using Eqs.~\eqref{QuadratureUncertainty1},\eqref{QuadratureUncertainty2}.
 
@@ -1138,17 +1106,30 @@ They then define decay operators for their cavity field mode $\sqrt{\kappa} \hat
     \label{ThreeLevelCEIT}
 \end{figure}
 
+\subsection{Computational Tools}
+
+A set of computational tools were developed specifically to model the four-level diamond configuration atomic system. The main function is defined as \lstinline|iterative_solve| taking inputs as the initial Rabi frequencies $\Omega_s$, $\Omega_i$, $\Omega_I$, $\Omega_{II}$, the detunings $\Delta_s$, $\Delta_i$, $\Delta_I$, $\Delta_{II}$, $\Delta_a$, $\Delta_b$, temperature $T$, cell length $l$, step size $\delta$, the number of velocity subclasses $M$, and the desired Hamiltonian function.
 
 
 
+It is closely aligned with the algorithm outlined in Code Block~\ref{Alg}, adding the additional step of including Doppler broadening. For the purposes of this code, the phase matching condition given by Eq.~\eqref{DopplerFreePhaseMatching} is applied. Otherwise, the algorithmic time complexity would increase drastically.
 
-\section{Outook}
+To perform the Doppler broadening procedure, $M$ evenly spaced velocities are generated from Eq.~\eqref{GaussianPDF} about the mean extending 2 standard deviations on either side. For each velocity, the Doppler shift with respect to each field is calculated and added to its respective detuning. This is used to form the Hamiltonian. Each of the 3 Hamiltonians $\tilde{H}_{ab}$, $\tilde{H}_{a}$, and $\tilde{H}_{b}$ from Eqs.~\eqref{Hab},\eqref{Ha},\eqref{Hb} have been implemented as fucntions called \lstinline|form_Hamiltonian_ab|, \lstinline|form_Hamiltonian_a|, and \lstinline|form_Hamiltonian_b|, each with input arguments $\Omega_s$, $\Omega_i$, $\Omega_I$, $\Omega_{II}$, $\Delta_s$, $\Delta_i$, $\Delta_I$, $\Delta_{II}$, $\Delta_a$, and $\Delta_b$.
 
+This Hamiltonian is then passed into the QuTiP \lstinline|steadystate| function along with the decay operators listed in Sec.~\ref{LMBE} to find the steady state density matrix for a single velocity. This is repeated for all velocity subclasses, then the mean density matrix is calculated according to Eq.~\eqref{SingleDopplerMean}. The result is renormalized to unity.
+
+With this, the Maxwell-BLoch equations of Eqs.~\eqref{MBE1},\eqref{MBE2} are calculated and the Rabi frequencies are updated as $\Omega_s \leftarrow \Omega_s + \partial_z \Omega_s \cdot \delta$ and $\Omega_i \leftarrow \Omega_i + \partial_z \Omega_i \cdot \delta$. This entire process is repeated for every step until the end of the cell is reached and the final density matrix $\hat{\rho}$, signal field Rabi frequency $\Omega_s$, and idler field Rabi frequency $\Omega_i$ are returned.
+
+This code makes the following approximations and assumptions: it assumes the mono-axial phase matching condition of Eq.~\eqref{DopplerFreePhaseMatching} such that Eq.~\eqref{SingleDopplerMean} may be applied to reduce computational complexity; the frequency-dependent index of refraction involved in calculating the Doppler shift from Eq.~\eqref{TrueDopplerShift} was taken to be constant as in Eq.~\eqref{ApproxDopplerShift} since we have not investigated a way to accurately calculate this; and the group velocity $v_g$ in the maxwell bloch equations~\eqref{MBE1},\eqref{MBE2} is taken to be the speed of light $c$ since we have not yet investigated a well-defined way of computationally calculating $v_g$. Each of these points can be improved upon in future iteration.
 
 \section{Discussion}
 
-\subsection{Conditions for Optical Squeezing}
 
+
+
+\pagebreak
+
+\section*{References}
 \bibliographystyle{unsrt}
 \bibliography{refs}
 
@@ -2376,18 +2357,18 @@ Additionally, consider that in this derivation we considered only a single atom 
     &\approx
     i \frac{\omega_s d_{12}^2}{2 v_g \epsilon_0 \hbar V } N \overline{\rho}_{12} \nonumber \\
     &\approx
-    i \frac{\omega_s n d_{12}^2}{2 v_g \epsilon_0 \hbar } \overline{\rho}_{12}
+    i \frac{\omega_s \nu d_{12}^2}{2 v_g \epsilon_0 \hbar } \overline{\rho}_{12}
 \end{align}
-where $n = N/V$ is atomic density.
+where $\nu = N/V$ is atomic density.
 
 Identical steps lead to a complementary equation for the idler field such that we have the Maxwell-Bloch equations for our system as
 \begin{align}\label{MaxwellBlochForSystem}
     \partial_\zeta \Omega_s(\zeta, \tau)
     &\approx
-    i \frac{\omega_s n d_{12}^2}{2 v_g \epsilon_0 \hbar } \overline{\rho}_{12} \\
+    i \frac{\omega_s \nu d_{12}^2}{2 v_g \epsilon_0 \hbar } \overline{\rho}_{12} \\
     \partial_\zeta \Omega_s(\zeta, \tau)
     &\approx
-    i \frac{\omega_i n d_{34}^2}{2 v_g \epsilon_0 \hbar } \overline{\rho}_{34}
+    i \frac{\omega_i \nu d_{34}^2}{2 v_g \epsilon_0 \hbar } \overline{\rho}_{34}
 \end{align}
 
 \subsection{Considering Noise}
@@ -2401,11 +2382,11 @@ where we have introduced a noise term for just field $\hat{a}$. This would then 
 \begin{align}
     \frac{d}{dt}\hat{\varepsilon}_H(z, t)
     &=
-    \frac{i}{\hbar} \left[ \tilde{H}(t) + \frac{\hbar}{2} \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right), \hat{\varepsilon}_H(z, t) \right] \nonumber \\
+    \frac{i}{\hbar} \left[ \tilde{H}(t) + \hbar \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right), \hat{\varepsilon}_H(z, t) \right] \nonumber \\
     &=
-    \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t)\right] + \left[\frac{\hbar}{2} \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right), \hat{\varepsilon}_H(z, t) \right] \nonumber \\
+    \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t)\right] + \left[\hbar \left(\varepsilon_s \hat{a} + \varepsilon_s^* \hat{a}^{\dagger}\right), \hat{\varepsilon}_H(z, t) \right] \nonumber \\
     &=
-    \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t)\right] + \left[\frac{\hbar}{2} \hat{\varepsilon}_H(z, t), \hat{\varepsilon}_H(z, t) \right] \nonumber \\
+    \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t)\right] + \left[\hbar \hat{\varepsilon}_H(z, t), \hat{\varepsilon}_H(z, t) \right] \nonumber \\
     &=
     \frac{i}{\hbar} \left[ \tilde{H}(t), \hat{\varepsilon}_H(z, t)\right]
 \end{align}
