@@ -176,10 +176,6 @@
 
 \usepackage[titles]{tocloft}
 \addtolength{\cftsecnumwidth}{2pt}
-% \addtolength{\cftsubsecnumwidth}{0pt}
-% \addtolength{\cftsubsubsecnumwidth}{0pt}
-% \setlength{\cftsubsubsecindent}{30pt}
-
 \usepackage{tocloft}
 
 % Set the desired space between entries (e.g., 1em)
@@ -208,13 +204,28 @@ We investigate a potential method for converting beams of optically encoded quan
 \clearpage
 
 \tableofcontents
+\addcontentsline{toc}{section}{Table of Contents}
 
 \pagebreak
 
 \listoffigures
+\addcontentsline{toc}{section}{List of Figures}
 
 \clearpage
 
+\begingroup
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{}{0em}{}
+\section*{Acknowledgements}
+\addcontentsline{toc}{section}{Acknowledgements}
+\endgroup
+
+\vspace{2.5cm}
+
+\begin{center}
+I would like to thank my project supervisor Andrew MacRae for the dedicated time he has spent on nurturing the growth of countless students including myself, and Thomas E. Baker for providing me with myriad opportunities and insights which have formed the bedrock of my physics understanding and led to the development of keystone principles in my broader worldview.
+\end{center}
+
+\clearpage
 
 \pagenumbering{arabic}
 

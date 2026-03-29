@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  29 MAR 2026 00:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  29 MAR 2026 00:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,16 +1009,16 @@ Package tocloft Warning: \@starttoc has already been redefined; tocloft bailing
 
 )
 Class revtex4-1 Info: Unrecognized LaTeX tabular. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 188.
+lass! (Proceeding with fingers crossed.) on input line 184.
 
 
 Class revtex4-1 Warning: Repair the float package.
 
-Class revtex4-1 Info: cite was not loaded (OK!) on input line 188.
-Class revtex4-1 Info: mcite was not loaded (OK!) on input line 188.
-Class revtex4-1 Info: multicol was not loaded (OK!) on input line 188.
+Class revtex4-1 Info: cite was not loaded (OK!) on input line 184.
+Class revtex4-1 Info: mcite was not loaded (OK!) on input line 184.
+Class revtex4-1 Info: multicol was not loaded (OK!) on input line 184.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 18
-8.
+4.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -1030,24 +1030,24 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 (./HonoursThesis.aux)
 \openout1 = `HonoursThesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 188.
-LaTeX Font Info:    ... okay on input line 188.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1072,14 +1072,14 @@ Package caption Info: End \AtBeginDocument code.
 
 Package tikz-feynman Warning: LuaTeX is required if you wish to have vertices a
 utomatically placed. You can disable this warning by setting /tikzfeynman/warn 
-luatex=false on input line 188.
+luatex=false on input line 184.
 
-Package hyperref Info: Link coloring OFF on input line 188.
+Package hyperref Info: Link coloring OFF on input line 184.
 (./HonoursThesis.out) (./HonoursThesis.out)
 \@outlinefile=\write5
 \openout5 = `HonoursThesis.out'.
 
-Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 188.
+Class revtex4-1 Info: Taking \maketitle back from hyperref on input line 184.
 \openout3 = `HonoursThesisNotes.bib'.
 
 
@@ -1090,44 +1090,44 @@ Class revtex4-1 Warning: Assuming \noaffiliation for authors.
 ocal/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 202.
+(hyperref)                be the same. Added a new anchor on input line 198.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
-05.
+01.
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
-05.
+01.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-205.
+201.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-205.
+201.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 205.
+(Font)              <10> on input line 201.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 205.
+(Font)              <7> on input line 201.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 205.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 205
+(Font)              <5> on input line 201.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 201
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 205
+LaTeX Font Info:    Trying to load font information for U+msb on input line 201
 .
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1143,84 +1143,87 @@ l/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/
 \tf@lof=\write7
 \openout7 = `HonoursThesis.lof'.
 
- [4{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [1] [
-2] [3] [4]
-<Figs//Lambda-system.png, id=413, 338.26375pt x 190.7125pt>
+ [4{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [5] [
+1] [2] [3] [4]
+<Figs//Lambda-system.png, id=429, 338.26375pt x 190.7125pt>
 File: Figs//Lambda-system.png Graphic file (type png)
 <use Figs//Lambda-system.png>
-Package pdftex.def Info: Figs//Lambda-system.png  used on input line 403.
+Package pdftex.def Info: Figs//Lambda-system.png  used on input line 414.
 (pdftex.def)             Requested size: 163.20374pt x 92.01529pt.
-<Figs//V-system.png, id=415, 343.2825pt x 181.67876pt>
+<Figs//V-system.png, id=431, 343.2825pt x 181.67876pt>
 File: Figs//V-system.png Graphic file (type png)
 <use Figs//V-system.png>
-Package pdftex.def Info: Figs//V-system.png  used on input line 408.
+Package pdftex.def Info: Figs//V-system.png  used on input line 419.
 (pdftex.def)             Requested size: 163.20374pt x 86.37314pt.
-<Figs//Ladder-system.png, id=416, 132.495pt x 283.0575pt>
+<Figs//Ladder-system.png, id=432, 132.495pt x 283.0575pt>
 File: Figs//Ladder-system.png Graphic file (type png)
 <use Figs//Ladder-system.png>
-Package pdftex.def Info: Figs//Ladder-system.png  used on input line 413.
+Package pdftex.def Info: Figs//Ladder-system.png  used on input line 424.
 (pdftex.def)             Requested size: 51.00311pt x 108.96234pt.
  [5]
-<Figs//ThreeLevelAtom.png, id=430, 337.26pt x 222.8325pt>
+<Figs//ThreeLevelAtom.png, id=446, 337.26pt x 222.8325pt>
 File: Figs//ThreeLevelAtom.png Graphic file (type png)
 <use Figs//ThreeLevelAtom.png>
-Package pdftex.def Info: Figs//ThreeLevelAtom.png  used on input line 430.
+Package pdftex.def Info: Figs//ThreeLevelAtom.png  used on input line 441.
 (pdftex.def)             Requested size: 255.0pt x 168.48402pt.
  [6 <./Figs//Lambda-system.png> <./Figs//V-system.png> <./Figs//Ladder-system.p
 ng> <./Figs//ThreeLevelAtom.png>]
-<Figs/DiamondAtom.png, id=448, 376.40625pt x 301.125pt>
+<Figs/DiamondAtom.png, id=464, 376.40625pt x 301.125pt>
 File: Figs/DiamondAtom.png Graphic file (type png)
 <use Figs/DiamondAtom.png>
-Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 451.
+Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 462.
 (pdftex.def)             Requested size: 255.0pt x 204.00414pt.
-<Figs//Doppler.png, id=450, 357.335pt x 261.97874pt>
+<Figs//Doppler.png, id=466, 357.335pt x 261.97874pt>
 File: Figs//Doppler.png Graphic file (type png)
 <use Figs//Doppler.png>
-Package pdftex.def Info: Figs//Doppler.png  used on input line 463.
+Package pdftex.def Info: Figs//Doppler.png  used on input line 474.
 (pdftex.def)             Requested size: 255.0pt x 186.9536pt.
- [7 <./Figs/DiamondAtom.png>]
-<Figs//FWM.png, id=468, 385.44pt x 132.495pt>
+
+[7 <./Figs/DiamondAtom.png>]
+<Figs//FWM.png, id=484, 385.44pt x 132.495pt>
 File: Figs//FWM.png Graphic file (type png)
 <use Figs//FWM.png>
-Package pdftex.def Info: Figs//FWM.png  used on input line 485.
+Package pdftex.def Info: Figs//FWM.png  used on input line 496.
 (pdftex.def)             Requested size: 203.99689pt x 70.12294pt.
- [8 <./Figs//Doppler.png> <./Figs//FWM.png>] [9]
-<Figs/Squeezing.png, id=513, 711.65875pt x 321.2pt>
+ [8 <./Figs//Doppler.png> <./Figs//FWM.png>]
+[9]
+<Figs/Squeezing.png, id=529, 711.65875pt x 321.2pt>
 File: Figs/Squeezing.png Graphic file (type png)
 <use Figs/Squeezing.png>
-Package pdftex.def Info: Figs/Squeezing.png  used on input line 545.
+Package pdftex.def Info: Figs/Squeezing.png  used on input line 556.
 (pdftex.def)             Requested size: 255.0pt x 115.08789pt.
  [10 <./Figs/Squeezing.png>] [11]
-<Figs//AtomicMedium.png, id=565, 596.2275pt x 184.69pt>
+<Figs//AtomicMedium.png, id=581, 596.2275pt x 184.69pt>
 File: Figs//AtomicMedium.png Graphic file (type png)
 <use Figs//AtomicMedium.png>
-Package pdftex.def Info: Figs//AtomicMedium.png  used on input line 619.
+Package pdftex.def Info: Figs//AtomicMedium.png  used on input line 630.
 (pdftex.def)             Requested size: 408.00156pt x 126.38506pt.
  [12 <./Figs//AtomicMedium.png>] [13]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 713.
+put line 724.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 715.
+(Font)              <9> on input line 726.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 715.
- [14]
-<Figs//ThreeFieldDiamondAtom.png, id=632, 427.5975pt x 284.06125pt>
+(Font)              <6> on input line 726.
+
+[14]
+<Figs//ThreeFieldDiamondAtom.png, id=649, 427.5975pt x 284.06125pt>
 File: Figs//ThreeFieldDiamondAtom.png Graphic file (type png)
 <use Figs//ThreeFieldDiamondAtom.png>
-Package pdftex.def Info: Figs//ThreeFieldDiamondAtom.png  used on input line 74
-5.
+Package pdftex.def Info: Figs//ThreeFieldDiamondAtom.png  used on input line 75
+6.
 (pdftex.def)             Requested size: 255.0pt x 169.40211pt.
  [15 <./Figs//ThreeFieldDiamondAtom.png>] [16]
-<Figs//Gaussian.png, id=656, 642.4pt x 471.7625pt>
+<Figs//Gaussian.png, id=672, 642.4pt x 471.7625pt>
 File: Figs//Gaussian.png Graphic file (type png)
 <use Figs//Gaussian.png>
-Package pdftex.def Info: Figs//Gaussian.png  used on input line 802.
+Package pdftex.def Info: Figs//Gaussian.png  used on input line 813.
 (pdftex.def)             Requested size: 356.99844pt x 262.1768pt.
- [17 <./Figs//Gaussian.png>] [18] [19]
+ [17 <./Figs//Gaussian.png>]
+[18] [19]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
-58.
-
-(/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
+69.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
@@ -1232,22 +1235,22 @@ File: latin1.def 2021/02/14 v1.3d Input encoding file
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
 )
-<Figs//JCM1.png, id=706, 240.9pt x 220.825pt>
+<Figs//JCM1.png, id=722, 240.9pt x 220.825pt>
 File: Figs//JCM1.png Graphic file (type png)
 <use Figs//JCM1.png>
-Package pdftex.def Info: Figs//JCM1.png  used on input line 972.
+Package pdftex.def Info: Figs//JCM1.png  used on input line 983.
 (pdftex.def)             Requested size: 203.99689pt x 187.00127pt.
-<Figs//JCM2.png, id=707, 140.525pt x 142.5325pt>
+<Figs//JCM2.png, id=723, 140.525pt x 142.5325pt>
 File: Figs//JCM2.png Graphic file (type png)
 <use Figs//JCM2.png>
-Package pdftex.def Info: Figs//JCM2.png  used on input line 977.
+Package pdftex.def Info: Figs//JCM2.png  used on input line 988.
 (pdftex.def)             Requested size: 153.00156pt x 155.19638pt.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 1000.
+nput line 1011.
  [20 <./Figs//JCM1.png> <./Figs//JCM2.png>]
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
@@ -1255,23 +1258,23 @@ File: latin1.def 2021/02/14 v1.3d Input encoding file
 [21] (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
 )
-<Figs//JCM-Rabi.png, id=768, 584.1825pt x 457.71pt>
+<Figs//JCM-Rabi.png, id=784, 584.1825pt x 457.71pt>
 File: Figs//JCM-Rabi.png Graphic file (type png)
 <use Figs//JCM-Rabi.png>
-Package pdftex.def Info: Figs//JCM-Rabi.png  used on input line 1051.
+Package pdftex.def Info: Figs//JCM-Rabi.png  used on input line 1062.
 (pdftex.def)             Requested size: 356.99844pt x 279.71951pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1056.
+(hyperref)                removing `math shift' on input line 1067.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 1056.
+(hyperref)                removing `\Lambda' on input line 1067.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1056.
+(hyperref)                removing `math shift' on input line 1067.
 
 [22 <./Figs//JCM-Rabi.png>]
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
@@ -1280,10 +1283,10 @@ File: latin1.def 2021/02/14 v1.3d Input encoding file
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
 )
-<Figs//SemiClassicalEIT.png, id=784, 627.34375pt x 470.75874pt>
+<Figs//SemiClassicalEIT.png, id=800, 627.34375pt x 470.75874pt>
 File: Figs//SemiClassicalEIT.png Graphic file (type png)
 <use Figs//SemiClassicalEIT.png>
-Package pdftex.def Info: Figs//SemiClassicalEIT.png  used on input line 1101.
+Package pdftex.def Info: Figs//SemiClassicalEIT.png  used on input line 1112.
 (pdftex.def)             Requested size: 408.00156pt x 306.17632pt.
 
 
@@ -1291,41 +1294,41 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1107.
+(hyperref)                removing `math shift' on input line 1118.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 1107.
+(hyperref)                removing `\Lambda' on input line 1118.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1107.
+(hyperref)                removing `math shift' on input line 1118.
 
 [23]
-<Figs//NoisyJCM-Rabi.png, id=796, 631.35875pt x 470.75874pt>
+<Figs//NoisyJCM-Rabi.png, id=813, 631.35875pt x 470.75874pt>
 File: Figs//NoisyJCM-Rabi.png Graphic file (type png)
 <use Figs//NoisyJCM-Rabi.png>
-Package pdftex.def Info: Figs//NoisyJCM-Rabi.png  used on input line 1124.
+Package pdftex.def Info: Figs//NoisyJCM-Rabi.png  used on input line 1135.
 (pdftex.def)             Requested size: 408.00156pt x 304.22249pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [24 <./Figs//SemiClassicalEIT.png>]
-<Figs//PhotonCountThreeLevel.png, id=810, 767.86874pt x 541.02126pt>
+<Figs//PhotonCountThreeLevel.png, id=826, 767.86874pt x 541.02126pt>
 File: Figs//PhotonCountThreeLevel.png Graphic file (type png)
 <use Figs//PhotonCountThreeLevel.png>
 Package pdftex.def Info: Figs//PhotonCountThreeLevel.png  used on input line 11
-32.
+43.
 (pdftex.def)             Requested size: 377.4028pt x 265.91174pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figs//ThreeLevelCEIT.png, id=812, 1105.12875pt x 695.59875pt>
+<Figs//ThreeLevelCEIT.png, id=828, 1105.12875pt x 695.59875pt>
 File: Figs//ThreeLevelCEIT.png Graphic file (type png)
 <use Figs//ThreeLevelCEIT.png>
-Package pdftex.def Info: Figs//ThreeLevelCEIT.png  used on input line 1139.
+Package pdftex.def Info: Figs//ThreeLevelCEIT.png  used on input line 1150.
 (pdftex.def)             Requested size: 377.4028pt x 237.54062pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1352,17 +1355,17 @@ File: latin1.def 2021/02/14 v1.3d Input encoding file
 [28] (./HonoursThesis.bbl [29]) [30]
 File: Figs/DiamondAtom.png Graphic file (type png)
 <use Figs/DiamondAtom.png>
-Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 1202.
+Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 1213.
 (pdftex.def)             Requested size: 229.49844pt x 183.60326pt.
-<Figs/DrivenDiamondAtom.png, id=875, 428.60126pt x 295.1025pt>
+<Figs/DrivenDiamondAtom.png, id=891, 428.60126pt x 295.1025pt>
 File: Figs/DrivenDiamondAtom.png Graphic file (type png)
 <use Figs/DrivenDiamondAtom.png>
-Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 1209.
+Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 1220.
 (pdftex.def)             Requested size: 229.49844pt x 158.0156pt.
  [31 <./Figs/DrivenDiamondAtom.png>]
 [32] [33] [34] [35] [36] [37] [38] [39] [40]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 207
-6.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 208
+7.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
@@ -1377,12 +1380,12 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
  [48] [49] [50] [51] [52] [53]) [54]
 (./HonoursThesis.aux)
 Package rerunfilecheck Info: File `HonoursThesis.out' has not changed.
-(rerunfilecheck)             Checksum: 070D0B4ECD3FFB1CBBA6E269451A3814;9213.
+(rerunfilecheck)             Checksum: 58095C31A63FF18F10E25BCE841B107B;9630.
  ) 
 Here is how much of TeX's memory you used:
- 31877 strings out of 476025
- 602356 string characters out of 5790017
- 2185388 words of memory out of 5000000
+ 31878 strings out of 476025
+ 602362 string characters out of 5790017
+ 2184388 words of memory out of 5000000
  50928 multiletter control sequences out of 15000+600000
  574984 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1411,10 +1414,10 @@ mtk10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local
 /texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on HonoursThesis.pdf (58 pages, 1512260 bytes).
+Output written on HonoursThesis.pdf (59 pages, 1513574 bytes).
 PDF statistics:
- 1770 PDF objects out of 2073 (max. 8388607)
- 1599 compressed objects within 16 object streams
- 783 named destinations out of 1000 (max. 500000)
- 420 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1787 PDF objects out of 2073 (max. 8388607)
+ 1614 compressed objects within 17 object streams
+ 784 named destinations out of 1000 (max. 500000)
+ 444 words of extra memory for PDF output out of 10000 (max. 10000000)
 
