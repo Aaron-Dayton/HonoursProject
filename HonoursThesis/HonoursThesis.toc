@@ -28,13 +28,14 @@
 \contentsline {subsubsection}{\numberline {2}Electromagnetically induced transparency in a $\Lambda $-system with classical driving fields}{25}{subsubsection.4.1.2}%
 \contentsline {subsubsection}{\numberline {3}Cavity electromagnetically induced transparency in a $\Lambda $-system with quantized driving fields}{26}{subsubsection.4.1.3}%
 \contentsline {subsection}{\numberline {B}Computational Tools}{27}{subsection.4.2}%
-\contentsline {section}{\numberline {V}Discussion}{29}{section.5}%
-\contentsline {section}{\numberline {}References}{30}{section*.17}%
+\contentsline {section}{\numberline {V}Discussion and Outlook}{29}{section.5}%
+\contentsline {section}{\numberline {VI}Conclusion}{30}{section.6}%
+\contentsline {section}{\numberline {}References}{31}{section*.17}%
 \appendix 
-\contentsline {section}{\numberline {A}Hamiltonian Formulation}{32}{appendix.A}%
-\contentsline {subsection}{\numberline {1}Classical Field Simplification via Rotating Wave Approximation}{33}{subsection.A.1}%
-\contentsline {subsection}{\numberline {2}Quantum Field Simplification via Rotating Wave Approximation}{34}{subsection.A.2}%
-\contentsline {subsection}{\numberline {3}Hamiltonian Simplification}{34}{subsection.A.3}%
-\contentsline {section}{\numberline {B}Maxwell-Bloch Equations Derivation}{44}{appendix.B}%
-\contentsline {subsection}{\numberline {1}Considering Noise}{48}{subsection.B.1}%
-\contentsline {section}{\numberline {C}Four-Level Diamond Configuration Atom Code}{49}{appendix.C}%
+\contentsline {section}{\numberline {A}Hamiltonian Formulation}{33}{appendix.A}%
+\contentsline {subsection}{\numberline {1}Classical Field Simplification via Rotating Wave Approximation}{34}{subsection.A.1}%
+\contentsline {subsection}{\numberline {2}Quantum Field Simplification via Rotating Wave Approximation}{35}{subsection.A.2}%
+\contentsline {subsection}{\numberline {3}Hamiltonian Simplification}{35}{subsection.A.3}%
+\contentsline {section}{\numberline {B}Maxwell-Bloch Equations Derivation}{45}{appendix.B}%
+\contentsline {subsection}{\numberline {1}Considering Noise}{49}{subsection.B.1}%
+\contentsline {section}{\numberline {C}Four-Level Diamond Configuration Atom Code}{50}{appendix.C}%
