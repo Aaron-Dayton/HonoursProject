@@ -165,7 +165,6 @@
 
 \usepackage[compat=1.1.0]{tikz-feynman}
 
-
 \usepackage{titlesec}
 \titleformat{\section}[hang]{\normalfont\Large\bfseries}{\thesection}{1em}{}
 
@@ -175,16 +174,49 @@
 
 \usepackage[hidelinks]{hyperref}
 
+\usepackage[titles]{tocloft}
+\addtolength{\cftsecnumwidth}{2pt}
+% \addtolength{\cftsubsecnumwidth}{0pt}
+% \addtolength{\cftsubsubsecnumwidth}{0pt}
+% \setlength{\cftsubsubsecindent}{30pt}
+
+\usepackage{tocloft}
+
+% Set the desired space between entries (e.g., 1em)
+\setlength{\cftbeforefigskip}{0.6em}
 
 \begin{document}
+
+\pagenumbering{roman}
 
 \title{\LARGE Simulation of Squeezed Light Generation in an Optical Resonator}
 \author{\Large \vspace{2.5cm}Aaron Dayton\\\vspace{3pt} Supervisor: Prof. Andrew MacRae\\\vspace{10cm}Honours Bachelor Thesis\\\vspace{3pt}Department of Physics and Astronomy\\\vspace{3pt}University of Victoria\\\vspace{5pt}\today} 
 
 \vspace*{2cm} 
 \maketitle
+
+
+\begingroup
+\titleformat{\section}[block]{\Large\bfseries\filcenter}{}{0em}{}
+\section*{Abstract}
+\addcontentsline{toc}{section}{Abstract}
+\endgroup
+
+We investigate a potential method for converting beams of optically encoded quantum information from conventional operational wavelengths to telecom wavelengths which, if viable, could lead to a scalable and economically viable method for rapidly deploying quantum networks. The system of interest is the four-level, diamond configuration, energy substructure of rubidium-87 composed of states $5S_{1/2} - 5P_{1/2} - 5P_{3/2} - 4D_{1/2}$. To achieve efficient frequency conversion with an economically scalable device, the phenomenon of electromagnetically induce transparency enhanced four wave mixing in a Doppler broadened hot atomic medium would need to be produced. The use of a resonant cavity can enhance electromagnetically induced transparency, and four wave mixing can generate squeezed light such that quantum uncertainty can be reduced in one quadrature which gives a method to reduce transmission signal noise. Towards the goal of realizing this system, the theory for all the relevant physical processes is presented, a set of possible system Hamiltonians are derived and presented, Lindbladian decay operators are given to allow for steady-state density matrices to be found via computation, and the Maxwell-Bloch equations for the system are derived and presented to give a method for calculating theoretical field propagation throughout the medium. An algorithmic method for solving Doppler broadened systems with the combined equations is presented. Known example systems are solved to give intuition as to how the computational methods should be applied, and a set of problem specific computational tools are developed and presented. Steps for future work are outlined.
+
+
+\clearpage
+
 \tableofcontents
+
 \pagebreak
+
+\listoffigures
+
+\clearpage
+
+
+\pagenumbering{arabic}
 
 \section{Project Motivation}
 
@@ -202,13 +234,12 @@ Progress has been made on forming quantum-optical networks, such as in America w
 
 This thesis covers a theoretically viable method for frequency conversion of quantum information encoded in an electromagnetic field (continuous variable quantum information). The technique involves interfering three electromagnetic fields within a sample of Rubidium-87 gas to induce transitions such that one additional field is produced. Rubidium-87 is a widely studied candidate for applications in short-timescale quantum memory~\cite{Hosseini}\cite{Strassel}, quantum repeaters~\cite{Langenfeld}, and quantum computation~\cite{Saffman}. We will focus on a 4-level transition substructure with one transition frequency compatible with modern quantum methods, one transition frequency compatible with telecom frequencies in the conventional band (C-band), and two frequencies which will be leveraged for interference effects in a process known as four wave mixing (FWM)~\cite{Diamond}.
 
+In Sec.~\ref{Background}, the theory of electromagnetically induced transparency (EIT) and FWM, the Lindblad master equation and Maxwell-Bloch equation solution methods for quantum systems, and an algorithmic procedure for pairing the Lindblad and Maxwell-Bloch strategies are presented. Sec.~\ref{ProblemDefinition} explicitly outlines the problem definition by defining the theoretical system, outlining the effects and mathematical treatment of Doppler broadening, presenting multiple forms for the system Hamiltonian and discussing how each should be applied, and presenting system-specific Maxwell-Bloch equations to calculate field propagation through the medium. Sec.~\ref{ComputationalMethods} covers how to apply the QuTiP python library by reproducing known results, then outlines a set of computational tools designed to solve the system. Sec.~\ref{Discussion} covers the broad ideas encompassed in this work, defines what was accomplished, explains shortcomings, and sets up the next steps for future research. Sec.~\ref{Conclusion} summarizes the work.
 
-\textcolor{red}{TODO - Write what the outline of the thesis will be here!!!}
 
+\section{Background Information}\label{Background}
 
-\section{Background Information}
-
-This project involves understanding how hot atomic vapours interact with external electromagnetic fields to induce desirable physical phenomena. To convert frequencies, FWM can be applied with the added bonus that it can generate squeezed light~\cite{Slusher}, which is useful in continuous variable quantum information applications since optical squeezing causes uncertainty in one quadrature (amplitude or phase) to be reduced while being increased in the other. FWM may be enhanced by electromagnetically induced transparency (EIT)~\cite{Xiao}, a process in which an atomic medium becomes effectively transparent to a frequency of light near-resonance with one of its transition frequencies under certain conditions. We will tackle these topics in reverse order to build up to the idea of optical squeezing.
+This project involves understanding how hot atomic vapours interact with external electromagnetic fields to induce desirable physical phenomena. To convert frequencies, FWM can be applied with the added bonus that it can generate squeezed light~\cite{Slusher}, which is useful in continuous variable quantum information applications since optical squeezing causes uncertainty in one quadrature (amplitude or phase) to be reduced while being increased in the other. FWM may be enhanced by EIT~\cite{Xiao}, a process in which an atomic medium becomes effectively transparent to a frequency of light near-resonance with one of its transition frequencies under certain conditions. We will tackle these topics in reverse order to build up to the idea of optical squeezing.
 
 In order to solve for signal propagation, we must find the steady state system dynamics via the Lindblad master equation, then use the result to solve for the field propagation through the medium step by step using the Maxwell-Bloch equations. The master equation is a function of field strength, so we can produce a combined solution algorithm to obtain the field strength of the converted frequency field at the end of the sample. This result tells us how much of the signal has been converted via FWM.
 
@@ -232,7 +263,7 @@ where $q$ is charge, and $\vec{v}$ is particle velocity. Using the Bohr model fo
 \begin{equation}
     v_n = \alpha \frac{Z}{n} c
 \end{equation}
-where $\alpha$ is the fine structure constant, $Z$ is the atomic number, and $n$ is the principle quantum number \cite{Atomic book p.23}. We can therefore see by rough approximation that we have
+where $\alpha$ is the fine structure constant, $Z$ is the atomic number, and $n$ is the principle quantum number \cite{Atomic}. We can therefore see by rough approximation that we have
 \begin{equation}
     |\vec{v} \times \vec{B}| \lessapprox \alpha Z c \frac{E}{c} = \alpha Z E.
 \end{equation}
@@ -360,7 +391,7 @@ In order to meaningfully utilize the power of quantum information via quantum st
 
 With enough ingenuity, we can use existing systems to approximate useful mathematical abstractions. Enter, the three-level (hydrogenic) atom. All hydrogenic atoms, in theory, have infinitely many states up to ionization ($n \in \mathbb{N}$), and transition probabilities between many of these states can be non-zero. Though by finding a subset of states with desired characteristics and leveraging transition rules where any undesired state transitions are suppressed, a physical atom can be used to approximate a model system. This becomes especially useful in the limit of a large number of atoms where, statistically, the desired transitions are the most probable, and any undesired transitions are vastly outnumbered, such that the system tends towards the desired behaviour in the limit of many particles.
 
-A three-level atom has three distinct states with some set of allowed transitions between those states. There exist $\Lambda$-systems, V-systems , and $\Xi$-systems, each depicted in Fig.~\ref{ThreeLevelDiagrams}. An common example of a $\Lambda$-system exists in $^{87}Rb$ with the collection of hyperfine split states $5^{2}S_{1/2}$ for $F=1$ and $F=2$ with energy differece given according to~\eqref{hyperfine} so that they take on the roles of states $\ket{1}$ and $\ket{2}$, respectively, and state $5^{2}P_{1/2}$ for $F=1$ acts as the excited state $\ket{3}$~\cite{Xiao}.
+A three-level atom has three distinct states with some set of allowed transitions between those states. There exist $\Lambda$-systems, V-systems , and $\Xi$-systems, each depicted in Fig.~\ref{ThreeLevelDiagrams}. An common example of a $\Lambda$-system exists in $^{87}Rb$ with the collection of hyperfine split states $5^{2}S_{1/2}$ for $F=1$ and $F=2$ with energy difference given according to~\eqref{hyperfine} so that they take on the roles of states $\ket{1}$ and $\ket{2}$, respectively, and state $5^{2}P_{1/2}$ for $F=1$ acts as the excited state $\ket{3}$~\cite{Xiao}.
 
 Some points of note in this system are as follows. State $5^{2}S_{1/2}$ $F=1$ is the absolute ground state of the system. The nuclear spin of $^{87}Rb$ is $3/2$~\cite{Millman}, so states $\ket{1}$ and $\ket{2}$ differ by the direction of electron spin $s = \pm 1/2$, so the energy difference between these states is the result of hyperfine splitting. State $\ket{3}$ has the same principle quantum number of $n=5$ as states $\ket{1}$ and $\ket{2}$ but a different angular momentum quantum number, indicating that this state is due to fine structure (with a hyperfine energy correction). Since states $\ket{1}$ and $\ket{2}$ have the same $l$ value, the transition between these levels is forbidden as per Eqs.~\eqref{TransitionRule1},~\eqref{TransitionRule2},~\eqref{TransitionRule3}, and~\eqref{TransitionRule4}.
 
@@ -434,7 +465,7 @@ Consider a system composed of Avogadro's number of three-level or four-level ato
     \label{DopplerPic}
 \end{figure}
 
-However, it is known that in $\Lambda$-systems composed of `hyperfine-split metastable states' (as described in Section~\ref{ThreeLevelSection}) are unaffected by Doppler broadening if the two applied fields are copropagating~\cite{Fleischhauer}. This is because for a copropagating pump and control beam (i.e.~beams travelling in opposite directions) the Doppler shift observed by any one atom with respect to the pump is equal and opposite to that of the control beam, so they cancel out. This type of system is called Doppler insensitive.
+However, it is known that in $\Lambda$-systems composed of `hyperfine-split metastable states' (as described in Section~\ref{ThreeLevelSection}) are unaffected by Doppler broadening if the two applied fields are copropagating~\cite{Fleischhauer}. This is because for a copropagating pump and control beam (i.e.~beams traveling in opposite directions) the Doppler shift observed by any one atom with respect to the pump is equal and opposite to that of the control beam, so they cancel out. This type of system is called Doppler insensitive.
 
 Improved behaviour is achievable for an ultracold atomic system where temperatures are cooled to near-zero-kelvin in order to minimize~\cite{Fleischhauer}. This is possible with advanced hardware such as a magneto optical trap~\cite{Geng}, however deploying such technology is currently costly and labor-intensive, so application to large scale networks is not economically viable in the near-term. Therefore, for telecom transmission purposes, it would be favorable to deploy hot atomic frequency converters as opposed to ultracold ones.
 
@@ -478,7 +509,7 @@ so by the conservation equations Eqs.~\eqref{ConservationEq1},~\eqref{Conservati
 
 So why is the $\omega_d$ field produced so important? What about all the other fields? Well, a photon is emitted when a charge accelerates, so for an electromagnetic field to be produced the valance electron must transition between states. By cleverly selecting the level structure and driving beam frequencies, many undesired transitions pathways can be suppressed and a transition near frequency $\omega_d$ can be driven~\cite{Nonlinear}. Rogue transitions may produce photons outside the set of frequencies $\{\omega_a, \omega_b, \omega_c, \omega_d\}$, but their number will be negligible in comparison to that of the $\omega_d$ field.
 
-However, this is more of a theoretical hope than a scientific fact. The probability of any given competing non-lienar processes is likely to be diminished, but there are many of them. All of these additional nonlinear effects compete with FWM~\cite{Kim}, turning FWM generation into a parameter optimizaition problem in which the system must be set up to support the FWM process while other maximally suppressing any other nonlinear mixing processes such as third-harmonic generation~\cite{Agarwal}.
+However, this is more of a theoretical hope than a scientific fact. The probability of any given competing nonlinear processes is likely to be diminished, but there are many of them. All of these additional nonlinear effects compete with FWM~\cite{Kim}, turning FWM generation into a parameter optimization problem in which the system must be set up to support the FWM process while other maximally suppressing any other nonlinear mixing processes such as third-harmonic generation~\cite{Agarwal}.
 
 For the four-level diamond configuration atom of consideration (see Fig.~\ref{FirstDiamondAtom}), driving fields of transition frequency $\omega_{12}$, $\omega_{13}$, and $\omega_{24}$ will be applied to induce a near-$\omega_{34}$ transition within the telecom C-band frequency range.
 
@@ -491,7 +522,7 @@ A significant property of FWM is that the additional field generated can be `squ
     \Delta \hat{x} \Delta \hat{p} \geq \frac{\hbar}{2}.
 \end{equation}
 
-For light of sufficient intensity (i.e.~for sufficiently many photons), one can consider its amplitude and phase as canonically conjugate variables~\cite{Slusher}. For a generically produced beam, one would expect the standard deviations of amplitude and phaseto to be roughly equal. If measurement were to be performed in a single quadrature (amplitude for example), then reducing the uncertainty in that quadrature would result in a more precise overall reading.
+For light of sufficient intensity (i.e.~for sufficiently many photons), one can consider its amplitude and phase as canonically conjugate variables~\cite{Slusher}. For a generically produced beam, one would expect the standard deviations of amplitude and phase to be roughly equal. If measurement were to be performed in a single quadrature (amplitude for example), then reducing the uncertainty in that quadrature would result in a more precise overall reading.
 
 When quantum information is stored in the amplitude and phase quadratures of light, it is called continuous variable quantum information~\cite{Sonoyama}. Continuous variable measurements are typically performed with homodyne detectors, compare some input beam against a controlled probe beam and takes the difference between their readings~\cite{Andersen}.
 
@@ -518,12 +549,12 @@ where $\delta\left( \hat{x} \hat{y} \right) = \expect{\hat{x} \hat{y}} - \expect
 
 There are actually two forms of squeezing: single-mode and two-mode squeezing. Single-mode squeezing is typically the result of a phase relationship between emitted photon pairs of the same frequency, while in two-mode squeezing the two photons produces are of different frequencies such that there are correlations between the phase and amplitude of the two beams~\cite{Glorieux}. We are specifically concerned with single-mode squeezed states, and so any mention of squeezing will be in reference to single-mode squeezing.
 
-It is crucial to note that any practilcal implementation of a system in which the production of squeezed light is attempted, that `amplitude squeezing is maintained only if classical pump relative-intensity noise (RIN) is suppressed below shot noise'~\cite{Patel}.
+It is crucial to note that any practical implementation of a system in which the production of squeezed light is attempted, that `amplitude squeezing is maintained only if classical pump relative-intensity noise (RIN) is suppressed below shot noise'~\cite{Patel}.
 
 
 \subsubsection{The effects of optical depth on four wave mixing}
 
-Recall the Beer-Lambert law of Eq.~\eqref{Beer}, which says that the field wihtin a medium decays exponentially with $Im(\chi)$. There is another convention for expressing field decay within a medium, however. It is conventional to take the exponent as the optical depth $OD$ such that
+Recall the Beer-Lambert law of Eq.~\eqref{Beer}, which says that the field within a medium decays exponentially with $Im(\chi)$. There is another convention for expressing field decay within a medium, however. It is conventional to take the exponent as the optical depth $OD$ such that
 \begin{equation}\label{OD1}
     e^{-OD} = e^{-Im\left( \chi^{(1)} \right) k z / 2} 
 \end{equation}
@@ -564,7 +595,7 @@ Overall, if EIA can be induced with respect to the input signal field to strengt
 
 \subsection{Quantum Methods}
 
-In order to make any quantitative statements about the systems and phenomena we have been considering thus far, we must have a mathematical framework for decribing them. To this end, we may apply the Lindblad master equation to find steady-state solutions for our system, and the Maxwell-Bloch equations to find the electric field strength within the medium. We may algorithmically combine these approaches to find the steady state of each region within a theoretical sample of $^{87}Rb$ by propagating the electromagnetic fields throughout.
+In order to make any quantitative statements about the systems and phenomena we have been considering thus far, we must have a mathematical framework for describing them. To this end, we may apply the Lindblad master equation to find steady-state solutions for our system, and the Maxwell-Bloch equations to find the electric field strength within the medium. We may algorithmically combine these approaches to find the steady state of each region within a theoretical sample of $^{87}Rb$ by propagating the electromagnetic fields throughout.
 
 \subsubsection{Lindblad Master equation}
 
@@ -572,7 +603,7 @@ For any quantum system, the total amount of information must be conserved, yet w
 \begin{equation}
     \frac{d \hat{\rho}_T}{dt} = -i \left[ \hat{H}_T, \hat{\rho}_T \right]
 \end{equation}
-where $\hat{\rho}_T$ is the total system density matrix and $\hat{H}_T$ is the total Hamiltonian~\cite{Manzano}. Needless to say, solving this is not an option. By tracing out the environment to isolate the subsystem $\hat{\rho}_S = Tr_E\left[ \hat{\rho}_T \right]$, applying the Born approximation where all interactions between the system and environment are assumed to be weak such that they may be traced out for simplification, applying the Markov approximation assuming that the system is memoryless (past states do not affect future states), then finally applying the rotating wave approximation where rapidly evolving components are averaged out and neglected (since time evolution can be factored in terms of complex exponentials $e^{-i \omega t}$) such that the resulting density matrix is strictly non-negative~\cite{Brasil}\cite{Manzano}. Additional simplification yields the Lindblad master equation as
+where $\hat{\rho}_T$ is the total system density matrix and $\hat{H}_T$ is the total Hamiltonian~\cite{Manzano}. Needless to say, solving this is not an option. By tracing out the environment to isolate the subsystem $\hat{\rho}_S = Tr_E\left[ \hat{\rho}_T \right]$, applying the Born approximation where all interactions between the system and environment are assumed to be weak such that they may be traced out for simplification, applying the Markov approximation assuming that the system is memoryless (past states do not affect future states), then finally applying the rotating wave approximation where rapidly evolving components are averaged out and neglected (since time evolution can be factored in terms of complex exponentials $e^{-i \omega t}$) such that the resulting density matrix is strictly non-negative~\cite{Manzano}\cite{Brasil}. Additional simplification yields the Lindblad master equation as
 \begin{equation}\label{LindbladMasterEquation}
     \frac{d \hat{\rho}_S}{dt} = -i \left[ \hat{H}_S, \hat{\rho}_S \right] + \sum_{\alpha} \gamma_{\alpha} \left( \hat{L}_{\alpha} \hat{\rho}_S \hat{L}_{\alpha}^{\dagger} - \frac{1}{2} \left\{ \hat{L}_{\alpha}^{\dagger} \hat{L}_{\alpha}, \hat{\rho}_S \right\}\right)
 \end{equation}
@@ -649,7 +680,7 @@ then we have that
 \begin{align}
     \left| \frac{\partial^2}{\partial t^2}\vec{\pi}(z, t) \right| \ll \left| \omega \frac{\partial}{\partial t} \vec{\pi}(z, t) \right| \ll \left| \omega^2 \vec{\pi}(z, t) \right|
 \end{align}
-so we may neglet the other terms to obtain
+so we may neglect the other terms to obtain
 \begin{equation}
    \frac{\partial^2}{\partial t^2} \vec{P} \approx - \omega^2 \vec{\pi}(z, t) e^{-i (\omega t - kz)} + c.c.\\
 \end{equation}
@@ -678,7 +709,7 @@ Finding an expression for $\partial_\zeta \varepsilon(\zeta, \tau)$ for each rel
 
 The Lindblad master equation (Eq.~\eqref{LindbladMasterEquation}) can be used in tandem with the Maxwell-Bloch equations (Eq.~\eqref{MaxwellBlochEquation}) to solve for the steady state density matrix, which may be applied to find the expected polarization, then find the electric field strength at the next cross-sectional region. This process can be performed iteratively throughout the medium via computational methods in order to find the desired field strength at the end of the medium. For an idler field, this could then tell us how much field intensity is produced as output via FWM. Due to the use of a co-moving frame, no time evolution is required. This all comes together in Alg.~\ref{Alg}
 
-\begin{algorithm}[H]\label{Alg}
+\begin{algorithm}[H]
     \caption{The Lindblad-Maxwell-Bloch Algorithm}
     \begin{algorithmic}[1]
         \State Initialize the electric field strength, frequency, and propagation direction for each field at location $\zeta=0$ along the atomic medium. Also initialize step size $\Delta \zeta$ and sample length $Z$ (stopping condition).
@@ -694,6 +725,7 @@ The Lindblad master equation (Eq.~\eqref{LindbladMasterEquation}) can be used in
         \State Return $\varepsilon$ and $\hat \rho$.
 
     \end{algorithmic}
+    \label{Alg}
 \end{algorithm}
 
 
@@ -707,7 +739,7 @@ By selecting some system parameterization (such as initial beam strengths, detun
 
 \subsection{Doppler Broadening and Doppler Insensitivity}
 
-It would be highly advantageous if we could show that the diamond-configuration system can be Doppler insensitive. When driving the three transitions such that a telecom wavelength field is promoted we can depict our system as in Fig.~\ref{ThreeFieldDiamond}. This is essentially the combination of a V-system and a ladder system, or at least that is how some interpret it~\cite{Lee}. Lee et al.~\cite{Lee} state that the two-photon coherence of the V-type and $\Xi$-type subsystems can be made Doppler insensitive when the ($\omega_s$) and strong pump I ($\omega_{I}$) co-propagate (for V-type) and when the weak signal ($\omega_s$) and strong pump II ($\omega_{II}$) beams counter-propogate (for $\Xi$-type). They extend this to line of reasoning to state that both conditions should hold in order to obtain Doppler insensitive three-photon coherence in a Doppler broadened medium. They found that  Doppler-free three-photon electromagnetically induced absorption (EIA) of the weak signal beam was present under these conditions. Additionally, they found that increased EIA intensity was strongly correlated with increased FWM field production. It should be noted that Lee et al.~used a slightly different atomic configuration in the $^{87}Rb$ spectrum.
+It would be highly advantageous if we could show that the diamond-configuration system can be Doppler insensitive. When driving the three transitions such that a telecom wavelength field is promoted we can depict our system as in Fig.~\ref{ThreeFieldDiamond}. This is essentially the combination of a V-system and a ladder system, or at least that is how some interpret it~\cite{Lee}. Lee et al.~\cite{Lee} state that the two-photon coherence of the V-type and $\Xi$-type subsystems can be made Doppler insensitive when the ($\omega_s$) and strong pump I ($\omega_{I}$) co-propagate (for V-type) and when the weak signal ($\omega_s$) and strong pump II ($\omega_{II}$) beams counter-propagate (for $\Xi$-type). They extend this to line of reasoning to state that both conditions should hold in order to obtain Doppler insensitive three-photon coherence in a Doppler broadened medium. They found that  Doppler-free three-photon electromagnetically induced absorption (EIA) of the weak signal beam was present under these conditions. Additionally, they found that increased EIA intensity was strongly correlated with increased FWM field production. It should be noted that Lee et al.~used a slightly different atomic configuration in the $^{87}Rb$ spectrum.
 
 \begin{figure}%[h!]
     \includegraphics[width=0.5\columnwidth]{ThreeFieldDiamondAtom.png}
@@ -861,7 +893,7 @@ There are still alternative Hamiltonians which may be applicable to this problem
     \hbar \left(\varepsilon_i \hat{b} + \varepsilon_i^* \hat{b}^{\dagger}\right)
 \end{align}
 
-On top of this, we must also take the use of cavities into consideration and ask: is it practical to use resonant cavities for this system? Recall that the condition for Doppler insensitivity is that $\vec{k}_s$ and $\vec{k}_I$ must co-propagate, $\vec{k}_i$ and $\vec{k}_{II}$ must co-propagate, and $\vec{k}_s$ and $\vec{k}_i$ must counter-propagate such that all four beams travel along the same line. But how does one place two resonant cavities of distinct frequencies along the same line? It is possible that there is a way to cleverly engineer a system to alleviate this issue, but considering such a problem is out of the scope of this report. Instead, we present the other possible Hamiltonains obtained by de-quantizing one of the two fields.
+On top of this, we must also take the use of cavities into consideration and ask: is it practical to use resonant cavities for this system? Recall that the condition for Doppler insensitivity is that $\vec{k}_s$ and $\vec{k}_I$ must co-propagate, $\vec{k}_i$ and $\vec{k}_{II}$ must co-propagate, and $\vec{k}_s$ and $\vec{k}_i$ must counter-propagate such that all four beams travel along the same line. But how does one place two resonant cavities of distinct frequencies along the same line? It is possible that there is a way to cleverly engineer a system to alleviate this issue, but considering such a problem is out of the scope of this report. Instead, we present the other possible Hamiltonians obtained by de-quantizing one of the two fields.
 \begin{align}\label{Ha}
     \tilde{H}_{a}
     &=
@@ -916,7 +948,7 @@ where $v_g$ is group velocity, $\nu$ is atomic density, and we are in the co-mov
 
 By propagating the field throughout the entire cell, the field strength of the expectation value of the number operator $\hat{a}^{\dagger} \hat{a}$ for each field could be obtained using the final mean density matrix, the quadrature noise and the amount of squeezing can be obtained using Eqs.~\eqref{QuadratureUncertainty1},\eqref{QuadratureUncertainty2}.
 
-\section{Computational Methods}
+\section{Computational Methods}\label{ComputationalMethods}
 
 In order to handle the massive amount of information involved with such a quantized system, computational methods will be applied. Introductory computations with the QuTip python package will be performed to reproduce known results and investigate how various phenomena, then a set of computational tools based on the contents of Sec.~\ref{ProblemDefinition} will be introduced.
 
@@ -963,6 +995,11 @@ The atomic term is given by
         0 & -1
     \end{array}\right).
 \end{align}
+
+
+\lstinputlisting[caption={Python code for the Jaynes-Cummings Model}, language=Python, firstline=6, lastline=39]{./Code/JCM.py}\label{JCM-Code}
+
+
 The photonic term is given by
 \begin{equation*}
     \hat H_{Photon} = \hbar \omega\left(\hat{a}^{\dagger} \hat{a} + \frac{1}{2}\right).
@@ -990,7 +1027,7 @@ In order to combine the Hilbert spaces for these two separate quantizes systems,
         \Omega \hat{a}^{\dagger} & \omega
     \end{array}\right) + \hbar \omega \hat{a}^{\dagger} \hat{a}
 \end{align}
-We may then choose to arbitraily shift the ground state as to obtain
+We may then choose to arbitrarily shift the ground state as to obtain
 \begin{align}\label{JCMHamiltonian}
     \hat{H}_{JC} &= \frac{\hbar}{2} \left(\begin{array}{cc}
         0 & \Omega \hat{a}\\
@@ -1006,17 +1043,15 @@ This is not the whole story, however. Any real cavity has some photonic decay ra
 
 To learn the QuTiP package, the Jaynes-Cummings model was coded (see Code Block.~\ref{JCM-Code}) based on an implementation by Robert Johansson \cite{Qutip-lectures}. This code differs slightly from the above description in that the atomic Hamiltonian basis is shifted such that it is in the rotating frame $\hat{H}_{Atom} = \hbar \omega \ket{e}\bra{e}$.
 
-\lstinputlisting[caption={Python code for the Jaynes-Cummings Model}, language=Python, firstline=6, lastline=39]{./Code/JCM.py}\label{JCM-Code}
-
 This code uses the \lstinline|mesolve| function for time evolving a quantum system such that we may inspect the evolution of the state. For an initial state where the atom is excited and there are no photons present in the cavity, we obtain decaying Rabi oscillations as expected (see Fig.~\ref{JCM-Rabi}).
 
-\begin{figure}%[h!]
-    \includegraphics[width=0.8\columnwidth]{JCM-Rabi.png}
+This code will be a base for all quantum code going forward, but before we can dive any deeper into quantized systems, we must take a step back to look at a semi-classical system.
+
+\begin{figure}[h!]
+    \includegraphics[width=0.7\columnwidth]{JCM-Rabi.png}
     \caption{Decaying Rabi oscillation produced by the Jaynes-Cummings model with initial state $\ket{\psi}_0 = \ket{e} \otimes \ket{0}$.}
     \label{JCM-Rabi}
 \end{figure}
-
-This code will be a base for all quantum code going forward, but before we can dive any deeper into quantized systems, we must take a step back to look at a semi-classical system.
 
 \subsubsection{Electromagnetically induced transparency in a $\Lambda$-system with classical driving fields}
 
@@ -1071,7 +1106,7 @@ We may also check the validity of our approximation $\rho_{12} \approx \rho_{23}
 
 \subsubsection{Cavity electromagnetically induced transparency in a $\Lambda$-system with quantized driving fields}
 
-The final stepping stone towards developing system-specific code comes with reproducing a known result of a more advanced and modern system. In the paper `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souza et al.~they describe a three-level $\Lambda$-system within a resonant cavity of frequency $\omega_{cav}$ in the presence of a strong calssical pump field of frequency$\omega_c$ and a weak quantized probe beam of frequency $\omega_p$ and solve for steady state solutions via the Lindblad master equation~\cite{Souza}. This combines all the techniques seen thus far. They give their Hamiltonian as
+The final stepping stone towards developing system-specific code comes with reproducing a known result of a more advanced and modern system. In the paper `Coherent Control of Quantum Fluctuations Using Cavity Electromagnetically Induced Transparency' by Souza et al.~they describe a three-level $\Lambda$-system within a resonant cavity of frequency $\omega_{cav}$ in the presence of a strong classical pump field of frequency$\omega_c$ and a weak quantized probe beam of frequency $\omega_p$ and solve for steady state solutions via the Lindblad master equation~\cite{Souza}. This combines all the techniques seen thus far. They give their Hamiltonian as
 \begin{align}
     \hat{H} &= \Delta \hat{\sigma}_{33} + (\Delta_1 - \Delta_2) \hat{\sigma}_{22} - \Delta \hat{\sigma}_{11} + \Delta \hat{a}^{\dagger} \hat{a} + \left( \varepsilon \hat{a} + g \hat{a} \hat{\sigma}_{31} + \Omega_{32} + h.c.\right) \nonumber \\
     &=
@@ -1091,7 +1126,7 @@ There is one particular term of note here which has not yet shown up: $\varepsil
     \label{NoisyJCM-Rabi}
 \end{figure}
 
-They then define decay operators for their cavity field mode $\sqrt{\kappa} \hat{a}$, and their atomic states $\sqrt{\Gamma_{13}} \hat{\sigma}_{13}$, $\sqrt{\Gamma_{23}} \hat{\sigma}_{23}$. Implementing this Hamiltonian with QuTiP and solving for the steady-state density matrix via the Lindblad mater equation with the specified decay operators allowed us to reproduce some of the results presented by Souza et al.~\cite{Souza}. Fig.~\ref{PhotonCountThreeLevel} reproduces the portion of figure 1(c) depicting the transmission profile over a range of $\Delta$ detunings with cavity EIT (CEIT). Fig.~\ref{ThreeLevelCEIT} reproduces figure 2(b) depicting the state expectation values over the range of detunings, where we have opted to split the original figure into two to avoid overcrowding. Additionally, the expectation value of atomic state $\ket{3}$ was added, where we observe a sharp dip in state population on resonance. This indicates the presence of a dark state, giving evidence to the presence of EIT. Fig.~\ref{PhotonCountThreeLevel} also suggests that the cavity mode becomes more populated on resonance, sopporting evidence of EIT; with increases also observed at other detunings corresponding to alternative transition frequencies introduced by `Autler-Townes-like' energy level splitting~\cite{Souza}.
+They then define decay operators for their cavity field mode $\sqrt{\kappa} \hat{a}$, and their atomic states $\sqrt{\Gamma_{13}} \hat{\sigma}_{13}$, $\sqrt{\Gamma_{23}} \hat{\sigma}_{23}$. Implementing this Hamiltonian with QuTiP and solving for the steady-state density matrix via the Lindblad mater equation with the specified decay operators allowed us to reproduce some of the results presented by Souza et al.~\cite{Souza}. Fig.~\ref{PhotonCountThreeLevel} reproduces the portion of figure 1(c) depicting the transmission profile over a range of $\Delta$ detunings with cavity EIT (CEIT). Fig.~\ref{ThreeLevelCEIT} reproduces figure 2(b) depicting the state expectation values over the range of detunings, where we have opted to split the original figure into two to avoid overcrowding. Additionally, the expectation value of atomic state $\ket{3}$ was added, where we observe a sharp dip in state population on resonance. This indicates the presence of a dark state, giving evidence to the presence of EIT. Fig.~\ref{PhotonCountThreeLevel} also suggests that the cavity mode becomes more populated on resonance, supporting evidence of EIT; with increases also observed at other detunings corresponding to alternative transition frequencies introduced by `Autler-Townes-like' energy level splitting~\cite{Souza}.
 
 \begin{figure}[h!]
     \includegraphics[width=0.74\columnwidth]{PhotonCountThreeLevel.png}
@@ -1124,22 +1159,25 @@ Additionally, within this code constants such as $c$, $\epsilon_0$, $\hbar$, etc
 
 Therefore, the code presented in Sec.~\ref{SimulatorCode} is meant to act as a template for further development and research. It is recommended that any choice of unit convention scales such constants to unity if possible, and that any other physically relevant parameters are defined in terms of some other parameter. The latter has been done in the presented code such that atomic decay rates are expressed in terms of the cavity decay rate, giving relative meaning to parameter choices.
 
-\section{Discussion and Outlook}
+\section{Discussion and Outlook}\label{Discussion}
 
 Progress has been made towards answering the question: can the four-level diamond configuration formed by the $5S_{1/2} - 5P_{1/2} - 5P_{3/2} - 4D_{1/2}$ energy level substructure in hot $^{87}Rb$ vapour be used to convert a weak laser field near $795$ nm encoded with continuous variable quantum information to a field in the telecom C-band of $1530$ nm to $1565$ nm via an EIT (and perhaps EIA) enhanced FWM process while generating a single-mode squeezed state to reduce noise below the shot noise limit? If so, then it may be possible to rapidly scale quantum networks in an economically viable way by using existing telecom infrastructure to prepare secure sensitive information networks for a post-quantum world. In this pursuit, the theoretical connections between various nonlinear optical phenomena were formed and related to the problem at hand, the problem itself was given a well-defined definition with quantifiable performance metrics, various derivations were performed to obtain the Lindblad master equation and Maxwell-Bloch equations for the system, and a set of computational tools were developed for the specific problem and presented alongside reproductions of known computational results of similar physical systems to build intuition of how results may be obtained.
 
-Application of the Lindblad master equation in conjunction with the Maxwell-Bloch equations as outlined in Alg.~\ref{Alg} gives a method to theoretically improve simulation accuracy over those which only apply the master equation by assuming uniform steady state propagation dynamics in a Doppler broadened atomic medium undergoing nonlinear optical processes. However, computational accuracy can still be improved over that of the methods presented in this body of work. The tools presented make the approximations that the Doppler free phase matching condition of Eq.~\eqref{DopplerFreePhaseMatching} is enforced and simplifying assumptions were applied to some equations since exact equations which were compatible with the algorithmic solution method could not be derived. The code can be improved in these respects in future work to improve accuracy and robustness. It is important to note that the computational time complexity of any additional steps should be considered as the computation time of an algorithm can hinder its ability to practically produce results.
+Application of the Lindblad master equation in conjunction with the Maxwell-Bloch equations as outlined in Alg.~\ref{Alg} gives a method to theoretically improve simulation accuracy over those which only apply the master equation by assuming uniform steady state propagation dynamics in a Doppler broadened atomic medium undergoing nonlinear optical processes. However, computational accuracy can still be improved over that of the methods presented in this body of work. The tools presented make the approximations that the Doppler free phase matching condition of Eq.~\eqref{DopplerFreePhaseMatching} is enforced and simplifying assumptions were applied to some equations since exact equations which were compatible with the algorithmic solution method could not be derived. Whether this phase matching condition is practical to a real-world system must be investigated further. The code can be improved in these respects in future work to improve accuracy and robustness. It is important to note that the computational time complexity of any additional steps should be considered as the computation time of an algorithm can hinder its ability to practically produce results.
+
+If it is found that efficient frequency conversion is viable with this method, then there would be evidence to support experimentation towards the development of a deployable quantum device. If the contrary is found, then the possibility of viability cannot be fully ruled out, but this would suggest evidence in favor of applying ultracold atomic frequency converters across quantum telecom networks. This ladder case would likely drastically increase the cost, implementation time, and maintenance requirement for such networks.
 
 While the mathematical framework presented theoretically describes the system, its predictive utility is yet to be supported via simulation results. It is intended that the foundations built by this body of work will advance this pursuit. If future results support this approach, then the methods and algorithms described may be applied to other systems. The shortcomings and limitations of these methods may also be highlighted in this process, possibly leading to subsequent iteration and improvement. The equations presented may also be applied to theoretical works for analytical calculations. However, any application of them should recognize the various approximations applied (such as the rotating wave approximation or slowly varying envelope approximation) and confirm that they hold in the regime of consideration.
 
 It is intended that this thesis may be used as a self-contained starting point and building block for subsequent collaborators. All the theory and examples included exist to build one's intuition with respect to the problem, and ideas between topics in nonlinear optics have been connected to help the reader understand the broad scale network of ideas.
 
+\section{Conclusion}\label{Conclusion}
 
-\section{Conclusion}
+Quantum technologies are advancing rapidly introducing new possibilities, however, they are dual use in that they can be used for both civilian and military purposes. Quantum methods can potentially crack conventional encryption algorithms, but quantum communication techniques like quantum key distribution are theoretically impervious to such attack. So it is considered a national interest to secure sensitive communication channels. It would be advantageous to use existing telecommunications infrastructure, but many techniques for producing optically encoded quantum information do not operate at comparable frequencies. For this purpose, a hot atomic vapour system composed of four-level diamond configuration $^{87}Rb$ is presented as a candidate for frequency conversion and noise reduction of optically encoded continuous variable quantum signals via EIT and FWM. A key hurdle to achieving these phenomena in a hot medium is the effect of Doppler broadening. If the system can be made Doppler insensitive, then FWM and EIT may be promoted.
 
+By iteratively applying the Lindblad master equation and Maxwell-Bloch equations to a Doppler-broadened medium, it is theorized that signal propagation can be computationally modelled in order to obtain a measure of signal conversion efficiency and optical squeezing. Derivations and algorithms have been presented towards this end, although work remains. The code presented must be iterated upon, applied to obtain a computational result, then possibly verified against an experimental system. This body of work is intended to be a self-contained guide to aid future collaborators execute these goals.
 
-
-\pagebreak
+\clearpage
 
 \section*{References}
 \bibliographystyle{unsrt}
@@ -1162,12 +1200,14 @@ The first step in Hamiltonian formulation is system definition. We are modelling
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\columnwidth]{Figs/DiamondAtom.png}
+    \caption{}
     \label{SecondDiamondAtom}
   \end{subfigure}
   \hfill
   \begin{subfigure}{0.45\textwidth}
     \centering
     \includegraphics[width=\columnwidth]{Figs/DrivenDiamondAtom.png}
+    \caption{}
     \label{DrivenDiamondAtom}
   \end{subfigure}
   \caption{Diamond configuration atom diagrams. (Left) Duplicate of Fig.~\ref{FirstDiamondAtom} placed for convenience. A diamond configuration atomic system with  non-degenerate energy levels $\ket{1}, \ket{2}, \ket{3}, \ket{4}$. The system has allowed transitions $\ket{1} \leftrightarrow \ket{2}$, $\ket{1} \leftrightarrow \ket{3}$, $\ket{2} \leftrightarrow \ket{4}$, and $\ket{3} \leftrightarrow \ket{4}$ with respective energies $\hbar \omega_{12}$, $\hbar \omega_{13}$, $\hbar \omega_{24}$, and $\hbar \omega_{34}$ and corresponding wavelengths $\lambda_{12}$, $\lambda_{13}$, $\lambda_{24}$, and $\lambda_{34}$. (Right) A strong pump drives transition $\ket{1} \leftrightarrow \ket{3}$ at frequency $\omega_I$ with detuning $\Delta_I = \omega_I - \omega_{13}$, a separate strong pump drives transition $\ket{2} \leftrightarrow \ket{4}$ with detuning $\Delta_{II} = \omega_{II} - \omega_{24}$, a weak signal beam drives transition $\ket{1} \leftrightarrow \ket{2}$ with detuning $\Delta_{s} = \omega_{s} - \omega_{12}$, and a weak idler field (undriven) is induced by the presence of the other fields through a FWM process, resulting in transition $\ket{3} \leftrightarrow \ket{4}$ with emission detuning $\Delta_{i} = \omega_{i} - \omega_{34}$.}
@@ -1353,7 +1393,7 @@ so we have
     &+ \left(\hbar \Omega_{II}(t) \hat{\sigma}_{24} e^{i \omega_{II} t - i \vec{k}_{II} \cdot \vec{r}} + c.c.\right)\nonumber \\
     &+ \left(\hbar \Omega_{i}(t) \hat{\sigma}_{34} \hat{b}^{\dagger} e^{-i \vec{k}_{i} \cdot \vec{r}} + h.c.\right)
 \end{align}
-where the Rabi frequencies changes on a much slower timescale than the rate of its corresponging carrier frequency, $\omega$, or the Rabi frequency, $\Omega$, itself. To clarify, there is the rate of the carreir frequency (fast), the rate of Rabi oscillations (moderate), and the rate of change in the Rabi frequency (slow). This is because $\Omega \propto |\varepsilon|$ and, recall that, the field amplitude is the carrier of quantum information. This line of reasoning allows us to leverage the slowly-varying envelope approximation.
+where the Rabi frequencies changes on a much slower timescale than the rate of its corresponding carrier frequency, $\omega$, or the Rabi frequency, $\Omega$, itself. To clarify, there is the rate of the carrier frequency (fast), the rate of Rabi oscillations (moderate), and the rate of change in the Rabi frequency (slow). This is because $\Omega \propto |\varepsilon|$ and, recall that, the field amplitude is the carrier of quantum information. This line of reasoning allows us to leverage the slowly-varying envelope approximation.
 
 Combining this with $\hat{H}_S$ we obtain a Hamiltonian coupling atomic states with the weak signal and idler fields as
 \begin{align}

@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{Souza}
+J.~A. Souza, E.~Figueroa, H.~Chibani, C.~J. Villas-Boas, and G.~Rempe.
+\newblock Coherent control of quantum fluctuations using cavity
+  electromagnetically induced transparency.
+\newblock {\em Phys. Rev. Lett.}, 111:113602, Sep 2013.
+
 \bibitem{DFT}
 R.~O. Jones.
 \newblock Density functional theory: Its origins, rise to prominence, and
@@ -95,6 +101,11 @@ David Tong.
 \newblock {\em Quantum Mechanics}.
 \newblock Cambridge University Press, 2025.
 
+\bibitem{Atomic}
+M.~Fox.
+\newblock {\em A Students Guide to Atomic Physics}.
+\newblock Cambridge University Press, 2018.
+
 \bibitem{Peatross}
 J.~Peatross and M.~Ware.
 \newblock {\em Physics of light and Optics}.
@@ -126,11 +137,6 @@ R\"{u}diger Paschotta.
 D.~H. McIntyre.
 \newblock {\em Quantum Mechanics: A Paradigms Approach}.
 \newblock Cambridge University Press, 2023.
-
-\bibitem{Atomic}
-M.~Fox.
-\newblock {\em A Students Guide to Atomic Physics}.
-\newblock Cambridge University Press, 2018.
 
 \bibitem{Millman}
 S.~Millman and M.~Fox.
@@ -232,12 +238,6 @@ Y.~S. Lee and H.~S. Moon.
 \newblock Doppler-free three-photon coherence in doppler-broadened diamond-type
   atomic system.
 \newblock {\em Opt. Express}, 25(5):5316--5326, Mar 2017.
-
-\bibitem{Souza}
-J.~A. Souza, E.~Figueroa, H.~Chibani, C.~J. Villas-Boas, and G.~Rempe.
-\newblock Coherent control of quantum fluctuations using cavity
-  electromagnetically induced transparency.
-\newblock {\em Phys. Rev. Lett.}, 111:113602, Sep 2013.
 
 \bibitem{FWM}
 S.~Du, E.~Oh, J.~Wen, and M.~H. Rubin.
