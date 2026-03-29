@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  29 MAR 2026 00:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.19)  29 MAR 2026 01:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1292,47 +1292,46 @@ Package pdftex.def Info: Figs//SemiClassicalEIT.png  used on input line 1112.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1118.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Lambda' on input line 1118.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1118.
-
-[23]
-<Figs//NoisyJCM-Rabi.png, id=813, 631.35875pt x 470.75874pt>
+<Figs//NoisyJCM-Rabi.png, id=801, 631.35875pt x 470.75874pt>
 File: Figs//NoisyJCM-Rabi.png Graphic file (type png)
 <use Figs//NoisyJCM-Rabi.png>
-Package pdftex.def Info: Figs//NoisyJCM-Rabi.png  used on input line 1135.
+Package pdftex.def Info: Figs//NoisyJCM-Rabi.png  used on input line 1119.
 (pdftex.def)             Requested size: 408.00156pt x 304.22249pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24 <./Figs//SemiClassicalEIT.png>]
-<Figs//PhotonCountThreeLevel.png, id=826, 767.86874pt x 541.02126pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1124.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Lambda' on input line 1124.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 1124.
+
+[23]
+<Figs//PhotonCountThreeLevel.png, id=815, 767.86874pt x 541.02126pt>
 File: Figs//PhotonCountThreeLevel.png Graphic file (type png)
 <use Figs//PhotonCountThreeLevel.png>
 Package pdftex.def Info: Figs//PhotonCountThreeLevel.png  used on input line 11
-43.
+42.
 (pdftex.def)             Requested size: 377.4028pt x 265.91174pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Figs//ThreeLevelCEIT.png, id=828, 1105.12875pt x 695.59875pt>
+<Figs//ThreeLevelCEIT.png, id=817, 1105.12875pt x 695.59875pt>
 File: Figs//ThreeLevelCEIT.png Graphic file (type png)
 <use Figs//ThreeLevelCEIT.png>
-Package pdftex.def Info: Figs//ThreeLevelCEIT.png  used on input line 1150.
+Package pdftex.def Info: Figs//ThreeLevelCEIT.png  used on input line 1149.
 (pdftex.def)             Requested size: 377.4028pt x 237.54062pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[24 <./Figs//SemiClassicalEIT.png>]
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2021/02/14 v1.3d Input encoding file
 )
@@ -1355,17 +1354,17 @@ File: latin1.def 2021/02/14 v1.3d Input encoding file
 [28] (./HonoursThesis.bbl [29]) [30]
 File: Figs/DiamondAtom.png Graphic file (type png)
 <use Figs/DiamondAtom.png>
-Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 1213.
+Package pdftex.def Info: Figs/DiamondAtom.png  used on input line 1215.
 (pdftex.def)             Requested size: 229.49844pt x 183.60326pt.
 <Figs/DrivenDiamondAtom.png, id=891, 428.60126pt x 295.1025pt>
 File: Figs/DrivenDiamondAtom.png Graphic file (type png)
 <use Figs/DrivenDiamondAtom.png>
-Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 1220.
+Package pdftex.def Info: Figs/DrivenDiamondAtom.png  used on input line 1222.
 (pdftex.def)             Requested size: 229.49844pt x 158.0156pt.
  [31 <./Figs/DrivenDiamondAtom.png>]
 [32] [33] [34] [35] [36] [37] [38] [39] [40]
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 208
-7.
+9.
 
 (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
@@ -1414,7 +1413,7 @@ mtk10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt9.pfb></usr/local
 /texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/l
 ocal/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on HonoursThesis.pdf (59 pages, 1513574 bytes).
+Output written on HonoursThesis.pdf (59 pages, 1513563 bytes).
 PDF statistics:
  1787 PDF objects out of 2073 (max. 8388607)
  1614 compressed objects within 17 object streams
